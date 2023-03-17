@@ -1,4 +1,255 @@
 {
   "current": {
+    "enable_atc_ajax": true,
+    "social_facebook_link": "https:\/\/www.facebook.com\/BethelShop",
+    "social_pinterest_link": "https:\/\/www.pinterest.com\/bethelredding",
+    "social_instagram_link": "https:\/\/www.instagram.com\/shopbethel",
+    "social_youtube_link": "https:\/\/www.youtube.com\/user\/ibethelmusic",
+    "social_twitter_link": "https:\/\/twitter.com\/bethelmusic",
+    "pt_show_collection_group": false,
+    "pt_refine_text": "Filters",
+    "pt_sort_price_asc_text": "Price Lowest",
+    "pt_sort_price_desc_text": "Price Highest",
+    "pt_sort_created_asc_text": "Oldest",
+    "color_pt_header_border": "rgba(0,0,0,0)",
+    "pt_header_size": 15,
+    "pt_header_weight": "300",
+    "color_pt_links": "#000000",
+    "color_pt_links_selected": "#000000",
+    "color_pt_links_hover": "#000000",
+    "color_pt_counts_color": "#000000",
+    "pt_links_size": 13,
+    "pt_checkbox_style": "6",
+    "pt_checkbox_primary_color": "#cccccc",
+    "pt_checkbox_secondary_color": "#000000",
+    "color_pt_clear_bg": "rgba(0,0,0,0)",
+    "color_pt_clear_text": "#7f7f7f",
+    "color_pt_clear_bg_hover": "rgba(0,0,0,0)",
+    "color_pt_clear_text_hover": "#7f7f7f",
+    "pt_mobile_enable": false,
+    "pt_accordion_enable": true,
+    "pt_accordion_mode": "first",
+    "pt_accordion_icon_style": "plus_minus",
+    "pt_mobile_color": "#000000",
+    "pt_mobile_hide_selected": false,
+    "color_pt_small_box_bg": "rgba(0,0,0,0)",
+    "color_pt_small_box_bg_hover": "#7f7f7f",
+    "color_pt_small_box_text_hover": "rgba(0,0,0,0)",
+    "pt_view_more_enable": true,
+    "pt_view_more_count": 6,
+    "pt_view_more_text": "+ More",
+    "pt_apply_button_color": "rgba(0,0,0,0)",
+    "pt_apply_button_hover_color": "#7f7f7f",
+    "pt_ajax_selector": "#bm-collection__container",
+    "sections": {
+      "mobile-menu": {
+        "type": "mobile-menu",
+        "blocks": {
+          "fcc0d0a1-e34a-458e-9075-8dc1df6fdffd": {
+            "type": "nav_list_main",
+            "settings": {
+              "main_nav": "main-menu"
+            }
+          },
+          "1c439f34-47e7-4583-8710-d0fd9c6d336b": {
+            "type": "nav_list_manage",
+            "settings": {
+              "search_link_vis": "default",
+              "enable_wish_star": false,
+              "star_link_vis": "xl",
+              "account_link_vis": "default",
+              "cart_link_vis": "default"
+            }
+          }
+        },
+        "block_order": [
+          "fcc0d0a1-e34a-458e-9075-8dc1df6fdffd",
+          "1c439f34-47e7-4583-8710-d0fd9c6d336b"
+        ],
+        "settings": {
+        }
+      },
+      "bm-universal-nav": {
+        "type": "bm-universal-nav",
+        "settings": {
+          "enable": true,
+          "main_nav": "universal-menu",
+          "background_color": "#ffffff",
+          "text_color": "#000000",
+          "enable_newsletter": true,
+          "newsletter_btn_text": "Sign up!"
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announcement-bar-0": {
+            "type": "announcement",
+            "settings": {
+              "background_color": "#000000",
+              "link": "",
+              "message": "",
+              "enable_message_styles": false,
+              "message_color": "#fff",
+              "font_family": "ff-roboto",
+              "font_size": "6",
+              "font_size_tablet": "fs-sm-6",
+              "font_size_desk": "fs-xl-6",
+              "font_style_italic": false,
+              "font_weight": "default",
+              "line_height": "lh-default",
+              "text_alignment_desk": "text-xl-inherit",
+              "text_alignment_tablet": "text-sm-inherit",
+              "text_alignment_phone": "text-inherit"
+            }
+          }
+        },
+        "block_order": [
+          "announcement-bar-0"
+        ],
+        "settings": {
+          "enable": true,
+          "section_margin": "mb-0",
+          "slider_scroll": "autoscroll",
+          "speed": 2,
+          "interval": 5,
+          "enable_rewind": true
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "25fbe1bb-8eff-434b-a70c-a7c488119866": {
+            "type": "main_logo",
+            "settings": {
+              "logo": "shopify:\/\/shop_images\/logox2_47cdd922-fdb7-406f-b4f0-d3bd9841922e.png",
+              "logo_max_width": 90
+            }
+          },
+          "9e6e1754-6d5d-41c2-9287-cd6abec3a08a": {
+            "type": "nav_list_main",
+            "settings": {
+              "main_nav": "menu2-0"
+            }
+          },
+          "dc71ef93-68ed-4c85-89bc-05b7f0b4d1ad": {
+            "type": "nav_list_manage",
+            "settings": {
+              "search_is_form": true,
+              "search_width": 301,
+              "search_link_vis": "xl",
+              "enable_wish_star": true,
+              "star_link_vis": "xl",
+              "account_link_vis": "xl",
+              "cart_link_vis": "default"
+            }
+          }
+        },
+        "block_order": [
+          "25fbe1bb-8eff-434b-a70c-a7c488119866",
+          "9e6e1754-6d5d-41c2-9287-cd6abec3a08a",
+          "dc71ef93-68ed-4c85-89bc-05b7f0b4d1ad"
+        ],
+        "settings": {
+          "background_color": "#ffffff",
+          "text_color": "#000000",
+          "enable_nav_level_two": false,
+          "enable_nav_level_three": false
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "523ba8a5-8357-4a10-9945-94686f9bff60": {
+            "type": "footer_top",
+            "settings": {
+              "message": "Bethel's mission is revival – the personal, regional, and global\n<br>\nexpansion of God's Kingdom through His manifest presence.",
+              "enable_message_styles": true,
+              "message_color": "#ffffff",
+              "font_size": "fs-6",
+              "font_style_italic": false,
+              "font_weight": "fw-light",
+              "text_alignment_desk": "text-xl-center",
+              "text_alignment_tablet": "text-sm-center",
+              "text_alignment_phone": "text-center",
+              "message_margin": "mb-4",
+              "message_visibility": "default"
+            }
+          },
+          "fa359242-73b3-4385-b2b8-1bf1a08ddc8b": {
+            "type": "footer_middle",
+            "settings": {
+              "enable_styles": true,
+              "text_color": "#ffffff",
+              "footer_menu_1": "footer-bethel-sites-and-affiliates",
+              "footer_menu_2": "footer-account-menu",
+              "footer_menu_3": "footer-contact-us-menu",
+              "enable_footer_newsletter": true,
+              "newsletter_title": "SUBSCRIBE FOR OUR WEEKLY EMAIL",
+              "newsletter_title_tag": "h5",
+              "newsletter_title_font_size": "fs-6",
+              "newsletter_title_font_weight": "fw-light",
+              "newsletter_title_alignment_desk": "text-xl-inherit",
+              "newsletter_title_alignment_tablet": "text-sm-inherit",
+              "newsletter_title_alignment_phone": "text-inherit",
+              "newsletter_title_margin": "mb-0",
+              "newsletter_message": "Get 15% off your first order",
+              "newsletter_message_font_size": "fs-8",
+              "newsletter_message_font_weight": "fw-light",
+              "newsletter_message_alignment_desk": "text-xl-inherit",
+              "newsletter_message_alignment_tablet": "text-sm-inherit",
+              "newsletter_message_alignment_phone": "text-inherit",
+              "newsletter_message_margin": "mb-3",
+              "newsletter_button_text": "SIGN UP",
+              "newsletter_button_size": "small",
+              "enable_button_styles": false,
+              "button_color": "#000000",
+              "button_text_color": "#ffffff",
+              "newsletter_button_template": "primary",
+              "newsletter_button_align_phone": "justify-content-inherit",
+              "newsletter_button_align_tablet": "justify-content-sm-inherit",
+              "newsletter_button_align_desk": "justify-content-xl-inherit",
+              "newsletter_button_margin": "mb-0"
+            }
+          },
+          "ff7bc576-b397-4280-a365-34ce6314168e": {
+            "type": "footer_bottom",
+            "settings": {
+              "enable_youtube": true,
+              "enable_twitter": true,
+              "enable_facebook": true,
+              "enable_instagram": true,
+              "enable_pinterest": true,
+              "copyright_message": "Copyright 2022 Bethel Media. All rights reserved. <a href=\"https:\/\/shop.bethel.com\/pages\/return-policy\" style=\"color: #fff; text-decoration: none;\">Return policy<\/a>",
+              "copyright_font_size": "fs-7",
+              "copyright_font_weight": "fw-light",
+              "logo_max_width": 90
+            }
+          }
+        },
+        "block_order": [
+          "523ba8a5-8357-4a10-9945-94686f9bff60",
+          "fa359242-73b3-4385-b2b8-1bf1a08ddc8b",
+          "ff7bc576-b397-4280-a365-34ce6314168e"
+        ],
+        "settings": {
+          "enable_hide_scroll": false,
+          "enable_background": true,
+          "background_color": "#a5acb0"
+        }
+      },
+      "filter-menu-settings": {
+        "type": "filter-menu-settings",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
   }
 }
