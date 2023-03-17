@@ -4,58 +4,55 @@
 
 - [Node](https://nodejs.org/en/) (v16.14.0)
 - [NPM](https://docs.npmjs.com/) (v8.3.1)
-- [Theme Kit](https://shopify.github.io/themekit/)
-  - [Install app](https://apps.shopify.com/theme-kit-access)
+- [Shopify CLI](https://shopify.dev/docs/themes/tools/cli/install)
+  - Install with home brew
+    - `brew tap shopify/shopify`
+    - `brew install shopify-cli`
 - [NVM](https://github.com/nvm-sh/nvm)
   - [Install with home brew](https://formulae.brew.sh/formula/nvm)
     - `brew install nvm`
+- [Ruby](https://www.ruby-lang.org/en/)
+  - [Install with rbenv](https://github.com/rbenv/rbenv)
+    - Install with home brew
+    - `brew install rbenv ruby-build`
+    - Check `.ruby-version` for version to install.
 
 ## 🎬 Setting Up
 
 1. `git clone` the repo
 2. `nvm use` && `nvm install`
 3. `npm i` to install all node modules.
-4. Create a `config.yml` in the root directory.
-5. Your `config.yml` file should look like this:
-   ```
-   development:
-     password: <PRIVATE_APP_PASSWORD>
-     theme_id: "<THEME_ID>"
-     store: <STORE_URL>
-     directory: dist/
-     ignore_files:
-       - config/settings_data.json
-       - templates/*.json
-   ```
+4. Create a `.env` in the root directory.
+5. Your `.env` file should look like this: [Shopify CLI Environment](#shopify-cli-environment)
 6. Run `npm start` to run the app.
 
 #### Note:
 
-- You might need to run `npm run deploy`
+- You might need to run push to your dev theme: [Scripts](#scripts)
   - If your theme inside Shopify is really outdated.
   - Or if you are setting up a new theme in shopify.
 
 ## ⚙️ Configuration
-
-### NPM
 
 #### Scripts
 
 `npm start`
 
 - Completes a Webpack build in **development** mode
-- Webpack begins watching for file changes in the `src`folder.
-- Theme Kit begins watching for file changes in `dist/`
-- Theme Kit opens your development theme in your default browser
+- Webpack begins watching for file changes in the `src` folder.
+- Shopify CLI begins watching for file changes in `/dev` folder
+- Shopify CLI will print out your dev url, customize url and preview share url to use in the terminal.
 
 `npm run build`
 
 - Completes a Webpack build in **production** mode
 
-`npm run deploy`
+`npm run build:dev`
 
-- Completes a Webpack build in **production** mode
-- Deploys dist folder to the **development** theme in `config.yml`
+- Completes a Webpack build in **development** mode in the `/dev` folder
+
+- If you need to push to your development theme:
+  - `shopify theme push -s=<your-store.myshopify.com> -t=<themeid> --password=<themeaccesstoken> --path=dev`
 
 ### Webpack
 
@@ -70,18 +67,28 @@
 
 - Webpack will generate a JavaScript file for each template and layout file in the `bundles` directory.
 - The CSS files imported in each bundle entry file will also generate CSS files.
-- Webpack will add all output files to `dist/assets`.
+- **production** Webpack will add all output files to their appropriate folder in the `root` directory.
+- **development** Webpack will add all output files to their appropriate folder in the `/dev` directory.
 
-### Theme Kit
+### Shopify CLI Environment
 
-#### Config
+- Get your `token` and `themeid` from your developer lead if you do not already know how to get it.
 
-- The Theme Kit configuration file uses `dist` as the root directory for watching files to upload.
+```
+# https://shopify.dev/docs/themes/tools/cli/ci-cd
+SHOPIFY_CLI_THEME_TOKEN=<yourthemeaccesspassword>
+SHOPIFY_CLI_THEME_ID=<yourthemeid>
+SHOPIFY_FLAG_STORE=<your-store.myshopify.com>
+# SHOPIFY_CLI_TTY=
+```
 
-#### File Uploads
+### File Uploads
 
-- When running `npm start`, Webpack will use a plugin that runs `shopify-themekit watch` after a successful build.
-- Webpack will then watch and recompile entry file changes, and Theme Kit will watch for file changes in the `dist` directory.
+- When running `npm start`, Webpack will build into the `/dev` folder.
+- Webpack will then watch the `/src` folder for changes.
+- When the build has completed Webpack shell will run the Shopify CLI Command to start your sync with your development theme and your `/dev` folder.
+- When Shopify CLI has synced your files. Shopify CLI will watch you the `/dev` folder for changes.
+- When a change is made Webpack will recompile to the `/dev` folder your change, Shopify CLI will see it and sync that single change to your development theme.
 
 ## ‼️ Required Files
 
@@ -90,21 +97,11 @@
 - The `bundled-styles.liquid` and `bundled-scripts.liquid` snippets output dynamic asset URLs based on current layout and template.
 - These have been added to `theme.liquid`. The `layout` variable is required.
 
-#### Shopify Plus Stores
-
-If your store is on Shopify Plus, and you want to edit the checkout, you'll need to do the following:
-
-- Create `checkout.scss` and add to `src/styles/layout/`.
-- Create `checkout.js` and add to `src/js/bundles/layout/`.
-- Add `import "Styles/layout/checkout.scss";` in `checkout.js`.
-- Render the style-bundle and script-bundle snippets in `checkout.liquid` by changing the snippet's layout variable value to `checkout`. ie. `{% render 'style-bundle', layout: 'checkout' %}` and `{% render 'script-bundle', layout: 'checkout' %}`.
-
 ## 📝 Notes
 
 - Subdirectories are allowed in `assets/`, `js/`, `styles/`, `snippets/`.
 - A `Styles` module alias for the styles directory is ready to use. ie. `import "Styles/layout/theme.scss"`.
 - To reference an asset url in an SCSS file such as a background image, just use `./filename.ext`, since all final CSS and images live in the `dist/assets/` directory.
-- If you add a new JavaScript entry file to `js/bundles/` while Webpack and Theme Kit are watching for changes, you'll need to end the process and run `npm start` again so that Webpack is aware of the new entry file.
 
 ## ⚙️ Theme Tools & Libraries
 
