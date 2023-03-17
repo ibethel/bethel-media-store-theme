@@ -7,7 +7,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 const mode = process.env.NODE_ENV === DEVELOPMENT ? DEVELOPMENT : PRODUCTION;
 const envIsDevelopment = mode === DEVELOPMENT;
-console.log(envIsDevelopment);
 const root = envIsDevelopment ? "dev" : "";
 const stats = envIsDevelopment ? "errors-warnings" : { children: false };
 const files = glob.sync("./src/js/bundles/**/*.js");
