@@ -2,8 +2,23 @@
   "sections": {
     "404": {
       "type": "404",
-      "settings": {}
+      "settings": {
+        "menu": "main-menu"
+      }
+    },
+    "16626599997c155630": {
+      "type": "limespot",
+      "settings": {
+        "enable_contain": true,
+        "is_a_section": true,
+        "enable_background": false,
+        "background_color": "#fff",
+        "section_margin": "mb-5"
+      }
     }
   },
-  "order": ["404"]
+  "order": [
+    "404",
+    "16626599997c155630"
+  ]
 }
