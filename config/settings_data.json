@@ -1,5 +1,10 @@
 {
   "current": {
+    "favicon": "shopify:\/\/shop_images\/bm-favicon.webp",
+    "bm_logo": "shopify:\/\/shop_images\/logox2_47cdd922-fdb7-406f-b4f0-d3bd9841922e.png",
+    "enable_wish_list": true,
+    "enable_quick_view": true,
+    "main_header_sticky": true,
     "enable_atc_ajax": true,
     "social_facebook_link": "https:\/\/www.facebook.com\/BethelShop",
     "social_pinterest_link": "https:\/\/www.pinterest.com\/bethelredding",
@@ -48,7 +53,7 @@
           "fcc0d0a1-e34a-458e-9075-8dc1df6fdffd": {
             "type": "nav_list_main",
             "settings": {
-              "main_nav": "main-menu"
+              "main_nav": "menu2-0"
             }
           },
           "1c439f34-47e7-4583-8710-d0fd9c6d336b": {
@@ -90,7 +95,7 @@
               "link": "",
               "message": "",
               "enable_message_styles": false,
-              "message_color": "#fff",
+              "message_color": "#ffffff",
               "font_family": "ff-roboto",
               "font_size": "6",
               "font_size_tablet": "fs-sm-6",
@@ -153,7 +158,7 @@
         "settings": {
           "background_color": "#ffffff",
           "text_color": "#000000",
-          "enable_nav_level_two": false,
+          "enable_nav_level_two": true,
           "enable_nav_level_three": false
         }
       },
@@ -223,6 +228,7 @@
               "copyright_message": "Copyright 2022 Bethel Media. All rights reserved. <a href=\"https:\/\/shop.bethel.com\/pages\/return-policy\" style=\"color: #fff; text-decoration: none;\">Return policy<\/a>",
               "copyright_font_size": "fs-7",
               "copyright_font_weight": "fw-light",
+              "logo": "shopify:\/\/shop_images\/BethelStoreLogo_400_04c03067-b92b-4de9-95cd-f3482097b9ab.png",
               "logo_max_width": 90
             }
           }
@@ -233,7 +239,6 @@
           "ff7bc576-b397-4280-a365-34ce6314168e"
         ],
         "settings": {
-          "enable_hide_scroll": false,
           "enable_background": true,
           "background_color": "#a5acb0"
         }
