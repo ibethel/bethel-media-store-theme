@@ -1,12 +1,64 @@
 {
   "sections": {
     "banner": {
-      "type": "banner"
+      "type": "banner",
+      "blocks": {
+        "5857d6de-8db3-40f1-8993-57fd89aa3c36": {
+          "type": "banner_title",
+          "settings": {
+            "title": "sfghjwsjry",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h2",
+            "font_family": "ff-ivypresto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "5857d6de-8db3-40f1-8993-57fd89aa3c36"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "content_padding_phone": "p-3",
+        "content_padding_tablet": "p-sm-4",
+        "content_padding_desk": "p-xl-4",
+        "horiz_align_phone": "justify-content-center",
+        "horiz_align_tablet": "justify-content-sm-center",
+        "horiz_align_desk": "justify-content-xl-center",
+        "vert_align_phone": "align-items-center",
+        "vert_align_tablet": "align-items-sm-center",
+        "vert_align_desk": "align-items-xl-center",
+        "text_alignment_desk": "text-xl-center",
+        "text_alignment_tablet": "text-sm-center",
+        "text_alignment_phone": "text-center",
+        "section_margin": "mb-5",
+        "banner_html": ""
+      }
     },
     "placeholder": {
       "type": "placeholder",
-      "settings": {}
+      "settings": {
+      }
     }
   },
-  "order": ["banner", "placeholder"]
+  "order": [
+    "banner",
+    "placeholder"
+  ]
 }
