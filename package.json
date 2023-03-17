@@ -6,9 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=development webpack watch",
     "build:dev": "NODE_ENV=development webpack",
-    "build": "webpack",
-    "deploy": "webpack && theme deploy",
-    "reset": "rm -rf /dist && webpack && theme deploy"
+    "build": "webpack"
   },
   "author": "@krjo",
   "license": "MIT",
@@ -28,6 +26,7 @@
     "babel-loader": "^8.2.4",
     "copy-webpack-plugin": "^6.4.1",
     "css-loader": "^6.7.1",
+    "dotenv": "^16.0.3",
     "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.4",

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const glob = require("glob");
 const path = require("path");
 const DEVELOPMENT = "development";
@@ -9,6 +10,7 @@ const mode = process.env.NODE_ENV === DEVELOPMENT ? DEVELOPMENT : PRODUCTION;
 const envIsDevelopment = mode === DEVELOPMENT;
 const root = envIsDevelopment ? "dev" : "";
 const stats = envIsDevelopment ? "errors-warnings" : { children: false };
+const shopifyCommand = `shopify theme dev -s=${process.env.SHOPIFY_FLAG_STORE} -t=${process.env.SHOPIFY_CLI_THEME_ID} --password=${process.env.SHOPIFY_CLI_THEME_TOKEN} --live-reload=full-page --path=dev`;
 const files = glob.sync("./src/js/bundles/**/*.js");
 const entries = files.reduce((obj, route) => {
   // eslint-disable-next-line no-useless-escape
@@ -17,6 +19,8 @@ const entries = files.reduce((obj, route) => {
   obj[key] = route;
   return obj;
 }, {});
+
+console.log(process.env.SHOPIFY_FLAG_STORE);
 
 module.exports = {
   devtool: false,
@@ -120,7 +124,7 @@ if (envIsDevelopment) {
         scripts: ["echo Builing webpack"],
       },
       onBuildEnd: {
-        scripts: ["echo Webpack done"],
+        scripts: ["echo Webpack done", shopifyCommand],
         parallel: true,
       },
     })
