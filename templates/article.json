@@ -2,8 +2,12 @@
   "sections": {
     "article": {
       "type": "article",
-      "settings": {}
+      "settings": {
+        "section_margin": "mb-5"
+      }
     }
   },
-  "order": ["article"]
+  "order": [
+    "article"
+  ]
 }
