@@ -20,8 +20,6 @@ const entries = files.reduce((obj, route) => {
   return obj;
 }, {});
 
-console.log(process.env.SHOPIFY_FLAG_STORE);
-
 module.exports = {
   devtool: false,
   entry: entries,
