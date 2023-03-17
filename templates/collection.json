@@ -1,9 +1,51 @@
 {
   "sections": {
+    "1659032124f352ae46": {
+      "type": "bm-spacing",
+      "settings": {
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#ffffff",
+        "bm_spacing_phone": "pb-3",
+        "bm_spacing_tablet": "pb-sm-3",
+        "bm_spacing_desk": "pb-xl-4"
+      }
+    },
+    "165903208451bd1213": {
+      "type": "breadcrumbs",
+      "settings": {
+        "section_contain": "container-none",
+        "enable_background": false,
+        "background_color": "#ffffff",
+        "section_margin_phone": "pb-3",
+        "section_margin_tablet": "pb-sm-3",
+        "section_margin_desk": "pb-xl-4"
+      }
+    },
     "collection": {
       "type": "collection",
-      "settings": {}
+      "settings": {
+        "enable_contain": true,
+        "page_item_limit": 36,
+        "pagination_type": "load_more",
+        "item_widths_phone": "col-6",
+        "item_widths_tablet": "col-sm-4",
+        "item_widths_desk": "col-xl-3",
+        "item_widths_max": "col-xxxl-2",
+        "enable_styles": false,
+        "text_color": "#000000",
+        "price_color": "#000000",
+        "price_color_sale": "#bc3033",
+        "compare_price_color": "#cccccc",
+        "font_size": "fs-6",
+        "font_weight": "fw-default",
+        "section_margin": "mb-5"
+      }
     }
   },
-  "order": ["collection"]
+  "order": [
+    "1659032124f352ae46",
+    "165903208451bd1213",
+    "collection"
+  ]
 }
