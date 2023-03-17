@@ -1,0 +1,29 @@
+<div class="bm-thumbnail-gallery__primary">
+  <div
+    class="splide bm-thumbnail-gallery__primary-slider"
+    data-settings='{%- render "helper-slider-settings",
+      arrows: false,
+      change_variant_image: true,
+      pagination: false,
+      primary_thumbnail: true,
+      rewind: true -%}'
+  >
+    <div class="splide__track">
+      <ul class="splide__list">
+
+        {%- for media in media_array -%}
+
+          {%- render 'bm-thumbnail-gallery-media',
+            enable_image_zoom: enable_image_zoom,
+            media: media,
+            primary: true,
+            video_autoplay: video_autoplay,
+            video_controls: video_controls,
+            video_loop: video_loop -%}
+
+        {%- endfor -%}
+
+      </ul>
+    </div>
+  </div>
+</div>

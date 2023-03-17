@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-between mb-3 mb-xl-4">
+  <div class="d-sm-flex align-items-sm-center col-6">
+    <div class="d-block d-xl-none pe-sm-2 p-xl-0">
+
+      {%- capture button_attributes -%}
+        aria-controls="{{ collection_filter_id }}"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="Collection filter toggle"
+        data-target="{{ collection_filter_id }}"
+      {%- endcapture -%}
+
+      {%- render 'bm-btn',
+        button_attributes: button_attributes,
+        button_classes: "collection-filter__button bm-btn--no-styles cursor-pointer sidebar-slide__button sidebar-slide-hide bm-bg-transparent bm-fonts fs-6 fs-sm-9"
+        button_content: "Filter" -%}
+
+    </div>
+
+    <div class="d-none d-sm-flex align-items-sm-center">
+      <span class="d-block bm-colors-color-grey-50 pe-1 bm-fonts fs-8">{{ collection.products_count }}</span>
+
+      {%- render 'bm-title-block',
+        title_content: products_section_title,
+        title_font: "ff-roboto bm-colors-color-grey-50 bm-fonts fs-8",
+        title_id: products_section_id,
+        title_margin: "mb-0" -%}
+
+    </div>
+  </div>
+
+  {%- render 'collection-sorting' -%}
+
+</div>

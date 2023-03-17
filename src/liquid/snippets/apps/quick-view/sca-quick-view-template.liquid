@@ -1,0 +1,195 @@
+<div id="sca-qv-showqv" style="display: none !important;">
+
+<div class="sca-next-back">
+	         <div  class="sca-qv-button-container">
+	            <div class="sca-qv-bannercontainer"></div>
+            </div>
+	      </div>
+
+ <div >
+
+	<!--START PRODUCT-->
+	 <div class="quick-view-container fancyox-view-detail">
+	    <div id="sca-qv-left" class="sca-left sca-left-config">
+
+          	<div id="sca-qv-sale"  class="sca-qv-sale sca-qv-sale-settings sca-qv-hidden" ><span id="sca-qv-sale-text"></span>  <span id="sca-qv-sale-percent"></span></div>
+			<!-- START ZOOM IMAGE-->
+			 <div class="sca-qv-zoom-container">
+                    <div class="zoomWrapper">
+					  <div id="sca-qv-zoomcontainer" class='sca-qv-zoomcontainer'>
+                              <!-- Main image  ! DON'T PUT CONTENT HERE! -->
+                      </div>
+                    </div>
+             </div>
+
+			<!-- END ZOOM IMAGE-->
+
+            <!-- START GALLERY-->
+            <div id="sca-qv-galleryid" class="sca-qv-gallery">
+              		<!-- Collection of image ! DON'T PUT CONTENT HERE!-->
+            </div>
+            <!-- END GALLERY-->
+        </div>
+
+		<!--START BUY-->
+		<div id ="sca-qv-right" class="sca-right">
+          	<!-- -------------------------- -->
+			<div id="sca-qv-title" class="name-title" >
+					<!-- Title of product ! DON'T PUT CONTENT HERE!-->
+			</div>
+			<!-- -------------------------- -->
+			<div id ="sca-qv-price-container" class="sca-qv-price-container"  >
+					<!-- price information of product ! DON'T PUT CONTENT HERE!-->
+			</div>
+             <div><p id="sca-qv-inventory" class="sca-qv-hidden"></p></div>
+			<!-- -------------------------- -->
+			<div id="sca-qv-des" class="sca-qv-row">
+					<!-- description of product ! DON'T PUT CONTENT HERE!-->
+			</div>
+			<!-- -------------------------- -->
+          <div id="sca-qv-vedor-type" class="sca-qv-row">
+            	<p>
+            		<div id="sca-qv-vendor-container"> <span class="sca-qv-vendor-type"></span> <span id="sca-qv-vendor"></span> </div>
+            		<div id="sca-qv-type-container"> <span class="sca-qv-vendor-type"></span> <span id="sca-qv-type"></span> </div>
+            	</p>
+			</div>
+
+
+
+	        <span class="pinterest" id="pinterest">
+	        </span>
+	        <div class="google-plus"><g:plusone href="{{ shop.url }}" size="medium" annotation="none"></g:plusone></div>
+
+            <span class="facebook-like">
+	            <iframe id="sca-facebook" src="//www.facebook.com/plugins/like.php?href={{ shop.url }}{{ product.url }}&amp;send=false&amp;layout=button_count&amp;width=120&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"  style="border:none; overflow:hidden; width:76px; height:21px;" ></iframe>
+	        </span>
+
+	      </p>
+    	</div>
+
+          	<!-- -------------------------- -->
+           <div  class="sca-qv-row" >
+             <p id="sca-qv-reviewtext" > <span class="sca-qv-vendor-type"></span> <span id="sca-qv-review"></span> (<span id="sca-qv-totalreview"></span> <span class="sca-qv-text-afterreview"></span>)</p>
+		   </div>
+
+
+			<!-- -------------------------- -->
+			<div class="sca-qv-row">
+				<a id="sca-qv-detail" href="" > 	View full product details → </a>
+			</div>
+		<!-- ----------------------------------------------------------------------- -->
+            <div id='sca-qv-cartform'>
+	          <form id="sca-qv-add-item-form"  method="post">
+                <!-- Begin product options ! DON'T PUT CONTENT HERE!-->
+                <div class="sca-qv-product-options">
+                  <!-- -------------------------- -->
+                  <div id="sca-qv-variant-options" class="sca-qv-optionrow">
+							<!-- variant options  of product  ! DON'T PUT CONTENT HERE!-->
+		          </div>
+                  <!-- -------------------------- -->
+                  <div class="sca-qv-optionrow">
+                    <label id="sca-qv-quantity-label" ></label>
+          	        <input id="sca-qv-quantity" min="1" type="number" name="quantity" value="1"  />
+                  </div>
+				  <!-- -------------------------- -->
+                  <div class="sca-qv-optionrow">
+                     <a type="submit" class="sca-qv-cartbtn sca-qv-cartbtn-config sca-qv-hidden"></a>
+                     <div id="sca-qv-cart-animation" style="display:none">1</div>
+                  </div>
+                  <!-- -------------------------- -->
+                </div>
+               <!-- End product options -->
+            </form>
+         </div>
+           <div class="sca-qv-button-container">
+       		<input id="sca-qv-previous" class="sca-qv-btn sca-qv-bnt-change" type="button" value="previous"><input id="sca-qv-next" class="sca-qv-btn sca-qv-bnt-change" type="button" value="next">
+       </div>
+	   </div>
+	   <!--END BUY-->
+
+
+
+    </div>
+	<!--END PRODUCT-->
+ </div>
+</div>
+
+
+	<!-- -------------------------- -->
+<div id="sca-qv-intermediate" style="display:none !important;">
+</div>
+
+<script>
+ (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = '//apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+
+var shop_url = "{{ shop.url }}/";
+var twitter_account = "{{ settings.twitter_account }}";
+
+var sca_qv_social_function = function ($,product) {
+  var relate_info =product.title + " - {{shop.name}}"
+
+	if(twitter_account != '') {
+		twitter_account = 'data-via="'+twitter_account+'" ';
+	}
+
+
+	var sca_facebook = $('.sca_qv_product__social .facebook-like').empty();
+	sca_facebook.append('<iframe id="sca-facebook" src="//www.facebook.com/plugins/like.php?href='+product_url+'&amp;send=false&amp;layout=button_count&amp;width=120&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21"  style="border:none; overflow:hidden; width:106px; height:21px;" ></iframe>');
+
+
+	var sca_pinterest = $('.sca_qv_product__social .pinterest');
+	sca_pinterest.empty();
+    var sca_pinterest_a = $('.sca_qv_product__social .pinterest a');
+  	if (sca_pinterest_a.length != 0) {
+      sca_pinterest_a.attr('class',sca_pinterest_a.attr('class').replace('hazClick',''));
+      var datas_href = sca_pinterest_a.attr('data-pin-href');
+      datas = datas_href.split('&');
+      var pinit_url = 'url=' + encodeURIComponent(product_url) + '&';
+      var pinit_media = 'media=' + encodeURIComponent(feature_img.replace('//','http://')) + '&';
+      var pinit_des = 'description=' + encodeURIComponent(relate_info); ;
+      var new_datas = datas[0] + '&' + pinit_url+ pinit_media + pinit_des;
+      sca_pinterest_a.attr('data-pin-href',new_datas);
+  	} else {
+      sca_pinterest.append('<a id="sca-pinterest" href="//pinterest.com/pin/create/button/?url='+product_url+'&media='+feature_img+'&description='+encodeURIComponent(relate_info)+'" class="pin-it-button" count-layout="horizontal">Pin It</a>');
+      $.getScript("//assets.pinterest.com/js/pinit_main.js",function () {
+            $('.sca_qv_product__social .pinterest').show();
+      });
+  	}
+
+
+}
+
+
+function sca_default_custom_function ($,product) {
+
+  $('#sca-nbtemp').remove();
+    var nbtemp = $('.sca-next-back').clone(true, true);
+    nbtemp.attr('id','sca-nbtemp');
+    $('.sca-next-back').hide();
+    nbtemp.show();
+    nbtemp.insertAfter('.sca-fancybox-outer');
+
+   if(product == undefined) return;
+   sca_qv_social_function($,product);
+}
+
+
+</script>
+
+<div id="scaqv-metadata"
+data-locked = "true"
+data-enable_mobile = "true"
+data-autoconfig = "yes"
+data-review_star = ".spr-summary-starrating"
+data-review_total = ".spr-summary-actions-togglereviews"
+data-review_container = "#shopify-product-reviews"
+data-noimage = "{{ 'sca-qv-no-image.jpg' | asset_url }}"
+data-look_icon = "{{ 'sca-look-icon.gif' | asset_url }}"
+data-guarantee_image = "{{ 'sca-label-guarantee.png' | asset_url }}"
+data-moneyFormat = '{{ shop.money_format }}'
+data-jsondata = "{{ shop.metafields.sca-np-qv.settings }}"
+data-ads_value="{{ shop.metafields.sca-np-qv.ads-settings }}"></div>

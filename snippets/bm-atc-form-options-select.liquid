@@ -1,0 +1,57 @@
+<div class="bm-atc-form-options">
+  {%- assign current_variant = form_product.selected_or_first_available_variant -%}
+
+  <input
+    type="hidden"
+    name="id"
+    value="{{ current_variant.id }}"
+
+    {%- if disabled %} disabled{%- endif -%}
+  >
+
+  {%- for option in product.options_with_values -%}
+    {%- assign formatted_option_name = option.name
+      | sha1
+      | append: forloop.index -%}
+    {%- assign option_unique_id = "option-"
+      | append: option.name
+      | handleize
+      | append: '-'
+      | append: formatted_option_name -%}
+
+    <div class="bm-atc-form-option">
+      <label
+        class="bm-atc-form__label"
+        for="{{- option_unique_id -}}"
+      >
+        {{- option.name -}}
+      </label>
+
+      <select
+        class="d-block px-1 py-2 mb-3"
+        id="{{- option_unique_id -}}"
+        name="options[{{ option.name | escape }}]"
+        form="{{- form_id -}}"
+
+        {%- unless form_product.available %}
+          disabled="disabled"
+        {%- endunless -%}
+      >
+        {%- for value in option.values -%}
+          <option
+            value="{{- value | escape -}}"
+
+            {%- if option.selected_value == value %}
+              selected="selected"
+            {%- endif -%}
+
+          >
+            {{- value -}}
+          </option>
+        {%- endfor -%}
+      </select>
+    </div>
+
+  {%- endfor -%}
+
+</div>

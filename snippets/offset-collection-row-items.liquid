@@ -1,0 +1,41 @@
+{%- if item_limit == blank -%}
+  {%- assign item_limit = 4 -%}
+{%- endif -%}
+
+{%- for product in product_array limit: item_limit -%}
+  {%- if product_blocks != blank -%}
+    {%- assign current_item = all_products[product.settings.prod] -%}
+    {%- else -%}
+      {%- assign current_item = product -%}
+  {%- endif -%}
+
+  {%- if current_item.variants.size == 1 -%}
+    {%- assign show_compare_price = true -%}
+  {%- endif -%}
+
+  {%- render 'bm-prod-item',
+    bmpi_classes: bmpi_classes,
+    bmpi_img: current_item.featured_image,
+    bmpi_title: current_item.title,
+    bmpi_url: current_item.url,
+    compare_price: current_item.compare_at_price,
+    compare_price_color: compare_price_color,
+    compare_price_varies: current_item.compare_at_price_varies,
+    enable_styles: enable_styles,
+    font_italic: font_italic,
+    font_size: font_size,
+    font_weight: font_weight,
+    price: current_item.price,
+    price_classes: "bm-colors-color-grey-50",
+    price_color: price_color,
+    price_color_sale: price_color_sale,
+    price_varies: current_item.price_varies,
+    show_compare_price: show_compare_price,
+    text_color: text_color,
+    image_widths: "180,360,540,720,900",
+    item_width_desk:item_width_desk,
+    item_width_max: item_width_max,
+    item_width_phone: item_width_phone,
+    item_width_tablet: item_width_tablet -%}
+
+{%- endfor -%}

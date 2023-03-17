@@ -1,0 +1,22 @@
+<div class="bm-register py-3 py-xl-5 mb-3 mb-xl-5">
+  <div class="bm-register__container container-xl px-3 position-relative">
+    {%- assign bm_login_title = "register.title" | t -%}
+    {%- assign formatted_title = bm_login_title | sha1 -%}
+    {%- assign title_id = bm_login_title | handleize | append: '-' | append: formatted_title -%}
+
+    <div class="bm-register-form__container col-12 col-sm-8 col-xl-6 m-auto">
+
+      {%- render 'bm-title-block',
+        title_alignment_phone: "text-center",
+        title_content: bm_login_title,
+        title_font: "ff-ivypresto",
+        title_id: title_id,
+        title_margin: "mb-3 mb-xl-5",
+        title_size: "fs-1",
+        title_tag: "h1" -%}
+
+      {%- render 'register-form', title_id: title_id -%}
+
+    </div>
+  </div>
+</div>

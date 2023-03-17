@@ -1,0 +1,79 @@
+.bm-header {
+  &.border-bottom {
+    border-color: $navBarBackground !important;
+  }
+
+  .sub-navigation__list {
+    .border-top {
+      border-color: $navBarBackground !important;
+    }
+
+    .sub-navigation__list {
+      &.border-bottom {
+        border-color: $grey25 !important;
+      }
+
+      &.border-top {
+        border-color: $grey25 !important;
+      }
+    }
+  }
+}
+
+.bm-header__link-hover {
+  text-decoration: none;
+
+  &:hover {
+    color: $bmBrown !important;
+    text-decoration: underline;
+  }
+}
+
+.bm-header__item-hover {
+  &:hover {
+    color: $bmBrown !important;
+    text-decoration: underline;
+
+    > a {
+      color: $bmBrown !important;
+      text-decoration: underline;
+    }
+  }
+}
+
+.bm-header__container {
+  min-height: $bmHeaderMaxHeight;
+}
+
+.bm-header__list {
+  list-style: none;
+  list-style-type: none;
+}
+
+.bm-icon__icon-cart-count {
+  right: 0;
+  top: 30%;
+
+  @include media-query($min, $desktop + 1) {
+    right: $gutter;
+  }
+}
+
+.bm-icon__icon-wish-count {
+  right: 0;
+  top: 30%;
+
+  // @include media-query($min, $desktop + 1) {
+  //   right: $gutter;
+  // }
+}
+
+.bm-cart-counter,
+.bm-wish-counter {
+  background: $bmBrown;
+  line-height: 17px;
+
+  &[data-count="0"] {
+    display: none !important;
+  }
+}

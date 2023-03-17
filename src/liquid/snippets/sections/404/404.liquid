@@ -1,0 +1,29 @@
+<div class="bm-404 pt-3 pt-xl-5 mb-3 mb-xl-5">
+  <div class="bm-404__container container-xl px-3">
+    {%- assign bm_404_title = "404.title" | t -%}
+
+    {%- render 'bm-title-block',
+      title_alignment_phone: "text-center",
+      title_content: bm_404_title,
+      title_font: "ff-ivypresto",
+      title_margin: "mb-3 mb-xl-5",
+      title_size: "fs-1",
+      title_size_tablet: block.settings.font_size_tablet,
+      title_size_desk: block.settings.font_size_desk,
+      title_tag: "h1",
+      title_weight: block.settings.font_weight -%}
+
+    <div class="bm-404__content">
+
+      {%- assign 404_message = "404.message" | t -%}
+
+      {%- render 'bm-message-block',
+        message_alignment_phone: "text-center",
+        message_content: 404_message,
+        message_margin: "mb-3 mb-xl-5" -%}
+
+      {%- render '404-menu' menu: menu -%}
+
+    </div>
+  </div>
+</div>

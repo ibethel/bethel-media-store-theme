@@ -1,0 +1,41 @@
+{%- if item.original_price != item.final_price -%}
+  {%- assign show_compare = true -%}
+{%- endif -%}
+
+<div class="cart-item-pricing">
+  <div
+    class="cart-item-pricing__container
+
+      {%- if show_compare %} d-flex align-items-center{%- endif -%}"
+  >
+
+    {% comment %} {{item.original_price}}--{{item.final_price}} {% endcomment %}
+    <div class="cart-item-pricing__price-container">
+      {%- if show_compare -%}
+        <span class="visually-hidden">
+          {{- 'general.pricing.sale_price' | t -}}
+        </span>
+      {%- endif -%}
+
+      <span
+        class="cart-item-pricing__price d-block bm-colors-color-grey-50 bm-fonts fs-8 mb-3
+
+          {%- if show_compare %} me-2 text-danger{%- endif -%}"
+      >
+        {{- item.final_line_price | money -}}
+      </span>
+    </div>
+
+
+    {%- if show_compare -%}
+      <div class="cart-item-pricing__price-compare-container">
+        <span class="visually-hidden">
+          {{- 'general.pricing.regular_price' | t -}}
+        </span>
+        <s class="cart-item-pricing__price-compare text-muted d-block bm-fonts fs-8 mb-3">
+          {{- item.original_line_price | money -}}
+        </s>
+      </div>
+    {%- endif -%}
+  </div>
+</div>

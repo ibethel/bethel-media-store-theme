@@ -1,0 +1,10 @@
+# dependencies
+/node_modules
+
+# development
+/dev
+
+# misc
+.DS_Store
+.history
+

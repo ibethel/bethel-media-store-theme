@@ -1,0 +1,40 @@
+{%- assign main_logo = section_blocks | where: "type", "main_logo" -%}
+{%- assign nav_list_main = section_blocks | where: "type", "nav_list_main" -%}
+{%- assign nav_list_manage = section_blocks | where: "type", "nav_list_manage" -%}
+
+<header
+  class="bm-header border-bottom border-1 position-relative"
+  style="background-color: {{- background_color -}};"
+>
+  <div class="bm-header__container d-flex align-items-center px-2 px-xl-4">
+    <nav class="d-flex flex-grow-1">
+
+      {%- render 'header-hamburger',
+        text_color: text_color -%}
+
+      {%- render 'header-main',
+        enable_nav_level_two: enable_nav_level_two,
+        enable_nav_level_three: enable_nav_level_three,
+        main_nav: nav_list_main.first.settings.main_nav,
+        text_color: text_color -%}
+
+      {%- render 'header-logo',
+        main_logo: main_logo.first -%}
+
+      {%- render 'management-menu',
+        account_link_vis: nav_list_manage.first.settings.account_link_vis,
+        cart_link_vis: nav_list_manage.first.settings.cart_link_vis,
+        enable_wish_star: nav_list_manage.first.settings.enable_wish_star,
+        managment_menu_classes: "management-menu--desk d-flex align-items-center justify-content-end col-5",
+        managment_menu_desk: true,
+        management_menu_link_classes: "p-2",
+        orientation: "horizonal",
+        search_is_form: nav_list_manage.first.settings.search_is_form,
+        search_link_vis: nav_list_manage.first.settings.search_link_vis,
+        search_width: nav_list_manage.first.settings.search_width,
+        star_link_vis: nav_list_manage.first.settings.star_link_vis,
+        text_color: text_color -%}
+
+    </nav>
+  </div>
+</header>

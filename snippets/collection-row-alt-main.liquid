@@ -1,0 +1,52 @@
+{%- assign product_blocks = section_blocks | where: "type", "section_product" -%}
+
+{%- if product_blocks != blank -%}
+  {%- assign product_array = product_blocks -%}
+  {%- else -%}
+    {%- assign product_array = collection.products -%}
+{%- endif -%}
+
+<div class="coll-row-alt__wrapper">
+  <div class="coll-row-alt__list-container">
+    <ul class="row list-type-none my-0 ps-0">
+
+      {%- if product_blocks != blank -%}
+
+        {%- render 'collection-row-alt-items',
+          bmpi_classes: "mb-4",
+          item_width_desk: "col-xl-3",
+          item_width_max: "col-xxxl-3",
+          item_width_phone: "col-6",
+          item_width_tablet: "col-sm-3",
+          product_array: product_array,
+          product_blocks: product_blocks -%}
+
+        {%- else -%}
+
+          {%- if item_offset != blank -%}
+
+            {%- render 'collection-row-alt-offset',
+              bmpi_classes: "mb-4",
+              item_offset: item_offset,
+              item_width_desk: "col-xl-3",
+              item_width_max: "col-xxxl-3",
+              item_width_phone: "col-6",
+              item_width_tablet: "col-sm-3"
+              product_array: product_array -%}
+
+            {%- else -%}
+
+              {%- render 'collection-row-alt-items',
+                bmpi_classes: "mb-4",
+                item_width_desk: "col-xl-3",
+                item_width_max: "col-xxxl-3",
+                item_width_phone: "col-6",
+                item_width_tablet: "col-sm-3"
+                product_array: product_array -%}
+
+          {%- endif -%}
+      {%- endif -%}
+
+    </ul>
+  </div>
+</div>

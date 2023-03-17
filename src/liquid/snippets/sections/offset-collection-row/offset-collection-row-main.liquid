@@ -1,0 +1,83 @@
+<div class="coll-row-alt__wrapper">
+  <div class="coll-row-alt__list-container">
+      {%- if enable_offset and item_offset != blank and pagination_type == "none" -%}
+
+        {%- if page_item_limit > 4 -%}
+          {%- assign item_limit = 4 -%}
+          {%- else -%}
+            {%- assign item_limit = page_item_limit -%}
+        {%- endif -%}
+
+        <ul class="row list-type-none my-0 ps-0">
+
+          {%- render 'offset-collection-row-offset-items',
+            bmpi_classes: "mb-4",
+            item_limit: item_limit,
+            item_offset: item_offset,
+            item_width_desk: item_width_desk,
+            item_width_max: item_width_max,
+            item_width_phone: item_width_phone,
+            item_width_tablet: item_width_tablet,
+            product_array: collection.products,
+            show_items: show_items -%}
+
+        </ul>
+
+        {%- else -%}
+
+          {%- paginate collection.products by page_item_limit -%}
+            {%- if hide_after_first_page and paginate.current_page > 1 -%}
+              {%- assign show_items = false -%}
+              {%- else -%}
+                {%- assign show_items = true -%}
+            {%- endif -%}
+
+            {%- if show_items -%}
+              <ul
+                class="row list-type-none my-0 ps-0
+
+                {%- if pagination_type == 'load_more' %} load-more-container{%- endif -%}"
+              >
+
+                {%- render 'offset-collection-row-offset-items',
+                  bmpi_classes: "mb-4",
+                  item_limit: page_item_limit,
+                  item_offset: item_offset,
+                  item_width_desk: item_width_desk,
+                  item_width_max: item_width_max,
+                  item_width_phone: item_width_phone,
+                  item_width_tablet: item_width_tablet,
+                  paginate: paginate,
+                  product_array: collection.products,
+                  show_items: show_items -%}
+
+              </ul>
+
+              {%- if pagination_type == "load_more" and paginate.pages > 1 -%}
+                {%- capture button_attributes -%}data-next="{{ paginate.next.url }}"{%- endcapture -%}
+
+                {%- render 'bm-btn-block',
+                  button_attributes: button_attributes,
+                  button_alignment_desk: "justify-content-xl-center",
+                  button_alignment_phone: "justify-content-center",
+                  button_alignment_tablet: "justify-content-sm-center",
+                  button_classes: "load-more-btn rounded-5",
+                  button_content: "LOAD MORE",
+                  button_size: "large",
+                  button_size_desk: "large",
+                  button_size_tablet: "large",
+                  button_title: "LOAD MORE",
+                  button_template: "primary" -%}
+
+                {%- elsif pagination_type != "none" and paginate.pages > 1 -%}
+                  {%- render 'pagination' paginate: paginate -%}
+              {%- endif -%}
+
+            {%- endif -%}
+
+          {%- endpaginate -%}
+
+      {%- endif -%}
+
+  </div>
+</div>

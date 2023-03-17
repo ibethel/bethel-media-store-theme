@@ -1,0 +1,540 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $headerFontStack;
+  font-style: normal;
+  font-weight: $regularFontWeight;
+}
+
+.ff-inter {
+  font-family: $btvBaseFontStack !important;
+  font-style: normal;
+  font-weight: $regularFontWeight;
+}
+
+.ff-ivypresto {
+  font-family: $displayFontStack !important;
+  font-style: normal;
+  font-weight: $lightFontWeight;
+}
+
+.ff-majesti {
+  font-family: $btvDisplayFontStack !important;
+  font-style: normal;
+  font-weight: $baseFontWeight;
+}
+
+.ff-roboto {
+  font-family: $regularFontStack !important;
+  font-style: normal;
+  font-weight: $regularFontWeight;
+}
+
+.bm-fonts {
+  &.fs {
+    &-1 {
+      u {
+        text-decoration-thickness: 2px !important;
+        text-underline-offset: 0.6rem !important;
+      }
+
+      &-2 {
+        font-size: $h1FontSize2 !important;
+
+        u {
+          text-decoration-thickness: 2px !important;
+          text-underline-offset: 0.8rem !important;
+        }
+      }
+
+      &-3 {
+        font-size: $h1FontSize3 !important;
+
+        u {
+          text-decoration-thickness: 2px !important;
+          text-underline-offset: 0.9rem !important;
+        }
+      }
+
+      &-4 {
+        font-size: $h1FontSize4 !important;
+
+        u {
+          text-decoration-thickness: 3px !important;
+          text-underline-offset: 1rem !important;
+        }
+      }
+
+      &-5 {
+        font-size: $h1FontSize5 !important;
+
+        u {
+          text-decoration-thickness: 3px !important;
+          text-underline-offset: 1.1rem !important;
+        }
+      }
+
+      &-6 {
+        font-size: $h1FontSize6 !important;
+
+        u {
+          text-decoration-thickness: 3px !important;
+          text-underline-offset: 1.2rem !important;
+        }
+      }
+
+      &-7 {
+        font-size: $h1FontSize7 !important;
+
+        u {
+          text-decoration-thickness: 3px !important;
+          text-underline-offset: 1.3rem !important;
+        }
+      }
+
+      &-8 {
+        font-size: $h1FontSize8 !important;
+
+        u {
+          text-decoration-thickness: 3px !important;
+          text-underline-offset: 1.4rem !important;
+        }
+      }
+
+      &-9 {
+        font-size: $h1FontSize9 !important;
+
+        u {
+          text-decoration-thickness: 3px !important;
+          text-underline-offset: 1.5rem !important;
+        }
+      }
+
+      &-10 {
+        font-size: $h1FontSize10 !important;
+
+        u {
+          text-decoration-thickness: 3px !important;
+          text-underline-offset: 1.6rem !important;
+        }
+      }
+    }
+
+    &-4 {
+      u {
+        text-decoration-thickness: 1px !important;
+        text-underline-offset: 0.4rem !important;
+      }
+    }
+
+    &-7 {
+      font-size: $fontSize7;
+    }
+
+    &-8 {
+      font-size: $fontSize8;
+    }
+
+    &-9 {
+      font-size: $fontSize9;
+    }
+
+    &-sm {
+      &-1 {
+        @include media-query($min, $phone + 1) {
+          font-size: $h1FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+
+          &-4 {
+            font-size: $h1FontSize4 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1rem !important;
+            }
+          }
+        }
+
+        &-2 {
+          @include media-query($min, $phone + 1) {
+            font-size: $h1FontSize2 !important;
+
+            u {
+              text-decoration-thickness: 2px !important;
+              text-underline-offset: 0.8rem !important;
+            }
+          }
+        }
+
+        &-3 {
+          @include media-query($min, $phone + 1) {
+            font-size: $h1FontSize3 !important;
+
+            u {
+              text-decoration-thickness: 2px !important;
+              text-underline-offset: 0.9rem !important;
+            }
+          }
+        }
+
+        &-4 {
+          @include media-query($min, $phone + 1) {
+            font-size: $h1FontSize4 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1rem !important;
+            }
+          }
+        }
+
+        &-5 {
+          @include media-query($min, $phone + 1) {
+            font-size: $h1FontSize5 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.1rem !important;
+            }
+          }
+        }
+
+        &-6 {
+          @include media-query($min, $phone + 1) {
+            font-size: $h1FontSize6 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.2rem !important;
+            }
+          }
+        }
+
+        &-7 {
+          @include media-query($min, $phone + 1) {
+            font-size: $h1FontSize7 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.3rem !important;
+            }
+          }
+        }
+
+        &-8 {
+          @include media-query($min, $phone + 1) {
+            font-size: $h1FontSize8 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.4rem !important;
+            }
+          }
+        }
+
+        &-9 {
+          @include media-query($min, $phone + 1) {
+            font-size: $h1FontSize9 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.5rem !important;
+            }
+          }
+        }
+
+        &-10 {
+          @include media-query($min, $phone + 1) {
+            font-size: $h1FontSize10 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.6rem !important;
+            }
+          }
+        }
+      }
+
+      &-2 {
+        @include media-query($min, $phone + 1) {
+          font-size: $h2FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-3 {
+        @include media-query($min, $phone + 1) {
+          font-size: $h3FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-4 {
+        @include media-query($min, $phone + 1) {
+          font-size: $h4FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-5 {
+        @include media-query($min, $phone + 1) {
+          font-size: $h5FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-6 {
+        @include media-query($min, $phone + 1) {
+          font-size: $h6FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-7 {
+        @include media-query($min, $phone + 1) {
+          font-size: $fontSize7 !important;
+        }
+      }
+
+      &-8 {
+        @include media-query($min, $phone + 1) {
+          font-size: $fontSize8 !important;
+        }
+      }
+
+      &-9 {
+        @include media-query($min, $phone + 1) {
+          font-size: $fontSize9 !important;
+        }
+      }
+    }
+
+    &-xl {
+      &-1 {
+        @include media-query($min, $desktop + 1) {
+          font-size: $h1FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+
+        &-2 {
+          @include media-query($min, $desktop + 1) {
+            font-size: $h1FontSize2 !important;
+
+            u {
+              text-decoration-thickness: 2px !important;
+              text-underline-offset: 0.8rem !important;
+            }
+          }
+        }
+
+        &-3 {
+          @include media-query($min, $desktop + 1) {
+            font-size: $h1FontSize3 !important;
+
+            u {
+              text-decoration-thickness: 2px !important;
+              text-underline-offset: 0.9rem !important;
+            }
+          }
+        }
+
+        &-4 {
+          @include media-query($min, $desktop + 1) {
+            font-size: $h1FontSize4 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1rem !important;
+            }
+          }
+        }
+
+        &-5 {
+          @include media-query($min, $desktop + 1) {
+            font-size: $h1FontSize5 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.1rem !important;
+            }
+          }
+        }
+
+        &-6 {
+          @include media-query($min, $desktop + 1) {
+            font-size: $h1FontSize6 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.2rem !important;
+            }
+          }
+        }
+
+        &-7 {
+          @include media-query($min, $desktop + 1) {
+            font-size: $h1FontSize7 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.3rem !important;
+            }
+          }
+        }
+
+        &-8 {
+          @include media-query($min, $desktop + 1) {
+            font-size: $h1FontSize8 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.4rem !important;
+            }
+          }
+        }
+
+        &-9 {
+          @include media-query($min, $desktop + 1) {
+            font-size: $h1FontSize9 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.5rem !important;
+            }
+          }
+        }
+
+        &-10 {
+          @include media-query($min, $desktop + 1) {
+            font-size: $h1FontSize10 !important;
+
+            u {
+              text-decoration-thickness: 3px !important;
+              text-underline-offset: 1.6rem !important;
+            }
+          }
+        }
+      }
+
+      &-2 {
+        @include media-query($min, $desktop + 1) {
+          font-size: $h2FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-3 {
+        @include media-query($min, $desktop + 1) {
+          font-size: $h3FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-4 {
+        @include media-query($min, $desktop + 1) {
+          font-size: $h4FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-5 {
+        @include media-query($min, $desktop + 1) {
+          font-size: $h5FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-6 {
+        @include media-query($min, $desktop + 1) {
+          font-size: $h6FontSize !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-7 {
+        @include media-query($min, $desktop + 1) {
+          font-size: $fontSize7 !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+
+      &-8 {
+        @include media-query($min, $desktop + 1) {
+          font-size: $fontSize8 !important;
+
+          u {
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 0.6rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lh {
+  &-4 {
+    line-height: 23px !important;
+  }
+}

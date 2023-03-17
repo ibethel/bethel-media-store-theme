@@ -1,0 +1,59 @@
+{%- assign article_image = article.image -%}
+{%- assign article_title = article.title -%}
+
+{%- capture article_title_html -%}
+  <u>{{ article_title }}</u>
+{%- endcapture -%}
+
+{%- if article.excerpt.size > 0 -%}
+  {%- assign message_content = article.excerpt -%}
+  {%- else -%}
+    {%- assign message_content = article.content | strip_html | truncate: 125, '...' -%}
+{%- endif -%}
+
+<li class="bm-blog-article-item mb-4 col-12 col-sm-6 col-xl-4">
+  <a class="bm-blog-article-item__link d-block text-decoration-none" href="{{- article.url -}}" title="{{ article_title }}">
+
+    {%- if article_image != blank -%}
+      <div class="bm-blog-article-item__image">
+
+        {%- render 'bm-image'
+          bm_img: article_image,
+          bm_img_alt: article_image.alt,
+          bm_img_classes: bm_img_classes,
+          bm_img_is_lazy: true,
+          bm_img_wrapper_classes: "bm-img__wrapper--fixed-width",
+          bm_img_widths: image_widths,
+          bm_img_width: article_image.width,
+          bm_img_height: article_image.height -%}
+
+      </div>
+    {%- endif -%}
+
+    <div class="bm-blog-article-item__details p-3">
+
+      {%- if article_title_html != blank -%}
+
+        {%- render 'bm-title-block',
+          title_classes: "text-white",
+          title_content: article_title_html,
+          title_font: "ff-ivypresto",
+          title_margin: "mb-3",
+          title_size: "fs-4",
+          title_weight: "fw-light" -%}
+
+      {%- endif -%}
+
+      {%- if message_content != blank -%}
+
+        {%- render 'bm-message-block',
+          message_classes: "text-white",
+          message_content: message_content,
+          message_size: "bm-fonts fs-9" -%}
+
+      {%- endif -%}
+
+    </div>
+  </a>
+</li>
+

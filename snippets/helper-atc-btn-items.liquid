@@ -1,0 +1,98 @@
+{%- if product_array != blank -%}
+  {%- assign tag_bulk_approved = settings.tag_bulk_approved -%}
+  {%- assign tag_bulk_not_approved = settings.tag_bulk_not_approved -%}
+
+  {"items":[
+
+    {%- if product_array.first != blank -%}
+
+      {%- for prod in product_array -%}
+        {%- assign current_product = all_products[prod] -%}
+
+        {%- if product_handles -%}
+          {%- assign prod_variant_id = current_product.selected_or_first_available_variant.id -%}
+          {%- else -%}
+            {%- assign prod_variant_id = prod.selected_or_first_available_variant.id -%}
+        {%- endif -%}
+
+        {%- if current_product.tags != blank and tag_bulk_approved != blank and current_product.tags contains tag_bulk_approved -%}
+          {%- capture bulk_approved_prop %}"bulk_approved": "{{ tag_bulk_approved }}"{% endcapture -%}
+          {%- else -%}
+            {%- assign bulk_approved_prop = "" -%}
+        {%- endif -%}
+
+        {%- if current_product.tags != blank and tag_bulk_not_approved != blank and current_product.tags contains tag_bulk_not_approved -%}
+          {%- capture bulk_not_approved_prop %}"bulk_not_approved": "{{ tag_bulk_not_approved }}"{% endcapture -%}
+          {%- else -%}
+            {%- assign bulk_not_approved_prop = "" -%}
+        {%- endif -%}
+
+        {%- if bulk_approved_prop != blank or bulk_not_approved_prop != blank -%}
+          {%- capture properties_prop -%}
+            "properties": {
+              {%- if bulk_approved_prop != blank %}{{ bulk_approved_prop }}{% endif -%}
+              {%- if bulk_not_approved_prop != blank %}{{ bulk_not_approved_prop }}{% endif -%}
+            }
+          {%- endcapture -%}
+          {%- else -%}
+            {%- assign properties_prop = "" -%}
+        {%- endif -%}
+
+        {%- assign id_prop = '"id":' | append: prod_variant_id -%}
+        {%- assign qty_prop = '"quantity":' | append: 1 -%}
+
+        {
+          {{- id_prop -}},
+          {{- qty_prop -}}
+          {%- if properties_prop != blank %},{{ properties_prop }}{% endif -%}
+        }
+
+        {%- unless forloop.last -%},{%- endunless -%}
+
+      {%- endfor -%}
+
+      {%- else -%}
+
+        {%- assign single_prod = all_products[product_array] -%}
+
+        {%- if single_prod.tags != blank and tag_bulk_approved != blank and single_prod.tags contains tag_bulk_approved -%}
+          {%- capture bulk_approved_prop %}"bulk_approved": "{{ tag_bulk_approved }}"{% endcapture -%}
+          {%- else -%}
+            {%- assign bulk_approved_prop = "" -%}
+        {%- endif -%}
+
+        {%- if single_prod.tags != blank and tag_bulk_not_approved != blank and single_prod.tags contains tag_bulk_not_approved -%}
+          {%- capture bulk_not_approved_prop %}"bulk_not_approved": "{{ tag_bulk_not_approved }}"{% endcapture -%}
+          {%- else -%}
+            {%- assign bulk_not_approved_prop = "" -%}
+        {%- endif -%}
+
+        {%- if bulk_approved_prop != blank or bulk_not_approved_prop != blank -%}
+          {%- capture properties_prop -%}
+            "properties": {
+              {%- if bulk_approved_prop != blank %}{{ bulk_approved_prop }}{% endif -%}
+              {%- if bulk_not_approved_prop != blank %}{{ bulk_not_approved_prop }}{% endif -%}
+            }
+          {%- endcapture -%}
+          {%- else -%}
+            {%- assign properties_prop = "" -%}
+        {%- endif -%}
+
+        {%- assign id_prop = '"id":' | append: single_prod.selected_or_first_available_variant.id -%}
+        {%- assign qty_prop = '"quantity":' | append: 1 -%}
+
+        {
+          {{- id_prop -}},
+          {{- qty_prop -}}
+          {%- if properties_prop != blank %},{{ properties_prop }}{% endif -%}
+        }
+
+    {%- endif -%}
+
+  ]}
+
+  {%- else -%}
+
+    {"items":[]}
+
+{%- endif -%}

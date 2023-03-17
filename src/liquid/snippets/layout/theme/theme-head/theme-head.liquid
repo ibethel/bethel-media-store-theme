@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="{{ canonical_url }}">
+<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+{%- if settings.favicon != blank -%}
+  <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+{%- endif -%}
+
+{%- render 'theme-fonts' -%}
+
+<title>
+  {{- page_title -}}
+
+  {%- if current_tags != blank -%}
+    {%- assign meta_tags = current_tags | join: ', ' -%}
+    {{- 'head.tags' | t: tags: meta_tags | prepend: ' &ndash; ' -}}
+  {%- endif -%}
+
+  {%- if current_page != 1 -%}
+    {{- 'head.page' | t: page: current_page | prepend: ' &ndash; ' -}}
+  {%- endif -%}
+
+  {%- unless page_title contains shop.name -%}
+    {{- shop.name | prepend: ' &ndash; ' -}}
+  {%- endunless -%}
+
+</title>
+
+{%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}">
+{%- endif -%}
+
+{%- render 'theme-meta-tags' -%}
+
+{%- comment -%}Site Verifications{%- endcomment -%}
+<meta name="google-site-verification" content="UvjC8iG2GpnA0OlZOWj_fDYbLKN0j8Nlr3C08U9BylA" />
+<meta name="google-site-verification" content="3XjnQKs6Si2lyehZ9BINrNLsWSkSxjIZ8_jLG-S-Y_o" />
+<meta name="google-site-verification" content="1Fn6pzn7GGGpI2tUNcUv4_zi-r6byTtHC3Fl463F52A" />
+<meta name="google-site-verification" content="D1FZr7cLwbx_KgyMFU-8x-u401eOfx4BB-gMXTSz4xE" />
+<meta name="google-site-verification" content="o1cOc74BFIY2VUndsfR8wVJ505fTLMFl8M4CBSNASLo" />
+<meta name="google-site-verification" content="fuHpkpREmjxzlu_M_W4Yo3UgOOCWdDrCVQmUyLSpJW0" />
+<meta name="google-site-verification" content="cOnrFDdrL2cfp-6MrHwc1BML_5puo7QYDkAQFzVJ5HQ" />
+<meta name="p:domain_verify" content="9909b995fd5c81ca1d4b24dff9e84805"/>
+{%- comment -%}End Site Verifications{%- endcomment -%}

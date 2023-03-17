@@ -1,0 +1,59 @@
+.d-xxxl-none {
+  @include media-query($min, $maxScreen + 1) {
+    display: none !important;
+  }
+
+  &[class^="d-"],
+  &[class*="d-"] {
+    @include media-query($min, $maxScreen + 1) {
+      display: none !important;
+    }
+  }
+}
+
+.d-xxxl-block {
+  @include media-query($min, $maxScreen + 1) {
+    display: block !important;
+  }
+
+  &[class^="d-"],
+  &[class*="d-"] {
+    @include media-query($min, $maxScreen + 1) {
+      display: block !important;
+    }
+  }
+}
+
+.d-xxxl-none {
+  @include media-query($min, $maxScreen + 1) {
+    display: none !important;
+  }
+
+  &[class^="d-"],
+  &[class*="d-"] {
+    @include media-query($min, $maxScreen + 1) {
+      display: none !important;
+    }
+  }
+}
+
+.d-xxxl-flex {
+  @include media-query($min, $maxScreen + 1) {
+    display: flex !important;
+  }
+
+  &[class^="d-"],
+  &[class*="d-"] {
+    @include media-query($min, $maxScreen + 1) {
+      display: flex !important;
+    }
+  }
+}
+
+.fade-in-opacity {
+  transition: opacity 0.2s linear;
+
+  &:not(.faded-in-opacity) {
+    opacity: 0;
+  }
+}

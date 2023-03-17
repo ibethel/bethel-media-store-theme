@@ -1,0 +1,37 @@
+{%- if menu != blank -%}
+
+  <div class="d-flex align-items-center justify-content-center">
+    <ul
+      class="list-type-none my-0 ps-0 d-flex flex-column flex-sm-row align-items-center"
+      aria-label="{{- shop.name }} 404 navigation"
+      aria-orientation="horizonal"
+      role="menubar"
+    >
+
+      {%- for link in menu.links -%}
+        {%- assign bm_link_classes = "d-block bm-header__link-hover p-2" -%}
+        {%- assign title_content = link.title -%}
+        {%- assign link_content = title_content -%}
+        {%- assign link_item_attributes = false -%}
+
+        {%- if forloop.first -%}
+          {%- assign bm_link_classes = bm_link_classes | prepend: 'ps-2 ps-xl-4 ' -%}
+        {%- endif -%}
+
+        <li role="none">
+
+          {%- render 'bm-link',
+            bm_link_role: "menuitem",
+            bm_link_title: title_content,
+            bm_link_classes: bm_link_classes,
+            bm_link_url: link.url,
+            bm_link_content: link_content,
+            bm_link_styles: bm_link_styles -%}
+
+        </li>
+      {%- endfor -%}
+
+    </ul>
+  </div>
+
+{%- endif -%}

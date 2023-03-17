@@ -1,0 +1,101 @@
+{%- render "search",
+  item_widths_desk: section.settings.item_widths_desk,
+  item_widths_max: section.settings.item_widths_max,
+  item_widths_phone: section.settings.item_widths_phone,
+  item_widths_tablet: section.settings.item_widths_tablet,
+  page_item_limit: section.settings.page_item_limit -%}
+
+
+{% schema %}
+  {
+    "name": "t:sections.search.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.general_settings.name"
+      },
+      {
+        "type": "range",
+        "id": "page_item_limit",
+        "min": 2,
+        "max": 100,
+        "step": 1,
+        "unit": "itm",
+        "label": "t:sections.collection.settings.page_item_limit",
+        "default": 36
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.item_rows.label"
+      },
+      {
+        "type": "select",
+        "id": "item_widths_phone",
+        "label": "t:sections.all.item_rows.settings.item_widths_phone",
+        "options": [
+          {
+            "value": "col-12",
+            "label": "1"
+          },
+          {
+            "value": "col-6",
+            "label": "2"
+          }
+        ],
+        "default": "col-6"
+      },
+      {
+        "type": "select",
+        "id": "item_widths_tablet",
+        "label": "t:sections.all.item_rows.settings.item_widths_tablet",
+        "options": [
+          {
+            "value": "col-sm-6",
+            "label": "2"
+          },
+          {
+            "value": "col-sm-4",
+            "label": "3"
+          },
+          {
+            "value": "col-sm-3",
+            "label": "4"
+          }
+        ],
+        "default": "col-sm-4"
+      },
+      {
+        "type": "select",
+        "id": "item_widths_desk",
+        "label": "t:sections.all.item_rows.settings.item_widths_desk",
+        "options": [
+          {
+            "value": "col-xl-4",
+            "label": "3"
+          },
+          {
+            "value": "col-xl-3",
+            "label": "4"
+          }
+        ],
+        "default": "col-xl-3"
+      },
+      {
+        "type": "select",
+        "id": "item_widths_max",
+        "label": "t:sections.all.item_rows.settings.item_widths_max",
+        "options": [
+          {
+            "value": "col-xxxl-3",
+            "label": "4"
+          },
+          {
+            "value": "col-xxxl-2",
+            "label": "6"
+          }
+        ],
+        "default": "col-xxxl-2"
+      }
+    ]
+  }
+{% endschema %}

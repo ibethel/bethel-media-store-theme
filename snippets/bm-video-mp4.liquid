@@ -1,0 +1,20 @@
+{%- if video_url contains "wistia" -%}
+
+  {%- render 'bm-video-wistia',
+    interaction: interaction,
+    thumbnail_alt: thumbnail_alt,
+    video_url: video_url,
+    video_visibility: video_visibility -%}
+
+  {%- else -%}
+
+    {%- render 'bm-video-video',
+      autoplay: autoplay,
+      controls: controls,
+      interaction: interaction,
+      loop: loop,
+      video_src: video_url,
+      thumbnail_url: thumbnail_url,
+      video_visibility: video_visibility -%}
+
+{%- endif -%}

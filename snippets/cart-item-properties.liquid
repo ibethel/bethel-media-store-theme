@@ -1,0 +1,15 @@
+{%- if item.properties != blank -%}
+  <ul class="list-type-none ps-0 mt-0 mb-3">
+
+  {%- for property in item.properties -%}
+
+    {%- if property.last != blank -%}
+      <li class="bm-colors-color-grey-50 bm-fonts fs-8">
+        {{- property.first }}: {{ property.last -}}
+      </li>
+    {%- endif -%}
+
+  {%- endfor -%}
+
+  </ul>
+{%- endif -%}

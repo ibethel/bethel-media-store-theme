@@ -1,0 +1,72 @@
+{%- if page_item_limit != blank -%}
+  {%- assign limit = page_item_limit | times: 1 -%}
+  {%- else -%}
+    {%- assign limit = 12 -%}
+{%- endif -%}
+
+{%- paginate collection.products by limit -%}
+
+  <ul class="row list-type-none my-0 ps-0
+
+    {%- if pagination_type == 'load_more' %} load-more-container{%- endif -%}"
+  >
+
+    {%- for product in section_collection.products -%}
+
+      {%- if product.variants.size == 1 -%}
+        {%- assign show_compare_price = true -%}
+      {%- endif -%}
+
+      {%- render 'bm-prod-item',
+        bmpi_classes: "mb-4",
+        bmpi_handle: product.handle,
+        bmpi_img: product.featured_image,
+        bmpi_product: product,
+        bmpi_title: product.title,
+        bmpi_url: product.url,
+        bmpi_wish_list: true,
+        compare_price: product.compare_at_price,
+        compare_price_color: compare_price_color,
+        compare_price_varies: product.compare_at_price_varies,
+        enable_styles: enable_styles,
+        font_italic: font_italic,
+        font_size: font_size,
+        font_weight: font_weight,
+        price: product.price,
+        price_classes: "bm-colors-color-grey-50",
+        price_color: price_color,
+        price_color_sale: price_color_sale,
+        price_varies: product.price_varies,
+        show_compare_price: show_compare_price,
+        text_color: text_color,
+        image_widths: "180,360,540,720,900",
+        item_width_desk: item_widths_desk,
+        item_width_max: item_widths_max,
+        item_width_phone: item_widths_phone,
+        item_width_tablet: item_widths_tablet, -%}
+
+    {%- endfor -%}
+
+  </ul>
+
+  {%- if pagination_type == "load_more" and paginate.pages > 1 -%}
+    {%- capture button_attributes -%}data-next="{{ paginate.next.url }}"{%- endcapture -%}
+
+    {%- render 'bm-btn-block',
+      button_attributes: button_attributes,
+      button_alignment_desk: "justify-content-xl-center",
+      button_alignment_phone: "justify-content-center",
+      button_alignment_tablet: "justify-content-sm-center",
+      button_classes: "load-more-btn rounded-5",
+      button_content: "LOAD MORE",
+      button_size: "large",
+      button_size_desk: "large",
+      button_size_tablet: "large",
+      button_title: "LOAD MORE",
+      button_template: "primary" -%}
+
+    {%- elsif paginate.pages > 1 -%}
+      {%- render 'pagination' paginate: paginate -%}
+  {%- endif -%}
+
+{%- endpaginate -%}

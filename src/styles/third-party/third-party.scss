@@ -1,0 +1,20 @@
+.splide__arrow {
+  background-color: #fff9ff !important;
+  border-radius: unset !important;
+  height: 3.75rem !important;
+  width: 2.5rem !important;
+
+  svg {
+    fill: $grey50 !important;
+    height: $iconSize !important;
+    width: $iconSize !important;
+  }
+}
+
+.splide__arrow--prev {
+  left: 0 !important;
+}
+
+.splide__arrow--next {
+  right: 0 !important;
+}

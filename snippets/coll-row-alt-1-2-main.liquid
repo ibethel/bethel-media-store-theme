@@ -1,0 +1,118 @@
+{%- assign custom_items = section_blocks | where: "type", "custom_item" -%}
+{%- assign product_blocks = section_blocks | where: "type", "section_product" -%}
+{%- assign section_messages = section_blocks | where: "type", "section_message" -%}
+{%- assign section_titles = section_blocks | where: "type", "section_title" -%}
+
+{%- if product_blocks != blank -%}
+  {%- assign product_array = product_blocks -%}
+  {%- else -%}
+    {%- assign product_array = collection.products -%}
+{%- endif -%}
+
+<div class="coll-row-alt__wrapper row">
+  <div class="col-12 col-sm-6 d-flex flex-column justify-content-between">
+    <div class="coll-row-alt__text">
+      {%- assign section_message = section_messages.first -%}
+      {%- assign section_title = section_titles.first -%}
+
+      {%- render 'bm-title-block',
+        enable_title_styles: section_title.settings.enable_title_styles,
+        title_alignment_desk: section_title.settings.text_alignment_desk,
+        title_alignment_tablet: section_title.settings.text_alignment_tablet,
+        title_alignment_phone: section_title.settings.text_alignment_phone,
+        title_color: section_title.settings.title_color,
+        title_content: section_title.settings.title,
+        title_font: section_title.settings.font_family,
+        title_is_page_title: section_title.settings.is_page_title,
+        title_italic: section_title.settings.font_style_italic,
+        title_labelledby: title_labelledby,
+        title_margin: section_title.settings.title_margin,
+        title_size: section_title.settings.font_size,
+        title_size_tablet: section_title.settings.font_size_tablet,
+        title_size_desk: section_title.settings.font_size_desk,
+        title_tag: section_title.settings.title_tag,
+        title_visibility: section_title.settings.title_visibility,
+        title_weight: section_title.settings.font_weight -%}
+
+      {%- render 'bm-message-block',
+        enable_message_styles: section_message.settings.enable_message_styles,
+        message_alignment_desk: section_message.settings.text_alignment_desk,
+        message_alignment_tablet: section_message.settings.text_alignment_tablet,
+        message_alignment_phone: section_message.settings.text_alignment_phone,
+        message_color: section_message.settings.message_color,
+        message_content: section_message.settings.message,
+        message_italic: section_message.settings.font_style_italic,
+        message_font: section_message.settings.font_family,
+        message_line_height: section_message.settings.line_height,
+        message_margin: section_message.settings.message_margin,
+        message_size: section_message.settings.font_size,
+        message_size_tablet: section_message.settings.font_size_tablet,
+        message_size_desk: section_message.settings.font_size_desk,
+        message_visibility: section_message.settings.message_visibility,
+        message_weight: section_message.settings.font_weight -%}
+
+    </div>
+
+    <ul class="row list-type-none my-0 ps-0">
+
+      {%- for product in product_array limit: 2 -%}
+
+        {%- if product.variants.size == 1 -%}
+          {%- assign show_compare_price = true -%}
+        {%- endif -%}
+
+        {%- if product_blocks != blank -%}
+          {%- assign current_item = all_products[product.settings.prod] -%}
+          {%- else -%}
+            {%- assign current_item = product -%}
+        {%- endif -%}
+
+        {%- render 'bm-prod-item',
+          bmpi_classes: "mb-4",
+          bmpi_img: current_item.featured_image,
+          bmpi_title: current_item.title,
+          bmpi_url: current_item.url,
+          compare_price: current_item.compare_at_price,
+          compare_price_color: compare_price_color,
+          compare_price_varies: current_item.compare_at_price_varies,
+          enable_styles: enable_styles,
+          font_italic: font_italic,
+          font_size: font_size,
+          font_weight: font_weight,
+          price: current_item.price,
+          price_classes: "bm-colors-color-grey-50",
+          price_color: price_color,
+          price_color_sale: price_color_sale,
+          price_varies: current_item.price_varies,
+          show_compare_price: show_compare_price,
+          text_color: text_color,
+          image_widths: "180,360,540,720,900",
+          item_width_phone: "col-6" -%}
+
+      {%- endfor -%}
+
+    </ul>
+  </div>
+
+  <div class="col-12 col-sm-6">
+    <ul class="row list-type-none my-0 ps-0">
+
+      {%- for block in custom_items limit: 1 -%}
+        {%- assign item_url = block.settings.item_url -%}
+
+        {%- if item_url != blank -%}
+          {%- assign bmci_classes = bmci_classes | append: " position-relative" -%}
+        {%- endif -%}
+
+        {%- render 'bm-banner-item',
+          bmci_classes: bmci_classes,
+          bmci_url: item_url,
+          block: block,
+          image_widths: "180,360,540,720,900",
+          item_width_phone: "col-12" -%}
+
+      {%- endfor -%}
+
+    </ul>
+  </div>
+</div>

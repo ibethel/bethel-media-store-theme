@@ -1,0 +1,79 @@
+{%- if compare_price > price -%}
+  {%- assign show_on_sale = true -%}
+
+  {%- if price_color_sale != blank -%}
+    {%- assign price_color = price_color_sale -%}
+  {%- endif -%}
+
+  {%- if show_compare_price or price_varies and compare_price_varies == false -%}
+    {%- assign show_compare_price = true -%}
+    {%- else -%}
+      {%- assign show_compare_price = false -%}
+  {%- endif -%}
+
+  {%- else -%}
+    {%- assign show_on_sale = false -%}
+    {%- assign show_compare_price = false -%}
+{%- endif -%}
+
+{%- if enable_styles and price_color != blank -%}
+  {%- assign custom_color = true -%}
+  {%- else -%}
+    {%- assign custom_color = false -%}
+{%- endif -%}
+
+<div class="bm-prod-pricing d-flex align-items-center
+
+  {%- if price_margin != blank %} {{ price_margin }}{% endif -%}"
+>
+  <span
+    class="bm-prod-pricing
+
+      {%- if show_on_sale %} me-2{%- endif -%}"
+  >
+    <span
+      class="bm-prod-pricing__text
+
+        {%- if price_classes != blank %} {{ price_classes -}}{%- endif -%}
+
+        {%- if price_size != blank or
+          price_size_tablet != blank or
+          price_size_desk != blank %} bm-fonts{%- endif -%}
+
+        {%- if price_size != blank %} {{ price_size }}{% endif -%}
+        {%- if price_size_tablet != blank %} {{ price_size_tablet }}{% endif -%}
+        {%- if price_size_desk != blank %} {{ price_size_desk }}{% endif -%}
+
+        {%- if show_on_sale and custom_color != true %} text-danger{%- endif -%}"
+
+      {%- if custom_color -%}
+        style="color: {{- price_color -}} !important;"
+      {%- endif -%}
+    >
+      {{- price | money -}}
+    </span>
+  </span>
+
+  {%- if show_compare_price -%}
+    <span class="bm-prod-pricing__compare">
+      <span
+        class="bm-prod-pricing__compare-text text-muted text-decoration-line-through
+
+          {%- if price_size != blank or
+            price_size_tablet != blank or
+            price_size_desk != blank %} bm-fonts{%- endif -%}
+
+          {%- if price_size != blank %} {{ price_size }}{% endif -%}
+          {%- if price_size_tablet != blank %} {{ price_size_tablet }}{% endif -%}
+          {%- if price_size_desk != blank %} {{ price_size_desk }}{% endif %}"
+
+        {%- if enable_styles and compare_price_color != blank -%}
+          style="color: {{- compare_price_color -}} !important;"
+        {%- endif -%}
+      >
+        {{- compare_price | money -}}
+      </span>
+    </span>
+  {%- endif -%}
+
+</div>

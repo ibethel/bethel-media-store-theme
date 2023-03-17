@@ -1,0 +1,19 @@
+/* SCSS Mixins */
+
+@mixin media-query($constraint, $viewport1, $viewport2: null) {
+  @if $constraint == $min {
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+    /* stylelint-disable-next-line at-rule-empty-line-before */
+  } @else if $constraint == $max {
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+    /* stylelint-disable-next-line at-rule-empty-line-before */
+  } @else {
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+  }
+}

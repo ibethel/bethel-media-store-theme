@@ -1,0 +1,57 @@
+{%- assign current_variant = form_product.selected_or_first_available_variant -%}
+{%- assign formatted_product_name = form_product.title | sha1 | prepend: '-' -%}
+{%- assign select_unique_id = form_product.title
+  | handleize
+  | append: formatted_product_name -%}
+
+<div
+  id="{{- select_unique_id -}}"
+  class="bm-atc-form-variants"
+  data-handle="{{- form_product.handle -}}"
+>
+
+    {%- for variant in form_product.variants -%}
+      {%- assign formatted_variant_title = variant.title
+          | sha1
+          | append: forloop.index -%}
+      {%- assign variant_unique_id = "variant-"
+        | append: variant.title
+        | handleize
+        | append: '-'
+        | append: formatted_variant_title -%}
+
+      <div
+        class="bm-atc-form-variants__radio rounded-1 cursor-pointer d-block px-2 py-3 mb-3
+
+          {%- unless variant.available %} pe-none{%- endunless -%}"
+      >
+        <input
+          class="cursor-pointer"
+          type="radio"
+          id="{{ variant_unique_id }}"
+          name="id"
+          value="{{ variant.id }}"
+          form="{{ form_id }}"
+          data-sku="{{ variant.sku }}"
+
+          {%- if variant.id == current_variant.id %}
+            checked
+          {%- endif -%}
+
+          {%- unless variant.available %}
+            disabled="disabled"
+          {%- endunless -%}
+        >
+
+        <label
+          class="bm-atc-form__label pe-none
+
+            {%- unless variant.available %} text-black text-opacity-25 text-decoration-line-through{%- endunless -%}"
+          for="{{ variant_unique_id }}"
+        >
+          {{- variant.title }} - {{ variant.price | money -}}
+        </label>
+      </div>
+    {%- endfor -%}
+
+</div>

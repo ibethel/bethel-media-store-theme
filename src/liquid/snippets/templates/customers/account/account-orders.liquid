@@ -1,0 +1,88 @@
+{%- assign orders_title = "orders.title" | t -%}
+{%- assign formatted_title = bm_login_title | sha1 -%}
+{%- assign title_id = bm_login_title | handleize | append: '-' | append: formatted_title -%}
+
+<div
+  class="bm-account__orders"
+  aria-label="{{ orders_title | t }}"
+>
+
+  {%- render 'bm-title-block',
+    title_content: orders_title,
+    title_font: "ff-ivypresto",
+    title_id: title_id,
+    title_margin: "mb-3",
+    title_size: "fs-3",
+    title_tag: "h2" -%}
+
+  {%- paginate customer.orders by 20 -%}
+
+  {%- if customer.orders_count > 0 -%}
+    <div class="bm-account__orders-table-container overflow-auto" aria-labelledby="{{ title_id }}">
+      <table class="col-sm-12">
+        <thead>
+          <tr>
+            <th class="fw-bold text-start text-nowrap">
+              {{- 'orders.order_number' | t -}}
+            </th>
+            <th class="fw-bold text-start text-nowrap">
+              {{- 'orders.date' | t -}}
+            </th>
+            <th class="fw-bold text-start text-nowrap">
+              {{- 'orders.payment_status' | t -}}
+            </th>
+            <th class="fw-bold text-start text-nowrap">
+              {{- 'orders.fulfillment_status' | t -}}
+            </th>
+            <th class="fw-bold text-start text-nowrap">
+              {{- 'orders.total' | t -}}
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          {%- for order in customer.orders -%}
+            <tr>
+              <td class="text-nowrap py-1 pe-1">
+
+                {%- render 'bm-link',
+                  bm_link_title: order.name,
+                  bm_link_classes: "opacity-hover",
+                  bm_link_url: order.customer_url,
+                  bm_link_content: order.name -%}
+
+              </td>
+              <td class="text-nowrap py-1 pe-1">
+                {{- order.created_at | date: "%b %d, %y" -}}
+              </td>
+              <td class="text-nowrap py-1 pe-1">
+                {{- order.financial_status_label -}}
+              </td>
+              <td class="text-nowrap py-1 pe-1">
+                {{- order.fulfillment_status_label -}}
+              </td>
+              <td class="text-nowrap py-1">
+                {{- order.total_price | money -}}
+              </td>
+            </tr>
+          {%- endfor -%}
+
+        </tbody>
+      </table>
+    </div>
+    {%- else -%}
+      <p>
+        {{- 'orders.none' | t -}}
+      </p>
+  {%- endif -%}
+
+  {%- if paginate.pages > 1 -%}
+    {%- render 'pagination' paginate: paginate -%}
+  {%- endif -%}
+
+  {%- endpaginate -%}
+
+</div>
+
+

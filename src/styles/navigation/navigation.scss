@@ -1,0 +1,44 @@
+.bm-link {
+  color: $black;
+}
+
+#mobileMenu {
+  background-color: $bmSiteBackground;
+  transform: translateX(-105%);
+  transition: transform $animationTransition - 0.1 ease;
+  z-index: $zLevelSix;
+
+  &[aria-hidden="false"] {
+    transform: translateX(0);
+  }
+
+  li {
+    &.border-bottom {
+      border-bottom: 1px solid !important;
+    }
+
+    &.border-top {
+      border-top: 1px solid !important;
+    }
+  }
+}
+
+.bm-mobile-sub-menu {
+  background-color: $bmSiteBackground;
+  z-index: $zLevelSeven;
+}
+
+.bm-mobile-menu__container {
+  height: 100%;
+}
+
+.navigation__list {
+  list-style: none;
+  list-style-type: none;
+}
+
+.sub-navigation__list {
+  min-height: 100px;
+  min-width: 200px;
+  z-index: $zLevelSix;
+}

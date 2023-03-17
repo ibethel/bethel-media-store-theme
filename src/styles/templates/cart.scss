@@ -1,0 +1,13 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+@import "../integrations/easy-donation.scss";
+
+.cart-item__input {
+  width: 30px;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

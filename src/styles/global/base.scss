@@ -1,0 +1,54 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: $regularFontStack;
+  font-size: $baseFontSize;
+  font-style: normal;
+  font-weight: $regularFontWeight;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-family: $regularFontStack;
+  font-size: $baseFontSize;
+  font-style: normal;
+  font-weight: $regularFontWeight;
+}
+
+body {
+  &.body--scroll-locked {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+}
+
+.bm-overlay {
+  background-color: $black;
+  opacity: 0.2;
+  z-index: $zLevelOne;
+}
+
+.field {
+  border: 1px solid;
+}
+
+.errors {
+  color: $redDanger;
+
+  ul {
+    list-style: none;
+    list-style-type: none;
+    margin: 0 0 $gutterMediumSmall;
+    padding-left: 0;
+    text-align: center;
+  }
+}

@@ -1,0 +1,328 @@
+{%- assign button_pos = block.settings.button_pos -%}
+{%- assign custom_html = block.settings.custom_html -%}
+{%- assign custom_html_pos = block.settings.custom_html_pos -%}
+{%- assign img_pos = block.settings.img_pos -%}
+{%- assign message_pos = block.settings.message_pos -%}
+{%- assign sub_title_pos = block.settings.sub_title_pos -%}
+{%- assign title_pos = block.settings.title_pos -%}
+
+{%- comment -%}Position 1{%- endcomment -%}
+
+{%- if img_pos == 1 -%}
+  {%- render 'bm-custom-item-image',
+    block: block,
+    image_widths: image_widths -%}
+{%- endif -%}
+
+{%- if title_pos == 1 -%}
+  {%- render 'bm-custom-item-title' block: block -%}
+{%- endif -%}
+
+{%- if sub_title_pos == 1 -%}
+  {%- render 'bm-custom-item-sub-title' block: block -%}
+{%- endif -%}
+
+{%- if message_pos == 1 -%}
+  {%- render 'bm-custom-item-message' block: block -%}
+{%- endif -%}
+
+{%- if button_pos == 1 -%}
+  {%- render 'bm-custom-item-button',
+    block: block,
+    text_alignment_desk: text_alignment_desk,
+    text_alignment_phone: text_alignment_phone,
+    text_alignment_tablet: text_alignment_tablet -%}
+{%- endif -%}
+
+{%- if custom_html_pos == 1 and custom_html != blank -%}
+  {{- custom_html -}}
+{%- endif -%}
+
+{%- comment -%}Position 2{%- endcomment -%}
+
+{%- if img_pos == 2 -%}
+  {%- render 'bm-custom-item-image',
+    block: block,
+    image_widths: image_widths -%}
+{%- endif -%}
+
+{%- if title_pos == 2 -%}
+  {%- render 'bm-custom-item-title' block: block -%}
+{%- endif -%}
+
+{%- if sub_title_pos == 2 -%}
+  {%- render 'bm-custom-item-sub-title' block: block -%}
+{%- endif -%}
+
+{%- if message_pos == 2 -%}
+  {%- render 'bm-custom-item-message' block: block -%}
+{%- endif -%}
+
+{%- if button_pos == 2 -%}
+  {%- render 'bm-custom-item-button',
+    block: block,
+    text_alignment_desk: text_alignment_desk,
+    text_alignment_phone: text_alignment_phone,
+    text_alignment_tablet: text_alignment_tablet -%}
+{%- endif -%}
+
+{%- if custom_html_pos == 2 and custom_html != blank -%}
+  {{- custom_html -}}
+{%- endif -%}
+
+{%- comment -%}Position 3{%- endcomment -%}
+
+{%- if img_pos == 3 -%}
+  {%- render 'bm-custom-item-image',
+    block: block,
+    image_widths: image_widths -%}
+{%- endif -%}
+
+{%- if title_pos == 3 -%}
+  {%- render 'bm-custom-item-title' block: block -%}
+{%- endif -%}
+
+{%- if sub_title_pos == 3 -%}
+  {%- render 'bm-custom-item-sub-title' block: block -%}
+{%- endif -%}
+
+{%- if message_pos == 3 -%}
+  {%- render 'bm-custom-item-message' block: block -%}
+{%- endif -%}
+
+{%- if button_pos == 3 -%}
+  {%- render 'bm-custom-item-button',
+    block: block,
+    text_alignment_desk: text_alignment_desk,
+    text_alignment_phone: text_alignment_phone,
+    text_alignment_tablet: text_alignment_tablet -%}
+{%- endif -%}
+
+{%- if custom_html_pos == 3 and custom_html != blank -%}
+  {{- custom_html -}}
+{%- endif -%}
+
+{%- comment -%}Position 4{%- endcomment -%}
+
+{%- if img_pos == 4 -%}
+  {%- render 'bm-custom-item-image',
+    block: block,
+    image_widths: image_widths -%}
+{%- endif -%}
+
+{%- if title_pos == 4 -%}
+  {%- render 'bm-custom-item-title' block: block -%}
+{%- endif -%}
+
+{%- if sub_title_pos == 4 -%}
+  {%- render 'bm-custom-item-sub-title' block: block -%}
+{%- endif -%}
+
+{%- if message_pos == 4 -%}
+  {%- render 'bm-custom-item-message' block: block -%}
+{%- endif -%}
+
+{%- if button_pos == 4 -%}
+  {%- render 'bm-custom-item-button',
+    block: block,
+    text_alignment_desk: text_alignment_desk,
+    text_alignment_phone: text_alignment_phone,
+    text_alignment_tablet: text_alignment_tablet -%}
+{%- endif -%}
+
+{%- if custom_html_pos == 4 and custom_html != blank -%}
+  {{- custom_html -}}
+{%- endif -%}
+
+{%- comment -%}Position 5{%- endcomment -%}
+
+{%- if img_pos == 5 -%}
+  {%- render 'bm-custom-item-image',
+    block: block,
+    image_widths: image_widths -%}
+{%- endif -%}
+
+{%- if title_pos == 5 -%}
+  {%- render 'bm-custom-item-title' block: block -%}
+{%- endif -%}
+
+{%- if sub_title_pos == 5 -%}
+  {%- render 'bm-custom-item-sub-title' block: block -%}
+{%- endif -%}
+
+{%- if message_pos == 5 -%}
+  {%- render 'bm-custom-item-message' block: block -%}
+{%- endif -%}
+
+{%- if button_pos == 5 -%}
+  {%- render 'bm-custom-item-button',
+    block: block,
+    text_alignment_desk: text_alignment_desk,
+    text_alignment_phone: text_alignment_phone,
+    text_alignment_tablet: text_alignment_tablet -%}
+{%- endif -%}
+
+{%- if custom_html_pos == 5 and custom_html != blank -%}
+  {{- custom_html -}}
+{%- endif -%}
+
+{%- comment -%}Position 6{%- endcomment -%}
+
+{%- if img_pos == 6 -%}
+  {%- render 'bm-custom-item-image',
+    block: block,
+    image_widths: image_widths -%}
+{%- endif -%}
+
+{%- if title_pos == 6 -%}
+  {%- render 'bm-custom-item-title' block: block -%}
+{%- endif -%}
+
+{%- if sub_title_pos == 6 -%}
+  {%- render 'bm-custom-item-sub-title' block: block -%}
+{%- endif -%}
+
+{%- if message_pos == 6 -%}
+  {%- render 'bm-custom-item-message' block: block -%}
+{%- endif -%}
+
+{%- if button_pos == 6 -%}
+  {%- render 'bm-custom-item-button',
+    block: block,
+    text_alignment_desk: text_alignment_desk,
+    text_alignment_phone: text_alignment_phone,
+    text_alignment_tablet: text_alignment_tablet -%}
+{%- endif -%}
+
+{%- if custom_html_pos == 6 and custom_html != blank -%}
+  {{- custom_html -}}
+{%- endif -%}
+
+{%- comment -%}Position 7{%- endcomment -%}
+
+{%- if img_pos == 7 -%}
+  {%- render 'bm-custom-item-image',
+    block: block,
+    image_widths: image_widths -%}
+{%- endif -%}
+
+{%- if title_pos == 7 -%}
+  {%- render 'bm-custom-item-title' block: block -%}
+{%- endif -%}
+
+{%- if sub_title_pos == 7 -%}
+  {%- render 'bm-custom-item-sub-title' block: block -%}
+{%- endif -%}
+
+{%- if message_pos == 7 -%}
+  {%- render 'bm-custom-item-message' block: block -%}
+{%- endif -%}
+
+{%- if button_pos == 7 -%}
+  {%- render 'bm-custom-item-button',
+    block: block,
+    text_alignment_desk: text_alignment_desk,
+    text_alignment_phone: text_alignment_phone,
+    text_alignment_tablet: text_alignment_tablet -%}
+{%- endif -%}
+
+{%- if custom_html_pos == 7 and custom_html != blank -%}
+  {{- custom_html -}}
+{%- endif -%}
+
+{%- comment -%}Position 8{%- endcomment -%}
+
+{%- if img_pos == 8 -%}
+  {%- render 'bm-custom-item-image',
+    block: block,
+    image_widths: image_widths -%}
+{%- endif -%}
+
+{%- if title_pos == 8 -%}
+  {%- render 'bm-custom-item-title' block: block -%}
+{%- endif -%}
+
+{%- if sub_title_pos == 8 -%}
+  {%- render 'bm-custom-item-sub-title' block: block -%}
+{%- endif -%}
+
+{%- if message_pos == 8 -%}
+  {%- render 'bm-custom-item-message' block: block -%}
+{%- endif -%}
+
+{%- if button_pos == 8 -%}
+  {%- render 'bm-custom-item-button',
+    block: block,
+    text_alignment_desk: text_alignment_desk,
+    text_alignment_phone: text_alignment_phone,
+    text_alignment_tablet: text_alignment_tablet -%}
+{%- endif -%}
+
+{%- if custom_html_pos == 8 and custom_html != blank -%}
+  {{- custom_html -}}
+{%- endif -%}
+
+{%- comment -%}Position 9{%- endcomment -%}
+
+{%- if img_pos == 9 -%}
+  {%- render 'bm-custom-item-image',
+    block: block,
+    image_widths: image_widths -%}
+{%- endif -%}
+
+{%- if title_pos == 9 -%}
+  {%- render 'bm-custom-item-title' block: block -%}
+{%- endif -%}
+
+{%- if sub_title_pos == 9 -%}
+  {%- render 'bm-custom-item-sub-title' block: block -%}
+{%- endif -%}
+
+{%- if message_pos == 9 -%}
+  {%- render 'bm-custom-item-message' block: block -%}
+{%- endif -%}
+
+{%- if button_pos == 9 -%}
+  {%- render 'bm-custom-item-button',
+    block: block,
+    text_alignment_desk: text_alignment_desk,
+    text_alignment_phone: text_alignment_phone,
+    text_alignment_tablet: text_alignment_tablet -%}
+{%- endif -%}
+
+{%- if custom_html_pos == 9 and custom_html != blank -%}
+  {{- custom_html -}}
+{%- endif -%}
+
+{%- comment -%}Position 10{%- endcomment -%}
+
+{%- if img_pos == 10 -%}
+  {%- render 'bm-custom-item-image',
+    block: block,
+    image_widths: image_widths -%}
+{%- endif -%}
+
+{%- if title_pos == 10 -%}
+  {%- render 'bm-custom-item-title' block: block -%}
+{%- endif -%}
+
+{%- if sub_title_pos == 10 -%}
+  {%- render 'bm-custom-item-sub-title' block: block -%}
+{%- endif -%}
+
+{%- if message_pos == 10 -%}
+  {%- render 'bm-custom-item-message' block: block -%}
+{%- endif -%}
+
+{%- if button_pos == 10 -%}
+  {%- render 'bm-custom-item-button',
+    block: block,
+    text_alignment_desk: text_alignment_desk,
+    text_alignment_phone: text_alignment_phone,
+    text_alignment_tablet: text_alignment_tablet -%}
+{%- endif -%}
+
+{%- if custom_html_pos == 10 and custom_html != blank -%}
+  {{- custom_html -}}
+{%- endif -%}
+

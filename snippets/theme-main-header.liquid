@@ -1,0 +1,26 @@
+{%- assign main_header_sticky = settings.main_header_sticky -%}
+
+{%- assign page_disable_header = page.metafields.bmg.disable_nav_bar -%}
+
+{%- if page_disable_header != true -%}
+
+  {%- section 'mobile-menu' -%}
+
+  <section
+    class="bm-main-header
+
+      {%- if main_header_sticky %} bm-main-header--sticky{%- endif -%}"
+  >
+
+    {% comment %} {%- section 'bm-universal-nav' -%} {% endcomment %}
+
+    {%- section 'announcement-bar' -%}
+
+    {%- section 'header' -%}
+
+  </section>
+
+  {%- if main_header_sticky %}
+    <div class="bm-main-header__sticky-placeholder"></div>
+  {%- endif -%}
+{%- endif -%}

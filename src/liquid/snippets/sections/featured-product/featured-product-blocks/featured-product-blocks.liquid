@@ -1,0 +1,344 @@
+{%- assign space_between_img_txt = space_between_img_txt | times: 1 -%}
+{%- assign current_product = all_products[featured_product] -%}
+
+{%- if enable_contain == false and
+  enable_background == false and
+  enable_full_width %}
+  {%- assign enable_text_padding = true -%}
+{%- endif -%}
+
+{%- if enable_text_section_styles -%}
+  {%- assign enable_text_padding = true -%}
+{%- endif -%}
+
+{%- if space_between_img_txt < 3 and space_between_img_txt > 0 -%}
+  {%- assign tablet_space_between_img_txt = 1 -%}
+  {%- assign phone_space_between_img_txt = 1 -%}
+  {%- else -%}
+    {%- assign tablet_space_between_img_txt = space_between_img_txt | minus: 2 -%}
+    {%- assign phone_space_between_img_txt = space_between_img_txt -%}
+{%- endif -%}
+
+{%- if space_between_img_txt == 0 -%}
+  {%- assign tablet_space_between_img_txt = 0 -%}
+{%- endif -%}
+
+{%- if image_pos == "row" -%}
+  {%- assign desk_padding_left = "ps-xl-" | append: space_between_img_txt -%}
+  {%- assign tablet_padding_left = "ps-sm-" | append: tablet_space_between_img_txt -%}
+  {%- assign padding_left = tablet_padding_left | append: ' ' | append: desk_padding_left -%}
+
+  {%- if enable_text_padding -%}
+    {%- assign padding_right = "pe-sm-3" -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if img_breakpoint_pos == "flex-column" -%}
+  {%- assign breakpoint_padding_top = "pt-" | append: main_breakpoint | append: '-0' -%}
+  {%- assign padding_top = "pt-"
+    | append: phone_space_between_img_txt
+    | append: ' '
+    | append: breakpoint_padding_top -%}
+  {%- assign padding_bottom = "pb-0" -%}
+{%- endif -%}
+
+{%- if image_pos == "row-reverse" -%}
+  {%- assign desk_padding = "pe-xl-" | append: space_between_img_txt -%}
+  {%- assign tablet_padding = "pe-sm-" | append: tablet_space_between_img_txt -%}
+  {%- assign padding_right = tablet_padding | append: ' ' | append: desk_padding -%}
+
+  {%- if enable_text_padding -%}
+    {%- assign padding_left = "ps-sm-3" -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- if img_breakpoint_pos == "flex-column-reverse" -%}
+  {%- assign breakpoint_padding_bottom = "pb-" | append: main_breakpoint | append: '-0' -%}
+  {%- assign padding_bottom = "pb-"
+    | append: phone_space_between_img_txt
+    | append: ' '
+    | append: breakpoint_padding_bottom -%}
+  {%- assign padding_top = "pt-0 pt-sm-0" -%}
+{%- endif -%}
+
+<div
+  class="image-with-text__blocks col-12 col-{{ main_breakpoint }}-{{ text_width -}}
+
+    {%- if enable_text_padding %} ps-3 pe-3{%- endif -%}
+    {{- padding_bottom | prepend: ' ' -}}
+    {{- padding_left | prepend: ' ' -}}
+    {{- padding_right | prepend: ' ' -}}
+    {{- padding_top | prepend: ' ' -}}"
+
+  {%- if enable_text_section_styles and text_background != blank -%}
+    style="background-color: {{- text_background -}};"
+  {%- endif -%}
+>
+  <div
+    class="image-with-text__blocks-container
+
+      {{- padding_left | prepend: ' ' | replace: 'sm-', 'xl-' -}}
+      {{- padding_right | prepend: ' ' | replace: 'sm-', 'xl-' -}}
+      {{- text_alignment_phone | prepend: ' ' -}}
+      {{- text_alignment_tablet | prepend: ' ' -}}
+      {{- text_alignment_desk | prepend: ' ' -}}"
+  >
+    <div
+      class="image-with-text__blocks-wrapper d-flex
+
+        {{- vert_align_phone | prepend: ' ' -}}
+        {{- vert_align_tablet | prepend: ' ' -}}
+        {{- vert_align_desk | prepend: ' ' -}}
+        {{- horiz_align_phone | prepend: ' ' -}}
+        {{- horiz_align_tablet | prepend: ' ' -}}
+        {{- horiz_align_desk | prepend: ' ' -}}"
+    >
+      <div
+        class="image-with-text__blocks-content col-12
+
+          {{- content_padding_phone | prepend: ' ' -}}
+          {{- content_padding_tablet | prepend: ' ' -}}
+          {{- content_padding_desk | prepend: ' ' -}}"
+      >
+
+        {%- for block in section_blocks -%}
+          {%- case block.type -%}
+
+            {%- when "section_title" -%}
+              {%- assign block_title = block.settings.title -%}
+              {%- assign is_section_title = block.settings.is_section_title -%}
+
+              {%- if is_section_title -%}
+                {%- assign title_labelledby = aria_labelledby -%}
+                {%- else -%}
+                  {%- assign title_labelledby = "" -%}
+              {%- endif -%}
+
+              {%- if block_title != blank -%}
+                {%- assign current_title = block_title -%}
+                {%- else -%}
+                  {%- assign current_title = current_product.title -%}
+              {%- endif -%}
+
+              {%- render 'bm-title-block',
+                enable_title_styles: block.settings.enable_title_styles,
+                title_alignment_desk: block.settings.text_alignment_desk,
+                title_alignment_tablet: block.settings.text_alignment_tablet,
+                title_alignment_phone: block.settings.text_alignment_phone,
+                title_color: block.settings.title_color,
+                title_content: current_title,
+                title_font: block.settings.font_family,
+                title_is_page_title: block.settings.is_page_title,
+                title_italic: block.settings.font_style_italic,
+                title_labelledby: title_labelledby,
+                title_margin: block.settings.title_margin,
+                title_size: block.settings.font_size,
+                title_size_tablet: block.settings.font_size_tablet,
+                title_size_desk: block.settings.font_size_desk,
+                title_tag: block.settings.title_tag,
+                title_visibility: block.settings.title_visibility,
+                title_weight: block.settings.font_weight -%}
+
+            {%- when "section_product_author" -%}
+
+              {%- assign product_author = block.settings.author -%}
+
+              {%- if product_author == blank -%}
+                {%- assign product_author = product.metafields.bmg.author -%}
+              {%- endif -%}
+
+              {%- render 'bm-title-block',
+                enable_title_styles: block.settings.enable_title_styles,
+                title_alignment_desk: block.settings.text_alignment_desk,
+                title_alignment_tablet: block.settings.text_alignment_tablet,
+                title_alignment_phone: block.settings.text_alignment_phone,
+                title_color: block.settings.title_color,
+                title_content: product_author,
+                title_font: block.settings.font_family,
+                title_is_page_title: block.settings.is_page_title,
+                title_italic: block.settings.font_style_italic,
+                title_labelledby: title_labelledby,
+                title_margin: block.settings.title_margin,
+                title_size: block.settings.font_size,
+                title_size_tablet: block.settings.font_size_tablet,
+                title_size_desk: block.settings.font_size_desk,
+                title_tag: block.settings.title_tag,
+                title_visibility: block.settings.title_visibility,
+                title_weight: block.settings.font_weight -%}
+
+            {%- when "section_product_title" -%}
+
+              {%- if is_product_page -%}
+                {%- assign title_tag = "h1" -%}
+              {%- endif -%}
+
+              {%- render 'bm-title-block',
+                enable_title_styles: block.settings.enable_title_styles,
+                title_alignment_desk: block.settings.text_alignment_desk,
+                title_alignment_tablet: block.settings.text_alignment_tablet,
+                title_alignment_phone: block.settings.text_alignment_phone,
+                title_color: block.settings.title_color,
+                title_content: product_main.title,
+                title_font: block.settings.font_family,
+                title_is_page_title: block.settings.is_page_title,
+                title_italic: block.settings.font_style_italic,
+                title_labelledby: title_labelledby,
+                title_link: block.settings.title_link,
+                title_margin: block.settings.title_margin,
+                title_size: block.settings.font_size,
+                title_size_tablet: block.settings.font_size_tablet,
+                title_size_desk: block.settings.font_size_desk,
+                title_tag: block.settings.title_tag,
+                title_visibility: block.settings.title_visibility,
+                title_weight: block.settings.font_weight -%}
+
+            {%- when "section_sub_title" -%}
+
+              {%- render 'bm-sub-title-block',
+                enable_sub_title_styles: block.settings.enable_title_styles,
+                sub_title_alignment_desk: block.settings.text_alignment_desk,
+                sub_title_alignment_tablet: block.settings.text_alignment_tablet,
+                sub_title_alignment_phone: block.settings.text_alignment_phone,
+                sub_title_color: block.settings.title_color,
+                sub_title_content: block.settings.title,
+                sub_title_font: block.settings.font_family,
+                sub_title_italic: block.settings.font_style_italic,
+                sub_title_margin: block.settings.title_margin,
+                sub_title_size: block.settings.font_size,
+                sub_title_visibility: block.settings.title_visibility,
+                sub_title_weight: block.settings.font_weight -%}
+
+            {%- when "section_pricing" -%}
+
+              {%- if current_product.variants.size == 1 -%}
+                {%- assign show_compare_price = true -%}
+              {%- endif -%}
+
+              {%- render 'bm-prod-pricing',
+                compare_price: current_product.compare_at_price,
+                compare_price_color: block.settings.compare_price_color,
+                compare_price_varies: current_product.compare_at_price_varies,
+                enable_styles: block.settings.enable_styles,
+                price: current_product.price,
+                price_classes: "bm-colors-color-grey-50",
+                price_color: block.settings.price_color,
+                price_color_sale: block.settings.price_color_sale,
+                price_margin: block.settings.block_margin,
+                price_size: block.settings.font_size,
+                price_size_desk: block.settings.font_size_desk,
+                price_size_tablet: block.settings.font_size_tablet,
+                price_varies: current_product.price_varies,
+                show_compare_price: show_compare_price -%}
+
+            {%- when "section_message" -%}
+
+              {%- render 'bm-message-block',
+                enable_message_styles: block.settings.enable_message_styles,
+                message_alignment_desk: block.settings.text_alignment_desk,
+                message_alignment_tablet: block.settings.text_alignment_tablet,
+                message_alignment_phone: block.settings.text_alignment_phone,
+                message_color: block.settings.message_color,
+                message_content: block.settings.message,
+                message_font: block.settings.font_family,
+                message_italic: block.settings.font_style_italic,
+                message_line_height: block.settings.line_height,
+                message_margin: block.settings.message_margin,
+                message_size: block.settings.font_size,
+                message_size_tablet: block.settings.font_size_tablet,
+                message_size_desk: block.settings.font_size_desk,
+                message_visibility: block.settings.message_visibility,
+                message_weight: block.settings.font_weight -%}
+
+            {%- when "section_description" -%}
+              {%- assign custom_descripton = block.settings.custom_descripton -%}
+
+              {%- if custom_descripton != blank -%}
+                {%- assign description_content = custom_descripton -%}
+                {%- else -%}
+                  {%- assign description_content = current_product.description -%}
+              {%- endif -%}
+
+              {%- render 'bm-description-block',
+                enable_description_styles: block.settings.enable_description_styles,
+                description_alignment_desk: block.settings.text_alignment_desk,
+                description_alignment_tablet: block.settings.text_alignment_tablet,
+                description_alignment_phone: block.settings.text_alignment_phone,
+                description_color: block.settings.description_color,
+                description_content: description_content,
+                description_italic: block.settings.font_style_italic,
+                description_margin: block.settings.description_margin,
+                description_size: block.settings.font_size,
+                description_visibility: block.settings.description_visibility,
+                description_weight: block.settings.font_weight -%}
+
+            {%- when "section_prod_description" -%}
+
+              {%- render 'bm-description-block',
+                enable_description_styles: block.settings.enable_description_styles,
+                description_alignment_desk: block.settings.text_alignment_desk,
+                description_alignment_tablet: block.settings.text_alignment_tablet,
+                description_alignment_phone: block.settings.text_alignment_phone,
+                description_color: block.settings.description_color,
+                description_content: product_main.description,
+                description_has_html: true,
+                description_italic: block.settings.font_style_italic,
+                description_margin: block.settings.description_margin,
+                description_size: block.settings.font_size,
+                description_visibility: block.settings.description_visibility,
+                description_weight: block.settings.font_weight -%}
+
+            {%- when "section_button" -%}
+
+              {%- render 'image-with-text-button-block',
+                block: block,
+                text_alignment_desk: text_alignment_desk,
+                text_alignment_tablet: text_alignment_tablet,
+                text_alignment_phone: text_alignment_phone -%}
+
+            {%- when "section_product_button" -%}
+
+              {%- render 'featured-product-product-button-block',
+                block: block,
+                enable_product_button: true,
+                featured_product: featured_product,
+                button_product_form: is_product_page,
+                product_variant_selection: product_variant_selection,
+                text_alignment_desk: text_alignment_desk,
+                text_alignment_tablet: text_alignment_tablet,
+                text_alignment_phone: text_alignment_phone, -%}
+
+            {%- when "section_html" -%}
+
+              {{- block.settings.custom_html -}}
+
+            {%- when "section_bulk_accordion" -%}
+
+              {%- render 'featured-product-bulk',
+                block: block,
+                product_main: product_main  -%}
+
+            {%- when "section_digital_accordion" -%}
+
+              {%- render 'featured-product-digital',
+                block: block,
+                product_main: product_main  -%}
+
+            {%- when "section_reviews_accordion" -%}
+
+              {%- render 'featured-product-reviews', block: block  -%}
+
+            {%- when "section_social" -%}
+
+              {%- render 'featured-product-social', block: block  -%}
+
+            {%- when "section_ship_accordion" -%}
+
+              {%- render 'featured-product-shipping', block: block  -%}
+
+          {%- endcase -%}
+        {%- endfor -%}
+
+      </div>
+    </div>
+  </div>
+</div>

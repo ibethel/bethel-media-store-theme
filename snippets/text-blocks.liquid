@@ -1,0 +1,115 @@
+<div
+  class="text__blocks col-12 d-flex
+
+    {{- horiz_align_phone | prepend: ' ' -}}
+    {{- horiz_align_tablet | prepend: ' ' -}}
+    {{- horiz_align_desk | prepend: ' ' -}}"
+>
+  <div class="text__blocks-container
+
+    {{- content_width_phone | prepend: ' col-' -}}
+    {{- content_width_tablet | prepend: ' col-sm-' -}}
+    {{- content_width_desk | prepend: ' col-xl-' -}}"
+  >
+
+    {%- for block in section_blocks -%}
+      {%- case block.type -%}
+
+        {%- when "text_title" -%}
+          {%- assign is_section_title = block.settings.is_section_title -%}
+
+          {%- if is_section_title -%}
+            {%- assign title_labelledby = aria_labelledby -%}
+          {%- endif -%}
+
+          {%- render 'bm-title-block',
+            enable_title_styles: block.settings.enable_title_styles,
+            title_alignment_desk: block.settings.text_alignment_desk,
+            title_alignment_tablet: block.settings.text_alignment_tablet,
+            title_alignment_phone: block.settings.text_alignment_phone,
+            title_color: block.settings.title_color,
+            title_content: block.settings.title,
+            title_font: block.settings.font_family,
+            title_is_page_title: block.settings.is_page_title,
+            title_italic: block.settings.font_style_italic,
+            title_labelledby: title_labelledby,
+            title_link: block.settings.title_link,
+            title_margin: block.settings.title_margin,
+            title_size: block.settings.title_font_size,
+            title_size_tablet: block.settings.font_size_tablet,
+            title_size_desk: block.settings.font_size_desk,
+            title_tag: block.settings.title_tag,
+            title_visibility: block.settings.title_visibility,
+            title_weight: block.settings.font_weight -%}
+
+        {%- when "text_sub_title" -%}
+
+          {%- render 'bm-sub-title-block',
+            enable_sub_title_styles: block.settings.enable_title_styles,
+            sub_title_alignment_desk: block.settings.text_alignment_desk,
+            sub_title_alignment_tablet: block.settings.text_alignment_tablet,
+            sub_title_alignment_phone: block.settings.text_alignment_phone,
+            sub_title_color: block.settings.title_color,
+            sub_title_content: block.settings.title,
+            sub_title_font: block.settings.font_family,
+            sub_title_italic: block.settings.font_style_italic,
+            sub_title_margin: block.settings.title_margin,
+            sub_title_size: block.settings.font_size,
+            sub_title_visibility: block.settings.title_visibility,
+            sub_title_weight: block.settings.font_weight -%}
+
+        {%- when "text_message" -%}
+
+          {%- render 'bm-message-block',
+            enable_message_styles: block.settings.enable_message_styles,
+            message_alignment_desk: block.settings.text_alignment_desk,
+            message_alignment_tablet: block.settings.text_alignment_tablet,
+            message_alignment_phone: block.settings.text_alignment_phone,
+            message_color: block.settings.message_color,
+            message_content: block.settings.message,
+            message_font: block.settings.font_family,
+            message_italic: block.settings.font_style_italic,
+            message_line_height: block.settings.line_height,
+            message_margin: block.settings.message_margin,
+            message_size: block.settings.font_size,
+            message_size_tablet: block.settings.font_size_tablet,
+            message_size_desk: block.settings.font_size_desk,
+            message_visibility: block.settings.message_visibility,
+            message_weight: block.settings.font_weight -%}
+
+        {%- when "text_html" -%}
+          {%- assign custom_html = block.settings.custom_html -%}
+
+          {%- if custom_html != blank -%}
+            {{- custom_html -}}
+          {%- endif -%}
+
+        {%- when "section_spacing" -%}
+
+          {%- render 'bm-spacing-block',
+            bm_spacing_desk: block.settings.bm_spacing_desk
+            bm_spacing_phone: block.settings.bm_spacing_phone
+            bm_spacing_tablet: block.settings.bm_spacing_tablet -%}
+
+        {%- when "section_description" -%}
+
+          {%- render 'text-description-block',
+            enable_description_styles: block.settings.enable_styles,
+            description_alignment_desk: block.settings.text_alignment_desk,
+            description_alignment_tablet: block.settings.text_alignment_tablet,
+            description_alignment_phone: block.settings.text_alignment_phone,
+            description_color: block.settings.block_color,
+            description_font: block.settings.font_family,
+            description_italic: block.settings.font_style_italic,
+            description_margin: block.settings.block_margin,
+            description_size: block.settings.font_size,
+            description_size_tablet: block.settings.font_size_tablet,
+            description_size_desk: block.settings.font_size_desk,
+            description_visibility: block.settings.block_visibility,
+            description_weight: block.settings.font_weight -%}
+
+      {%- endcase -%}
+    {%- endfor -%}
+
+  </div>
+</div>

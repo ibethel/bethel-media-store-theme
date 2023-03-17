@@ -1,0 +1,128 @@
+{%- assign current_template = template.name -%}
+
+{%- unless current_template == 'index' or
+  current_template == 'cart' or
+  current_template == 'list-collections' or
+  current_template == '404' -%}
+
+
+  <nav
+    class="bm-breadcrumbs__container"
+    aria-label="Breadcrumbs"
+  >
+    <ol
+      class="bm-breadcrumbs__list p-0 m-0 list-type-none align-items-center d-flex"
+      role="menubar"
+      aria-orientation="horizontal"
+    >
+
+      <li class="bm-breadcrumbs__item d-flex align-items-center" role="menuitem">
+
+        {%- render 'bm-link',
+          bm_link_classes: "text-decoration-none opacity-hover pe-1 bm-fonts fs-8",
+          bm_link_title: "Home",
+          bm_link_url: routes.root_url,
+          bm_link_content: "Home" -%}
+
+        {%- render 'bm-icon-template',
+          bm_icon: "icon-chevron-right",
+          bm_icon_classes: "d-block",
+          icon_classes: "d-block bm-icon__size--small-2" -%}
+
+      </li>
+
+      {%- case current_template -%}
+        {%- when "article" -%}
+        {%- when "collection" -%}
+
+          {%- if collection.url != blank -%}
+
+            <li
+              class="bm-breadcrumbs__item
+
+                {%- if current_tags != blank %} d-flex align-items-center{%- endif -%}"
+              role="menuitem"
+            >
+
+              {%- if current_tags != blank -%}
+                {%- assign collection_link_aria_current = false -%}
+                {%- else -%}
+                  {%- assign collection_link_aria_current = true -%}
+              {%- endif -%}
+
+              {%- render 'bm-link',
+                bm_link_aria_current: collection_link_aria_current,
+                bm_link_classes: "text-decoration-none opacity-hover px-1 bm-fonts fs-8",
+                bm_link_title: collection.title,
+                bm_link_url: collection.url,
+                bm_link_content: collection.title -%}
+
+              {%- if current_tags != blank -%}
+
+                {%- render 'bm-icon-template',
+                  bm_icon: "icon-chevron-right",
+                  bm_icon_classes: "d-block",
+                  icon_classes: "d-block bm-icon__size--small-2" -%}
+
+              {%- endif -%}
+
+            </li>
+
+            {%- if current_tags != blank -%}
+              <li class="breadcrumbs__item">
+                {%- assign tags_title = current_tags | join: ' + ' -%}
+
+                {%- render 'bm-link',
+                  bm_link_aria_current: true,
+                  bm_link_classes: "text-decoration-none opacity-hover px-1 bm-fonts fs-8",
+                  bm_link_title: tags_title,
+                  bm_link_url: request.path,
+                  bm_link_content: tags_title -%}
+
+              </li>
+            {%- endif -%}
+
+          {%- endif -%}
+
+        {%- when 'product' -%}
+          {%- if collection.url != blank -%}
+
+            <li
+              class="bm-breadcrumbs__item d-flex align-items-center d-flex align-items-center"
+              role="menuitem"
+            >
+
+              {%- render 'bm-link',
+                bm_link_classes: "text-decoration-none opacity-hover px-1 bm-fonts fs-8",
+                bm_link_title: collection.title,
+                bm_link_url: collection.url,
+                bm_link_content: collection.title -%}
+
+              {%- render 'bm-icon-template',
+                bm_icon: "icon-chevron-right",
+                bm_icon_classes: "d-block",
+                icon_classes: "d-block bm-icon__size--small-2 bm-fonts fs-8" -%}
+
+            </li>
+
+          {%- endif -%}
+
+            <li class="bm-breadcrumbs__item d-flex align-items-center" role="menuitem">
+
+              {%- render 'bm-link',
+                bm_link_aria_current: true,
+                bm_link_classes: "text-decoration-none opacity-hover px-1 bm-fonts fs-8",
+                bm_link_title: product.title,
+                bm_link_url: product.url,
+                bm_link_content: product.title -%}
+
+            </li>
+
+        {%- else -%}
+
+      {%- endcase -%}
+
+    </ol>
+  </nav>
+
+{%- endunless -%}

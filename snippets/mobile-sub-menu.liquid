@@ -1,0 +1,102 @@
+<ul
+  id="{{- data_target -}}"
+  class="bm-mobile-sub-menu list-type-none border-top border-1 bm-bg-white my-0 ps-0 position-absolute start-0 end-0 top-0 bottom-0 bm-slide-right display-toggle display-hidden"
+  aria-orientation="vertical"
+  aria-hidden="true"
+  role="menu"
+>
+
+  <li class="px-3 py-4 bm-bg-brown position-relative" role="none">
+
+    {%- capture button_attributes -%}
+      data-target="{{ data_target }}"
+      aria-controls="{{ data_target -}}"
+      aria-expanded="false"
+    {%- endcapture -%}
+
+    {%- capture button_content -%}
+      {%- render 'bm-icon-template',
+        bm_icon: "icon-chevron-left",
+        bm_icon_classes: "d-block",
+        icon_classes: "d-block bm-icon__size--small text-white" -%}
+    {%- endcapture -%}
+
+    {%- render 'bm-btn',
+      button_attributes: button_attributes,
+      button_classes: "bm-btn--no-styles p-3 pop-over-btn closed-pop-over position-absolute top-0 start-0"
+      button_content: button_content -%}
+
+    {%- render 'bm-title-block',
+      title_alignment_phone: "text-center text-white",
+      title_content: parent_link.title,
+      title_font: "ff-ivypresto",
+      title_id: title_id,
+      title_margin: "mb-0",
+      title_tag: "text",
+      title_size: "fs-1" -%}
+
+  </li>
+
+  {%- for link in parent_link.links -%}
+    {%- assign bm_link_classes = "opacity-hover text-decoration-none d-block px-3 py-3" -%}
+
+    <li
+      class="bm-bdr-btm border-very-light-brown
+
+          {%- if forloop.first %} bm-bdr-top{%- endif -%}"
+      role="none"
+    >
+
+      {%- assign bm_link_classes = "opacity-hover text-decoration-none d-block px-3 py-3" -%}
+      {%- assign title_content = link.title -%}
+
+      {%- if link.levels > 0 %}
+        {%- assign bm_link_classes = bm_link_classes | append: ' flex-grow-1' -%}
+      {% endif -%}
+
+      {%- if link.levels > 0 %}
+        <span class="d-flex align-items-center">
+      {% endif -%}
+
+      {%- render 'bm-link',
+        bm_link_role: "menuitem",
+        bm_link_title: title_content,
+        bm_link_classes: bm_link_classes,
+        bm_link_url: link.url,
+        bm_link_content: title_content -%}
+
+      {%- if link.levels > 0 -%}
+        {%- assign formatted_title = title_content | sha1 -%}
+        {%- assign data_target = "mobile-sub-menu-" | append: formatted_title -%}
+
+        {%- capture button_attributes -%}
+          data-target="{{ data_target }}"
+          aria-controls="{{ data_target -}}"
+          aria-expanded="false"
+        {%- endcapture -%}
+
+        {%- capture button_content -%}
+          {%- render 'bm-icon-template',
+            bm_icon: "icon-chevron-right",
+            bm_icon_classes: "d-block",
+            icon_classes: "d-block bm-icon__size--small" -%}
+        {%- endcapture -%}
+
+        {%- render 'bm-btn',
+          button_attributes: button_attributes,
+          button_classes: "bm-btn--no-styles p-3 pop-over-btn closed-pop-over"
+          button_content: button_content -%}
+
+        </span>
+
+        {%- render 'mobile-sub-sub-menu',
+          data_target: data_target,
+          parent_link: link -%}
+
+      {%- endif -%}
+
+    </li>
+
+  {%- endfor -%}
+
+</ul>

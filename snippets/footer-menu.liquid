@@ -1,0 +1,56 @@
+{%- assign footer_menu_title = footer_menu.title -%}
+{%- assign footer_menu_links = footer_menu.links -%}
+
+{%- if text_color != blank and enable_styles -%}
+  {%- capture bm_link_styles -%}
+    color: {{ text_color }};
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if bm_link_classes != blank -%}
+  {%- assign bm_link_classes = bm_link_classes
+    | append: " text-decoration-none d-block px-1 py-01 fw-light bm-fonts fs-7" -%}
+{%- endif -%}
+
+{%- if footer_menu_links != blank -%}
+  <nav>
+    <ul
+      class="list-type-none mt-0 mb-3 mb-sm-0 ps-0 d-flex flex-column"
+      aria-label="{{- shop.name }} {{ footer_menu.title | downcase }} menu"
+      aria-orientation="vertical"
+      role="menu"
+    >
+
+      {%- for link in footer_menu_links -%}
+
+        {%- if footer_menu_title and
+          show_title and
+          forloop.first -%}
+          <li
+            class="d-block p-1 fw-light bm-fonts fs-7"
+            role="none"
+
+            {%- if text_color != blank and enable_styles -%}
+              style="color: {{ text_color }};"
+            {%- endif -%}
+          >
+            {{- footer_menu_title -}}
+          </li>
+        {%- endif -%}
+
+        <li role="none">
+
+          {%- render 'bm-link',
+            bm_link_role: "menuitem",
+            bm_link_title: link.title,
+            bm_link_classes: bm_link_classes,
+            bm_link_url: link.url,
+            bm_link_content: link.title,
+            bm_link_styles: bm_link_styles -%}
+
+        </li>
+      {%- endfor -%}
+
+    </ul>
+  </nav>
+{%- endif -%}

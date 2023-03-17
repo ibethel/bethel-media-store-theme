@@ -1,0 +1,177 @@
+.bm-btn {
+  border: $borderSize solid;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $baseFontSize - 0.1875; /* 13px */
+  margin: 0;
+  padding: $gutterSmaller;
+  text-align: center;
+  text-decoration: none;
+  transition: all $siteTransition ease-in-out;
+
+  &.bm-btn--link {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    text-decoration: underline;
+  }
+
+  &--no-styles {
+    background: none;
+    border: none;
+
+    &.disabled {
+      color: $grey20;
+      text-decoration: line-through;
+    }
+  }
+
+  &--regular {
+    background: $grey20;
+    border-color: $grey20;
+  }
+
+  &.bm-btn--primary {
+    background: $bmBrown;
+    border-color: $bmBrown;
+    color: $bmVerylightBrown;
+  }
+
+  &.bm-btn--secondary {
+    background: $bmVerylightBrown;
+    border-color: $bmBrown;
+    color: $bmBrown;
+  }
+
+  &--small {
+    font-size: $fontSize8;
+    padding-bottom: $gutterSmall;
+    padding-left: $gutterMedium;
+    padding-right: $gutterMedium;
+    padding-top: $gutterSmall;
+  }
+
+  &--medium {
+    font-size: $baseFontSize;
+    min-height: $buttonHeightMedium;
+    padding-bottom: $gutterMediumSmall;
+    padding-left: $gutterMedium;
+    padding-right: $gutterMedium;
+    padding-top: $gutterMediumSmall;
+  }
+
+  &--large {
+    font-size: $h5FontSize;
+    min-height: $buttonHeightLarge;
+    padding-bottom: $gutter;
+    padding-left: $gutterMedium;
+    padding-right: $gutterMedium;
+    padding-top: $gutter;
+  }
+
+  &.bm-btn-sm {
+    &--large {
+      @include media-query($min, $phone + 1) {
+        height: $buttonHeightLarge;
+        min-height: $buttonHeightLarge;
+        padding-bottom: $gutter;
+        padding-left: $gutterMedium;
+        padding-right: $gutterMedium;
+        padding-top: $gutter;
+      }
+    }
+
+    &--medium {
+      @include media-query($min, $phone + 1) {
+        height: $buttonHeightMedium;
+        min-height: $buttonHeightMedium;
+        padding-bottom: $gutterMediumSmall;
+        padding-left: $gutterMedium;
+        padding-right: $gutterMedium;
+        padding-top: $gutterMediumSmall;
+      }
+    }
+
+    &--none {
+      @include media-query($min, $phone + 1) {
+        height: unset;
+        min-height: unset;
+        padding-bottom: unset;
+        padding-left: unset;
+        padding-right: unset;
+        padding-top: unset;
+      }
+    }
+
+    &--small {
+      @include media-query($min, $phone + 1) {
+        height: unset;
+        min-height: unset;
+        padding-bottom: $gutterSmall;
+        padding-left: $gutterMedium;
+        padding-right: $gutterMedium;
+        padding-top: $gutterSmall;
+      }
+    }
+  }
+
+  &.bm-btn-xl {
+    &--large {
+      @include media-query($min, $desktop + 1) {
+        height: $buttonHeightLarge;
+        min-height: $buttonHeightLarge;
+        padding-bottom: $gutter;
+        padding-left: $gutterMedium;
+        padding-right: $gutterMedium;
+        padding-top: $gutter;
+      }
+    }
+
+    &--medium {
+      @include media-query($min, $desktop + 1) {
+        height: $buttonHeightMedium;
+        min-height: $buttonHeightMedium;
+        padding-bottom: $gutterMediumSmall;
+        padding-left: $gutterMedium;
+        padding-right: $gutterMedium;
+        padding-top: $gutterMediumSmall;
+      }
+    }
+
+    &--none {
+      @include media-query($min, $desktop + 1) {
+        height: unset;
+        min-height: unset;
+        padding-bottom: unset;
+        padding-left: unset;
+        padding-right: unset;
+        padding-top: unset;
+      }
+    }
+
+    &--small {
+      @include media-query($min, $desktop + 1) {
+        height: unset;
+        min-height: unset;
+        padding-bottom: $gutterSmall;
+        padding-left: $gutterMedium;
+        padding-right: $gutterMedium;
+        padding-top: $gutterSmall;
+      }
+    }
+  }
+
+  &.disabled {
+    background: $grey20;
+    border-color: $grey20;
+    color: $grey10;
+    cursor: default;
+    pointer-events: none;
+    text-decoration: line-through;
+  }
+
+  .bm-btn__wrapper {
+    height: 100%;
+  }
+}

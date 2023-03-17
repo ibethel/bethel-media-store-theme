@@ -1,0 +1,146 @@
+.p {
+  &-01 {
+    padding: $gutterSmaller2 !important;
+  }
+
+  &y {
+    &-01 {
+      padding-bottom: $gutterSmaller2 !important;
+      padding-top: $gutterSmaller2 !important;
+    }
+  }
+
+  &b {
+    &-01 {
+      padding-bottom: $gutterSmaller2 !important;
+    }
+  }
+
+  &t {
+    &-01 {
+      padding-top: $gutterSmaller2 !important;
+    }
+
+    &-100 {
+      padding-top: 100% !important;
+    }
+  }
+}
+
+.mb-minus {
+  &-1 {
+    margin-bottom: -$gutterSmaller !important;
+  }
+
+  &-2 {
+    margin-bottom: -$gutterSmall !important;
+  }
+
+  &-3 {
+    margin-bottom: -$gutter !important;
+  }
+
+  &-4 {
+    margin-bottom: -$gutterMedium !important;
+  }
+
+  &-5 {
+    margin-bottom: -$gutterLarge !important;
+  }
+
+  &-sm {
+    &-1 {
+      @include media-query($min, $phone + 1) {
+        margin-bottom: -$gutterSmaller !important;
+      }
+    }
+
+    &-2 {
+      @include media-query($min, $phone + 1) {
+        margin-bottom: -$gutterSmall !important;
+      }
+    }
+
+    &-3 {
+      @include media-query($min, $phone + 1) {
+        margin-bottom: -$gutter !important;
+      }
+    }
+
+    &-4 {
+      @include media-query($min, $phone + 1) {
+        margin-bottom: -$gutterMedium !important;
+      }
+    }
+
+    &-5 {
+      @include media-query($min, $phone + 1) {
+        margin-bottom: -$gutterLarge !important;
+      }
+    }
+  }
+
+  &-xl {
+    &-1 {
+      @include media-query($min, $desktop + 1) {
+        margin-bottom: -$gutterSmaller !important;
+      }
+    }
+
+    &-2 {
+      @include media-query($min, $desktop + 1) {
+        margin-bottom: -$gutterSmall !important;
+      }
+    }
+
+    &-3 {
+      @include media-query($min, $desktop + 1) {
+        margin-bottom: -$gutter !important;
+      }
+    }
+
+    &-4 {
+      @include media-query($min, $desktop + 1) {
+        margin-bottom: -$gutterMedium !important;
+      }
+    }
+
+    &-5 {
+      @include media-query($min, $desktop + 1) {
+        margin-bottom: -$gutterLarge !important;
+      }
+    }
+  }
+
+  &-xxxl {
+    &-1 {
+      @include media-query($min, $maxScreen + 1) {
+        margin-bottom: -$gutterSmaller !important;
+      }
+    }
+
+    &-2 {
+      @include media-query($min, $maxScreen + 1) {
+        margin-bottom: -$gutterSmall !important;
+      }
+    }
+
+    &-3 {
+      @include media-query($min, $maxScreen + 1) {
+        margin-bottom: -$gutter !important;
+      }
+    }
+
+    &-4 {
+      @include media-query($min, $maxScreen + 1) {
+        margin-bottom: -$gutterMedium !important;
+      }
+    }
+
+    &-5 {
+      @include media-query($min, $maxScreen + 1) {
+        margin-bottom: -$gutterLarge !important;
+      }
+    }
+  }
+}

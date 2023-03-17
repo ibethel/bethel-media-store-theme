@@ -1,0 +1,139 @@
+{%- if sub_title_content != blank -%}
+  {%- if sub_title_tag == blank -%}
+    {%- assign sub_title_tag = "h5" -%}
+  {%- endif -%}
+
+  {%- if sub_title_link != blank -%}
+    <a class="bm-link text-decoration-none" href="{{ sub_title_link }}">
+  {%- endif -%}
+
+  {%- case sub_title_tag -%}
+    {%- when "h1" -%}
+
+      {%- render 'bm-sub-title-block-h1',
+        enable_sub_title_styles: enable_sub_title_styles,
+        sub_title_alignment_desk: sub_title_alignment_desk,
+        sub_title_alignment_phone: sub_title_alignment_phone,
+        sub_title_alignment_tablet: sub_title_alignment_tablet,
+        sub_title_color: sub_title_color,
+        sub_title_content: sub_title_content,
+        sub_title_font: sub_title_font,
+        sub_title_italic: sub_title_italic,
+        sub_title_margin: sub_title_margin,
+        sub_title_size: sub_title_size,
+        sub_title_tag: sub_title_tag,
+        sub_title_visibility: sub_title_visibility,
+        sub_title_weight: sub_title_weight -%}
+
+    {%- when "h2" -%}
+
+      {%- render 'bm-sub-title-block-h2',
+        enable_sub_title_styles: enable_sub_title_styles,
+        sub_title_alignment_desk: sub_title_alignment_desk,
+        sub_title_alignment_phone: sub_title_alignment_phone,
+        sub_title_alignment_tablet: sub_title_alignment_tablet,
+        sub_title_color: sub_title_color,
+        sub_title_content: sub_title_content,
+        sub_title_font: sub_title_font,
+        sub_title_italic: sub_title_italic,
+        sub_title_margin: sub_title_margin,
+        sub_title_size: sub_title_size,
+        sub_title_tag: sub_title_tag,
+        sub_title_visibility: sub_title_visibility,
+        sub_title_weight: sub_title_weight -%}
+
+    {%- when "h4" -%}
+
+      {%- render 'bm-sub-title-block-h4',
+        enable_sub_title_styles: enable_sub_title_styles,
+        sub_title_alignment_desk: sub_title_alignment_desk,
+        sub_title_alignment_phone: sub_title_alignment_phone,
+        sub_title_alignment_tablet: sub_title_alignment_tablet,
+        sub_title_color: sub_title_color,
+        sub_title_content: sub_title_content,
+        sub_title_font: sub_title_font,
+        sub_title_italic: sub_title_italic,
+        sub_title_margin: sub_title_margin,
+        sub_title_size: sub_title_size,
+        sub_title_tag: sub_title_tag,
+        sub_title_visibility: sub_title_visibility,
+        sub_title_weight: sub_title_weight -%}
+
+    {%- when "h5" -%}
+
+      {%- render 'bm-sub-title-block-h5',
+        enable_sub_title_styles: enable_sub_title_styles,
+        sub_title_alignment_desk: sub_title_alignment_desk,
+        sub_title_alignment_phone: sub_title_alignment_phone,
+        sub_title_alignment_tablet: sub_title_alignment_tablet,
+        sub_title_color: sub_title_color,
+        sub_title_content: sub_title_content,
+        sub_title_font: sub_title_font,
+        sub_title_italic: sub_title_italic,
+        sub_title_margin: sub_title_margin,
+        sub_title_size: sub_title_size,
+        sub_title_tag: sub_title_tag,
+        sub_title_visibility: sub_title_visibility,
+        sub_title_weight: sub_title_weight -%}
+
+    {%- when "h6" -%}
+
+      {%- render 'bm-sub-title-block-h6',
+        enable_sub_title_styles: enable_sub_title_styles,
+        sub_title_alignment_desk: sub_title_alignment_desk,
+        sub_title_alignment_phone: sub_title_alignment_phone,
+        sub_title_alignment_tablet: sub_title_alignment_tablet,
+        sub_title_color: sub_title_color,
+        sub_title_content: sub_title_content,
+        sub_title_font: sub_title_font,
+        sub_title_italic: sub_title_italic,
+        sub_title_margin: sub_title_margin,
+        sub_title_size: sub_title_size,
+        sub_title_tag: sub_title_tag,
+        sub_title_visibility: sub_title_visibility,
+        sub_title_weight: sub_title_weight -%}
+
+    {%- when "text" -%}
+
+      {%- render 'bm-sub-title-block-text',
+        enable_sub_title_styles: enable_sub_title_styles,
+        sub_title_alignment_desk: sub_title_alignment_desk,
+        sub_title_alignment_phone: sub_title_alignment_phone,
+        sub_title_alignment_tablet: sub_title_alignment_tablet,
+        sub_title_color: sub_title_color,
+        sub_title_content: sub_title_content,
+        sub_title_font: sub_title_font,
+        sub_title_italic: sub_title_italic,
+        sub_title_margin: sub_title_margin,
+        sub_title_size: sub_title_size,
+        sub_title_tag: sub_title_tag,
+        sub_title_visibility: sub_title_visibility,
+        sub_title_weight: sub_title_weight -%}
+
+    {%- else -%}
+
+      {%- render 'bm-sub-title-block-h3',
+        enable_sub_title_styles: enable_sub_title_styles,
+        sub_title_alignment_desk: sub_title_alignment_desk,
+        sub_title_alignment_phone: sub_title_alignment_phone,
+        sub_title_alignment_tablet: sub_title_alignment_tablet,
+        sub_title_color: sub_title_color,
+        sub_title_content: sub_title_content,
+        sub_title_font: sub_title_font,
+        sub_title_italic: sub_title_italic,
+        sub_title_margin: sub_title_margin,
+        sub_title_size: sub_title_size,
+        sub_title_tag: sub_title_tag,
+        sub_title_visibility: sub_title_visibility,
+        sub_title_weight: sub_title_weight -%}
+
+  {%- endcase -%}
+
+  {%- if sub_title_link != blank -%}
+    </a>
+  {%- endif -%}
+{%- endif -%}
+
+
+
+

@@ -1,0 +1,15 @@
+{%- assign favorites_list_size = customer.metafields.customer_fields.data.favorites_list.size -%}
+
+{%- if favorites_list_size > 0 -%}
+  <span
+    class="bm-wish-counter fst-normal
+
+      {%- if icon_classes != blank -%}
+        {{- icon_classes | prepend: ' ' -}}
+      {%- endif -%}"
+    data-count="{{ favorites_list_size }}"
+  >
+    {{- favorites_list_size -}}
+  </span>
+{%- endif -%}
+

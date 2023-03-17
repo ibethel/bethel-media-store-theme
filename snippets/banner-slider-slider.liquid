@@ -1,0 +1,80 @@
+{%- if interval != blank -%}
+  {%- assign interval = interval | times: 1000 -%}
+{%- endif -%}
+
+<div
+  class="splide"
+  data-settings='{%- render "helper-slider-settings",
+    arrows: false,
+    autoplay: autoplay,
+    autoscroll: false,
+    pagination: true,
+    rewind: rewind,
+    speed: speed,
+    interval: interval -%}'
+>
+  <div class="splide__track">
+    <ul class="splide__list">
+
+      {%- for block in section_blocks -%}
+
+        {%- case block.type -%}
+          {%- when "banner_slide" -%}
+
+            <li class="splide__slide col-12">
+
+              {%- render 'banner-slider-item',
+                block: block,
+                banner_image_desk: block.settings.banner_image_desk,
+                banner_image_max: block.settings.banner_image_max,
+                banner_image_phone: block.settings.banner_image_phone
+                banner_image_tablet: block.settings.banner_image_tablet,
+                content_padding_desk: block.settings.content_padding_desk,
+                content_padding_phone: block.settings.content_padding_phone,
+                content_padding_tablet: block.settings.content_padding_tablet,
+                content_width_desk: block.settings.content_width_desk,
+                content_width_phone: block.settings.content_width_phone,
+                content_width_tablet: block.settings.content_width_tablet,
+                horiz_align_desk: block.settings.horiz_align_desk,
+                horiz_align_phone: block.settings.horiz_align_phone,
+                horiz_align_tablet: block.settings.horiz_align_tablet,
+                img_link: block.settings.img_link,
+                overlay: block.settings.overlay,
+                slide_html: block.settings.slide_html,
+                text_alignment_desk: block.settings.text_alignment_desk,
+                text_alignment_phone: block.settings.text_alignment_phone,
+                text_alignment_tablet: block.settings.text_alignment_tablet,
+                vert_align_desk: block.settings.vert_align_desk,
+                vert_align_phone: block.settings.vert_align_phone,
+                vert_align_tablet: block.settings.vert_align_tablet -%}
+
+            </li>
+
+          {%- when "section_video" -%}
+
+            <li class="splide__slide col-12">
+              {%- assign thumbnail = block.settings.thumbnail -%}
+
+              {% if thumbnail != blank %}
+                {%- assign thumbnail_url = block.settings.thumbnail | img_url: 'master' -%}
+              {% endif %}
+
+              {%- render 'bm-video',
+                autoplay: block.settings.autoplay,
+                controls: block.settings.controls,
+                interaction: block.settings.interaction,
+                loop: block.settings.loop,
+                modal: false,
+                thumbnail_url: thumbnail_url,
+                video_id: block.settings.iframe_url.id,
+                video_url: block.settings.mp4_url -%}
+
+            </li>
+
+        {%- endcase -%}
+
+      {%- endfor -%}
+
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,132 @@
+{% layout none %}
+
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    <script src="{{ 'vendor/qrcode.js' | shopify_asset_url }}" defer></script>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {%- render 'theme-fonts' -%}
+
+    {%- assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros | strip_html -%}
+
+    <title>{{ 'gift_cards.issued.title' | t: value: formatted_initial_value, shop: shop.name }}</title>
+
+    <meta name="description" content="{{ 'gift_cards.issued.subtext' | t }}">
+
+    {{ content_for_header }}
+
+    {%- render 'bundled-styles', layout: 'theme' -%}
+
+  </head>
+
+  {%- assign gift_card_balance = gift_card.balance | money -%}
+
+  <body>
+    <header class="pt-3 pt-xl-5 mb-3 mb-xl-5 text-center">
+      <span class="bm-title d-block mt-0 mb-3 ff-ivypresto bm-fonts fs-1 fw-default">{{ shop.name }}</span>
+      <h1 class="bm-title mt-0 mb-3 bm-fonts fs-1 fw-light">{{ 'gift_cards.issued.subtext' | t }}</h1>
+      <p class="fs-2 mt-0 mb-3">
+        {{- gift_card.initial_value | money -}}
+
+        {%- if gift_card.enabled == false or gift_card.expired %} - {{ 'gift_cards.issued.expired' | t }}{%- endif -%}
+      </p>
+
+      {%- if gift_card.balance != gift_card.initial_value -%}
+        <p class="fs-4 mt-0 mb-3">{{ 'gift_cards.issued.remaining_html' | t: balance: gift_card_balance }}</p>
+      {%- endif -%}
+    </header>
+
+    <main>
+      <div class="bm-page py-5">
+        <div class="bm-page__container container-xl px-3">
+          <div class="d-flex justify-content-center">
+            <div class="col-12 col-sm-8 col-xl-6">
+              <div class="bm-img__wrapper bm-img__wrapper--fixed-width d-flex justify-content-center mb-3">
+                <img
+                  class="bm-img d-block"
+                  src="{{ 'gift-card/card.svg' | shopify_asset_url }}"
+                  alt="{{ 'gift_cards.issued.subtext' | t }}"
+                  height="{{ 570 | divided_by: 1.5 }}"
+                  width="570"
+                  loading="lazy"
+                >
+              </div>
+
+              <div class="d-flex justify-content-center mb-3">
+                <div class="qr-code" data-identifier="{{ gift_card.qr_identifier }}"></div>
+              </div>
+
+              <div class="gift-card-code text-center mb-3 border-very-light-brown">
+                <span
+                  class="d-block p-2 fs-4 mt-0 fw-bold"
+                  aria-label="{{ 'gift_cards.issued.gift_card_code' | t }}"
+                >
+                  {{- gift_card.code | format_code -}}
+                </span>
+              </div>
+
+              {%- if gift_card.pass_url -%}
+                <a
+                  href="{{ gift_card.pass_url }}"
+                  class="bm-link p-2 opacity-hover text-decoration-none d-block"
+                >
+                  <img
+                    src="{{ 'gift-card/add-to-apple-wallet.svg' | shopify_asset_url }}"
+                    width="120"
+                    height="40"
+                    alt="{{ 'gift_cards.issued.add_to_apple_wallet' | t }}"
+                    loading="lazy"
+                  >
+                </a>
+              {%- endif -%}
+
+              <div class="row">
+                <div class="col-12 col-sm-6 mb-3 mb-sm-0">
+                  <a
+                    href="{{ shop.url }}"
+                    class="bm-btn bm-btn--anchor-btn d-flex align-items-center justify-content-center rounded-5 bm-fonts fs-5 rounded-5 bm-btn--primary bm-btn--large opacity-hover col-12"
+                    target="_blank"
+                    type="button"
+                  >
+                    <span class="bm-btn__wrapper d-flex align-items-center justify-content-center">
+                      <span class="bm-btn__content d-block">
+                        {{- 'gift_cards.issued.shop_link' | t -}}
+                      </span>
+                    </span>
+                  </a>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                  <button
+                    class="bm-btn bm-btn--anchor-btn d-flex align-items-center justify-content-center rounded-5 bm-fonts fs-5 rounded-5 bm-btn--primary bm-btn--large opacity-hover col-12"
+                    onclick="window.print();"
+                  >
+                    <span class="bm-btn__wrapper d-flex align-items-center justify-content-center">
+                      <span class="bm-btn__content d-block">
+                        {{ 'gift_cards.issued.print_gift_card' | t }}
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    {%- render 'theme-footer-scripts' -%}
+
+  </body>
+</html>

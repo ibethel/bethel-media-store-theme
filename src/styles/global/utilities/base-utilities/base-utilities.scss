@@ -1,0 +1,25 @@
+.list-type-none {
+  list-style: none;
+  list-style-type: none;
+}
+
+.select-tag--normalize {
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.cursor {
+  &-pointer {
+    cursor: pointer;
+  }
+
+  &-zoom-in {
+    cursor: zoom-in;
+  }
+}
+
+.height {
+  &-100 {
+    height: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+.collection-sorting__button {
+  border: 1px solid $grey20;
+  border-radius: $buttonBorderRadiusSmall;
+  min-width: 125px;
+  padding-bottom: $gutterMediumSmall;
+  padding-top: $gutterMediumSmall;
+
+  @include media-query($max, $phone) {
+    border-radius: unset;
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+.collection-sorting__select {
+  background-color: $grey40;
+  z-index: $zLevelOne;
+}
+
+.collection-sorting__item {
+  .bm-link {
+    color: $white;
+    white-space: nowrap;
+  }
+
+  &.selected {
+    .bm-link {
+      opacity: 1;
+    }
+  }
+}

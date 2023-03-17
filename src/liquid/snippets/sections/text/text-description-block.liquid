@@ -1,0 +1,55 @@
+{%- if request.page_type == 'product' -%}
+  {%- assign current_description = product.description -%}
+  {%- elsif request.page_type == 'collection' -%}
+    {%- assign current_description = collection.description -%}
+  {%- elsif request.page_type == 'blog' -%}
+    {%- assign current_description = blog.description -%}
+  {%- elsif request.page_type == 'article' -%}
+    {%- assign current_description = article.description -%}
+  {%- elsif request.page_type == 'page' -%}
+    {%- assign current_description = page.description -%}
+{%- endif -%}
+
+<div class="text__description
+
+      {%- if description_alignment_phone != blank -%}{{- description_alignment_phone | prepend: ' ' -}}{%- endif -%}
+
+      {%- if description_alignment_tablet != blank -%}{{- description_alignment_tablet | prepend: ' ' -}}{%- endif -%}
+
+      {%- if description_alignment_desk != blank -%}{{- description_alignment_desk | prepend: ' ' -}}{%- endif -%}
+
+      {%- if description_line_height != blank -%}{{- description_line_height | prepend: ' ' -}}{%- endif -%}
+
+      {%- if description_margin != blank -%}{{- description_margin | prepend: ' ' -}}{%- endif -%}
+
+      {%- if description_font != blank %} {{ description_font }}{%- endif -%}
+
+      {%- if description_italic %} fst-italic{%- endif -%}
+
+      {%- if description_classes != blank %}{{- description_classes | prepend: ' ' -}}{%- endif -%}
+
+      {%- if description_size != blank or
+        description_size_tablet != blank or
+        description_size_desk != blank %} bm-fonts{%- endif -%}
+
+      {%- if description_size != blank %} {{ description_size }}{%- endif -%}
+
+      {%- if description_size_tablet != blank %} {{ description_size_tablet }}{%- endif -%}
+
+      {%- if description_size_desk != blank %} {{ description_size_desk }}{%- endif -%}
+
+      {%- if description_weight != blank -%}{{- description_weight | prepend: ' ' -}}{%- endif -%}
+
+      {%- if description_visibility != blank %}{{- description_visibility | replace: '_', ' ' | prepend: ' ' -}}{%- endif -%}"
+
+    {%- if enable_description_styles -%}
+      style="
+        {%- if description_color != blank -%}
+          color: {{- description_color -}};
+        {%- endif -%}
+      "
+    {%- endif -%}
+
+>
+  {{- current_description -}}
+</div>

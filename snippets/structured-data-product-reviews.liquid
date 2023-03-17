@@ -1,0 +1,30 @@
+{%- if product.metafields.spr.reviews != blank -%}
+  {%- capture review_data -%}{{ product.metafields.spr.reviews }}{%- endcapture -%}
+
+  {% assign review_data_array_1 = review_data | split: '"reviewCount":' %}
+  {% assign review_data_array_2 = review_data_array_1.last | split: '"ratingValue":' %}
+  {%- assign review_data_array_3 = review_data_array_2.last | split: '"itemReviewed":' -%}
+  {%- assign review_rating = review_data_array_3.first
+    | strip
+    | remove: '"'
+    | remove: ','
+    | remove: ' '
+    | times: 1
+    | round: 2 -%}
+  {%- assign review_count = review_data_array_2.first
+    | strip
+    | remove: '"'
+    | remove: ','
+    | remove: ' '
+    | times: 1 -%}
+
+
+  {%- if review_count != blank and review_rating != blank -%}
+    ,"aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": {{ review_rating | json }},
+      "ratingCount": {{ review_count  | json }}
+    }
+  {%- endif -%}
+
+{%- endif -%}

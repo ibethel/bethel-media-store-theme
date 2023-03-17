@@ -1,0 +1,27 @@
+@import "../../helpers/variables.scss";
+@import "../../helpers/mixins.scss";
+
+.bm-modal {
+  &.bm-modal--full-width {
+    width: 100%;
+  }
+}
+
+.bm-modal__container {
+  &.overlow-y-unset {
+    overflow-y: unset !important;
+  }
+}
+
+.bm-modal__html-container {
+  .bm-modal__container-image-zoom & {
+    @include media-query($max, $desktop) {
+      max-height: 100vh;
+      overflow-x: auto;
+    }
+
+    @include media-query($min, $desktop + 1) {
+      overflow: unset;
+    }
+  }
+}

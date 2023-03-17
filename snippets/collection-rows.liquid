@@ -1,0 +1,36 @@
+<div class="collection-rows__container">
+
+  {%- if collection.products.size > 1 -%}
+
+    {%- render 'collection-rows-main',
+      compare_price_color: compare_price_color,
+      enable_contain: enable_contain,
+      enable_styles: enable_styles,
+      font_italic: font_italic,
+      font_size: font_size,
+      font_weight: font_weight,
+      item_widths_desk: item_widths_desk,
+      item_widths_max: item_widths_max,
+      item_widths_phone: item_widths_phone,
+      item_widths_tablet: item_widths_tablet,
+      page_item_limit: page_item_limit,
+      pagination_type: pagination_type,
+      price_color: price_color,
+      price_color_sale: price_color_sale,
+      section_collection: section_collection,
+      section_blocks: section_blocks,
+      show_background: show_background,
+      text_color: text_color -%}
+
+    {%- else -%}
+      <p>
+        There are no products in this collection. {% render 'bm-link',
+          bm_link_title: "Continue Shopping",
+          bm_link_classes: "opacity-hover",
+          bm_link_url: "/collections/all",
+          bm_link_content: "Continue Shopping" -%}
+
+      </p>
+  {%- endif -%}
+
+</div>

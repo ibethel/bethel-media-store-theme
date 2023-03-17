@@ -1,0 +1,71 @@
+{
+  "name": "bethelshop20",
+  "version": "1.0.0",
+  "description": "Shopify 2.0 theme for Bethel Shop",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "NODE_ENV=development webpack watch",
+    "build:dev": "NODE_ENV=development webpack",
+    "build": "webpack",
+    "deploy": "webpack && theme deploy",
+    "reset": "rm -rf /dist && webpack && theme deploy"
+  },
+  "author": "@krjo",
+  "license": "MIT",
+  "engines": {
+    "node": "16.14.0",
+    "npm": "8.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/runtime": "^7.17.8",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.4",
+    "copy-webpack-plugin": "^6.4.1",
+    "css-loader": "^6.7.1",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "glob": "^7.2.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass": "^7.0.1",
+    "postcss-loader": "^6.2.1",
+    "postcss-scss": "^4.0.4",
+    "pre-commit": "^1.2.2",
+    "sass-loader": "^12.6.0",
+    "standard": "^17.0.0",
+    "stylelint": "^14.6.1",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.2.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-shell-plugin-next": "^2.2.2"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.5",
+    "@splidejs/splide": "^3.6.12",
+    "@splidejs/splide-extension-auto-scroll": "^0.3.7",
+    "axios": "^0.26.1",
+    "bootstrap": "^5.1.3",
+    "dompurify": "^2.3.6",
+    "lazysizes": "^5.3.2",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.1",
+    "sweetalert2": "^11.4.8"
+  },
+  "pre-commit": [
+    "build"
+  ]
+}

@@ -1,0 +1,63 @@
+{%- if is_a_section -%}
+  <section
+    class="bm-btn-section {{ section_margin -}}
+
+      {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+      {%- if enable_background and background_color != blank -%}
+        {%- if enable_contain %} py-3 py-xl-5
+          {%- else %} p-3 p-xl-5
+        {%- endif -%}
+      {%- endif %}"
+
+    {%- if enable_background and background_color != blank -%}
+      style="background-color: {{ background_color }};"
+    {%- endif -%}
+  >
+  {%- else -%}
+    <div
+      class="bm-btn-section {{ section_margin -}}
+
+        {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+        {%- if enable_background and background_color != blank -%}
+          {%- if enable_contain %} py-3 py-xl-5
+            {%- else %} p-3 p-xl-5
+          {%- endif -%}
+        {%- endif %}"
+
+      {%- if enable_background and background_color != blank -%}
+        style="background-color: {{ background_color }};"
+      {%- endif -%}
+    >
+{%- endif -%}
+
+  <div
+    class="text__container
+
+      {{- text_alignment_phone | prepend: ' ' -}}
+      {{- text_alignment_tablet | prepend: ' ' -}}
+      {{- text_alignment_desk | prepend: ' ' -}}
+      {%- if enable_contain %} container-xl px-3{% else %} px-3{% endif %}"
+  >
+
+    {%- render 'button-blocks',
+      aria_labelledby: aria_labelledby,
+      content_width_desk: content_width_desk,
+      content_width_phone: content_width_phone,
+      content_width_tablet: content_width_tablet,
+      horiz_align_desk: horiz_align_desk,
+      horiz_align_phone: horiz_align_phone,
+      horiz_align_tablet: horiz_align_tablet,
+      section_blocks: section_blocks,
+      text_alignment_desk: text_alignment_desk,
+      text_alignment_tablet: text_alignment_tablet,
+      text_alignment_phone: text_alignment_phone -%}
+
+  </div>
+
+{%- if is_a_section -%}
+  </section>
+  {%- else -%}
+    </div>
+{%- endif -%}

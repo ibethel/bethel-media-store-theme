@@ -1,0 +1,7 @@
+{%- if title_blocks != blank -%}
+  {%- for title in title_blocks -%}
+    {%- if title.settings.is_section_title -%}
+      true
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

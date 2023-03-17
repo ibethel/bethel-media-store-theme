@@ -1,0 +1,61 @@
+{%- assign show_background = false -%}
+{%- if enable_background and background_color != blank -%}
+  {%- assign show_background = true -%}
+{%- endif -%}
+
+{%- assign products_title = 'products.name' | t -%}
+{%- assign formatted_title = products_title | sha1 -%}
+{%- assign title_labelledby = "products-title-" | append: formatted_title -%}
+
+<div
+  class="offset-collection-row {{ section_margin -}}
+
+    {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+    {%- if show_background -%}
+      {%- if enable_contain %} py-3 py-xl-5
+        {%- else %} p-3 p-xl-5
+      {%- endif -%}
+    {%- endif %}"
+
+  {%- if show_background -%}
+    style="background-color: {{ background_color }};"
+  {%- endif -%}
+>
+  <div
+    class="offset-collection-row__container
+
+      {%- if enable_contain %} container-xl px-3
+        {%- else -%}
+          {%- if show_background == false %} px-3 px-xl-5{%- endif -%}
+      {%- endif -%}"
+
+    {%- if enable_sorting -%}
+      aria-labelledby="{{- title_labelledby -}}"
+    {%- endif -%}
+  >
+
+    {%- if enable_sorting -%}
+
+      {%- render 'offset-collection-management', title_labelledby: title_labelledby -%}
+
+    {%- endif -%}
+
+    {%- if collection.products != blank -%}
+
+      {%- render 'offset-collection-row-main',
+        enable_offset: enable_offset,
+        hide_after_first_page: hide_after_first_page,
+        item_offset: item_offset,
+        item_width_desk: item_widths_desk,
+        item_width_max: item_widths_max,
+        item_width_phone: item_widths_phone,
+        item_width_tablet: item_widths_tablet,
+        pagination_type: pagination_type,
+        page_item_limit: page_item_limit -%}
+
+    {%- endif -%}
+
+  </div>
+</div>
+

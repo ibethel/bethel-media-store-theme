@@ -1,0 +1,46 @@
+{%- assign cart_title = 'cart.title' | t -%}
+
+{%- assign show_background = false -%}
+{%- if enable_background and background_color != blank -%}
+  {%- assign show_background = true -%}
+{%- endif -%}
+
+<section
+  class="bm-cart {{ section_margin -}}
+
+    {%- if show_background -%}
+      {%- if enable_contain %} py-3 py-xl-5
+        {%- else %} p-3 p-xl-5
+      {%- endif -%}
+    {%- endif -%}"
+
+  {%- if show_background -%}
+    style="background-color: {{- background_color -}};"
+  {%- endif -%}
+>
+  <div
+    class="bm-cart__container
+
+      {%- if enable_contain %} container-xl px-3
+        {%- else -%}
+          {%- if show_background == false %} px-3 px-xl-5{%- endif -%}
+      {%- endif -%}"
+  >
+    <header>
+
+      {%- render 'bm-title-block',
+        title_alignment_phone: "text-center",
+        title_content: cart_title,
+        title_font: "ff-ivypresto",
+        title_margin: "mb-5",
+        title_size: "fs-1",
+        title_tag: "h1",
+        title_weight: "fw-light" -%}
+
+    </header>
+
+    <div id="root">
+      <div>Loading your items...</div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+{%- assign checkout_btn = "cart.checkout_btn" | t -%}
+{%- assign order_summary_title = "cart.order_summary_title" | t -%}
+{%- assign subtotal_title = "cart.subtotal" | t -%}
+
+<div class="cart-recap col-12 col-xl-4">
+  <div class="bm-bg-grey-5 p-3 mb-3 mb-xl-4">
+
+    {%- render 'bm-title-block',
+      title_content: order_summary_title,
+      title_margin: "mb-3",
+      title_size: "fs-7" -%}
+
+    <hr class="mt-0 mb-3 p-0 border-color-grey-10">
+
+    <p class="cart-recap__total d-flex justify-content-between m-0 fs-7">
+      <span>{{ subtotal_title }}</span>
+      <span class="cart-recap__total-price">{{ cart.total_price | money }}</span>
+    </p>
+  </div>
+
+  {%- render 'bm-btn-block',
+    button_attributes: button_attributes,
+    button_alignment_desk: "justify-content-xl-center",
+    button_alignment_phone: "justify-content-center",
+    button_alignment_tablet: "justify-content-sm-center",
+    button_classes: "rounded-5 fs-7 col-12",
+    button_content: checkout_btn,
+    button_name: "checkout",
+    button_size: "large",
+    button_size_desk: "large",
+    button_size_tablet: "large",
+    button_title: checkout_btn,
+    button_type: "submit",
+    button_template: "primary" -%}
+
+</div>

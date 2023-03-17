@@ -1,0 +1,123 @@
+{%- assign bm_order_title = "order.title" | t: name: order.name -%}
+{%- assign formatted_title = bm_order_title | sha1 -%}
+{%- assign title_id = bm_order_title | handleize | append: '-' | append: formatted_title -%}
+
+<section
+  class="bm-order-summary overflow-auto"
+  aria-label="{{ bm_order_title }}"
+  aria-labelledby="{{ title_id }}"
+>
+
+  {%- render 'bm-title-block',
+    title_content: bm_order_title,
+    title_font: "ff-ivypresto",
+    title_id: title_id,
+    title_margin: "mb-0",
+    title_size: "fs-1",
+    title_tag: "h2" -%}
+
+  {%- capture date_time -%}
+    <time datetime="{{- order.created_at | date: format: 'long' -}}">
+      {{- order.created_at | date: format: 'long' -}}
+    </time>
+  {%- endcapture -%}
+
+  {%- render 'bm-title-block',
+    title_content: date_time,
+    title_margin: "mb-3",
+    title_size: "fs-6",
+    title_tag: "h4" -%}
+
+  <table class="col-sm-12">
+    <thead>
+      <tr>
+        <th class="fw-bold text-start text-nowrap">
+          {{- 'order.product' | t -}}
+        </th>
+        <th class="fw-bold text-start text-nowrap">
+          {{- 'order.sku' | t -}}
+        </th>
+        <th class="fw-bold text-start text-nowrap">
+          {{- 'order.price' | t -}}
+        </th>
+        <th class="fw-bold text-start text-nowrap">
+          {{- 'order.quantity' | t -}}
+        </th>
+        <th class="fw-bold text-start text-nowrap">
+          {{- 'order.total' | t -}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {%- for line_item in order.line_items -%}
+        <tr>
+          <td class="py-1 pe-1">
+
+            {%- render 'order-summary-product-cell', line_item: line_item -%}
+
+          </td>
+          <td class="py-1 pe-1 text-nowrap">
+            {{- line_item.sku -}}
+          </td>
+          <td class="py-1 pe-1 text-nowrap">
+
+            {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
+              <del>
+                {{- line_item.original_price | money -}}
+              </del>
+            {%- endif -%}
+
+            <span>
+              {{- line_item.final_price | money -}}
+            </span>
+
+            {%- if line_item.unit_price_measurement -%}
+              {%- assign reference_value = line_item.unit_price_measurement.reference_value -%}
+              {%- assign price_separator = "general.pricing.unit_price_separator" | t -%}
+
+              <span>
+
+                {%- capture unit_price_base_unit -%}
+                  {%- if reference_value != 1 -%}
+                    {{- reference_value -}}
+                  {%- endif -%}
+                  {{ line_item.unit_price_measurement.reference_unit }}
+                {%- endcapture -%}
+
+                {{ line_item.unit_price | money }} {{ price_separator }} {{ unit_price_base_unit -}}
+              </span>
+
+            {%- endif -%}
+
+          </td>
+          <td class="py-1 pe-1 text-nowrap">
+            {{- line_item.quantity -}}
+          </td>
+          <td class="py-1 pe-1 text-nowrap">
+
+            {%- if line_item.original_line_price != line_item.final_line_price -%}
+              <del>
+                {{- line_item.original_line_price | money -}}
+              </del>
+
+              <span>
+                {{- line_item.final_line_price | money -}}
+              </span>
+              {%- else -%}
+                {{- line_item.original_line_price | money -}}
+            {%- endif -%}
+
+          </td>
+        </tr>
+      {%- endfor -%}
+
+    </tbody>
+
+    <tfoot>
+
+      {%- render 'order-summary-footer' -%}
+
+    </tfoot>
+  </table>
+</section>

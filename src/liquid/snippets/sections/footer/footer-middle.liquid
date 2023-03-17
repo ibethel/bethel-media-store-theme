@@ -1,0 +1,59 @@
+{%- if footer_middle != blank -%}
+  {%- assign enable_styles = footer_middle.settings.enable_styles -%}
+  {%- assign footer_menu_1 = footer_middle.settings.footer_menu_1 -%}
+  {%- assign footer_menu_2 = footer_middle.settings.footer_menu_2 -%}
+  {%- assign footer_menu_3 = footer_middle.settings.footer_menu_3 -%}
+  {%- assign enable_footer_newsletter = footer_middle.settings.enable_footer_newsletter -%}
+  {%- assign text_color = footer_middle.settings.text_color -%}
+
+  <div
+    class="bm-footer-middle
+
+      {%- if footer_bottom != blank %} mb-3 mb-xl-5{%- endif -%}"
+  >
+    <div class="bm-footer-middle__container d-sm-flex flex-sm-row justify-content-between">
+
+      {%- if footer_menu_1 != blank -%}
+
+        {%- render 'footer-menu',
+          bm_link_classes: "opacity-hover",
+          enable_styles: enable_styles,
+          footer_menu: footer_menu_1,
+          show_title: false,
+          text_color: text_color -%}
+
+      {%- endif -%}
+
+      {%- if footer_menu_2 != blank -%}
+
+        {%- render 'footer-menu',
+          bm_link_classes: "opacity-75-hover",
+          enable_styles: enable_styles,
+          footer_menu: footer_menu_2,
+          show_title: true,
+          text_color: text_color -%}
+
+      {%- endif -%}
+
+      {%- if footer_menu_3 != blank -%}
+
+        {%- render 'footer-menu',
+          bm_link_classes: "opacity-75-hover",
+          enable_styles: enable_styles,
+          footer_menu: footer_menu_3,
+          show_title: true,
+          text_color: text_color -%}
+
+      {%- endif -%}
+
+      {%- if enable_footer_newsletter -%}
+
+        {%- render 'footer-newsletter',
+          footer_middle: footer_middle,
+          text_color: text_color -%}
+
+      {%- endif -%}
+
+    </div>
+  </div>
+{%- endif -%}

@@ -1,0 +1,17 @@
+.bm-hide-scroll {
+  visibility: hidden;
+
+  .splide.is-initialized,
+  .splide.is-rendered {
+    visibility: hidden;
+  }
+
+  &.animate-element {
+    visibility: visible;
+
+    .splide.is-initialized,
+    .splide.is-rendered {
+      visibility: visible;
+    }
+  }
+}

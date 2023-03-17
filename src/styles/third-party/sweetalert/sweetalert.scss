@@ -1,0 +1,23 @@
+@import "../../helpers/variables.scss";
+
+.swal2-container {
+  .swal2-html-container {
+    color: $black;
+    font-size: unset;
+    font-weight: unset;
+    justify-content: unset;
+    line-height: unset;
+    margin: 0;
+    overflow: unset;
+    padding: 0;
+    text-align: unset;
+    word-break: unset;
+    word-wrap: unset;
+  }
+
+  .swal2-close {
+    &:hover {
+      color: $black;
+    }
+  }
+}

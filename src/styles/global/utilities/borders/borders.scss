@@ -1,0 +1,43 @@
+.rounded-5 {
+  border-radius: 1rem;
+}
+
+.bm-bdr {
+  &-btm {
+    border-bottom: 1px solid;
+  }
+
+  &-start {
+    border-right: 1px solid;
+  }
+
+  &-top {
+    border-top: 1px solid;
+  }
+}
+
+.border-very-light-brown {
+  border-color: $bmVerylightBrown !important;
+}
+
+.border {
+  &-color {
+    &-grey {
+      &-10 {
+        border-color: $grey10;
+      }
+
+      &-20 {
+        border-color: $grey20;
+      }
+
+      &-25 {
+        border-color: $grey25 !important;
+      }
+
+      &-50 {
+        border-color: $grey50;
+      }
+    }
+  }
+}

@@ -1,0 +1,236 @@
+{%- render 'btv-footer',
+  background_color: section.settings.background_color,
+  enable_background: section.settings.enable_background,
+  enable_message_styles: section.settings.enable_message_styles,
+  enable_nav_styles: section.settings.enable_nav_styles,
+  enable_social: section.settings.enable_social,
+  enable_social_styles: section.settings.enable_social_styles,
+  footer_nav: section.settings.footer_nav,
+  logo: section.settings.logo,
+  logo_max_width: section.settings.logo_max_width,
+  message_color: section.settings.message_color,
+  message_content: section.settings.message,
+  message_font: section.settings.message_font_family,
+  message_margin: "mb-0",
+  message_size: section.settings.message_font_size,
+  message_weight: section.settings.message_font_weight,
+  nav_color: section.settings.nav_color,
+  social_color: section.settings.social_color,
+  social_facebook_link: section.settings.social_facebook_link,
+  social_instagram_link: section.settings.social_instagram_link,
+  social_twitter_link: section.settings.social_twitter_link,
+  social_youtube_link: section.settings.social_youtube_link -%}
+
+{% schema %}
+  {
+    "name": "t:sections.btv_footer.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.btv_footer.name"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_background",
+        "label": "t:sections.all.enable_background.label",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "t:sections.all.background_color.label",
+        "default": "#fff"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "t:schema_global.logo.label"
+      },
+      {
+        "type": "range",
+        "id": "logo_max_width",
+        "min": 50,
+        "max": 350,
+        "step": 5,
+        "unit": "px",
+        "label": "t:schema_global.logo.logo_max_width",
+        "default": 90
+      },
+      {
+        "type": "header",
+        "content": "t:sections.btv_footer.settings.message.label"
+      },
+      {
+        "type": "textarea",
+        "id": "message",
+        "label": "t:sections.btv_footer.settings.message.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_message_styles",
+        "label": "t:sections.all.styles.enable_styles",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "message_color",
+        "label": "t:sections.all.color.label",
+        "default": "#fff"
+      },
+      {
+        "type": "select",
+        "id": "message_font_family",
+        "label": "t:sections.all.font_family.label",
+        "options": [
+          {
+            "value": "ff-ivypresto",
+            "label": "t:sections.all.font_family.option_ivy"
+          },
+          {
+            "value": "ff-roboto",
+            "label": "t:sections.all.font_family.option_roboto"
+          },
+          {
+            "value": "ff-inter",
+            "label": "t:sections.all.font_family.option_inter"
+          },
+          {
+            "value": "ff-majesti",
+            "label": "t:sections.all.font_family.option_majesti"
+          }
+        ],
+        "default": "ff-roboto"
+      },
+      {
+        "type": "select",
+        "id": "message_font_size",
+        "label": "t:sections.all.font_size.label",
+        "options": [
+          {
+            "value": "fs-1",
+            "label": "t:sections.all.font_size.option_large"
+          },
+          {
+            "value": "fs-2",
+            "label": "t:sections.all.font_size.option_xmedium"
+          },
+          {
+            "value": "fs-3",
+            "label": "t:sections.all.font_size.option_medium"
+          },
+          {
+            "value": "fs-4",
+            "label": "t:sections.all.font_size.option_mediuml"
+          },
+          {
+            "value": "fs-5",
+            "label": "t:sections.all.font_size.option_small"
+          },
+          {
+            "value": "fs-6",
+            "label": "t:sections.all.font_size.option_smaller"
+          }
+        ],
+        "default": "fs-6"
+      },
+      {
+        "type": "select",
+        "id": "message_font_weight",
+        "label": "t:sections.all.font_weight.label",
+        "options": [
+          {
+            "value": "fw-default",
+            "label": "t:sections.all.font_weight.option_default"
+          },
+          {
+            "value": "fw-bold",
+            "label": "t:sections.all.font_weight.option_bold"
+          },
+          {
+            "value": "fw-bolder",
+            "label": "t:sections.all.font_weight.option_bolder"
+          },
+          {
+            "value": "fw-light",
+            "label": "t:sections.all.font_weight.option_light"
+          },
+          {
+            "value": "fw-lighter",
+            "label": "t:sections.all.font_weight.option_lighter"
+          }
+        ],
+        "default": "fw-default"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.btv_footer.settings.social_media.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_social",
+        "label": "t:sections.btv_footer.settings.social_media.enable_social",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_social_styles",
+        "label": "t:sections.btv_footer.settings.social_media.enable_social_styles",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "social_color",
+        "label": "t:sections.all.color.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.btv_footer.settings.social_media.links_header"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "t:schema_global.social_media.settings.facebook.label"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "t:schema_global.social_media.settings.instagram.label"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "t:schema_global.social_media.settings.youtube.label"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "t:schema_global.social_media.settings.twitter.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.btv_footer.settings.nav.label"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_nav",
+        "label": "t:sections.btv_footer.settings.nav.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_nav_styles",
+        "label": "t:sections.btv_footer.settings.nav.enable_nav_styles",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "nav_color",
+        "label": "t:sections.all.color.label"
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.btv_footer.name"
+      }
+    ]
+  }
+{% endschema %}

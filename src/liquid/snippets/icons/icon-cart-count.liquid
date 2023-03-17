@@ -1,0 +1,10 @@
+<span
+  class="bm-cart-counter fst-normal
+
+    {%- if icon_classes != blank -%}
+      {{- icon_classes | prepend: ' ' -}}
+    {%- endif -%}"
+  data-count="{{ cart.item_count }}"
+>
+  {{- cart.item_count -}}
+</span>

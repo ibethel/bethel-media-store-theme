@@ -1,0 +1,44 @@
+<div
+  id="{{ collection_filter_id }}"
+  class="bm-collection-filter d-block d-sm-flex d-xl-block sidebar-slide sidebar-slide__left-right--desk col-xl-2"
+  data-settings='{"screenLock": true}'
+>
+  <div class="bm-collection-filter__container">
+    <div class="d-flex d-xl-none justify-content-end p-3 px-sm-4">
+
+      {%- capture button_attributes -%}
+        aria-controls="{{ collection_filter_id }}"
+        aria-expanded="false"
+        aria-haspopup="true"
+        aria-label="Collection filter toggle"
+        data-target="{{ collection_filter_id }}"
+      {%- endcapture -%}
+
+      {%- capture button_content -%}
+
+        {%- render 'bm-icon-template',
+          bm_icon: "icon-close-lg",
+          bm_icon_classes: "d-block",
+          icon_classes: "d-block" -%}
+
+      {%- endcapture -%}
+
+      {%- render 'bm-btn',
+        button_attributes: button_attributes,
+        button_classes: "bm-btn--no-styles cursor-pointer sidebar-slide__button sidebar-slide-hide bm-bg-transparent bm-fonts fs-sm-9"
+        button_content: button_content -%}
+
+    </div>
+
+    <div class="bm-collection-filter__wrapper p-3 pt-0 pb-5 px-sm-4 p-xl-0">
+
+      {%- render 'filter-menu' -%}
+
+    </div>
+  </div>
+
+  <div
+    class="bm-overlay d-none d-sm-block d-xl-none sidebar-slide__button"
+    data-target="{{ collection_filter_id }}"
+  ></div>
+</div>

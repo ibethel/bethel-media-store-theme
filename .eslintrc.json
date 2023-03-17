@@ -1,0 +1,59 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:node/recommended",
+    "promise",
+    "standard"
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    },
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "requireConfigFile": false,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline"
+      }
+    ],
+    "indent": ["error", 2, { "SwitchCase": 1, "offsetTernaryExpressions": true }],
+    "jsx-quotes": ["error", "prefer-double"],
+    "linebreak-style": 1,
+    "multiline-ternary": "off",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "node/no-unpublished-require": [
+      "error",
+      {
+        "tryExtensions": [".js", ".json", ".node"]
+      }
+    ],
+    "prefer-const": ["error"],
+    "quotes": ["error", "double", { "avoidEscape": true }],
+    "react/jsx-uses-vars": "error",
+    "react/prop-types": [1, { "ignore": ["children", "className", "render"] }],
+    "semi": [2, "always"],
+    "space-before-function-paren": ["error", { "named": "never", "anonymous": "never" }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

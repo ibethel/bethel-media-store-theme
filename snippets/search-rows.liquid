@@ -1,0 +1,79 @@
+{%- if page_item_limit != blank -%}
+  {%- assign limit = page_item_limit | times: 1 -%}
+  {%- else -%}
+    {%- assign limit = 12 -%}
+{%- endif -%}
+{%- assign search_results = search.results -%}
+{%- assign placeholder_image_url = "bethel-store-placeholder-image.png" | asset_img_url: 'master' -%}
+
+{%- paginate search.results by limit -%}
+
+  <ul class="row list-type-none my-0 ps-0">
+
+    {%- for item in search.results -%}
+      {%- assign item_object_type = item.object_type -%}
+      {%- if item.variants.size == 1 -%}
+        {%- assign show_compare_price = true -%}
+      {%- endif -%}
+
+      {%- if item_object_type == "page" -%}
+        {%- assign current_image = "" -%}
+        {%- assign current_image_url = placeholder_image_url -%}
+        {%- elsif item_object_type == "article" -%}
+          {%- assign article_image = item.image -%}
+          {%- if article_image != blank -%}
+            {%- assign current_image = article_image -%}
+            {%- assign current_image_url = "" -%}
+            {%- else -%}
+              {%- assign current_image = "" -%}
+              {%- assign current_image_url = placeholder_image_url -%}
+          {%- endif -%}
+        {%- elsif item_object_type == "product" -%}
+          {%- assign product_image = item.featured_image -%}
+          {%- if product_image != blank -%}
+            {%- assign current_image = product_image -%}
+            {%- assign current_image_url = "" -%}
+            {%- else -%}
+              {%- assign current_image = "" -%}
+              {%- assign current_image_url = placeholder_image_url -%}
+          {%- endif -%}
+        {%- else -%}
+          {%- assign current_image = "" -%}
+          {%- assign current_image_url = placeholder_image_url -%}
+      {%- endif -%}
+
+      {%- render 'bm-prod-item',
+        bmpi_classes: "mb-4",
+        bmpi_img: current_image,
+        bmpi_img_url: current_image_url,
+        bmpi_title: item.title,
+        bmpi_url: item.url,
+        compare_price: item.compare_at_price,
+        compare_price_color: compare_price_color,
+        compare_price_varies: item.compare_at_price_varies,
+        enable_styles: enable_styles,
+        font_italic: font_italic,
+        font_size: font_size,
+        font_weight: font_weight,
+        price: item.price,
+        price_classes: "bm-colors-color-grey-50",
+        price_color: price_color,
+        price_color_sale: price_color_sale,
+        price_varies: item.price_varies,
+        show_compare_price: show_compare_price,
+        text_color: text_color,
+        image_widths: "180,360,540,720,900",
+        item_width_desk: item_widths_desk,
+        item_width_max: item_widths_max,
+        item_width_phone: item_widths_phone,
+        item_width_tablet: item_widths_tablet, -%}
+
+    {%- endfor -%}
+
+  </ul>
+
+  {%- if paginate.pages > 1 -%}
+    {%- render 'pagination' paginate: paginate -%}
+  {%- endif -%}
+
+{%- endpaginate -%}

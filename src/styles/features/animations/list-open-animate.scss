@@ -1,0 +1,12 @@
+.list-open-animate {
+  &--stagger-l-r {
+    > li {
+      transform: translateX(-50%);
+      transition: transform 0.2s ease-out;
+
+      &.item-animate {
+        transform: translateX(0);
+      }
+    }
+  }
+}

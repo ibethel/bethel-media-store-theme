@@ -1,0 +1,60 @@
+{%- assign bm_logo_label = shop.name
+  | append: ' - '
+  | append: 'Logo'-%}
+{%- assign bm_logo_image_alt = bm_logo_image.alt -%}
+
+{%- if bm_logo_image_alt == blank -%}
+  {%- assign bm_logo_image_alt = bm_logo_label -%}
+{%- endif -%}
+
+{%- if bm_logo_title == blank -%}
+  {%- assign bm_logo_title = shop.name -%}
+{%- endif -%}
+
+{%- assign bm_logo_image_wrapper_classes = "bm-logo__image-wrapper" -%}
+
+{%- if bm_logo_image_wrapper_additional_classes != blank -%}
+  {%- assign bm_logo_image_wrapper_classes = bm_logo_image_wrapper_classes
+    | append: ' '
+    | append: bm_logo_image_wrapper_additional_classes
+  -%}
+{%- endif -%}
+
+<div class="bm-logo" aria-label="{{- shop.name }} Logo">
+
+  {%- if bm_logo_in_header and template == 'index' -%}
+    <h1 class="m-0">
+    {%- else -%}
+      <div>
+  {%- endif -%}
+
+    {%- if bm_logo_image != blank -%}
+
+      {%- render 'bm-image'
+        bm_img: bm_logo_image,
+        bm_img_alt: bm_logo_image_alt,
+        bm_img_max_width: bm_logo_max_width,
+        bm_img_widths: '180',
+        bm_img_is_lazy: true,
+        bm_img_role: 'logo',
+        bm_img_wrapper_classes: "bm-img__wrapper--fixed-width",
+        bm_img_classes: "bm-logo__image",
+        bm_img_title: bm_logo_title,
+        bm_img_width: bm_logo_image.width,
+        bm_img_height: bm_logo_image.height -%}
+
+      {%- else -%}
+
+        <span class="fs-4 fw-bold">
+          {{- shop.name -}}
+        </span>
+    {%- endif -%}
+
+  {%- if bm_logo_in_header and template == 'index' -%}
+    </h1>
+    {%- else -%}
+      </div>
+  {%- endif -%}
+
+</div>
+

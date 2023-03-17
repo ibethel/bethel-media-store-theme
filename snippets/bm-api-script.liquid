@@ -1,0 +1,41 @@
+<script id="bmApi" type="application/json" defer>
+  {
+    "atc": {
+      "btn": {
+        "text": {
+          "start": {{ 'features.atc.start' | t | json }},
+          "added": {{ 'features.atc.added' | t | json }},
+          "adding": {{ 'features.atc.adding' | t | json }},
+          "buyNow": {{ 'features.atc.buy_now' | t | json }},
+          "unavailable": {{ 'features.atc.unavailable' | t | json -}}
+        }
+      }
+    },
+    "bulkOrders": {
+      "bulkOrderApproved": {
+        "tag": {{ settings.tag_bulk_approved | json }},
+        "message": {{ settings.bulk_approved_message | json -}}
+      },
+      "bulkOrderNotApproved": {
+        "tag": {{ settings.tag_bulk_not_approved | json }},
+        "message": {{ settings.bulk_not_approved_message | json -}}
+      }
+    },
+    "giftCards": {
+      "qrImageAlt": {{ 'gift_cards.issued.qr_image_alt' | t | json -}}
+    },
+    "klaviyo": {
+      "enableAtc": {{ settings.enable_klaviyo_atc | json }}
+    },
+
+    {%- render 'bm-api-cart' -%}
+
+    ,"products": {
+      "enableAtcAjax": {{ settings.enable_atc_ajax | json -}}
+    },
+    "wishList": {
+      "enableWishList": {{ settings.enable_wish_list | json }},
+      "noCustomerHtml": {{ "wish_list.no_customer_html" | t | json -}}
+    }
+  }
+</script>

@@ -1,0 +1,13 @@
+<script src="{{ 'jquery.min.js' | asset_url }}" type="text/javascript"></script>
+
+{%- if settings.bm_footer_scripts != blank -%}
+  {{- settings.bm_footer_scripts -}}
+{%- endif -%}
+
+{%- render 'customer-fields', customer_api: true, version: '4.11.2' -%}
+
+{%- render 'bm-structured-data' -%}
+
+{%- render 'bm-api-script' -%}
+
+{%- render 'bundled-scripts', layout: 'theme' -%}

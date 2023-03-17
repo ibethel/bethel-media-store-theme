@@ -1,0 +1,137 @@
+{%- render "mobile-menu",
+  section_blocks: section.blocks,
+  main_mobile_nav: section.settings.main_mobile_nav -%}
+
+
+{% schema %}
+  {
+    "name": "t:sections.mobile_menu.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.mobile_menu.name"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "nav_list_main",
+        "name": "t:sections.mobile_menu.blocks.mobile_main_nav.label",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "main_nav",
+            "label": "t:sections.mobile_menu.blocks.mobile_main_nav.label"
+          }
+        ]
+      },
+      {
+        "type": "nav_list_manage",
+        "name": "t:schema_global.management_nav.label",
+        "settings": [
+          {
+            "type": "select",
+            "id": "search_link_vis",
+            "label": "t:schema_global.management_nav.settings.search_link_vis.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:schema_global.management_nav.settings.search_link_vis.option_default"
+              },
+              {
+                "value": "sm",
+                "label": "t:schema_global.visibility.tablet"
+              },
+              {
+                "value": "xl",
+                "label": "t:schema_global.visibility.desk"
+              },
+              {
+                "value": "none",
+                "label": "t:schema_global.visibility.invisible"
+              }
+            ],
+            "default": "default"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_wish_star",
+            "label": "Enable wish star",
+            "default": false
+          },
+          {
+            "type": "select",
+            "id": "star_link_vis",
+            "label": "t:schema_global.management_nav.settings.star_link_vis.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:schema_global.management_nav.settings.star_link_vis.option_default"
+              },
+              {
+                "value": "sm",
+                "label": "t:schema_global.visibility.tablet"
+              },
+              {
+                "value": "xl",
+                "label": "t:schema_global.visibility.desk"
+              },
+              {
+                "value": "none",
+                "label": "t:schema_global.visibility.invisible"
+              }
+            ],
+            "default": "xl"
+          },
+          {
+            "type": "select",
+            "id": "account_link_vis",
+            "label": "t:schema_global.management_nav.settings.account_link_vis.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:schema_global.management_nav.settings.account_link_vis.option_default"
+              },
+              {
+                "value": "sm",
+                "label": "t:schema_global.visibility.tablet"
+              },
+              {
+                "value": "xl",
+                "label": "t:schema_global.visibility.desk"
+              },
+              {
+                "value": "none",
+                "label": "t:schema_global.visibility.invisible"
+              }
+            ],
+            "default": "default"
+          },
+          {
+            "type": "select",
+            "id": "cart_link_vis",
+            "label": "t:schema_global.management_nav.settings.cart_link_vis.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:schema_global.management_nav.settings.cart_link_vis.option_default"
+              },
+              {
+                "value": "sm",
+                "label": "t:schema_global.visibility.tablet"
+              },
+              {
+                "value": "xl",
+                "label": "t:schema_global.visibility.desk"
+              },
+              {
+                "value": "none",
+                "label": "t:schema_global.visibility.invisible"
+              }
+            ],
+            "default": "default"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

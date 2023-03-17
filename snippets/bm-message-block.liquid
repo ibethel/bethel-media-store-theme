@@ -1,0 +1,51 @@
+{%- if message_content != blank -%}
+  <{%- if message_has_html -%}div{%- else -%}p{%- endif %}
+    class="bm-message mt-0
+
+      {%- if message_alignment_phone != blank -%}{{- message_alignment_phone | prepend: ' ' -}}{%- endif -%}
+
+      {%- if message_alignment_tablet != blank -%}{{- message_alignment_tablet | prepend: ' ' -}}{%- endif -%}
+
+      {%- if message_alignment_desk != blank -%}{{- message_alignment_desk | prepend: ' ' -}}{%- endif -%}
+
+      {%- if message_line_height != blank -%}{{- message_line_height | prepend: ' ' -}}{%- endif -%}
+
+      {%- if message_margin != blank -%}{{- message_margin | prepend: ' ' -}}{%- endif -%}
+
+      {%- if message_font != blank %} {{ message_font }}{%- endif -%}
+
+      {%- if message_italic %} fst-italic{%- endif -%}
+
+      {%- if message_classes != blank %}{{- message_classes | prepend: ' ' -}}{%- endif -%}
+
+      {%- if message_size != blank or
+        message_size_tablet != blank or
+        message_size_desk != blank %} bm-fonts{%- endif -%}
+
+      {%- if message_size != blank %} {{ message_size }}{%- endif -%}
+
+      {%- if message_size_tablet != blank %} {{ message_size_tablet }}{%- endif -%}
+
+      {%- if message_size_desk != blank %} {{ message_size_desk }}{%- endif -%}
+
+      {%- if message_weight != blank -%}{{- message_weight | prepend: ' ' -}}{%- endif -%}
+
+      {%- if message_visibility != blank %}{{- message_visibility | replace: '_', ' ' | prepend: ' ' -}}{%- endif -%}"
+
+    {%- if enable_message_styles -%}
+      style="
+        {%- if message_color != blank -%}
+          color: {{- message_color -}};
+        {%- endif -%}
+      "
+    {%- endif -%}
+
+  >
+
+    {{- message_content -}}
+
+  </{%- if message_has_html -%}div{%- else -%}p{%- endif -%}>
+{%- endif -%}
+
+
+

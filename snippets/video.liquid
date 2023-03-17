@@ -1,0 +1,61 @@
+{%- if is_a_section -%}
+  <section
+    class="bm-video-section {{ section_margin -}}
+
+      {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+      {%- if enable_background and background_color != blank -%}
+        {%- if enable_contain %} py-3 py-xl-5
+          {%- else %} p-3 p-xl-5
+        {%- endif -%}
+      {%- endif %}"
+
+    {%- if enable_background and background_color != blank -%}
+      style="background-color: {{ background_color }};"
+    {%- endif -%}
+  >
+  {%- else -%}
+    <div
+      class="bm-video-section {{ section_margin -}}
+
+        {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+        {%- if enable_background and background_color != blank -%}
+          {%- if enable_contain %} py-3 py-xl-5
+            {%- else %} p-3 p-xl-5
+          {%- endif -%}
+        {%- endif %}"
+
+      {%- if enable_background and background_color != blank -%}
+        style="background-color: {{ background_color }};"
+      {%- endif -%}
+    >
+{%- endif -%}
+
+  <div
+    class="bm-video-section__container
+
+      {%- if enable_contain %} container-xl px-3{%- endif -%}"
+  >
+
+    {%- if thumbnail != blank -%}
+      {%- assign thumbnail_url = thumbnail | img_url: 'master' -%}
+    {%- endif -%}
+
+    {%- render 'bm-video',
+      autoplay: autoplay,
+      controls: controls,
+      interaction: interaction,
+      loop: loop,
+      modal: false,
+      thumbnail_url: thumbnail_url,
+      video_id: video_id,
+      video_url: video_url -%}
+
+  </div>
+
+{%- if is_a_section -%}
+  </section>
+  {%- else -%}
+    </div>
+{%- endif -%}

@@ -1,0 +1,22 @@
+.bm-img__contain {
+  padding-top: 100%;
+}
+
+.bm-img__wrapper {
+  &--fixed-width {
+    width: 100%;
+
+    .bm-img {
+      height: auto;
+
+      .bm-img__contain & {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.bm-img {
+  width: 100%;
+}

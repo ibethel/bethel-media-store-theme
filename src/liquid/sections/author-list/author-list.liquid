@@ -1,0 +1,120 @@
+{% comment %} Capture Alphabet in Array {% endcomment %}
+
+{% capture alphabet %}a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z{% endcapture %}
+
+{% assign letters = alphabet | strip |  split: '-' %}
+
+{% assign storeAuthors = ''  %}
+{% assign storeMinistries = '' %}
+
+{%- assign collection_titles = collections | map: "title" | sort: 'title' -%}
+
+{% comment %} {%- for title in collection_titles -%}
+  <p class="">
+  {{title}}
+  </p>
+{%- endfor -%} {% endcomment %}
+
+
+{%- for letter in letters -%}
+  {%- for collection in collections -%}
+    {%- assign title_letter = collection.title.first | downcase -%}
+    {%- assign collection_author = collection.metafields.custom_fields["collection_type_author"] -%}
+    {%- assign collection_ministry = collection.metafields.custom_fields["collection_type_ministry"] -%}
+
+    {%- if letter == title_letter -%}
+      {%- if collection_author == 1 -%}
+        {%- capture bm_author -%}
+          <li class="d-block col-12 col-sm-4">
+            {%- render 'bm-link',
+              bm_link_title: collection.title,
+              bm_link_classes: "opacity-hover d-block py-3 text-decoration-none bm-colors-color-brown",
+              bm_link_url: collection.url,
+              bm_link_content: collection.title -%}
+          </li>
+        {%- endcapture -%}
+
+        {%- assign bm_authors = bm_authors | append: bm_author -%}
+      {%- endif -%}
+
+      {%- if collection_ministry == 1 -%}
+        {%- capture bm_ministry -%}
+          <li class="d-block">
+            {%- render 'bm-link',
+              bm_link_title: collection.title,
+              bm_link_classes: "opacity-hover d-block px-3 py-1 text-decoration-none bm-colors-color-brown",
+              bm_link_url: collection.url,
+              bm_link_content: collection.title -%}
+          </li>
+        {%- endcapture -%}
+
+        {%- assign bm_ministries = bm_ministries | append: bm_ministry -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {% assign bm_authors = bm_authors | append: "~|~" %}
+  {% assign bm_ministries = bm_ministries | append: "~|~" %}
+{%- endfor -%}
+
+{% assign bm_authors_list = bm_authors | split: "~|~" %}
+{% assign bm_ministries_list = bm_ministries | split: "~|~" %}
+
+<div class="author-list py-3 py-xl-5 mb-3 mb-xl-5">
+  <div class="author-list__wrapper container-xl px-3">
+    <div class="author-list__container">
+      <header class="row mb-3">
+
+        {%- render 'bm-title-block',
+          title_alignment_phone: "text-center",
+          title_classes: "col-6 col-sm-8",
+          title_content: "Authors/Artists",
+          title_font: "ff-ivypresto",
+          title_margin: "mb-0",
+          title_size: "bm-fonts fs-3 fs-sm-1",
+          title_tag: "h1" -%}
+
+        {%- render 'bm-title-block',
+          title_alignment_phone: "text-center",
+          title_classes: "col-6 col-sm-4",
+          title_content: "Ministries",
+          title_font: "ff-ivypresto",
+          title_margin: "mb-0",
+          title_size: "bm-fonts fs-3 fs-sm-1",
+          title_tag: "h2" -%}
+
+      </header>
+
+      {%- for author in bm_authors_list -%}
+        {%- assign index = forloop.index0 -%}
+
+        {%- unless bm_authors_list[index] == "" and bm_ministries_list[index] == "" -%}
+          <div class="author-list__grid">
+            {%- assign letter_title = letters[index] | upcase -%}
+
+            {%- render 'bm-title-block',
+              title_classes: "bm-bdr-btm border-very-light-brown"
+              title_content: letter_title,
+              title_margin: "mb-3",
+              title_size: "fs-6" -%}
+
+            <div class="author-list__grid-wrapper row">
+              <div class="col-6 col-sm-8 bm-bdr-start border-very-light-brown">
+                <ul class="list-type-none ps-0 row">
+                  {{- bm_authors_list[index] -}}
+                </ul>
+              </div>
+
+              <div class="col-6 col-sm-4">
+                <ul class="list-type-none ps-0">
+                  {{- bm_ministries_list[index] -}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {%- endunless -%}
+      {%- endfor -%}
+
+    </div>
+  </div>
+</div>

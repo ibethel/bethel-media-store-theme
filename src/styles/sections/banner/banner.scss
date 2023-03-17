@@ -1,0 +1,45 @@
+.banner__blocks,
+.banner-slider-item__content {
+  pointer-events: none;
+  z-index: $zLevelThree;
+
+  .bm-btn {
+    pointer-events: auto;
+  }
+}
+
+.banner-slider-item,
+.banner-slider-images {
+  height: 100%;
+}
+
+.banner-slider-images {
+  background-color: $black;
+  z-index: $zLevelOne;
+}
+
+.banner-img__overlay {
+  background-color: $black;
+  opacity: 0.2;
+  z-index: $zLevelOne;
+}
+
+.banner-img__link {
+  z-index: $zLevelTwo;
+}
+
+.banner-slider {
+  .splide__pagination__page {
+    background: transparent;
+    border: 2px solid $white;
+    height: 15px;
+    margin: $gutterSmall;
+    opacity: 1;
+    width: 15px;
+
+    &.is-active {
+      background: $white;
+      transform: unset;
+    }
+  }
+}

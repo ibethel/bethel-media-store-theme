@@ -1,0 +1,15 @@
+{%- assign current_barcode = gtin_variant.barcode -%}
+
+{%- if current_barcode.size == 8 -%}
+  "gtin8": {{ current_barcode | json }},
+  {%- elsif current_barcode.size == 12 -%}
+    "gtin12": {{ current_barcode | json }},
+  {%- elsif current_barcode == 13 -%}
+    "gtin13": {{ current_barcode | json }},
+  {%- elsif current_barcode.size == 14 -%}
+    "gtin14": {{ current_barcode | json }},
+  {%- elsif current_barcode != blank -%}
+    "gtin": {{ current_barcode | json }},
+  {%- else -%}
+    "mpn": "{{ product.id | json }},
+{%- endif -%}

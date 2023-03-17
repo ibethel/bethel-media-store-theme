@@ -1,0 +1,47 @@
+<div class="bm-collection-pagination">
+  <ul class="list-type-none px-0 py-3 m-0 d-flex align-items-center">
+
+    {%- if paginate.previous -%}
+      <li>
+
+        {%- render 'bm-link',
+            bm_link_title: paginate.previous.title,
+            bm_link_classes: "text-decoration-none opacity-hover d-block p-1",
+            bm_link_url: paginate.previous.url,
+            bm_link_content: paginate.previous.title -%}
+
+      </li>
+    {%- endif -%}
+
+    {%- for part in paginate.parts -%}
+      <li>
+
+        {%- if part.is_link -%}
+
+          {%- render 'bm-link',
+            bm_link_title: part.title,
+            bm_link_classes: "text-decoration-none opacity-hover d-block p-1",
+            bm_link_url: part.url,
+            bm_link_content: part.title -%}
+
+        {%- else -%}
+          <span class="p-1">{{ part.title }}</span>
+        {%- endif -%}
+
+      </li>
+    {%- endfor -%}
+
+    {%- if paginate.next -%}
+      <li>
+
+        {%- render 'bm-link',
+          bm_link_title: paginate.next.title,
+          bm_link_classes: "text-decoration-none opacity-hover d-block p-1",
+          bm_link_url: paginate.next.url,
+          bm_link_content: paginate.next.title -%}
+
+      </li>
+    {%- endif -%}
+
+  </ul>
+</div>

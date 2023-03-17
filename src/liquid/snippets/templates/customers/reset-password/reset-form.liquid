@@ -1,0 +1,48 @@
+<div id="bm-register-form" class="bm-register-form" aria-labelledby="{{ title_id }}">
+
+  {%- form 'reset_customer_password' -%}
+
+    {%- if form.errors -%}
+      {{ form.errors | default_errors }}
+    {%- endif -%}
+
+    <div class="field-group mb-3">
+      <div class="field-group-wrapper">
+        <input
+          type="password"
+          class="px-2 py-3 mb-3 border-very-light-brown col-12 field"
+          name="customer[password]"
+          aria-label="{{ 'general.password' | t }}"
+          autocomplete="new-password"
+          placeholder="{{ 'general.password' | t }}"
+        >
+
+        <input
+          type="password"
+          class="px-2 py-3 border-very-light-brown col-12 field"
+          name="customer[password_confirmation]"
+          aria-label="{{ 'reset_password.password_confirm' | t }}"
+          autocomplete="new-password"
+          placeholder="{{ 'reset_password.password_confirm' | t }}"
+        >
+      </div>
+    </div>
+
+    {%- assign submit_button_content = 'general.submit' | t -%}
+
+    <div class="register-form__actions">
+      <div class="mb-3">
+
+        {%- render 'bm-btn-template',
+          button_size: "large",
+          button_classes: "col-12",
+          button_content: submit_button_content,
+          button_template: "primary",
+          button_type: "submit" -%}
+
+      </div>
+    </div>
+
+  {%- endform -%}
+
+</div>

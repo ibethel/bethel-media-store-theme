@@ -1,0 +1,17 @@
+@import "../../helpers/variables.scss";
+
+.field {
+  border: 1px solid;
+}
+
+.errors {
+  color: $redDanger;
+}
+
+ul {
+  list-style: none;
+  list-style-type: none;
+  margin: 0 0 $gutterMediumSmall;
+  padding-left: 0;
+  text-align: center;
+}

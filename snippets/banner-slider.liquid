@@ -1,0 +1,32 @@
+<section
+  class="banner-slider {{ section_margin -}}
+
+    {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+    {%- if enable_background and background_color != blank -%}
+      {%- if enable_contain %} py-3 py-xl-5
+        {%- else %} p-3 p-xl-5
+      {%- endif -%}
+    {%- endif %}"
+
+  {%- if enable_background and background_color != blank -%}
+    style="background-color: {{ background_color }};"
+  {%- endif -%}
+>
+  <div class="banner-slider__container
+    {%- if enable_contain %} container-xl px-3{%- endif %}"
+  >
+    <div
+      class="banner-slider__wrapper position-relative"
+      role="banner"
+    >
+
+      {%- render 'banner-slider-slider',
+        autoplay: enable_autoplay,
+        rewind: enable_rewind,
+        interval: interval,
+        section_blocks: section_blocks -%}
+
+    </div>
+  </div>
+</section>

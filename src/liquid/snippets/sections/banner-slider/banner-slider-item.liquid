@@ -1,0 +1,57 @@
+<div class="banner-slider-item">
+
+  {%- render 'banner-slider-item-images',
+    banner_image_desk: banner_image_desk,
+    banner_image_max: banner_image_max,
+    banner_image_phone: banner_image_phone,
+    banner_image_tablet: banner_image_tablet -%}
+
+  {%- if slide_html == blank -%}
+
+    <div
+      class="banner-slider-item__content position-absolute left-0 top-0 bottom-0 right-0 col-12 d-flex
+
+        {{- content_padding_phone | prepend: ' ' -}}
+        {{- content_padding_tablet | prepend: ' ' -}}
+        {{- content_padding_desk | prepend: ' ' -}}
+        {{- vert_align_phone | prepend: ' ' -}}
+        {{- vert_align_tablet | prepend: ' ' -}}
+        {{- vert_align_desk | prepend: ' ' -}}
+        {{- horiz_align_phone | prepend: ' ' -}}
+        {{- horiz_align_tablet | prepend: ' ' -}}
+        {{- horiz_align_desk | prepend: ' ' -}}"
+    >
+      <div
+        class="banner-slider-item__wrapper
+
+          {{- text_alignment_phone | prepend: ' ' -}}
+          {{- text_alignment_tablet | prepend: ' ' -}}
+          {{- text_alignment_desk | prepend: ' ' -}}
+          {{- content_width_phone | prepend: ' col-' -}}
+          {{- content_width_tablet | prepend: ' col-sm-' -}}
+          {{- content_width_desk | prepend: ' col-xl-' -}}"
+      >
+
+        {%- render 'banner-slider-positions',
+          block: block,
+          text_alignment_desk: text_alignment_desk,
+          text_alignment_phone: text_alignment_phone,
+          text_alignment_tablet: text_alignment_tablet -%}
+
+      </div>
+    </div>
+
+  {%- endif -%}
+
+  {%- if slide_html != blank %}{{ slide_html }}{% endif -%}
+
+  {%- if overlay -%}
+    <div class="banner-img__overlay position-absolute top-0 start-0 end-0 bottom-0"></div>
+  {%- endif -%}
+
+  {%- if img_link != blank and slide_html == blank -%}
+    <a class="banner-img__link d-block position-absolute top-0 start-0 end-0 bottom-0" href="{{ img_link }}"></a>
+  {%- endif -%}
+</div>
+
+

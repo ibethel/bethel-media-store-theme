@@ -1,0 +1,47 @@
+{%- assign show_background = false -%}
+{%- if enable_background and background_color != blank -%}
+  {%- assign show_background = true -%}
+{%- endif -%}
+
+{%- if logo != blank -%}
+  {%- assign message_classes = "p-2" -%}
+  {%- else -%}
+    {%- assign message_classes = "p-2 ps-2 ps-xl-4" -%}
+{%- endif -%}
+
+{%- if message_content == blank -%}
+  {%- assign btv_footer_social_classes = "ps-xl-3" -%}
+{%- endif -%}
+
+<header
+  class="btv-header__section p-2 px-2 px-xl-4
+
+    {%- if enable_sticky %} btv-main-header--sticky{%- endif -%}"
+
+  {%- if show_background -%}
+    style="background-color: {{- background_color -}};"
+  {%- endif -%}
+>
+  <div class="btv-header__container d-flex align-items-center">
+    <div class="btv-header__left d-flex align-items-center">
+
+      {%- render 'btv-header-logo',
+        logo: logo,
+        logo_max_width: logo_max_width -%}
+
+    </div>
+
+    {%- render 'btv-header-nav',
+      enable_text_styles: enable_text_styles,
+      section_blocks: section_blocks,
+      text_color: text_color,
+      text_font: text_font,
+      text_size: text_size,
+      text_weight: text_weight -%}
+
+  </div>
+</header>
+
+{%- if enable_sticky -%}
+  <div class="bm-main-header__sticky-placeholder"></div>
+{%- endif -%}

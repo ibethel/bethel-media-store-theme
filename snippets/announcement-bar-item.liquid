@@ -1,0 +1,33 @@
+<div
+  class="announcement-bar__wrapper"
+
+  {%- if background_color != blank -%}
+    style="background: {{ background_color }};"
+  {%- endif -%}
+>
+
+  {%- if link != blank -%}
+    <a href="{{ link }}" class="theme-link d-block text-decoration-none">
+  {%- endif -%}
+
+    {%- render 'bm-message-block',
+      enable_message_styles: enable_message_styles,
+      message_alignment_desk: message_alignment_desk,
+      message_alignment_tablet: message_alignment_tablet,
+      message_alignment_phone: message_alignment_phone,
+      message_classes: "announcement-bar__text py-2 px-3 px-xl-5 m-0",
+      message_color: message_color,
+      message_content: message_content,
+      message_font: message_font,
+      message_italic: message_italic,
+      message_line_height: message_line_height,
+      message_size: message_size,
+      message_size_tablet: message_size_tablet,
+      message_size_desk: message_size_desk,
+      message_weight: message_weight -%}
+
+  {%- if link != blank -%}
+    </a>
+  {%- endif -%}
+
+</div>

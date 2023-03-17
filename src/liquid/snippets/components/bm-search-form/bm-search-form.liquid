@@ -1,0 +1,62 @@
+{%- assign search_name = 'general.search.name' | t -%}
+
+<form
+  class="bm-search-form
+
+    {%- if search_classes != blank %} {{ search_classes }}{%- endif -%}"
+  action="{{ routes.search_url }}"
+  method="get"
+  role="search"
+>
+  <div class="bm-search-form__container position-relative">
+    <label
+      for="bm-search-form__input"
+      class="d-block bm-colors-color-grey-50 bm-fonts fs-8 mb-2
+
+        {%- if label_hidden %} visually-hidden{%- endif -%}"
+    >
+      {{- search_name -}}
+    </label>
+
+    <input
+      id="bm-search-form__input"
+      class="rounded"
+      type="search"
+      name="q"
+      placeholder="{{ search_name }}"
+
+      {%- if search_width != blank -%}
+        style="min-width: {{ search_width }}px;"
+      {%- endif -%}
+    >
+
+    <button
+      class="bm-search-form__btn d-flex align-items-center position-absolute start-0 top-0 bottom-0 p-0 ps-1"
+      type="submit"
+    >
+
+      {%- if search_btn_content == "icon" -%}
+
+        {%- render 'bm-icon-template',
+          bm_icon: "icon-search",
+          bm_icon_classes: "d-block",
+          icon_classes: "d-block bm-icon__size--small" -%}
+
+        {%- elsif search_btn_content == "text" -%}
+          {{- search_name -}}
+        {%- else -%}
+
+          <span class="d-flex align-items-center">
+
+            {%- render 'bm-icon-template',
+              bm_icon: "icon-search",
+              bm_icon_classes: "d-block",
+              icon_classes: "d-block bm-icon__size--regular me-2" -%}
+
+            <span>{{ search_name }}</span>
+          </span>
+      {%- endif -%}
+
+    </button>
+  </div>
+</form>

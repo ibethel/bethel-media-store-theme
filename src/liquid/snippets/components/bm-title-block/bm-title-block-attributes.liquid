@@ -1,0 +1,49 @@
+class="bm-title mt-0
+
+{%- if title_alignment_phone -%}{{- title_alignment_phone | prepend: ' ' -}}{%- endif -%}
+
+{%- if title_alignment_tablet -%}{{- title_alignment_tablet | prepend: ' ' -}}{%- endif -%}
+
+{%- if title_alignment_desk -%}{{- title_alignment_desk | prepend: ' ' -}}{%- endif -%}
+
+{%- if title_margin != blank -%}{{- title_margin | prepend: ' ' -}}{%- endif -%}
+
+{%- if title_font -%}{{- title_font | prepend: ' ' -}}{%- endif -%}
+
+{%- if title_italic %} fst-italic{%- endif -%}
+
+{%- if title_classes != blank %}{{- title_classes | prepend: ' ' -}}{%- endif -%}
+
+{%- if title_size != blank or
+  title_size_tablet != blank or
+  title_size_desk != blank %} bm-fonts{%- endif -%}
+
+{%- if title_size != blank -%}{{- title_size | prepend: ' ' -}}{%- endif -%}
+
+{%- if title_size_tablet != blank -%}{{- title_size_tablet | prepend: ' ' -}}{%- endif -%}
+
+{%- if title_size_desk != blank -%}{{- title_size_desk | prepend: ' ' -}}{%- endif -%}
+
+{%- if title_visibility != blank %}{{- title_visibility | replace: '_', ' ' | prepend: ' ' -}}{%- endif -%}
+
+{%- if title_weight != blank -%}{{- title_weight | prepend: ' ' -}}{%- endif -%}"
+
+{%- if title_labelledby != blank -%}
+  {%- assign title_id = title_labelledby -%}
+{%- endif -%}
+
+{%- if title_id != blank -%}
+  id="{{- title_id -}}"
+{%- endif -%}
+
+{%- if enable_title_styles -%}
+style="
+  {%- if title_color != blank -%}
+    color: {{- title_color -}};
+  {%- endif -%}
+
+  {%- if title_background_color != blank -%}
+    background-color: {{- title_background_color }};
+  {%- endif -%}
+"
+{%- endif -%}

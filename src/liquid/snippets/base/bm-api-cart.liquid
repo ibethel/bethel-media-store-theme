@@ -1,0 +1,14 @@
+"cartPage": {
+  "cart": {{ cart | json -}},
+  "copy": {
+    "checkout_button": {{ "cart.checkout_btn" | t | json -}},
+    "continue_browsing": {{ 'general.continue_browsing_html' | t | json -}},
+    "cart_empty": {{ 'cart.empty' | t | json -}},
+    "subtotal_title": {{ "cart.subtotal" | t | json -}},
+    "summary_title": {{ "cart.order_summary_title" | t | json -}},
+    "regular_price": {{ 'general.pricing.regular_price' | t | json -}},
+    "remove": {{ "cart.remove" | t | json -}},
+    "sale_price": {{ 'general.pricing.sale_price' | t | json -}},
+    "qty": {{ "cart.qty" | t | json -}}
+  }
+}

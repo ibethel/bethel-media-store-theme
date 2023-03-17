@@ -1,0 +1,19 @@
+{%- capture bundle_styles_name -%}
+  bundle.{{- layout -}}.css
+{%- endcapture -%}
+
+{{ bundle_styles_name | asset_url | stylesheet_tag }}
+
+{%- if template != blank -%}
+  {%- capture bundle_template_style_name -%}
+    bundle.{{- template.name -}}
+
+    {%- if template.suffix != blank -%}
+      .{{- template.suffix -}}
+    {%- endif -%}
+
+    .css
+  {%- endcapture -%}
+
+  {{ bundle_template_style_name | asset_url | stylesheet_tag }}
+{%- endif -%}

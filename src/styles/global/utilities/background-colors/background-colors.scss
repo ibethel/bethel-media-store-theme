@@ -1,0 +1,47 @@
+.bm-bg {
+  &-very-light-brown {
+    background-color: $bmVerylightBrown;
+  }
+
+  &-brown {
+    background-color: $bmBrown;
+  }
+
+  &-grey {
+    &-5 {
+      background-color: $grey5 !important;
+    }
+  }
+
+  &-grey {
+    &-10 {
+      background-color: $grey10 !important;
+    }
+  }
+
+  &-grey {
+    &-20 {
+      background-color: $grey20 !important;
+    }
+  }
+
+  &-grey {
+    &-40 {
+      background-color: $grey40 !important;
+    }
+  }
+
+  &-grey {
+    &-50 {
+      background-color: $grey50 !important;
+    }
+  }
+
+  &-transparent {
+    background-color: transparent !important;
+  }
+
+  &-white {
+    background-color: $white !important;
+  }
+}

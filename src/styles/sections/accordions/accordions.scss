@@ -1,0 +1,38 @@
+.close-accordion {
+  &:not(.display-accordion) {
+    display: none;
+  }
+}
+
+.peak-accordion {
+  &:not(.display-accordion) {
+    height: 60px;
+    overflow: hidden;
+  }
+}
+
+.closing-peak-accordion {
+  height: 60px;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+.closing-accordion {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+.accordion-item__title-button {
+  &.closed-accordion {
+    display: none;
+
+    .bi-chevron-up {
+      transform: rotate(180deg);
+    }
+  }
+
+  .bi-chevron-up {
+    transition: transform 0.35s linear;
+  }
+}

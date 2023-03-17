@@ -1,0 +1,111 @@
+{%- if facebook or twitter or pinterest -%}
+  {%- if orientation == "verticle" -%}
+    {%- assign verticle = true -%}
+  {%- endif -%}
+
+  <ul
+    class="list-type-none px-0 m-0 d-flex
+
+      {%- if classes != blank %} {{ classes }}{% endif -%}"
+
+    role="{% if verticle %}menu{% else %}menubar{% endif %}"
+    aria-orientation="{% if verticle %}verticle{% else %}horizontal{% endif %}"
+  >
+  {%- assign main_url = shop.url | append: sharing_url -%}
+
+  {%- if facebook -%}
+
+    {%- assign facebook_url = "//www.facebook.com/sharer.php?u=" | append: main_url -%}
+    {%- assign facebook_share = "general.social.alt_text.share_on_facebook" | t -%}
+
+    {%- capture facebook_link_content -%}
+
+      {%- render 'bm-icon-template',
+        bm_icon: "icon-facebook-f",
+        bm_icon_classes: "d-block",
+        icon_classes: "d-block bm-icon__size--small" -%}
+
+    {%- endcapture -%}
+
+    <li role="none">
+
+      {%- render 'bm-link',
+        bm_link_title: facebook_share,
+        bm_link_classes: "d-block p-2 opacity-hover",
+        bm_link_url: facebook_url,
+        bm_link_content: facebook_link_content,
+        bm_link_role: "menuitem"
+        bm_link_target: "_blank" -%}
+
+    </li>
+  {%- endif -%}
+
+  {%- if twitter -%}
+
+    {%- assign twitter_url = "//twitter.com/share?url="
+      | append: main_url
+      | append: '&amp;text='
+      | append: page_title -%}
+    {%- assign twitter_share = "general.social.alt_text.share_on_twitter" | t -%}
+
+    {%- capture twitter_link_content -%}
+
+      {%- render 'bm-icon-template',
+        bm_icon: "icon-twitter",
+        bm_icon_classes: "d-block",
+        icon_classes: "d-block bm-icon__size--small" -%}
+
+    {%- endcapture -%}
+
+    <li role="none">
+
+      {%- render 'bm-link',
+        bm_link_title: twitter_share,
+        bm_link_classes: "d-block p-2 opacity-hover",
+        bm_link_url: twitter_url,
+        bm_link_content: twitter_link_content,
+        bm_link_role: "menuitem"
+        bm_link_target: "_blank" -%}
+
+    </li>
+
+  {%- endif -%}
+
+  {%- if pinterest -%}
+
+    {%- if sharing_image == blank -%}
+      {%- assign sharing_image = page_image | image_url: width: 600 -%}
+    {%- endif -%}
+
+    {%- assign pinterest_url = "//pinterest.com/pin/create/button/?url="
+      | append: main_url
+      | append: '&amp;media='
+      | append: sharing_image
+      | append: '&amp;description='
+      | append: page_title -%}
+    {%- assign pinterest_share = "general.social.alt_text.share_on_pinterest" | t -%}
+
+    {%- capture pinterest_link_content -%}
+
+      {%- render 'bm-icon-template',
+        bm_icon: "icon-pinterest",
+        bm_icon_classes: "d-block",
+        icon_classes: "d-block bm-icon__size--small" -%}
+
+    {%- endcapture -%}
+
+    <li role="none">
+
+      {%- render 'bm-link',
+        bm_link_title: pinterest_share,
+        bm_link_classes: "d-block p-2 opacity-hover",
+        bm_link_url: pinterest_url,
+        bm_link_content: pinterest_link_content,
+        bm_link_role: "menuitem"
+        bm_link_target: "_blank" -%}
+
+    </li>
+
+  {%- endif -%}
+  </ul>
+{%- endif -%}

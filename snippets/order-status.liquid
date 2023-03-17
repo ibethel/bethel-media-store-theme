@@ -1,0 +1,46 @@
+{%- assign billing_title = "order.billing_address" | t -%}
+{%- assign formatted_billing_title = billing_title | sha1 -%}
+{%- assign title_id_billing = billing_title | handleize | append: '-' | append: formatted_billing_title -%}
+{%- assign shipping_title = "order.shipping_address" | t -%}
+{%- assign formatted_shipping_title = shipping_title | sha1 -%}
+{%- assign title_id_shipping = shipping_title | handleize | append: '-' | append: formatted_shipping_title -%}
+
+<section class="bm-order-status">
+  <div class="bm-order-status__container">
+    <div class="bm-order-status__billing" aria-labelledby={{ title_id_billing }}>
+
+      {%- render 'bm-title-block',
+        title_content: billing_title,
+        title_font: "ff-ivypresto",
+        title_id: title_id_billing,
+        title_margin: "mb-0",
+        title_size: "fs-4",
+        title_tag: "h3" -%}
+
+      <p>
+        {{- 'order.payment_status' | t }}: {{ order.financial_status_label -}}
+      </p>
+
+
+      {{ order.billing_address | format_address }}
+    </div>
+
+    <div class="bm-order-status__shipping" aria-labelledby={{ title_id_shipping }}>
+
+      {%- render 'bm-title-block',
+        title_content: shipping_title,
+        title_font: "ff-ivypresto",
+        title_id: title_id_shipping,
+        title_margin: "mb-0",
+        title_size: "fs-4",
+        title_tag: "h3" -%}
+
+      <p>
+        {{- 'order.fulfillment_status' | t }}: {{ order.fulfillment_status_label -}}
+      </p>
+
+      {{- order.shipping_address | format_address -}}
+
+    </div>
+  </div>
+</section>

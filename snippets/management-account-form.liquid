@@ -1,0 +1,43 @@
+{%- assign account_button_content = 'account.title' | t -%}
+{%- assign logout_title = "general.logout" | t -%}
+
+<div
+  id="{{- data_target -}}"
+  class="sub-navigation__list border-top border-1 bm-bg-white my-0 p-3 position-absolute end-0 fade-opacity display-flex-toggle display-hidden"
+  aria-hidden="true"
+>
+
+  {%- if customer != blank -%}
+
+    <div class="logged-in-dialog">
+      <div class="row align-items-center">
+        <div class="col-12 col-sm-6 d-flex justify-content-start">
+
+          {%- render 'bm-btn-template',
+            button_size: "small",
+            button_classes: "opacity-hover text-nowrap",
+            button_content: account_button_content,
+            button_route: routes.account_url,
+            button_template: "primary" -%}
+
+        </div>
+
+        <div class="col-12 col-sm-6 d-flex justify-content-end">
+
+          {%- render 'bm-link',
+            bm_link_title: logout_title,
+            bm_link_classes: "opacity-hover",
+            bm_link_url: routes.account_logout_url,
+            bm_link_content: logout_title -%}
+
+        </div>
+      </div>
+    </div>
+
+    {%- else -%}
+
+      {%- render 'login-form' -%}
+
+  {%- endif -%}
+
+</div>

@@ -1,0 +1,38 @@
+{%- assign enable_message_styles = message_block.settings.enable_message_styles -%}
+{%- assign message_color = message_block.settings.message_color -%}
+{%- assign message_content = message_block.settings.message -%}
+
+{%- if message_content != blank -%}
+  <div class="bm-footer-top
+
+    {%- if footer_middle != blank %} mb-3 mb-xl-5{%- endif -%}"
+  >
+
+    {%- render 'bm-message-block',
+      enable_message_styles: enable_message_styles,
+      message_alignment_desk: message_block.settings.text_alignment_desk,
+      message_alignment_tablet: message_block.settings.text_alignment_tablet,
+      message_alignment_phone: message_block.settings.text_alignment_phone,
+      message_color: message_color,
+      message_content: message_content,
+      message_italic: message_block.settings.font_style_italic,
+      message_margin: message_block.settings.message_margin,
+      message_size: message_block.settings.font_size,
+      message_visibility: message_block.settings.message_visibility,
+      message_weight: message_block.settings.font_weight -%}
+
+    <div
+      class="border border-bottom-2 footer-divider"
+
+      {%- if enable_message_styles -%}
+        style="
+          {%- if message_color != blank -%}
+            border-color: {{- message_color -}};
+          {%- endif -%}
+        "
+      {%- endif -%}
+    ></div>
+
+  </div>
+{%- endif -%}
+

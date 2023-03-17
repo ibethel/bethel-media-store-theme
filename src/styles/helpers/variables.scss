@@ -1,0 +1,146 @@
+/* Variables: */
+
+/* Colors */
+$bmSiteBackground: #ffffff;
+$bmBrown: #8f7056;
+$bmVerylightBrown: #eeebea;
+
+/* Header background */
+$navBarBackground: #f8f8f8;
+
+$greenSuccess: #33d87b;
+$orangeWarning: #fe9d2c;
+$redDanger: #bc3033;
+
+/* Specific colors */
+$greyBlue: #a5acb0;
+
+/* Grey Scale 5% - 95% */
+$black: #000000;
+$grey95: #0d0d0d;
+$grey90: #1a1a1a;
+$grey85: #262626;
+$grey80: #333333;
+$grey75: #404040;
+$grey70: #4d4d4d;
+$grey65: #595959;
+$grey60: #666666;
+$grey55: #737373;
+$grey50: #808080;
+$grey45: #8c8c8c;
+$grey40: #999999;
+$grey35: #a6a6a6;
+$grey30: #b3b3b3;
+$grey25: #c0c0c0;
+$grey20: #cccccc;
+$grey15: #d9d9d9;
+$grey10: #e6e6e6;
+$grey5: #f2f2f2;
+$offWhite: #f9f9f9;
+$white: #ffffff;
+
+/* Breakpoints: */
+$maxScreen: 1500px;
+$desktopLarge: 1400px;
+$desktop: 1200px;
+$laptop: 992px;
+$tablet: 768px;
+$phone: 576px;
+
+$min: min-width;
+$max: max-width;
+
+/* Fonts: */
+
+$baseFontStack: "roboto", "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+$displayFontStack: "ivypresto-display", Times, "Times New Roman", serif;
+$btvBaseFontStack: "inter", "roboto", "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+$btvDisplayFontStack: "majesti-banner-book", Times, "Times New Roman", serif;
+$headerFontStack: $baseFontStack;
+$regularFontStack: $baseFontStack;
+
+$baseFontColor: $black;
+$baseFontSize: 1rem;
+$baseFontWeight: 500;
+$lighterFontWeight: $baseFontWeight - 400;
+$lightFontWeight: $baseFontWeight - 200;
+$regularFontWeight: $baseFontWeight - 100;
+
+$h1FontSize10: $baseFontSize * 7;
+$h1FontSize9: $baseFontSize * 6.5;
+$h1FontSize8: $baseFontSize * 6;
+$h1FontSize7: $baseFontSize * 5.5;
+$h1FontSize6: $baseFontSize * 5;
+$h1FontSize5: $baseFontSize * 4.5;
+$h1FontSize4: $baseFontSize * 4;
+$h1FontSize3: $baseFontSize * 3.5;
+$h1FontSize2: $baseFontSize * 3;
+$h1FontSize: $baseFontSize * 2.5;
+$h2FontSize: $baseFontSize * 2;
+$h3FontSize: $baseFontSize * 1.75;
+$h4FontSize: $baseFontSize * 1.5;
+$h5FontSize: $baseFontSize * 1.25;
+$h6FontSize: $baseFontSize; // 16px
+$fontSize7: $baseFontSize - 0.0625; /* 15px */
+$fontSize8: $baseFontSize - 0.1875; /* 13px */
+$fontSize9: $baseFontSize - 0.3125; /* 11px */
+
+/* Fonts: Icons */
+
+$iconSizeExtraSmall: 11px;
+$iconSizeSmall: 15px;
+$iconSizeSmallPlus: $iconSizeSmall + 1;
+$iconSizeSmallRegular: $iconSizeSmall + 3;
+$iconSize: 20px;
+$iconSizeMedium: 30px;
+$iconSizeLarge: 40px;
+$iconSizeVeryLarge: 50px;
+
+/* Grid / Spacing: */
+
+$gutter: 1rem;
+$gutterSmaller2: $gutter * 0.125;
+$gutterSmaller: $gutter * 0.25;
+$gutterSmall: $gutter * 0.5;
+$gutterMediumSmall: $gutter * 0.75;
+$gutterMedium: $gutter * 1.5;
+$gutterLarge: $gutter * 3;
+
+/* Sizes: */
+
+$bmHeaderMaxHeight: 60px;
+
+/* Z-Index Levels: */
+
+$zLevelOne: 10;
+$zLevelTwo: 20;
+$zLevelThree: 30;
+$zLevelFour: 40;
+$zLevelFive: 50;
+$zLevelSix: 60;
+$zLevelSeven: 70;
+$zLevelEight: 80;
+$zLevelNine: 90;
+
+/* Buttons: */
+
+$btnPadding: 1rem;
+$btnPaddingSmaller: $btnPadding * 0.25;
+$btnPaddingSmall: $btnPadding * 0.5;
+$btnPaddingMedium: $btnPadding * 1.5;
+$btnPaddingLarge: $btnPadding * 3;
+
+$borderSize: 1px;
+$borderSizeMedium: 3px;
+$buttonBorderRadiusSmall: 3px;
+$buttonBorderRadiusLarge: 6px;
+$buttonHeightLarge: 60px;
+$buttonWidthLarge: 197px;
+$buttonHeightMedium: 50px;
+$buttonWidthMedium: 177px;
+$buttonWidthSmall: 133px;
+
+/* Times: */
+
+$animationTransition: 0.3s;
+$siteTransition: 0.2s;

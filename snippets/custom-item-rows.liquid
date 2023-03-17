@@ -1,0 +1,61 @@
+{%- assign show_background = false -%}
+{%- if enable_background and background_color != blank -%}
+  {%- assign show_background = true -%}
+{%- endif -%}
+
+{%- if is_a_section -%}
+  <section
+    class="custom-item-rows {{ section_margin -}}
+
+      {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+      {%- if is_a_carousel %} custom-item-rows-carousel{%- endif -%}
+
+      {%- if show_background -%}
+        {%- if enable_contain %} py-3 py-xl-5
+          {%- else %} p-3 p-xl-5
+        {%- endif -%}
+      {%- endif %}"
+
+    {%- if show_background -%}
+      style="background-color: {{ background_color }};"
+    {%- endif -%}
+  >
+  {%- else -%}
+    <div
+      class="custom-item-rows {{ section_margin -}}
+
+        {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+        {%- if is_a_carousel %} custom-item-rows-carousel{%- endif -%}
+
+        {%- if show_background -%}
+          {%- if enable_contain %} py-3 py-xl-5
+            {%- else %} p-3 p-xl-5
+          {%- endif -%}
+        {%- endif %}"
+
+      {%- if show_background -%}
+        style="background-color: {{ background_color }};"
+      {%- endif -%}
+    >
+{%- endif -%}
+
+  {%- render 'custom-item-rows-main',
+    content_width_desk: content_width_desk,
+    content_width_phone: content_width_phone,
+    content_width_tablet: content_width_tablet,
+    enable_contain: enable_contain,
+    is_a_carousel: is_a_carousel,
+    item_widths_desk: item_widths_desk,
+    item_widths_max: item_widths_max,
+    item_widths_phone: item_widths_phone,
+    item_widths_tablet: item_widths_tablet,
+    section_blocks: section_blocks,
+    show_background: show_background -%}
+
+{%- if is_a_section -%}
+  </section>
+  {%- else -%}
+    </div>
+{%- endif -%}

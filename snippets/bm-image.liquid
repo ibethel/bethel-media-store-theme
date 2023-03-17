@@ -1,0 +1,119 @@
+{%- capture bm_img_loading_height_width -%}
+
+  {%- render 'bm-img-loading-width',
+    bm_img_height: bm_img_height,
+    bm_img_width: bm_img_width, -%}
+
+{%- endcapture -%}
+
+{%- capture bm_img_loading_url -%}
+
+  {%- render 'bm-img-loading-url',
+    bm_img: bm_img,
+    bm_img_url: bm_img_url,
+    default_loading_height_width: bm_img_loading_height_width -%}
+
+{%- endcapture -%}
+
+{%- capture current_bmg_url -%}
+
+  {%- render 'bm-img-url',
+    bm_img: bm_img,
+    default_loading_height_width: bm_img_loading_height_width,
+    bm_img_srcset: bm_img_srcset,
+    bm_img_url: bm_img_url -%}
+
+{%- endcapture -%}
+
+{%- assign zoom_img_size = bm_img.width | times: 2 -%}
+{%- assign bm_img_zoom = bm_img | image_url: width: zoom_img_size -%}
+
+<div
+  class="bm-img__wrapper
+
+    {%- if bm_img_wrapper_classes != blank -%}
+      {{- bm_img_wrapper_classes | prepend: ' ' -}}
+    {%- endif -%}
+
+    {%- if bm_img_set_aspect %} bm-img__wrapper--set-aspect{%- endif -%}"
+
+  {%- if bm_img_max_width != blank or
+    bm_img_set_aspect -%}
+    style="
+
+    {%- if bm_img_max_width != blank -%}
+      width: {{- bm_img_max_width -}}px;
+    {%- endif -%}
+
+    {%- if bm_img_set_aspect -%}
+      padding-top: {{- 1 | divided_by: bm_img.aspect_ratio | times: 100 -}}%;
+    {%- endif -%}"
+
+  {%- endif -%}
+>
+  <img
+    class="bm-img d-block
+
+      {%- if bm_img_is_lazy %} lazyload{%- endif -%}
+
+      {%- if bm_img_classes != blank -%}{{- bm_img_classes | prepend: ' ' -}}{%- endif -%}"
+
+    {%- if data_srcset == blank -%}
+      src="{{- bm_img_loading_url -}}"
+    {%- endif -%}
+
+    {%- if bm_img_id != blank -%}
+      id="{{- bm_img_id -}}"
+    {%- endif -%}
+
+    {%- comment -%}Add these attributes if image is lazy loaded.{%- endcomment -%}
+
+    {%- if bm_img_is_lazy and
+      data_srcset == blank -%}
+      data-src="{{- current_bmg_url -}}"
+      data-widths="[{%- render 'bm-img-widths' bm_img_widths: bm_img_widths -%}]"
+      data-aspectratio="{{- bm_img.aspect_ratio -}}"
+      data-sizes="auto"
+      data-optimumx="1.3"
+      tabindex="-1"
+    {%- endif -%}
+
+    {%- if bm_img_zoom -%}
+      data-zoom="{{ bm_img_zoom }}"
+    {%- endif -%}
+
+    {%- if data_srcset != blank -%}
+      data-srcset="{{- data_srcset -}}"
+    {%- endif -%}
+
+    {%- if bm_img_srcset != blank -%}
+      srcset="{{- bm_img_srcset -}}"
+    {%- endif -%}
+
+    alt="{%- render 'bm-alt-text' bm_img_alt: bm_img_alt -%}"
+
+    {%- if bm_img_height != blank -%}
+      height="{{- bm_img_height -}}"
+    {%- endif -%}
+
+    {%- if bm_img_width != blank -%}
+      width="{{- bm_img_width -}}"
+    {%- endif -%}
+
+    {%- if bm_img_role != blank -%}
+      role="{{- bm_img_role -}}"
+    {%- endif -%}
+
+    {%- if bm_img_title != blank -%}
+      title="{{- bm_img_title | escape -}}"
+    {%- endif -%}
+  >
+
+  <noscript>
+    <img
+      class="{{- bm_img_classes -}}"
+      src="{{- bm_img | img_url: 'master' -}}"
+      alt="{%- render 'bm-alt-text' bm_img_alt: bm_img_alt -%}"
+    >
+  </noscript>
+</div>

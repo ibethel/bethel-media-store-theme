@@ -1,0 +1,26 @@
+<div class="bm-thumbnail-gallery__secondary mt-3">
+  <div
+    class="splide bm-thumbnail-gallery__secondary-slider"
+    data-settings='{%- render "helper-slider-settings",
+      arrows: true,
+      gap: "1rem",
+      is_navigation: true,
+      pagination: false,
+      per_move_max: 1,
+      per_page_max: 4,
+      rewind: true,
+      secondary_thumbnail: true -%}'
+  >
+    <div class="splide__track">
+      <ul class="splide__list">
+
+        {%- for media in media_array -%}
+
+          {%- render 'bm-thumbnail-gallery-media', media: media -%}
+
+        {%- endfor -%}
+
+      </ul>
+    </div>
+  </div>
+</div>

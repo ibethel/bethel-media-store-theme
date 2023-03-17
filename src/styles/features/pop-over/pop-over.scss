@@ -1,0 +1,7 @@
+.bm-slide-right {
+  transition: transform $animationTransition - 0.1 ease;
+
+  &:not(.opened-pop-over) {
+    transform: translateX(-105%);
+  }
+}

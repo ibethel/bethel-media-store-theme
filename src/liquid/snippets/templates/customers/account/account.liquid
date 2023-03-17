@@ -1,0 +1,136 @@
+{%- assign bm_login_title = "account.title" | t -%}
+{%- assign formatted_title = bm_login_title | sha1 -%}
+{%- assign title_id = bm_login_title | handleize | append: '-' | append: formatted_title -%}
+{%- assign reset_title = "account.reset_password" | t -%}
+{%- assign recover_url = routes.account_login_url | append: '#recover' -%}
+{%- assign logout_title = "general.logout" | t -%}
+{%- assign digital_button = "account.digital_button" | t -%}
+{%- assign digital_message = "account.digital_message" | t -%}
+
+<div class="bm-account py-3 py-xl-5 mb-3 mb-xl-5">
+  <div class="bm-account__container container-xl px-3 position-relative">
+    <div class="bm-account__wrapper">
+
+      {%- render 'bm-title-block',
+        title_alignment_phone: "text-center",
+        title_content: bm_login_title,
+        title_font: "ff-ivypresto",
+        title_id: title_id,
+        title_margin: "mb-3",
+        title_size: "fs-1",
+        title_tag: "h1" -%}
+
+      <div class="text-center mb-3">
+
+        {%- render 'bm-link',
+          bm_link_title: reset_title,
+          bm_link_classes: "me-3 opacity-hover",
+          bm_link_url: recover_url,
+          bm_link_content: reset_title -%}
+
+        {%- render 'bm-link',
+          bm_link_title: logout_title,
+          bm_link_classes: "opacity-hover",
+          bm_link_url: routes.account_logout_url,
+          bm_link_content: logout_title -%}
+
+      </div>
+
+      <div class="text-center mb-3 mb-xl-5">
+
+        {%- render 'bm-message-block',
+          message_alignment_phone: "text-center",
+          message_content: digital_message,
+          message_margin: "mb-1" -%}
+
+        <div>
+
+          {%- render 'bm-link',
+            bm_link_title: digital_button,
+            bm_link_classes: "opacity-hover",
+            bm_link_url: "https://bethel-web-store.myshopify.com/apps/flickrocket",
+            bm_link_content: digital_button -%}
+
+        </div>
+      </div>
+
+      <div class="bm-account__content row mb-3 mb-xl-5">
+        <div class="col-12 col-xl-9">
+
+          {%- render 'account-orders' -%}
+
+        </div>
+
+        <div class="col-12 col-xl-3">
+
+          {%- render 'account-details' -%}
+
+        </div>
+      </div>
+
+      {%- assign favorites_list = customer.metafields.customer_fields.data.favorites_list -%}
+
+      {%- if favorites_list.size > 0 -%}
+        {%- assign bm_wish_title = "wish_list.title" | t -%}
+        {%- assign formatted_wish_title = bm_wish_title | sha1 -%}
+        {%- assign title_wish_id = bm_wish_title | handleize | append: '-' | append: formatted_wish_title -%}
+
+        <div class="bm-account-favorites" aria-labelledby="{{ title_wish_id }}">
+
+          {%- render 'bm-title-block',
+            title_content: "Wish list",
+            title_font: "ff-ivypresto",
+            title_id: title_wish_id,
+            title_margin: "mb-3",
+            title_size: "fs-1",
+            title_tag: "h3" -%}
+
+          <ul class="row list-type-none my-0 ps-0 bm-bdr-top border-color-grey-20">
+
+            {%- for favorite in favorites_list -%}
+              <li class="favorites-item d-flex align-items-center bm-bdr-btm border-color-grey-20">
+
+                {%- assign current_product = all_products[favorite] -%}
+
+                <div class="flex-grow-1">
+
+                  {%- render 'bm-link',
+                    bm_link_title: current_product.title,
+                    bm_link_classes: "opacity-hover text-decoration-none d-block py-3",
+                    bm_link_url: current_product.url,
+                    bm_link_content: current_product.title -%}
+
+                </div>
+
+                <div>
+
+                  {%- capture button_content -%}
+
+                    {%- render 'bm-icon-template',
+                      bm_icon: "icon-close-lg",
+                      bm_icon_classes: "d-block",
+                      icon_classes: "d-block" -%}
+
+                  {%- endcapture -%}
+
+                  {%- capture button_attributes -%}
+                    data-handle="{{ current_product.handle }}"
+                    data-remove="true"
+                  {%- endcapture -%}
+
+                  {%- render 'bm-btn',
+                    button_attributes: button_attributes,
+                    button_classes: "bm-btn--no-styles opacity-hover px-2 py-3 bm-btn--wish-remove"
+                    button_content: button_content -%}
+
+                </div>
+              </li>
+            {%- endfor -%}
+
+          </ul>
+        </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+</div>

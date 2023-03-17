@@ -1,0 +1,20 @@
+.bm-search-form {
+  [type="search"] {
+    background-color: $bmVerylightBrown;
+    border-color: $bmVerylightBrown;
+    border-style: solid;
+    padding-bottom: $gutter - 0.5625;
+    padding-left: $gutterMedium + 0.125;
+    padding-right: $gutter - 0.5625;
+    padding-top: $gutter - 0.5625;
+
+    &::placeholder {
+      color: $black;
+    }
+  }
+}
+
+.bm-search-form__btn {
+  background: transparent;
+  border-color: transparent;
+}

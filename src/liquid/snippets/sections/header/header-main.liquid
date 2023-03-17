@@ -1,0 +1,85 @@
+{%- capture bm_link_styles -%}color: {{ text_color | default: '#000' }};{%- endcapture -%}
+
+<div class="d-none d-xl-flex align-items-center col-xl-5">
+  <ul
+    class="navigation__list navigation__list--main my-0 ps-0 d-flex align-items-center enable_nav_level_two-{{ enable_nav_level_two }}"
+    aria-label="{{ shop.name }} main navigation"
+    aria-orientation="horizonal"
+    role="menubar"
+  >
+
+    {%- for link in main_nav.links -%}
+      {%- assign bm_link_classes = "d-block bm-header__link-hover px-2 py-4" -%}
+      {%- assign enable_sub_menu = false -%}
+      {%- assign title_content = link.title -%}
+      {%- assign link_content = title_content -%}
+      {%- assign link_item_attributes = false -%}
+
+      {%- if link.levels > 0 and enable_nav_level_two -%}
+        {%- assign enable_sub_menu = true -%}
+      {%- endif -%}
+
+      {%- if forloop.first -%}
+        {%- assign bm_link_classes = bm_link_classes | prepend: 'ps-2 ps-xl-4 ' -%}
+      {%- endif -%}
+
+      {%- if enable_sub_menu -%}
+        {% comment %} {%- assign bm_link_classes = bm_link_classes | append: ' pe-none' -%} {% endcomment %}
+        {%- assign formatted_title = title_content | sha1 -%}
+        {%- assign title_labelledby = "sub-mnu-one-ttl-" | append: formatted_title -%}
+        {%- assign data_target = "sub-mnu-one-" | append: formatted_title -%}
+
+        {%- capture link_item_attributes -%}
+          id="{{ title_labelledby }}"
+          class="hover-open-button closed-hover-open cursor-pointer bm-header__item-hover"
+          data-target="{{ data_target }}"
+          aria-controls="{{ data_target }}"
+          aria-expanded="false"
+        {%- endcapture -%}
+
+        {%- capture link_content -%}
+
+          <span class="d-flex align-items-center pe-none">
+
+            <span>{{ title_content }}</span>
+
+            {%- render 'bm-icon-template',
+              bm_icon: "icon-chevron-down",
+              bm_icon_classes: "d-block ms-1",
+              icon_classes: "d-block bm-icon__size--small" -%}
+
+          </span>
+
+        {%- endcapture -%}
+      {% endif -%}
+
+      <li
+        role="none"
+
+        {%- if link_item_attributes %} {{ link_item_attributes }}{% endif -%}
+      >
+
+        {%- render 'bm-link',
+          bm_link_role: "menuitem",
+          bm_link_title: title_content,
+          bm_link_classes: bm_link_classes,
+          bm_link_url: link.url,
+          bm_link_content: link_content,
+          bm_link_styles: bm_link_styles -%}
+
+        {%- if enable_sub_menu -%}
+
+          {%- render 'header-sub-menu-one',
+            bm_link_styles: bm_link_styles,
+            data_target: data_target,
+            enable_nav_level_three: enable_nav_level_three,
+            parent_link: link,
+            title_labelledby: title_labelledby -%}
+
+        {%- endif -%}
+
+      </li>
+    {%- endfor -%}
+
+  </ul>
+</div>

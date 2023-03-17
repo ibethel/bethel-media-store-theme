@@ -1,0 +1,61 @@
+{%- assign accordions = section_blocks | where: "type", "section_accordion" -%}
+
+<div class="accordion__block">
+  <div class="accordion__blocks-container">
+    <div class="accordion__blocks-wrapper">
+      <div class="accordion__blocks-content">
+
+        {%- for block in section_blocks -%}
+          {%- assign title_content = block.settings.title -%}
+          {%- assign message_content = block.settings.message -%}
+          {%- assign html_content = block.settings.custom_html -%}
+          {%- assign formatted_title = title_content | sha1 -%}
+          {%- assign title_labelledby = "accordion-title-" | append: formatted_title -%}
+          {%- assign data_target = "accordion-" | append: formatted_title -%}
+
+          {%- if html_content != blank -%}
+            {%- assign current_content = html_content -%}
+            {%- assign message_has_html = true -%}
+            {%- else -%}
+              {%- assign current_content = message_content -%}
+          {%- endif -%}
+
+          {%- if title_content != blank and current_content != blank -%}
+
+            {%- render 'accordion-item',
+              data_target: data_target,
+              first_item: forloop.first,
+              enable_title_styles: block.settings.enable_title_styles,
+              title_color: block.settings.title_color,
+              title_content: title_content,
+              title_font: block.settings.title_font_family,
+              title_italic: block.settings.title_font_style_italic,
+              title_labelledby: title_labelledby,
+              title_size: block.settings.title_font_size,
+              title_size_tablet: block.settings.title_font_size_tablet,
+              title_size_desk: block.settings.title_font_size_desk,
+              title_tag: block.settings.title_tag,
+              title_weight: block.settings.title_font_weight,
+              enable_message_styles: block.settings.enable_message_styles,
+              message_alignment_desk: block.settings.message_text_alignment_desk,
+              message_alignment_tablet: block.settings.message_text_alignment_tablet,
+              message_alignment_phone: block.settings.message_text_alignment_phone,
+              message_color: block.settings.message_color,
+              message_content: current_content,
+              message_font: block.settings.message_font_family,
+              message_has_html: message_has_html,
+              message_italic: block.settings.message_font_style_italic,
+              message_line_height: block.settings.message_line_height,
+              message_size: block.settings.message_font_size,
+              message_size_tablet: block.settings.message_font_size_tablet,
+              message_size_desk: block.settings.message_font_size_desk,
+              message_weight: block.settings.message_font_weight -%}
+
+          {%- endif -%}
+
+        {%- endfor -%}
+
+      </div>
+    </div>
+  </div>
+</div>

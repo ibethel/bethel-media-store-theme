@@ -1,0 +1,44 @@
+<div
+  class="banner-item-rows__container
+
+    {%- if enable_full_width != true -%}
+      {%- if enable_contain %} container-xl px-3
+        {%- else -%}
+          {%- if show_background == false %} px-3 px-xl-5{%- endif -%}
+      {%- endif -%}
+    {%- endif -%}"
+>
+
+  {%- if section_blocks != blank -%}
+
+    {%- if is_a_carousel -%}
+
+      {%- render 'banner-item-rows-blocks-carousel',
+        item_widths_desk: item_widths_desk,
+        item_widths_max: item_widths_max,
+        item_widths_phone: item_widths_phone,
+        item_widths_tablet: item_widths_tablet,
+        section_blocks: section_blocks -%}
+
+      {%- else -%}
+
+        {%- render 'banner-item-rows-blocks',
+          border_bottom: border_bottom,
+          border_color: border_color,
+          border_left: border_left,
+          border_right: border_right,
+          border_top: border_top,
+          border_size: border_size,
+          enable_borders: enable_borders,
+          enable_item_gap: enable_item_gap,
+          item_widths_desk: item_widths_desk,
+          item_widths_max: item_widths_max,
+          item_widths_phone: item_widths_phone,
+          item_widths_tablet: item_widths_tablet,
+          section_blocks: section_blocks -%}
+
+    {%- endif -%}
+
+  {%- endif -%}
+
+</div>

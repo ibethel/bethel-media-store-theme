@@ -1,0 +1,17 @@
+.bm-colors {
+  &-color {
+    &-brown {
+      color: $bmBrown;
+    }
+
+    &-grey {
+      &-10 {
+        color: $grey10 !important;
+      }
+
+      &-50 {
+        color: $grey50 !important;
+      }
+    }
+  }
+}

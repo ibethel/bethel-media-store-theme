@@ -1,0 +1,198 @@
+{%- render "bm-spacing",
+  background_color: section.settings.background_color,
+  bm_spacing_desk: section.settings.bm_spacing_desk
+  bm_spacing_phone: section.settings.bm_spacing_phone
+  bm_spacing_tablet: section.settings.bm_spacing_tablet,
+  enable_background: section.settings.enable_background -%}
+
+{% schema %}
+  {
+    "name": "t:sections.spacing.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.spacing.name"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_contain",
+        "label": "t:sections.all.contain.label",
+        "default": false,
+        "info": "t:sections.all.contain.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_background",
+        "label": "t:sections.all.enable_background.label",
+        "default": false
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "t:sections.all.background_color.label",
+        "default": "#fff"
+      },
+      {
+        "type": "select",
+        "id": "bm_spacing_phone",
+        "label": "t:sections.spacing.settings.bm_spacing_phone",
+        "options": [
+          {
+            "value": "pb-0",
+            "label": "t:sections.all.section_margin.option_none"
+          },
+          {
+            "value": "pb-1",
+            "label": "t:sections.all.section_margin.option_xsmall"
+          },
+          {
+            "value": "pb-2",
+            "label": "t:sections.all.section_margin.option_smaller"
+          },
+          {
+            "value": "pb-3",
+            "label": "t:sections.all.section_margin.option_small"
+          },
+          {
+            "value": "pb-4",
+            "label": "t:sections.all.section_margin.option_medium"
+          },
+          {
+            "value": "pb-5",
+            "label": "t:sections.all.section_margin.option_large"
+          },
+          {
+            "value": "mb-minus-1",
+            "label": "t:sections.all.section_margin.option_negative_xsmall"
+          },
+          {
+            "value": "mb-minus-2",
+            "label": "t:sections.all.section_margin.option_negative_smaller"
+          },
+          {
+            "value": "mb-minus-3",
+            "label": "t:sections.all.section_margin.option_negative_small"
+          },
+          {
+            "value": "mb-minus-4",
+            "label": "t:sections.all.section_margin.option_negative_medium"
+          },
+          {
+            "value": "mb-minus-5",
+            "label": "t:sections.all.section_margin.option_negative_large"
+          }
+        ],
+        "default": "pb-5"
+      },
+      {
+        "type": "select",
+        "id": "bm_spacing_tablet",
+        "label": "t:sections.spacing.settings.bm_spacing_tablet",
+        "options": [
+          {
+            "value": "pb-sm-0",
+            "label": "t:sections.all.section_margin.option_none"
+          },
+          {
+            "value": "pb-sm-1",
+            "label": "t:sections.all.section_margin.option_xsmall"
+          },
+          {
+            "value": "pb-sm-2",
+            "label": "t:sections.all.section_margin.option_smaller"
+          },
+          {
+            "value": "pb-sm-3",
+            "label": "t:sections.all.section_margin.option_small"
+          },
+          {
+            "value": "pb-sm-4",
+            "label": "t:sections.all.section_margin.option_medium"
+          },
+          {
+            "value": "pb-sm-5",
+            "label": "t:sections.all.section_margin.option_large"
+          },
+          {
+            "value": "mb-minus-sm-1",
+            "label": "t:sections.all.section_margin.option_negative_xsmall"
+          },
+          {
+            "value": "mb-minus-sm-2",
+            "label": "t:sections.all.section_margin.option_negative_smaller"
+          },
+          {
+            "value": "mb-minus-sm-3",
+            "label": "t:sections.all.section_margin.option_negative_small"
+          },
+          {
+            "value": "mb-minus-sm-4",
+            "label": "t:sections.all.section_margin.option_negative_medium"
+          },
+          {
+            "value": "mb-minus-sm-5",
+            "label": "t:sections.all.section_margin.option_negative_large"
+          }
+        ],
+        "default": "pb-sm-5"
+      },
+      {
+        "type": "select",
+        "id": "bm_spacing_desk",
+        "label": "t:sections.spacing.settings.bm_spacing_desk",
+        "options": [
+          {
+            "value": "pb-xl-0",
+            "label": "t:sections.all.section_margin.option_none"
+          },
+          {
+            "value": "pb-xl-1",
+            "label": "t:sections.all.section_margin.option_xsmall"
+          },
+          {
+            "value": "pb-xl-2",
+            "label": "t:sections.all.section_margin.option_smaller"
+          },
+          {
+            "value": "pb-xl-3",
+            "label": "t:sections.all.section_margin.option_small"
+          },
+          {
+            "value": "pb-xl-4",
+            "label": "t:sections.all.section_margin.option_medium"
+          },
+          {
+            "value": "pb-xl-5",
+            "label": "t:sections.all.section_margin.option_large"
+          },
+          {
+            "value": "mb-minus-xl-1",
+            "label": "t:sections.all.section_margin.option_negative_xsmall"
+          },
+          {
+            "value": "mb-minus-xl-2",
+            "label": "t:sections.all.section_margin.option_negative_smaller"
+          },
+          {
+            "value": "mb-minus-xl-3",
+            "label": "t:sections.all.section_margin.option_negative_small"
+          },
+          {
+            "value": "mb-minus-xl-4",
+            "label": "t:sections.all.section_margin.option_negative_medium"
+          },
+          {
+            "value": "mb-minus-xl-5",
+            "label": "t:sections.all.section_margin.option_negative_large"
+          }
+        ],
+        "default": "pb-xl-5"
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.spacing.name"
+      }
+    ]
+  }
+{% endschema %}

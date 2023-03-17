@@ -1,0 +1,76 @@
+{%- if enable_item_gap -%}
+  {%- assign bmci_classes = "mb-4" -%}
+{%- endif -%}
+
+<ul class="row list-type-none my-0 ps-0
+
+      {%- if enable_item_gap != true %} ms-0 me-0{% endif %}"
+>
+
+  {%- for block in section_blocks -%}
+    {%- assign bmci_color = block.settings.background_color -%}
+    {%- assign bmci_styles = "" -%}
+    {%- assign item_url = block.settings.item_url -%}
+    {%- assign item_width_desk = block.settings.item_width_desk -%}
+    {%- assign item_width_max = block.settings.item_width_max -%}
+    {%- assign item_width_phone = block.settings.item_width_phone -%}
+    {%- assign item_width_tablet = block.settings.item_width_tablet -%}
+
+    {%- if item_width_desk == "inherit" -%}
+      {%- assign item_width_desk = item_widths_desk -%}
+    {%- endif -%}
+
+    {%- if item_width_max == "inherit" -%}
+      {%- assign item_width_max = item_widths_max -%}
+    {%- endif -%}
+
+    {%- if item_width_phone == "inherit" -%}
+      {%- assign item_width_phone = item_widths_phone -%}
+    {%- endif -%}
+
+    {%- if item_width_tablet == "inherit" -%}
+      {%- assign item_width_tablet = item_widths_tablet -%}
+    {%- endif -%}
+
+    {%- if item_url != blank -%}
+      {%- assign bmci_classes = bmci_classes | append: " position-relative" -%}
+    {%- endif -%}
+
+    {%- if bmci_color != blank or
+      enable_borders -%}
+      {%- capture bmci_styles -%}
+        {%- if bmci_color != blank %}background-color: {{ bmci_color }};{% endif -%}
+        {%- if border_bottom != blank and border_size != blank %}border-bottom-style: solid;
+          {%- if border_color != blank %}border-bottom-color: {{ border_color }};{% endif -%}
+          {%- if border_size != blank %}border-bottom-width: {{ border_size }}px;{% endif -%}
+        {% endif -%}
+        {%- if border_left != blank and border_size != blank %}border-left-style: solid;
+          {%- if border_color != blank %}border-left-color: {{ border_color }};{% endif -%}
+          {%- if border_size != blank %}border-left-width: {{ border_size }}px;{% endif -%}
+        {% endif -%}
+        {%- if border_right != blank and border_size != blank %}border-right-style: solid;
+          {%- if border_color != blank %}border-right-color: {{ border_color }};{% endif -%}
+          {%- if border_size != blank %}border-right-width: {{ border_size }}px;{% endif -%}
+        {% endif -%}
+        {%- if border_top != blank and border_size != blank %}border-top-style: solid;
+          {%- if border_color != blank %}border-top-color: {{ border_color }};{% endif -%}
+          {%- if border_size != blank %}border-top-width: {{ border_size }}px;{% endif -%}
+        {% endif -%}
+      {%- endcapture -%}
+    {%- endif -%}
+
+    {%- render 'bm-banner-item',
+      bmci_classes: bmci_classes,
+      bmci_styles: bmci_styles,
+      bmci_url: item_url,
+      block: block,
+      enable_item_gap: enable_item_gap,
+      image_widths: "180,360,540,720,900",
+      item_width_desk: item_width_desk,
+      item_width_max: item_width_max,
+      item_width_phone: item_width_phone,
+      item_width_tablet: item_width_tablet, -%}
+
+  {%- endfor -%}
+
+</ul>

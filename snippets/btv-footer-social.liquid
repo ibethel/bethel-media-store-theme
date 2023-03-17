@@ -1,0 +1,133 @@
+{%- if enable_social -%}
+  {%- if social_color != blank and enable_social_styles -%}
+    {%- capture icon_styles -%}
+      fill: {{ social_color }};
+    {%- endcapture -%}
+  {%- endif -%}
+
+  <nav
+    class="d-flex align-items-center
+
+      {%- if btv_footer_social_classes != blank %} {{ btv_footer_social_classes }}{%- endif -%}"
+  >
+    <ul class="list-type-none ps-0 m-0 d-flex align-items-center" role="menubar">
+
+      {%- if social_youtube_link != blank -%}
+        {%- assign youtube_title = "general.social.links.youtube" | t -%}
+
+        {%- capture youtube_content -%}
+
+          {%- render 'bm-icon-template',
+            bm_icon: "icon-btv-youtube",
+            bm_icon_classes: "d-block",
+            icon_classes: "d-block bm-icon__size--medium",
+            icon_styles: icon_styles -%}
+
+        {%- endcapture -%}
+
+        <li
+          class="list-item d-block"
+          role="menuitem"
+        >
+
+          {%- render 'bm-link',
+            bm_link_title: youtube_title,
+            bm_link_classes: "d-block opacity-hover p-2",
+            bm_link_url: social_youtube_link,
+            bm_link_content: youtube_content,
+            bm_link_styles: bm_link_styles,
+            bm_link_target: "_blank" -%}
+
+        </li>
+      {%- endif -%}
+
+      {%- if social_twitter_link != blank -%}
+        {%- assign twitter_title = "general.social.links.twitter" | t -%}
+
+        {%- capture twitter_content -%}
+
+          {%- render 'bm-icon-template',
+            bm_icon: "icon-btv-twitter",
+            bm_icon_classes: "d-block",
+            icon_classes: "d-block bm-icon__size--medium",
+            icon_styles: icon_styles -%}
+
+        {%- endcapture -%}
+
+        <li
+          class="list-item d-block"
+          role="menuitem"
+        >
+
+          {%- render 'bm-link',
+            bm_link_title: twitter_title,
+            bm_link_classes: "d-block opacity-hover p-2",
+            bm_link_url: social_twitter_link,
+            bm_link_content: twitter_content,
+            bm_link_styles: bm_link_styles,
+            bm_link_target: "_blank" -%}
+
+        </li>
+      {%- endif -%}
+
+      {%- if social_facebook_link != blank -%}
+        {%- assign facebook_title = "general.social.links.facebook" | t -%}
+
+        {%- capture facebook_content -%}
+
+          {%- render 'bm-icon-template',
+            bm_icon: "icon-btv-facebook",
+            bm_icon_classes: "d-block",
+            icon_classes: "d-block bm-icon__size--medium",
+            icon_styles: icon_styles -%}
+
+        {%- endcapture -%}
+
+        <li
+          class="list-item d-block"
+          role="menuitem"
+        >
+
+          {%- render 'bm-link',
+            bm_link_title: facebook_title,
+            bm_link_classes: "d-block opacity-hover p-2",
+            bm_link_url: social_facebook_link,
+            bm_link_content: facebook_content,
+            bm_link_styles: bm_link_styles,
+            bm_link_target: "_blank" -%}
+
+        </li>
+      {%- endif -%}
+
+      {%- if social_instagram_link != blank -%}
+        {%- assign instagram_title = "general.social.links.instagram" | t -%}
+
+        {%- capture instagram_content -%}
+
+          {%- render 'bm-icon-template',
+            bm_icon: "icon-btv-instagram",
+            bm_icon_classes: "d-block",
+            icon_classes: "d-block bm-icon__size--medium",
+            icon_styles: icon_styles -%}
+
+        {%- endcapture -%}
+
+        <li
+          class="list-item d-block"
+          role="menuitem"
+        >
+
+          {%- render 'bm-link',
+            bm_link_title: instagram_title,
+            bm_link_classes: "d-block opacity-hover p-2",
+            bm_link_url: social_instagram_link,
+            bm_link_content: instagram_content,
+            bm_link_styles: bm_link_styles,
+            bm_link_target: "_blank" -%}
+
+        </li>
+      {%- endif -%}
+
+    </ul>
+  </nav>
+{%- endif -%}

@@ -1,0 +1,53 @@
+{%- assign bm_account_title = "account.title" | t -%}
+{%- assign return_title = "account.return" | t -%}
+
+<div class="bm-order py-3 py-xl-5 mb-3 mb-xl-5">
+  <div class="bm-order__container container-xl px-3 position-relative">
+    <div class="bm-order__wrapper">
+
+      {%- render 'bm-title-block',
+        title_alignment_phone: "text-center",
+        title_content: bm_account_title,
+        title_font: "ff-ivypresto",
+        title_margin: "mb-3",
+        title_size: "fs-1",
+        title_tag: "h1" -%}
+
+      <div class="text-center mb-3">
+
+        {%- render 'bm-link',
+          bm_link_title: return_title,
+          bm_link_classes: "opacity-hover",
+          bm_link_url: routes.account_url,
+          bm_link_content: return_title -%}
+
+      </div>
+
+      <div class="bm-order__content row">
+
+        {%- if order.cancelled -%}
+          <div class="site-section site-section--medium site-settings__section-margin--large">
+
+            {%- assign cancelled_at = order.cancelled_at | date: format: 'long' -%}
+
+            <p>{{ 'order.cancelled_html' | t: date: cancelled_at }}</p>
+            <p>{{ 'order.cancelled_reason' | t: reason: order.cancel_reason_label }}</p>
+
+          </div>
+        {%- endif -%}
+
+        <div class="col-12 col-xl-9 mb-3 mb-xl-0">
+
+          {%- render 'order-summary' -%}
+
+        </div>
+
+        <div class="col-12 col-xl-3">
+
+          {%- render 'order-status' -%}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

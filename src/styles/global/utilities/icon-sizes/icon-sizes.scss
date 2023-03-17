@@ -1,0 +1,32 @@
+.bm-icon__size {
+  &--small-2 {
+    height: $iconSizeExtraSmall;
+    width: $iconSizeExtraSmall;
+  }
+
+  &--small {
+    height: $iconSizeSmall;
+    width: $iconSizeSmall;
+  }
+
+  &--regular-small {
+    height: $iconSizeSmallRegular;
+    width: $iconSizeSmallRegular;
+  }
+
+  &--regular {
+    height: $iconSize;
+    width: $iconSize;
+  }
+
+  &--medium {
+    height: $iconSizeMedium;
+    width: $iconSizeMedium;
+  }
+}
+
+.bm-icon {
+  &--black {
+    fill: $black;
+  }
+}

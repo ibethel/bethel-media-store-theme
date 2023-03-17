@@ -1,0 +1,41 @@
+{%- comment -%}Add this if there is a video position-absolute left-0 top-0 bottom-0 right-0 or figure out a better way{%- endcomment -%}
+
+<div class="banner-slider-images d-flex align-items-center">
+
+  {%- render 'bm-image'
+    bm_img: banner_image_phone,
+    bm_img_alt: banner_image_phone.alt,
+    bm_img_is_lazy: true,
+    bm_img_wrapper_classes: "bm-img__wrapper--fixed-width d-block d-sm-none",
+    bm_img_widths: "540",
+    bm_img_width: banner_image_phone.width,
+    bm_img_height: banner_image_phone.height -%}
+
+  {%- render 'bm-image'
+    bm_img: banner_image_tablet,
+    bm_img_alt: banner_image_tablet.alt,
+    bm_img_is_lazy: true,
+    bm_img_wrapper_classes: "bm-img__wrapper--fixed-width d-none d-sm-block d-xl-none",
+    bm_img_widths: "1080,1296",
+    bm_img_width: banner_image_tablet.width,
+    bm_img_height: banner_image_tablet.height -%}
+
+  {%- render 'bm-image'
+    bm_img: banner_image_desk,
+    bm_img_alt: banner_image_desk.alt,
+    bm_img_is_lazy: true,
+    bm_img_wrapper_classes: "bm-img__wrapper--fixed-width d-none d-xxxl-none d-xl-block",
+    bm_img_widths: "2808",
+    bm_img_width: banner_image_desk.width,
+    bm_img_height: banner_image_desk.height -%}
+
+  {%- render 'bm-image'
+    bm_img: banner_image_max,
+    bm_img_alt: banner_image_max.alt,
+    bm_img_is_lazy: true,
+    bm_img_wrapper_classes: "bm-img__wrapper--fixed-width d-none d-xxxl-block",
+    bm_img_widths: "3024",
+    bm_img_width: banner_image_max.width,
+    bm_img_height: banner_image_max.height -%}
+
+</div>

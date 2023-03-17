@@ -1,0 +1,30 @@
+{%- assign bm_activate_title = "activate_account.title" | t -%}
+{%- assign bm_activate_message = "activate_account.subtext" | t -%}
+
+<div class="bm-activate py-3 py-xl-5 mb-3 mb-xl-5">
+  <div class="bm-activate__container container-xl px-3 position-relative">
+    <div class="bm-activate__wrapper">
+
+      {%- render 'bm-title-block',
+        title_alignment_phone: "text-center",
+        title_content: bm_activate_title,
+        title_font: "ff-ivypresto",
+        title_margin: "mb-3",
+        title_size: "fs-1",
+        title_tag: "h1" -%}
+
+      {%- render 'bm-message-block',
+        message_alignment_phone: "text-center",
+        message_content: bm_activate_message,
+        message_margin: "mb-3 mb-xl-5" -%}
+
+      <div class="bm-activate__content d-flex justify-content-center">
+        <div class="col-12 col-xl-6">
+
+          {%- render 'activate-account-form' -%}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

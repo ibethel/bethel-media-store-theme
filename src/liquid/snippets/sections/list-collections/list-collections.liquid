@@ -1,0 +1,106 @@
+{%- assign list_collections_title = 'list_collections.title' | t -%}
+{%- assign see_all = 'list_collections.see_all' | t -%}
+
+{%- assign show_background = false -%}
+{%- if enable_background and background_color != blank -%}
+  {%- assign show_background = true -%}
+{%- endif -%}
+
+<div class="bm-list-collections {{ section_margin -}}">
+  <div
+    class="bm-list-collections__container
+
+      {%- if enable_contain %} container-xl px-3{%- endif -%}"
+  >
+    <header>
+
+      {%- render 'bm-title-block',
+        title_alignment_phone: "text-center",
+        title_content: list_collections_title,
+        title_font: "ff-ivypresto",
+        title_margin: "mb-5",
+        title_size: "fs-1",
+        title_tag: "h1",
+        title_weight: "fw-light" -%}
+
+    </header>
+
+    {%- paginate collections by 12 -%}
+
+    <section class="bm-list-collections__wrapper">
+
+      {%- for collection in collections -%}
+        {%- if collection.handle == 'frontpage' or collection.all_products_count > 1 -%}
+          {%- assign collection_title = collection.title | upcase | escape -%}
+
+          <div class="bm-list-collections__collection mb-3">
+            <div class="d-flex align-items-center justify-content-between border-bottom border-very-light-brown pb-2 mb-3">
+
+              {%- render 'bm-title-block',
+                title_alignment_phone: "text-start",
+                title_content: collection_title,
+                title_margin: "mb-0",
+                title_size: "fs-5" -%}
+
+
+              {%- render 'bm-link',
+                bm_link_title: see_all,
+                bm_link_classes: "opacity-hover bm-colors-color-brown",
+                bm_link_url: collection.url,
+                bm_link_content: see_all,
+                bm_link_styles: bm_link_styles -%}
+
+            </div>
+
+            <ul class="row list-type-none mt-0 ps-0">
+
+              {%- for product in collection.products limit: 4 -%}
+
+                {%- if product.variants.size == 1 -%}
+                  {%- assign show_compare_price = true -%}
+                {%- endif -%}
+
+                {%- render 'bm-prod-item',
+                  bmpi_classes: "mb-4",
+                  bmpi_img: product.featured_image,
+                  bmpi_title: product.title,
+                  bmpi_url: product.url,
+                  compare_price: product.compare_at_price,
+                  compare_price_color: compare_price_color,
+                  compare_price_varies: product.compare_at_price_varies,
+                  enable_styles: enable_styles,
+                  font_italic: font_italic,
+                  font_size: font_size,
+                  font_weight: font_weight,
+                  price: product.price,
+                  price_color: price_color,
+                  price_color_sale: price_color_sale,
+                  price_varies: product.price_varies,
+                  show_compare_price: show_compare_price,
+                  text_color: text_color,
+                  image_widths: "180,360,540,720,900",
+                  item_width_desk: "col-xl-3",
+                  item_width_max: "col-xxxl-2",
+                  item_width_phone: "col-6",
+                  item_width_tablet: "col-sm-4", -%}
+
+              {%- endfor -%}
+
+            </ul>
+          </div>
+
+        {%- endif -%}
+      {%- endfor -%}
+
+
+
+
+    </section>
+
+    {% if paginate.pages > 1 %}
+      {%- render 'pagination' paginate: paginate -%}
+    {% endif %}
+
+    {%- endpaginate -%}
+  </div>
+</div>

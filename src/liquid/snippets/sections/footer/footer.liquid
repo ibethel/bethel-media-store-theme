@@ -1,0 +1,35 @@
+{%- assign show_background = false -%}
+{%- if enable_background and background_color != blank -%}
+  {%- assign show_background = true -%}
+  {%- assign current_background = background_color -%}
+{%- endif -%}
+
+{%- assign footer_bottom = section_blocks | where: "type", "footer_bottom" -%}
+{%- assign footer_top_message = section_blocks | where: "type", "footer_top" -%}
+{%- assign footer_middle = section_blocks | where: "type", "footer_middle" -%}
+
+<div class="bm-footer {{ section_margin -}} p-3 p-xl-5
+
+  {%- if enable_hide_scroll %} bm-hide-scroll{% endif %}"
+
+  {%- if show_background -%}
+    style="background-color: {{ background_color }};"
+  {%- endif -%}
+>
+  <div class="bm-footer__container container-footer-lg">
+
+    {%- render 'footer-top',
+      message_block: footer_top_message.first,
+      footer_middle: footer_middle.first -%}
+
+    {%- render 'footer-middle',
+      footer_bottom: footer_bottom.first,
+      footer_middle: footer_middle.first -%}
+
+    {%- render 'footer-bottom',
+      footer_bottom: footer_bottom.first,
+      footer_middle: footer_middle.first -%}
+
+  </div>
+</div>
+

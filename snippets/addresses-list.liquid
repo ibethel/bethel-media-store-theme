@@ -1,0 +1,99 @@
+{%- paginate customer.addresses by 5 -%}
+
+  <div class="bm-address-list">
+
+    {%- for address in customer.addresses -%}
+
+      <div class="bm-address-list__address-container mb-3 mb-xl-5">
+        <div id="{{ address.id }}" class="bm-address-list__address">
+
+          {%- if address == customer.default_address -%}
+            {%- assign default = 'addresses.default' | t | prepend: ' - ' -%}
+            {%- assign address_title = address.street | append: default -%}
+            {%- else -%}
+              {%- assign address_title = address.street -%}
+          {%- endif -%}
+
+          {%- render 'bm-title-block',
+            title_content: address_title,
+            title_font: "ff-ivypresto",
+            title_margin: "mb-0",
+            title_size: "fs-4",
+            title_tag: "h4" -%}
+
+          {{- address | format_address -}}
+
+          {%- if address.phone != blank -%}
+            <p>
+              {{ address.phone }}
+            </p>
+          {%- endif -%}
+
+          <div class="bm-address-list__actions">
+            <div class="row">
+              <div class="col-6">
+
+                {%- assign edit_title = 'addresses.edit' | t -%}
+                {%- assign address_id = "bm-address-" | append: address.id -%}
+
+                {%- capture edit_attributes -%}
+                  aria-label="{{ 'addresses.edit_address' | t }} {{ forloop.index }}"
+                  aria-controls="{{ address_id }}"
+                  aria-expanded="false"
+                  data-target="{{ address_id }}"
+                {%- endcapture -%}
+
+                {%- render 'bm-btn-template',
+                  button_attributes: edit_attributes,
+                  button_classes: "drop-open-button closed-drop-open col-12",
+                  button_content: edit_title,
+                  button_font_size: button_font_size,
+                  button_text_color: button_text_color,
+                  button_size: "large",
+                  button_size_desk: button_size_desk,
+                  button_size_tablet: button_size_tablet,
+                  button_title: edit_title,
+                  button_template: "primary",
+                  button_radius: "rounded-5" -%}
+
+              </div>
+
+              <div class="col-6">
+                <form class="address-delete-form"
+                  method="post"
+                  action="/account/addresses/{{ address.id }}"
+                >
+                  <input type="hidden" name="_method" value="delete">
+
+                  {%- assign delete_title = 'addresses.delete' | t -%}
+
+                  {%- render 'bm-btn-template',
+                    button_classes: "col-12",
+                    button_content: delete_title,
+                    button_size: "large",
+                    button_type: "submit",
+                    button_title: edit_title,
+                    button_template: "primary",
+                    button_radius: "rounded-5" -%}
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {%- render 'address-edit-form',
+          address: address,
+          address_id: address_id -%}
+
+      </div>
+
+    {%- endfor -%}
+
+  </div>
+
+  {%- if paginate.pages > 1 -%}
+    {%- render 'pagination' paginate: paginate -%}
+  {%- endif -%}
+
+{%- endpaginate -%}

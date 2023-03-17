@@ -1,0 +1,81 @@
+{%- assign select_proxy_id = "collection-sorting__select"
+  | sha1
+  | prepend: 'collection-sorting__select' -%}
+
+<div class="collection-sorting col-6 d-sm-flex justify-content-sm-end">
+  <div class="collection-sorting__container position-relative">
+    {%- capture button_content -%}
+      <span class="d-sm-flex align-items-sm-center">
+        <span class="d-block pe-sm-5">Sort by</span>
+
+        {%- render 'bm-icon-template',
+            bm_icon: "icon-chevron-down",
+            bm_icon_classes: "d-none d-sm-block",
+            icon_classes: "d-block bm-icon__size--small-2" -%}
+
+      </span>
+
+    {%- endcapture -%}
+
+    {%- capture button_attributes -%}
+      aria-expanded="false"
+      data-target="{{ select_proxy_id }}"
+    {%- endcapture -%}
+
+    {%- render 'bm-btn',
+        button_attributes: button_attributes,
+        button_classes: "collection-sorting__button bm-btn--no-styles cursor-pointer drop-open-button closed-drop-open bm-fonts fs-6 fs-sm-9"
+        button_content: button_content -%}
+
+    <div
+      id="{{ select_proxy_id }}"
+      class="collection-sorting__select position-absolute top-100 start-0 end-0 fade-opacity display-toggle display-hidden"
+      aria-hidden="true"
+    >
+      <ul class="list-type-none px-0 py-3 m-0">
+        {%- for option in collection.sort_options -%}
+          {%- assign sort_url = request.path | append: "?sort_by=" | append: option.value -%}
+          {%- assign option_title = option.name -%}
+
+          {%- if option.value == "title-descending" or option.value == "title-ascending" -%}
+            {%- assign option_title = option.name | remove: 'Alphabetically, ' | strip -%}
+          {%- endif -%}
+
+          {%- if option.value == "price-ascending" -%}
+            {%- assign option_title = "Price Lowest" -%}
+          {%- endif -%}
+
+          {%- if option.value == "price-descending" -%}
+            {%- assign option_title = "Price Highest" -%}
+          {%- endif -%}
+
+          {%- if option.value == "created-ascending" -%}
+            {%- assign option_title = "Oldest" -%}
+          {%- endif -%}
+
+          {%- if option.value == "created-descending" -%}
+            {%- assign option_title = "Newest" -%}
+          {%- endif -%}
+
+          {%- if option.value != "manual" -%}
+
+            <li
+              class="collection-sorting__item
+
+                {%- if collection.sort_by == option.value %} selected{%- endif -%}"
+            >
+
+              {%- render 'bm-link',
+                bm_link_title: option_title,
+                bm_link_classes: "text-decoration-none opacity-75-hover d-block py-1 px-3 bm-fonts fs-8",
+                bm_link_url: sort_url,
+                bm_link_content: option_title -%}
+
+            </li>
+
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</div>

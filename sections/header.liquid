@@ -1,0 +1,201 @@
+{%- render "header",
+  background_color: section.settings.background_color,
+  enable_nav_level_two: section.settings.enable_nav_level_two,
+  enable_nav_level_three: section.settings.enable_nav_level_three,
+  section_blocks: section.blocks,
+  text_color: section.settings.text_color -%}
+
+{% schema %}
+  {
+    "name": "t:sections.header.name",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.header.name"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "t:sections.all.background_color.label",
+        "default": "#f8f8f8"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "t:sections.all.text_color.label",
+        "default": "#000000"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_nav_level_two",
+        "label": "Enable navigation level two",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_nav_level_three",
+        "label": "Enable navigation level three",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "nav_list_main",
+        "name": "t:sections.header.blocks.header_main_nav.label",
+        "settings": [
+          {
+            "type": "link_list",
+            "id": "main_nav",
+            "label": "t:sections.header.blocks.header_main_nav.label"
+          }
+        ]
+      },
+      {
+        "type": "nav_list_manage",
+        "name": "t:schema_global.management_nav.label",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "search_is_form",
+            "label": "t:schema_global.management_nav.settings.search_is_form.label",
+            "default": false
+          },
+          {
+            "type": "range",
+            "id": "search_width",
+            "min": 100,
+            "max": 301,
+            "step": 3,
+            "unit": "px",
+            "label": "t:schema_global.management_nav.settings.search_width.label",
+            "default": 301
+          },
+          {
+            "type": "select",
+            "id": "search_link_vis",
+            "label": "t:schema_global.management_nav.settings.search_link_vis.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:schema_global.management_nav.settings.search_link_vis.option_default"
+              },
+              {
+                "value": "sm",
+                "label": "t:schema_global.visibility.tablet"
+              },
+              {
+                "value": "xl",
+                "label": "t:schema_global.visibility.desk"
+              },
+              {
+                "value": "none",
+                "label": "t:schema_global.visibility.invisible"
+              }
+            ],
+            "default": "xl"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_wish_star",
+            "label": "Enable wish star",
+            "default": false
+          },
+          {
+            "type": "select",
+            "id": "star_link_vis",
+            "label": "t:schema_global.management_nav.settings.star_link_vis.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:schema_global.management_nav.settings.star_link_vis.option_default"
+              },
+              {
+                "value": "sm",
+                "label": "t:schema_global.visibility.tablet"
+              },
+              {
+                "value": "xl",
+                "label": "t:schema_global.visibility.desk"
+              },
+              {
+                "value": "none",
+                "label": "t:schema_global.visibility.invisible"
+              }
+            ],
+            "default": "xl"
+          },
+          {
+            "type": "select",
+            "id": "account_link_vis",
+            "label": "t:schema_global.management_nav.settings.account_link_vis.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:schema_global.management_nav.settings.account_link_vis.option_default"
+              },
+              {
+                "value": "sm",
+                "label": "t:schema_global.visibility.tablet"
+              },
+              {
+                "value": "xl",
+                "label": "t:schema_global.visibility.desk"
+              },
+              {
+                "value": "none",
+                "label": "t:schema_global.visibility.invisible"
+              }
+            ],
+            "default": "xl"
+          },
+          {
+            "type": "select",
+            "id": "cart_link_vis",
+            "label": "t:schema_global.management_nav.settings.cart_link_vis.label",
+            "options": [
+              {
+                "value": "default",
+                "label": "t:schema_global.management_nav.settings.cart_link_vis.option_default"
+              },
+              {
+                "value": "sm",
+                "label": "t:schema_global.visibility.tablet"
+              },
+              {
+                "value": "xl",
+                "label": "t:schema_global.visibility.desk"
+              },
+              {
+                "value": "none",
+                "label": "t:schema_global.visibility.invisible"
+              }
+            ],
+            "default": "default"
+          }
+        ]
+      },
+      {
+        "type": "main_logo",
+        "name": "t:schema_global.logo.label",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "t:schema_global.logo.label"
+          },
+          {
+            "type": "range",
+            "id": "logo_max_width",
+            "min": 50,
+            "max": 350,
+            "step": 5,
+            "unit": "px",
+            "label": "t:schema_global.logo.logo_max_width",
+            "default": 90
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

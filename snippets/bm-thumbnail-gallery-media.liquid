@@ -1,0 +1,88 @@
+{%- case media.media_type -%}
+  {%- when "image" -%}
+    {%- if enable_image_zoom -%}
+      {%- assign bm_img_classes = "bm-image--zoom cursor-zoom-in" -%}
+    {%- endif -%}
+
+    <li class="splide__slide" data-mediaid="{{ media.id }}">
+
+      {%- render 'bm-image'
+        bm_img: media,
+        bm_img_alt: media.alt,
+        bm_img_classes: bm_img_classes,
+        bm_img_is_lazy: true,
+        bm_img_wrapper_classes: "position-relative bm-img__wrapper--fixed-width",
+        bm_img_widths: "540,720,900,1728",
+        bm_img_width: media.width,
+        bm_img_height: media.height,
+        bm_img_zoom: enable_image_zoom -%}
+
+    </li>
+
+  {%- when 'video' -%}
+
+    <li class="splide__slide bg-black d-flex align-items-center" data-mediaid="{{ media.id }}">
+
+      {%- if primary -%}
+
+        {{ media
+          | video_tag:
+          class: "col-12",
+          image_size: "900x",
+          autoplay: video_autoplay,
+          controls: true,
+          loop: video_loop }}
+
+        {%- else -%}
+
+          {%- render 'bm-image'
+            bm_img: media.preview_image,
+            bm_img_alt: media.alt,
+            bm_img_classes: bm_img_classes,
+            bm_img_is_lazy: true,
+            bm_img_wrapper_classes: "position-relative bm-img__wrapper--fixed-width",
+            bm_img_widths: "540,720,900,1728",
+            bm_img_width: media.preview_image.width,
+            bm_img_height: media.preview_image.height,
+            bm_img_zoom: enable_image_zoom -%}
+
+      {%- endif -%}
+
+    </li>
+
+  {%- when 'external_video' -%}
+
+    <li class="splide__slide bg-black d-flex align-items-center" data-mediaid="{{ media.id }}">
+
+      {%- if primary -%}
+
+        {%- render 'bm-video',
+          autoplay: autoplay,
+          bm_video_classes: "col-12",
+          controls: true,
+          interaction: interaction,
+          loop: loop,
+          modal: false,
+          thumbnail_url: thumbnail_url,
+          video_id: media.external_id,
+          video_url: mp4_url,
+          video_visibility: video_visibility -%}
+
+      {%- else -%}
+
+        {%- render 'bm-image'
+          bm_img: media.preview_image,
+          bm_img_alt: media.alt,
+          bm_img_classes: bm_img_classes,
+          bm_img_is_lazy: true,
+          bm_img_wrapper_classes: "position-relative bm-img__wrapper--fixed-width",
+          bm_img_widths: "540,720,900,1728",
+          bm_img_width: media.preview_image.width,
+          bm_img_height: media.preview_image.height,
+          bm_img_zoom: enable_image_zoom -%}
+
+      {%- endif -%}
+
+    </li>
+
+{%- endcase -%}

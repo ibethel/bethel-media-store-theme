@@ -1,0 +1,13 @@
+{%- if item.discounts != blank -%}
+  <ul class="list-type-none ps-0 mt-0 mb-3">
+
+    {%- for discount in item.discounts -%}
+
+      <li class="text-success bm-fonts fs-8">
+        {{ discount.title }}
+      </li>
+
+    {%- endfor -%}
+
+  </ul>
+{%- endif -%}

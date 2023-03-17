@@ -1,0 +1,39 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+
+.bm-article__header-container {
+  margin: auto;
+  max-width: 730px;
+}
+
+.bm-article__social {
+  @include media-query($min, $phone + 1) {
+    width: 14%;
+  }
+}
+
+.bm-article__content-text {
+  @include media-query($min, $phone + 1) {
+    width: 72%;
+  }
+
+  @include media-query($max, $phone) {
+    img {
+      width: 100%;
+    }
+  }
+
+  p {
+    line-height: 2;
+
+    @include media-query($min, $phone + 1) {
+      font-size: $h5FontSize;
+    }
+  }
+}
+
+.bm-article__column-right {
+  @include media-query($min, $phone + 1) {
+    width: 14%;
+  }
+}

@@ -1,0 +1,66 @@
+{%- assign collection_title = collection.title -%}
+{%- assign products_section_title = "products.name" | t -%}
+{%- assign collection_title_handlize = collection_title | handleize -%}
+{%- assign products_section_id = collection_title | sha1 | prepend: collection_title_handlize -%}
+{%- assign collection_filter_id = "bm-collection-filter" | sha1 | prepend: 'bm-collection-filter' -%}
+
+<div
+  class="bm-collection {{ section_margin -}}
+
+    {%- if enable_contain %} container-large-xl px-3
+      {%- else %} px-3 px-xl-5
+    {%- endif -%}"
+>
+  <div id="bm-collection__container" class="bm-collection__container row">
+
+    {%- render 'collection-filter',
+      collection_filter_id: collection_filter_id -%}
+
+    <div class="col-12 col-xl-10">
+      <header class="collection-header">
+
+        {%- render 'bm-title-block',
+          title_alignment_phone: "text-start",
+          title_alignment_tablet: "text-sm-center",
+          title_content: collection_title,
+          title_font: "ff-ivypresto",
+          title_margin: "mb-3 mb-sm-0",
+          title_size: "fs-1-3",
+          title_tag: "h1" -%}
+
+      </header>
+
+      <section
+        class="collection-rows {{ section_margin -}}"
+        aria-labelledby="{{ products_section_id }}"
+      >
+
+        {%- render 'collection-management',
+          collection_filter_id: collection_filter_id,
+          products_section_id: products_section_id,
+          products_section_title: products_section_title -%}
+
+        {%- render 'collection-rows',
+          compare_price_color: compare_price_color,
+          enable_contain: enable_contain,
+          enable_styles: enable_styles,
+          font_italic: font_italic,
+          font_size: font_size,
+          font_weight: font_weight,
+          item_widths_desk: item_widths_desk,
+          item_widths_max: item_widths_max,
+          item_widths_phone: item_widths_phone,
+          item_widths_tablet: item_widths_tablet,
+          page_item_limit: page_item_limit,
+          pagination_type: pagination_type,
+          price_color: price_color,
+          price_color_sale: price_color_sale,
+          section_collection: section_collection,
+          section_margin: section_margin,
+          text_color: text_color -%}
+
+      </section>
+
+    </div>
+  </div>
+</div>

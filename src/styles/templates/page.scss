@@ -1,0 +1,13 @@
+@import "../helpers/variables.scss";
+
+.bm-rte {
+  h3 {
+    margin-bottom: $gutterSmall;
+  }
+
+  hr {
+    border-bottom-width: 2px !important;
+    border-color: $bmVerylightBrown;
+    border-style: solid;
+  }
+}

@@ -1,0 +1,76 @@
+.alt-col {
+  &-2 {
+    flex: 0 0 auto !important;
+    width: 20% !important;
+  }
+
+  &-xxxl-2 {
+    @include media-query($min, $maxScreen + 1) {
+      flex: 0 0 auto !important;
+      width: 20% !important;
+    }
+  }
+
+  &-xxl-2 {
+    @include media-query($min, $desktopLarge + 1) {
+      flex: 0 0 auto !important;
+      width: 20% !important;
+    }
+  }
+
+  &-xl-2 {
+    @include media-query($min, $desktop + 1) {
+      flex: 0 0 auto !important;
+      width: 20% !important;
+    }
+  }
+
+  &-lg-2 {
+    @include media-query($min, $laptop + 1) {
+      flex: 0 0 auto !important;
+      width: 20% !important;
+    }
+  }
+
+  &-md-2 {
+    @include media-query($min, $tablet + 1) {
+      flex: 0 0 auto !important;
+      width: 20% !important;
+    }
+  }
+
+  &-sm-2 {
+    @include media-query($min, $phone + 1) {
+      flex: 0 0 auto !important;
+      width: 20% !important;
+    }
+  }
+}
+
+.col-xxxl-2 {
+  @include media-query($min, $maxScreen + 1) {
+    flex: 0 0 auto !important;
+    width: 16.66666667% !important;
+  }
+}
+
+.col-xxxl-3 {
+  @include media-query($min, $maxScreen + 1) {
+    flex: 0 0 auto !important;
+    width: 25% !important;
+  }
+}
+
+.col-xxxl-4 {
+  @include media-query($min, $maxScreen + 1) {
+    flex: 0 0 auto !important;
+    width: 33.33333333% !important;
+  }
+}
+
+.col-xxxl-6 {
+  @include media-query($min, $maxScreen + 1) {
+    flex: 0 0 auto !important;
+    width: 50% !important;
+  }
+}

@@ -1,0 +1,57 @@
+{%- assign formatted_title = form_product.title | sha1 -%}
+{%- assign form_id = form_product.title | handleize | append: '-' | append: formatted_title -%}
+{%- assign show_form_single = form_product.has_only_default_variant -%}
+{%- assign tag_bulk_approved = settings.tag_bulk_approved -%}
+{%- assign tag_bulk_not_approved = settings.tag_bulk_not_approved -%}
+
+{%- form 'product',  form_product, id: form_id, class: "bm-atc-form col-12" -%}
+
+  {%- if form_product.tags != blank and tag_bulk_approved != blank and form_product.tags contains tag_bulk_approved -%}
+    <input type="hidden" name="properties[bulk_approved]" value="{{ tag_bulk_approved }}">
+  {%- endif -%}
+
+  {%- if form_product.tags != blank and tag_bulk_not_approved != blank and form_product.tags contains tag_bulk_not_approved -%}
+    <input type="hidden" name="properties[bulk_not_approved]" value="{{ tag_bulk_not_approved }}">
+  {%- endif -%}
+
+  <div class="bm-atc-form__fields
+
+    {%- unless show_form_single %} mb-3{%- endunless -%}"
+  >
+
+    {%- if show_form_single -%}
+
+      {%- render 'bm-atc-form-single', form_product: form_product -%}
+
+      {%- else -%}
+
+        {%- render 'bm-atc-form-variants',
+          form_id: form_id,
+          form_product: form_product,
+          product_variant_selection: product_variant_selection -%}
+
+    {%- endif -%}
+
+  </div>
+
+  {%- unless form_product.available %}
+    {%- assign button_attributes = "disabled" -%}
+    {% assign button_classes = button_classes | append: ' disabled' %}
+  {%- endunless -%}
+
+  {%- render 'bm-btn',
+    button_attributes: button_attributes,
+    button_autofocus: button_autofocus,
+    button_classes: button_classes,
+    button_content: button_content,
+    button_font_size: button_font_size,
+    button_id: button_id,
+    button_name: button_name,
+    button_radius: button_radius,
+    button_route: button_route,
+    button_styles: button_styles,
+    button_title: button_title,
+    button_type: "submit",
+    button_value: button_value -%}
+
+{%- endform -%}

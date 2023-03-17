@@ -1,0 +1,31 @@
+.display-toggle {
+  &:not(.display-show) {
+    display: none;
+  }
+
+  &.display-showing {
+    opacity: 0;
+  }
+}
+
+.display-flex-toggle {
+  &:not(.display-flex-show) {
+    display: none;
+  }
+
+  &.display-flex-showing {
+    opacity: 0;
+  }
+
+  &.display-flex-show {
+    display: flex;
+  }
+}
+
+.fade-opacity {
+  transition: opacity 0.07s linear;
+
+  &:not(.opened-drop-open) {
+    opacity: 0;
+  }
+}

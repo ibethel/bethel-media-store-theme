@@ -1,0 +1,61 @@
+{%- assign bm_img_height_float = bm_img_height | times: 1.0 -%}
+{%- assign bm_img_width_float = bm_img_width | times: 1.0 -%}
+{%- assign height_numbers = bm_img_height | split: '' -%}
+{%- assign width_numbers = bm_img_width | split: '' -%}
+{%- assign divided_by_number = 1 -%}
+
+{%- if width_numbers.size > height_numbers.size -%}
+  {%- assign cycle_number = height_numbers -%}
+  {%- else -%}
+    {%- assign cycle_number = width_numbers -%}
+{%- endif -%}
+
+{%- for number in cycle_number -%}
+  {%- assign current_divided_by_number = divided_by_number | times: 10 -%}
+  {%- unless forloop.first -%}
+    {%- assign divided_by_number = current_divided_by_number -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- if bm_img_width != blank and
+  bm_img_height != blank -%}
+  {%- assign loading_height = bm_img_height_float
+    | divided_by: divided_by_number
+    | round -%}
+  {%- assign loading_width = bm_img_width_float
+    | divided_by: divided_by_number
+    | round -%}
+
+  {% if loading_height == 0 %}
+    {%- assign loading_height = 1 -%}
+  {% endif %}
+
+  {% if loading_width == 0 %}
+    {%- assign loading_width = 1 -%}
+  {% endif %}
+
+  {%- assign loading_height_array = loading_height | split: '' -%}
+  {%- assign loading_width_array = loading_width | split: '' -%}
+  {%- assign loading_height_diff = height_numbers.size | minus: loading_height_array.size -%}
+  {%- assign loading_width_diff = width_numbers.size | minus: loading_width_array.size -%}
+
+  {% if loading_height_diff > 2 or
+    loading_width_diff > 2 %}
+    {%- assign loading_height = loading_height | times: 10 -%}
+    {%- assign loading_width = loading_width | times: 10 -%}
+  {% endif %}
+
+  {%- else -%}
+    {%- assign loading_height = 1 -%}
+    {%- assign loading_width = 1 -%}
+{%- endif -%}
+
+{%- if loading_width > 1 -%}
+  {%- assign default_loading_height_width = loading_height
+    | append: 'x'
+    | append: loading_width -%}
+  {%- else -%}
+    {%- assign default_loading_height_width = "1x" -%}
+{%- endif -%}
+
+{{- default_loading_height_width -}}

@@ -1,0 +1,75 @@
+.bm-easy-donation {
+  .bm-easy-donation__container {
+    .display_description {
+      border-bottom: 1px solid $grey15;
+      font-size: $fontSize7;
+      margin: 0 0 $gutter;
+      padding-bottom: $gutter;
+    }
+
+    .display_title {
+      display: none;
+    }
+
+    .donation_button {
+      margin: 0;
+    }
+
+    .easy_donation_title {
+      display: none;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+
+      &[type="submit"] {
+        background-color: transparent;
+        border: 1px solid $black;
+        border-radius: $buttonBorderRadiusSmall;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+
+        &:hover {
+          &:not(.disabled) {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    p,
+    input {
+      font-family: $baseFontStack;
+    }
+
+    #preview_container {
+      background-color: $grey5;
+      box-shadow: none;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding: $gutterMedium;
+
+      @include media-query($min, $phone + 1) {
+        padding: $gutterMedium $gutterLarge $gutterLarge;
+      }
+    }
+
+    .product-image {
+      display: none;
+    }
+
+    #textbox_amount {
+      border: 1px solid $grey15;
+      margin: 0 0 $gutter;
+    }
+  }
+}
+
+.bm-easy-donation__wrapper {
+  background-color: $grey5;
+  margin: auto;
+  max-width: 480px;
+  width: 100%;
+}

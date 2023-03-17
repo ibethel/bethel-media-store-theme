@@ -1,0 +1,226 @@
+{%- assign enable_button_styles = block.settings.enable_button_styles -%}
+{%- assign button_autoplay = block.settings.button_autoplay -%}
+{%- assign button_border_color = block.settings.button_border_color -%}
+{%- assign button_color = block.settings.button_color -%}
+{%- assign button_controls = block.settings.button_controls -%}
+{%- assign button_interaction = block.settings.button_interaction -%}
+{%- assign button_loop = block.settings.button_loop -%}
+{%- assign button_text_color = block.settings.button_text_color -%}
+{%- assign button_thumbnail = block.settings.button_thumbnail -%}
+{%- assign enable_button_two_styles = block.settings.enable_button_two_styles -%}
+{%- assign button_two_autoplay = block.settings.button_two_autoplay -%}
+{%- assign button_two_border_color = block.settings.button_two_border_color -%}
+{%- assign button_two_color = block.settings.button_two_color -%}
+{%- assign button_two_controls = block.settings.button_two_controls -%}
+{%- assign button_two_interaction = block.settings.button_two_interaction -%}
+{%- assign button_two_loop = block.settings.button_two_loop -%}
+{%- assign button_two_text_color = block.settings.button_two_text_color -%}
+{%- assign button_two_thumbnail = block.settings.button_two_thumbnail -%}
+{%- assign enable_button_three_styles = block.settings.enable_button_three_styles -%}
+{%- assign button_three_autoplay = block.settings.button_three_autoplay -%}
+{%- assign button_three_border_color = block.settings.button_three_border_color -%}
+{%- assign button_three_color = block.settings.button_three_color -%}
+{%- assign button_three_controls = block.settings.button_three_controls -%}
+{%- assign button_three_interaction = block.settings.button_interaction -%}
+{%- assign button_three_loop = block.settings.button_three_loop -%}
+{%- assign button_three_text_color = block.settings.button_three_text_color -%}
+{%- assign button_three_thumbnail = block.settings.button_three_thumbnail -%}
+{%- assign button_mp4_url = block.settings.button_mp4_url -%}
+{%- assign button_iframe_url = block.settings.button_iframe_url -%}
+{%- assign button_two_mp4_url = block.settings.button_two_mp4_url -%}
+{%- assign button_two_iframe_url = block.settings.button_two_iframe_url -%}
+{%- assign button_three_mp4_url = block.settings.button_three_mp4_url -%}
+{%- assign button_three_iframe_url = block.settings.button_three_iframe_url -%}
+{%- assign button_classes = button_classes | append: ' rounded-5' -%}
+{%- assign button_two_classes = button_two_classes | append: ' rounded-5' -%}
+{%- assign button_three_classes = button_three_classes | append: ' rounded-5' -%}
+
+{%- if button_mp4_url != blank -%}
+  {%- assign button_classes = button_classes | append: ' bm-btn__video ' -%}
+  {%- capture button_attributes -%}
+    data-video="{%- if button_mp4_url contains "wistia" -%}wistia{%- else -%}mp4{%- endif -%}"
+    data-videourl="{{- button_mp4_url -}}"
+    data-settings='{%- render "bm-video-settings",
+      autoplay: button_autoplay,
+      controls: button_controls,
+      interaction: button_interaction,
+      loop: button_loop,
+      thumbnail: button_thumbnail -%}'
+  {%- endcapture -%}
+  {%- elsif button_iframe_url != blank -%}
+    {%- assign button_classes = button_classes | append: ' bm-btn__video ' -%}
+    {%- capture button_attributes -%}
+      data-video="youtube"
+      data-videourl="{{- button_iframe_url.id -}}"
+      data-settings='{%- render "bm-video-settings",
+        autoplay: button_autoplay,
+        controls: button_controls,
+        interaction: button_interaction,
+        loop: button_loop -%}'
+    {%- endcapture -%}
+{%- endif -%}
+
+{%- if button_two_mp4_url != blank -%}
+  {%- assign button_two_classes = button_two_classes | append: ' bm-btn__video ' -%}
+  {%- capture button_two_attributes -%}
+    data-video="{%- if button_two_mp4_url contains "wistia" -%}wistia{%- else -%}mp4{%- endif -%}"
+    data-videourl="{{- button_two_mp4_url -}}"
+    data-settings='{%- render "bm-video-settings",
+      autoplay: button_two_autoplay,
+      controls: button_two_controls,
+      interaction: button_two_interaction,
+      loop: button_two_loop,
+      thumbnail: button_two_thumbnail -%}'
+  {%- endcapture -%}
+  {%- elsif button_two_iframe_url != blank -%}
+    {%- assign button_two_classes = button_two_classes | append: ' bm-btn__video ' -%}
+    {%- capture button_two_attributes -%}
+      data-video="youtube"
+      data-videourl="{{- button_two_iframe_url.id -}}"
+      data-settings='{%- render "bm-video-settings",
+        autoplay: button_two_autoplay,
+        controls: button_two_controls,
+        interaction: button_two_interaction,
+        loop: button_two_loop -%}'
+    {%- endcapture -%}
+{%- endif -%}
+
+{%- if button_three_mp4_url != blank -%}
+  {%- assign button_three_classes = button_three_classes | append: ' bm-btn__video ' -%}
+  {%- capture button_three_attributes -%}
+    data-video="{%- if button_three_mp4_url contains "wistia" -%}wistia{%- else -%}mp4{%- endif -%}"
+    data-videourl="{{- button_three_mp4_url -}}"
+    data-settings='{%- render "bm-video-settings",
+      autoplay: button_three_autoplay,
+      controls: button_three_controls,
+      interaction: button_three_interaction,
+      loop: button_three_loop ,
+      thumbnail: button_three_thumbnail -%}'
+  {%- endcapture -%}
+  {%- elsif button_three_iframe_url != blank -%}
+    {%- assign button_three_classes = button_three_classes | append: ' bm-btn__video ' -%}
+    {%- capture button_three_attributes -%}
+      data-video="youtube"
+      data-videourl="{{- button_three_iframe_url.id -}}"
+      data-settings='{%- render "bm-video-settings",
+        autoplay: button_three_autoplay,
+        controls: button_three_controls,
+        interaction: button_three_interaction,
+        loop: button_three_loop -%}'
+    {%- endcapture -%}
+{%- endif -%}
+
+{%- if enable_button_styles -%}
+  {%- capture button_styles -%}
+    {%- if button_color != blank -%}
+      background-color: {{ button_color }};
+    {%- endif -%}
+
+    {%- if button_border_color != blank -%}
+      border-color: {{ button_border_color }};
+      {%- elsif button_color != blank -%}
+        border-color: {{ button_color }};
+    {%- endif -%}
+
+    {%- if button_text_color != blank -%}
+      color: {{ button_text_color }};
+    {%- endif -%}
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if enable_button_two_styles -%}
+  {%- capture button_two_styles -%}
+    {%- if button_two_color != blank -%}
+      background-color: {{- button_two_color -}};
+    {%- endif -%}
+
+    {%- if button_two_border_color != blank -%}
+      border-color: {{ button_two_border_color }};
+      {%- elsif button_two_color != blank -%}
+        border-color: {{ button_two_color }};
+    {%- endif -%}
+
+    {%- if button_two_text_color != blank -%}
+      color: {{- button_two_text_color -}};
+    {%- endif -%}
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- if enable_button_three_styles -%}
+  {%- capture button_three_styles -%}
+    {%- if button_three_color != blank -%}
+      background-color: {{- button_three_color -}};
+    {%- endif -%}
+
+    {%- if button_three_border_color != blank -%}
+      border-color: {{ button_three_border_color }};
+      {%- elsif button_three_color != blank -%}
+        border-color: {{ button_three_color }};
+    {%- endif -%}
+
+    {%- if button_three_text_color != blank -%}
+      color: {{- button_three_text_color -}};
+    {%- endif -%}
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- render 'bm-btn-block-logic-filter',
+  button_action: block.settings.button_action,
+  button_alignment_desk: block.settings.button_alignment_desk,
+  button_alignment_phone: block.settings.button_alignment_phone,
+  button_alignment_tablet: block.settings.button_alignment_tablet,
+  button_attributes: button_attributes,
+  button_classes: button_classes,
+  button_content: block.settings.button_text,
+  button_font_size: block.settings.button_font_size,
+  button_font_size_tablet: block.settings.button_font_size_tablet,
+  button_font_size_desk: block.settings.button_font_size_desk,
+  button_margin: block.settings.button_margin,
+  button_product: block.settings.button_product,
+  button_product_two: block.settings.button_product_two,
+  button_radius: block.settings.button_radius,
+  button_route: block.settings.button_route
+  button_size: block.settings.button_size,
+  button_size_tablet: block.settings.button_size_tablet,
+  button_size_desk: block.settings.button_size_desk,
+  button_styles: button_styles,
+  button_template: block.settings.button_template,
+  button_visibility: block.settings.button_visibility,
+  button_wrap_breakpoint: block.settings.button_wrap_breakpoint,
+  text_alignment_desk: text_alignment_desk,
+  text_alignment_tablet: text_alignment_tablet,
+  text_alignment_phone: text_alignment_phone,
+  button_two_action: block.settings.button_two_action,
+  button_two_attributes: button_two_attributes,
+  button_two_classes: button_two_classes,
+  button_two_content: block.settings.button_two_text,
+  button_two_font_size: block.settings.button_two_font_size,
+  button_two_font_size_tablet: block.settings.button_two_font_size_tablet,
+  button_two_font_size_desk: block.settings.button_two_font_size_desk,
+  button_two_product: block.settings.button_two_product,
+  button_two_product_two: block.settings.button_two_product_two,
+  button_two_radius: block.settings.button_two_radius,
+  button_two_route: block.settings.button_two_route
+  button_two_size: block.settings.button_two_size,
+  button_two_size_tablet: block.settings.button_two_size_tablet,
+  button_two_size_desk: block.settings.button_two_size_desk,
+  button_two_styles: button_two_styles,
+  button_two_template: block.settings.button_two_template,
+  button_two_visibility: block.settings.button_two_visibility,
+  button_three_action: block.settings.button_three_action,
+  button_three_attributes: button_three_attributes,
+  button_three_classes: button_three_classes,
+  button_three_content: block.settings.button_three_text,
+  button_three_font_size: block.settings.button_three_font_size,
+  button_three_font_size_tablet: block.settings.button_three_font_size_tablet,
+  button_three_font_size_desk: block.settings.button_three_font_size_desk,
+  button_three_product: block.settings.button_three_product,
+  button_three_product_two: block.settings.button_three_product_two,
+  button_three_radius: block.settings.button_three_radius,
+  button_three_route: block.settings.button_three_route
+  button_three_size: block.settings.button_three_size,
+  button_three_size_tablet: block.settings.button_three_size_tablet,
+  button_three_size_desk: block.settings.button_three_size_desk,
+  button_three_styles: button_three_styles,
+  button_three_template: block.settings.button_three_template,
+  button_three_visibility: block.settings.button_three_visibility -%}

@@ -1,0 +1,69 @@
+<div class="bm-atc-form-options">
+  {%- assign current_variant = form_product.selected_or_first_available_variant -%}
+
+  <input
+    type="hidden"
+    name="id"
+    value="{{ current_variant.id }}"
+
+    {%- if disabled %} disabled{%- endif -%}
+  >
+
+  {%- for option in form_product.options_with_values -%}
+    {%- assign formatted_option_name = option.name
+      | sha1
+      | append: forloop.index -%}
+    {%- assign option_unique_id = "option-"
+      | append: option.name
+      | handleize
+      | append: '-'
+      | append: formatted_option_name -%}
+
+    <div class="bm-atc-form-option">
+      <fieldset id="{{ option_unique_id }}">
+        <legend
+          class="bm-atc-form__legend"
+        >
+          {{- option.name -}}
+        </legend>
+
+        {%- for value in option.values -%}
+          {%- assign formatted_option_value = value
+            | sha1
+            | append: forloop.index -%}
+          {%- assign option_value_unique_id = "value-"
+            | append: value
+            | handleize
+            | append: '-'
+            | append: formatted_option_value -%}
+
+          <div class="bm-atc-form-option__value">
+            <input
+              type="radio"
+              id="{{ option_value_unique_id }}"
+              name="{{ option.name }}"
+              value="{{ value | escape }}"
+              form="{{ product_form_id }}"
+
+              {%- if option.selected_value == value %}
+                checked
+              {%- endif -%}
+            >
+
+            <label
+              class="bm-atc-form__label"
+              for="{{ option_value_unique_id }}"
+            >
+              {{- value -}}
+            </label>
+          </div>
+
+        {%- endfor -%}
+
+      </fieldset>
+    </div>
+
+  {%- endfor -%}
+
+</div>
+{% comment %} {%- unless variant.available %} text-black text-opacity-25 text-decoration-line-through{%- endunless -%} {% endcomment %}

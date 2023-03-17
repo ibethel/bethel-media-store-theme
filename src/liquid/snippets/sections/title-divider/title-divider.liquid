@@ -1,0 +1,100 @@
+{%- assign show_background = false -%}
+{%- if enable_background and background_color != blank -%}
+  {%- assign show_background = true -%}
+  {%- assign current_background = background_color -%}
+  {%- else -%}
+    {%- assign current_background = "#fff" -%}
+{%- endif -%}
+
+{%- if enable_title_styles -%}
+  {%- assign current_color = title_color -%}
+  {%- else -%}
+    {%- assign current_color = "" -%}
+{%- endif -%}
+
+{%- if title_content != blank -%}
+  <div
+    class="bm-title-divider {{ section_margin -}}
+
+      {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+      {%- if show_background -%}
+        {%- if enable_contain %} py-3 py-xl-5
+          {%- else %} p-3 p-xl-5
+        {%- endif -%}
+      {%- endif %}"
+
+    {%- if show_background -%}
+      style="background-color: {{ background_color }};"
+    {%- endif -%}
+  >
+    <div
+      class="bm-title-divider__container
+
+        {%- if enable_contain %} container-xl px-3
+          {%- else -%}
+            {%- if show_background == false %} px-3 px-xl-5{%- endif -%}
+        {%- endif -%}"
+    >
+      <div class="bm-title-divider__wrapper">
+
+        {%- if divider_type == "type_2" -%}
+
+          {%- render 'title-divider-two',
+            enable_title_styles: true,
+            horiz_align_desk: horiz_align_desk,
+            horiz_align_phone: horiz_align_phone,
+            horiz_align_tablet: horiz_align_tablet,
+            title_alignment_desk: title_alignment_desk,
+            title_alignment_tablet: title_alignment_tablet,
+            title_alignment_phone: title_alignment_phone,
+            title_background_color: current_background,
+            title_color: current_color,
+            title_content: title_content,
+            title_classes: "mb-2",
+            title_font: title_font,
+            title_is_page_title: title_is_page_title,
+            title_italic: title_italic,
+            title_labelledby: title_labelledby,
+            title_link: title_link,
+            title_margin: title_margin,
+            title_size: title_size,
+            title_size_tablet: title_size_tablet,
+            title_size_desk: title_size_desk,
+            title_tag: title_tag,
+            title_visibility: title_visibility,
+            title_weight: title_weight -%}
+
+          {%- else -%}
+
+            {%- render 'title-divider-default',
+              enable_title_styles: true,
+              horiz_align_desk: horiz_align_desk,
+              horiz_align_phone: horiz_align_phone,
+              horiz_align_tablet: horiz_align_tablet,
+              title_alignment_desk: title_alignment_desk,
+              title_alignment_tablet: title_alignment_tablet,
+              title_alignment_phone: title_alignment_phone,
+              title_background_color: current_background,
+              title_color: current_color,
+              title_content: title_content,
+              title_classes: "px-2",
+              title_font: title_font,
+              title_is_page_title: title_is_page_title,
+              title_italic: title_italic,
+              title_labelledby: title_labelledby,
+              title_link: title_link,
+              title_margin: title_margin,
+              title_size: title_size,
+              title_size_tablet: title_size_tablet,
+              title_size_desk: title_size_desk,
+              title_tag: title_tag,
+              title_visibility: title_visibility,
+              title_weight: title_weight -%}
+
+        {%- endif -%}
+
+      </div>
+    </div>
+  </div>
+{%- endif -%}

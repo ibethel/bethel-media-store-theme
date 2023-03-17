@@ -1,0 +1,21 @@
+{%- liquid
+  if bm_img_alt == blank
+    if template.name == "index"
+      assign bm_img_alt = shop.name
+      elsif template.name == "article"
+        assign bm_img_alt = article.title
+      elsif template.name == "blog"
+        assign bm_img_alt = blog.title
+      elsif template.name == "collection"
+        assign bm_img_alt = collection.title
+      elsif template.name == "page"
+        assign bm_img_alt = page.title
+      elsif template.name == "product"
+        assign bm_img_alt = product.title
+      else
+        assign bm_img_alt = shop.name
+    endif
+  endif
+ -%}
+
+{{- bm_img_alt | escape -}}

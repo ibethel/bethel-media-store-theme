@@ -1,0 +1,46 @@
+{%- assign current_variant = form_product.selected_or_first_available_variant -%}
+{%- assign formatted_product_name = form_product.title | sha1 | prepend: '-' -%}
+{%- assign select_unique_id = form_product.title
+  | handleize
+  | append: formatted_product_name -%}
+
+{%- if button_classes != blank -%}
+  {%- assign button_classes = button_classes | append: ' d-block' -%}
+  {%- else -%}
+    {%- assign button_classes = "d-block" -%}
+{%- endif -%}
+
+<div class="bm-atc-form-variants">
+
+  <select
+    id="{{- select_unique_id -}}"
+    class="bm-atc-form-variants__select d-block px-1 py-2 mb-3"
+    name="id"
+    data-handle="{{- form_product.handle -}}"
+
+    {%- unless form_product.available %}
+      disabled="disabled"
+    {%- endunless -%}
+  >
+
+    {%- for variant in form_product.variants -%}
+      <option
+        class="bm-atc-form__option"
+
+        {% if variant == current_variant -%}
+          selected="selected"
+        {%- endif -%}
+
+        {%- unless variant.available -%}
+          disabled="disabled"
+        {%- endunless -%}
+
+        value="{{- variant.id -}}"
+        data-sku="{{- variant.sku -}}"
+      >
+        {{- variant.title }} - {{ variant.price | money -}}
+      </option>
+    {%- endfor -%}
+
+  </select>
+</div>

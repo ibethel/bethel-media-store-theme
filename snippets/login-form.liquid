@@ -1,0 +1,87 @@
+<div
+  id="bm-login-form"
+  class="bm-login-form"
+
+  {%- if title_id -%}
+    aria-labelledby="{{ title_id }}"
+  {%- endif -%}
+>
+
+  {%- form 'customer_login' -%}
+
+    {%- if form.errors -%}
+      {{ form.errors | default_errors }}
+    {%- endif -%}
+
+    <div class="field-group mb-3">
+      <div class="field-group-wrapper">
+        <input
+          type="email"
+          class="px-2 py-3 mb-3 border-very-light-brown col-12 field"
+          name="customer[email]"
+          autocorrect="off"
+          autocapitalize="off"
+          autocomplete="email"
+          placeholder="{{ 'general.email' | t }}"
+        >
+
+        <input
+          type="password"
+          class="px-2 py-3 border-very-light-brown col-12 field"
+          name="customer[password]"
+          autocomplete="current-password"
+          placeholder="{{ 'login_page.password' | t }}"
+        >
+      </div>
+    </div>
+
+    {%- assign login_button_content = 'login_page.title' | t -%}
+    {%- assign reset_button_content = 'login_page.forgot_password' | t -%}
+    {%- assign reset_button_route = routes.account_login_url | append: '#recover' -%}
+
+    {%- capture reset_button_attributes -%}
+      aria-controls="recover-form"
+      aria-expanded="false"
+      aria-haspopup="true"
+    {%- endcapture -%}
+
+    <div class="login-form__actions">
+      <div class="mb-3">
+
+        {%- render 'bm-btn-template',
+          button_size: "large",
+          button_styles: bm_link_styles,
+          button_classes: "col-12",
+          button_content: login_button_content,
+          button_template: "primary",
+          button_type: "submit" -%}
+
+      </div>
+
+      <div class="row align-items-center">
+        <div class="col-12 col-sm-6 d-flex justify-content-start">
+
+          {%- render 'bm-btn-template',
+            button_size: "none",
+            button_classes: "bm-btn__recover",
+            button_content: reset_button_content,
+            button_route: reset_button_route,
+            button_template: "link" -%}
+
+        </div>
+
+        <div class="col-12 col-sm-6 d-flex justify-content-end">
+
+          {%- render 'bm-btn-template',
+            button_size: "none",
+            button_content: "Create account",
+            button_route: routes.account_register_url,
+            button_template: "link" -%}
+
+        </div>
+      </div>
+    </div>
+
+  {%- endform -%}
+
+</div>

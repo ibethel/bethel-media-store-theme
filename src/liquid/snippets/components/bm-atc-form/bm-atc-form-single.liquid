@@ -1,0 +1,17 @@
+{%- assign single_variant = form_product.selected_or_first_available_variant -%}
+
+{%- unless form_product.available or single_variant.available -%}
+  {%- assign disabled = true -%}
+{%- endunless -%}
+
+{%- if disabled -%}
+  {%- assign button_attributes = "disabled" -%}
+{%- endif -%}
+
+<input
+  type="hidden"
+  name="id"
+  value="{{ single_variant.id }}"
+
+  {%- if disabled %} disabled{%- endif -%}
+>

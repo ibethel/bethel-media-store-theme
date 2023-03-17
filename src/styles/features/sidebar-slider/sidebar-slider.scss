@@ -1,0 +1,17 @@
+.sidebar-slide__left-right {
+  transition: transform $animationTransition - 0.1 ease;
+
+  &:not(.sidebar-slide-show) {
+    transform: translateX(-105%);
+  }
+
+  &--desk {
+    @include media-query($max, $desktop) {
+      transition: transform $animationTransition - 0.1 ease;
+
+      &:not(.sidebar-slide-show) {
+        transform: translateX(-105%);
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{%- liquid
+  if button_alignment_desk contains "inherit"
+    if text_alignment_desk contains "start"
+      assign button_alignment_desk = "justify-content-xl-start"
+    endif
+
+    if text_alignment_desk contains "center"
+      assign button_alignment_desk = "justify-content-xl-center"
+    endif
+
+    if text_alignment_desk contains "end"
+      assign button_alignment_desk = "justify-content-xl-end"
+    endif
+  endif
+
+  if button_alignment_phone contains "inherit"
+    if text_alignment_phone contains "start"
+      assign button_alignment_phone = "justify-content-start"
+    endif
+
+    if text_alignment_phone contains "center"
+      assign button_alignment_phone = "justify-content-center"
+    endif
+
+    if text_alignment_phone contains "end"
+      assign button_alignment_phone = "justify-content-end"
+    endif
+  endif
+
+  if button_alignment_tablet contains "inherit"
+    if text_alignment_tablet contains "start"
+      assign button_alignment_tablet = "justify-content-sm-start"
+    endif
+
+    if text_alignment_tablet contains "center"
+      assign button_alignment_tablet = "justify-content-sm-center"
+    endif
+
+    if text_alignment_tablet contains "end"
+      assign button_alignment_tablet = "justify-content-sm-end"
+    endif
+  endif
+-%}
+
+{%- if enable_product_button -%}
+
+  {%- render 'bm-prod-btn-block',
+    button_action: button_action,
+    button_attributes: button_attributes,
+    button_alignment_desk: button_alignment_desk,
+    button_alignment_phone: button_alignment_phone,
+    button_alignment_tablet: button_alignment_tablet,
+    button_classes: button_classes,
+    button_content: button_content,
+    button_font_size: button_font_size,
+    button_font_size_tablet: button_font_size_tablet,
+    button_font_size_desk: button_font_size_desk,
+    button_margin: button_margin,
+    button_product: button_product,
+    button_product_form: button_product_form,
+    button_product_two: button_product_two,
+    button_radius: button_radius,
+    button_route: button_route
+    button_size: button_size,
+    button_size_tablet: button_size_tablet,
+    button_size_desk: button_size_desk,
+    button_styles: button_styles,
+    button_template: button_template,
+    button_visibility: button_visibility,
+    button_wrap_breakpoint: button_wrap_breakpoint,
+    product_variant_selection: product_variant_selection -%}
+
+  {%- else -%}
+
+    {%- render 'bm-btn-block',
+      button_action: button_action,
+      button_attributes: button_attributes,
+      button_alignment_desk: button_alignment_desk,
+      button_alignment_phone: button_alignment_phone,
+      button_alignment_tablet: button_alignment_tablet,
+      button_classes: button_classes,
+      button_content: button_content,
+      button_font_size: button_font_size,
+      button_font_size_tablet: button_font_size_tablet,
+      button_font_size_desk: button_font_size_desk,
+      button_margin: button_margin,
+      button_product: button_product,
+      button_product_two: button_product_two,
+      button_radius: button_radius,
+      button_route: button_route
+      button_size: button_size,
+      button_size_tablet: button_size_tablet,
+      button_size_desk: button_size_desk,
+      button_styles: button_styles,
+      button_template: button_template,
+      button_visibility: button_visibility,
+      button_wrap_breakpoint: button_wrap_breakpoint,
+      button_two_action: button_two_action,
+      button_two_attributes: button_two_attributes,
+      button_two_classes: button_two_classes,
+      button_two_content: button_two_content,
+      button_two_font_size: button_two_font_size,
+      button_two_font_size_tablet: button_two_font_size_tablet,
+      button_two_font_size_desk: button_two_font_size_desk,
+      button_two_product: button_two_product,
+      button_two_product_two: button_two_product_two,
+      button_two_radius: button_two_radius,
+      button_two_route: button_two_route
+      button_two_size: button_two_size,
+      button_two_size_tablet: button_two_size_tablet,
+      button_two_size_desk: button_two_size_desk,
+      button_two_styles: button_two_styles,
+      button_two_template: button_two_template,
+      button_three_action: button_three_action,
+      button_three_attributes: button_three_attributes,
+      button_three_classes: button_three_classes,
+      button_three_content: button_three_content,
+      button_three_font_size: button_three_font_size,
+      button_three_font_size_tablet: button_three_font_size_tablet,
+      button_three_font_size_desk: button_three_font_size_desk,
+      button_three_product: button_three_product,
+      button_three_product_two: button_three_product_two,
+      button_three_radius: button_three_radius,
+      button_three_route: button_three_route
+      button_three_size: button_three_size,
+      button_three_size_tablet: button_three_size_tablet,
+      button_three_size_desk: button_three_size_desk,
+      button_three_styles: button_three_styles,
+      button_three_template: button_three_template  -%}
+
+{%- endif -%}

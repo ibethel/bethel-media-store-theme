@@ -1,0 +1,65 @@
+{%- assign show_background = false -%}
+{%- if enable_background and background_color != blank -%}
+  {%- assign show_background = true -%}
+{%- endif -%}
+
+{%- if is_a_section -%}
+  <section
+    class="product-rows product-rows-carousel {{ section_margin -}}
+
+      {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+      {%- if show_background -%}
+        {%- if enable_contain %} py-3 py-xl-5
+          {%- else %} p-3 p-xl-5
+        {%- endif -%}
+      {%- endif %}"
+
+    {%- if show_background -%}
+      style="background-color: {{ background_color }};"
+    {%- endif -%}
+  >
+  {%- else -%}
+    <div
+      class="product-rows product-rows-carousel {{ section_margin -}}
+
+        {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+        {%- if show_background -%}
+          {%- if enable_contain %} py-3 py-xl-5
+            {%- else %} p-3 p-xl-5
+          {%- endif -%}
+        {%- endif %}"
+
+      {%- if show_background -%}
+        style="background-color: {{ background_color }};"
+      {%- endif -%}
+    >
+{%- endif -%}
+
+  {%- render 'product-rows-main',
+    compare_price_color: compare_price_color,
+    enable_contain: enable_contain,
+    enable_item_limit: enable_item_limit,
+    enable_styles: enable_styles,
+    font_italic: font_italic,
+    font_size: font_size,
+    font_weight: font_weight,
+    is_a_carousel: is_a_carousel,
+    item_limit: item_limit,
+    item_widths_desk: item_widths_desk,
+    item_widths_max: item_widths_max,
+    item_widths_phone: item_widths_phone,
+    item_widths_tablet: item_widths_tablet,
+    price_color: price_color,
+    price_color_sale: price_color_sale,
+    section_collection: section_collection,
+    section_blocks: section_blocks,
+    show_background: show_background,
+    text_color: text_color -%}
+
+{%- if is_a_section -%}
+  </section>
+  {%- else -%}
+    </div>
+{%- endif -%}
