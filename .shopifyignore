@@ -24,6 +24,8 @@ webpack.config.js/
 README.md
 README.md/
 
+.env
+.env/
 .DS_Store
 .DS_Store/
 .gitignore
