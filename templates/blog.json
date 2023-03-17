@@ -2,8 +2,13 @@
   "sections": {
     "blog": {
       "type": "blog",
-      "settings": {}
+      "settings": {
+        "enable_contain": false,
+        "section_margin": "mb-5"
+      }
     }
   },
-  "order": ["blog"]
+  "order": [
+    "blog"
+  ]
 }
