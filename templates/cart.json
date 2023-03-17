@@ -1,9 +1,50 @@
 {
   "sections": {
+    "16594524348e1c1507": {
+      "type": "bm-spacing",
+      "settings": {
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#ffffff",
+        "bm_spacing_phone": "pb-3",
+        "bm_spacing_tablet": "pb-sm-3",
+        "bm_spacing_desk": "pb-xl-5"
+      }
+    },
     "cart": {
       "type": "cart",
-      "settings": {}
+      "settings": {
+        "enable_contain": true,
+        "enable_background": false,
+        "background_color": "#ffffff",
+        "section_margin": "mb-5"
+      }
+    },
+    "16595381533bd43ebe": {
+      "type": "easy-donation",
+      "settings": {
+        "enable_contain": true,
+        "enable_background": false,
+        "background_color": "#1878b9",
+        "section_margin": "mb-5",
+        "donation_img": "shopify:\/\/shop_images\/donation_image-form_2.jpg"
+      }
+    },
+    "1659458709dc22fa39": {
+      "type": "limespot",
+      "settings": {
+        "enable_contain": false,
+        "is_a_section": false,
+        "enable_background": false,
+        "background_color": "#ffffff",
+        "section_margin": "mb-5"
+      }
     }
   },
-  "order": ["cart"]
+  "order": [
+    "16594524348e1c1507",
+    "cart",
+    "16595381533bd43ebe",
+    "1659458709dc22fa39"
+  ]
 }
