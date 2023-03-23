@@ -63,7 +63,7 @@
             "block_visibility": "d-none_d-sm-flex",
             "button_wrap_breakpoint": "sm",
             "button_text": "SEE WHAT'S NEW",
-            "button_route": "shopify:\/\/products\/uprising-the-epic-battle-for-the-most-fatherless-generation-in-history",
+            "button_route": "shopify:\/\/collections\/new-releases",
             "button_product": "",
             "button_product_two": "",
             "button_action": "add_to_cart",
