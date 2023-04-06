@@ -6,6 +6,7 @@
     "enable_quick_view": true,
     "main_header_sticky": true,
     "enable_atc_ajax": true,
+    "bm_head_scripts": "<!-- Google tag (gtag.js) -->\n<script async src=\"https:\/\/www.googletagmanager.com\/gtag\/js?id=G-12169MTHLZ\"><\/script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'G-12169MTHLZ');\n<\/script>",
     "social_facebook_link": "https:\/\/www.facebook.com\/BethelShop",
     "social_pinterest_link": "https:\/\/www.pinterest.com\/bethelredding",
     "social_instagram_link": "https:\/\/www.instagram.com\/shopbethel",
@@ -239,6 +240,7 @@
           "ff7bc576-b397-4280-a365-34ce6314168e"
         ],
         "settings": {
+          "enable_hide_scroll": false,
           "enable_background": true,
           "background_color": "#a5acb0"
         }
