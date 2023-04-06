@@ -53,6 +53,27 @@
         },
         "klaviyo_bis_script": {
           "label": "(Not Supported) Klaviyo back in stock script"
+        },
+        "search": {
+          "name": "Search",
+          "enable_predictive_search_pages": {
+            "label": "Enable predictive pages search"
+          },
+          "enable_predictive_search_products": {
+            "label": "Enable predictive product search"
+          },
+          "enable_predictive_search_collections": {
+            "label": "Enable predictive collections search"
+          },
+          "enable_predictive_search_terms": {
+            "label": "Enable predictive terms search"
+          },
+          "enable_predictive_search": {
+            "label": "Enable predictive search"
+          },
+          "enable_predictive_search_articles": {
+            "label": "Enable predictive articles search"
+          }
         }
       }
     },
@@ -357,6 +378,11 @@
     "management_nav": {
       "label": "Management navigation",
       "settings": {
+        "search_format": {
+          "label": "Search format",
+          "option_icon": "Icon",
+          "option_form": "Form"
+        },
         "search_is_form": {
           "label": "Search is form"
         },
