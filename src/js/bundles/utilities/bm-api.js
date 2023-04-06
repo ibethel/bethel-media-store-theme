@@ -31,12 +31,12 @@ export const changeLine = async (line, quantity) => {
 
 export const getCart = async () => {
   try {
-    const res = await axios.get("/cart.js");
+    const res = await axios.get(`${window.Shopify.routes.root}cart.js`);
 
     return res;
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.log({ error });
+    console.log("getCart", { error });
   }
 };
 
@@ -59,6 +59,6 @@ export const addToCart = async items => {
     return res.data;
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.log({ error });
+    console.log("addToCart", { error });
   }
 };

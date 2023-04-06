@@ -1,0 +1,12 @@
+.bm-predictive-search-modal {
+  z-index: $zLevelSix;
+
+  .bm-mobile-menu & {
+    left: 15px;
+    right: 15px;
+  }
+
+  mark {
+    background-color: $bmVerylightBrown;
+  }
+}

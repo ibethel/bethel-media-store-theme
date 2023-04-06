@@ -73,6 +73,46 @@
         "id": "enable_klaviyo_atc",
         "label": "t:settings_schema.features.settings.enable_klaviyo_atc.label",
         "default": false
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.features.settings.search.name"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_predictive_search",
+        "label": "t:settings_schema.features.settings.search.enable_predictive_search.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_predictive_search_terms",
+        "label": "t:settings_schema.features.settings.search.enable_predictive_search_terms.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_predictive_search_products",
+        "label": "t:settings_schema.features.settings.search.enable_predictive_search_products.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_predictive_search_pages",
+        "label": "t:settings_schema.features.settings.search.enable_predictive_search_pages.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_predictive_search_collections",
+        "label": "t:settings_schema.features.settings.search.enable_predictive_search_collections.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_predictive_search_articles",
+        "label": "t:settings_schema.features.settings.search.enable_predictive_search_articles.label",
+        "default": false
       }
     ]
   },

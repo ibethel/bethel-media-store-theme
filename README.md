@@ -34,6 +34,70 @@
 
 ## ⚙️ Configuration
 
+### Workflow setup
+
+**Store variable**
+
+- When logged into the Shopify admin look at the url to find your myshopify address.
+- Should look similar to `some-store-name.myshopify.com`
+- Assign variable `SHOPIFY_FLAG_STORE` in your `.env` to that myshopify address.
+
+**Development theme**
+
+- If you do not already have a development theme specific to you then you need to create one.
+- If you do not know how to create a development theme contact your developer lead.
+- Get your theme id and set `SHOPIFY_CLI_THEME_ID` in your `.env`.
+
+### Workflow
+
+**Pull**
+
+- Always pull and fetch before you begin a new branch `git pull origin staging`, `git fetch origin staging`.
+- This is very important as the json files in `/templates`, `/config` change very often by your store users.
+
+**Create new branch**
+
+- Always create a new branch `git checkout -b some-branch-name`.
+- Because staging jsons will be changing so often all commits must be merged with pull request.
+
+**npm start**
+
+- Webpack and shopify watch your files. see: [File Uploads](#file-uploads)
+- You should see something similart to the following:
+
+**!IMPORTANT**
+
+- Only edit files in the `/src` folder.
+  - Within the `/src` folder there are corresponding `/assets`, `/config`, `/layout`, `/locales`, `/sections`, `/snippets`, `/templates` that will build into the `/dev` folder.
+  - The `root` folders `/assets`, `/config`, `/layout`, `/locales`, `/sections`, `/snippets`, `/templates` are for production. Shopify reads these from Github and builds the theme. Do not edit these in development mode.
+    - These folders are only updated when you `build` right before your push your final commit to your PR.
+
+**npm run build**
+
+- When you are done coding on this branch and are ready to push for merging into staging you must first run `npm run build`.
+  - This will build into the `root` folders and allow Shopify to read Github hub and update staging once the PR is merged.
+
+**updating dev jsons(optional)**
+
+- If you would like to update your jsons in your dev environment then update your json in `/dev` and then your dev theme with update the json.
+
+```
+Serving <path to>/dev
+
+Please open this URL in your browser:
+http://some-local-url
+
+Customize this theme in the Theme Editor, and use 'theme pull' to get the changes:
+https://some-store.myshopify.com/admin/themes/<theme-id>/editor
+
+Share this theme preview:
+https://some-store.myshopify.com/?preview_theme_id=<theme-id>
+
+(Use Ctrl-C to stop)
+```
+
+- The local url will show your development theme
+
 #### Scripts
 
 `npm start`
