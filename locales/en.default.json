@@ -191,6 +191,12 @@
     "update_language": "Update language",
     "update_country": "Update country/region"
   },
+  "predictive_search": {
+    "articles": "Articles",
+    "collections": "Collections",
+    "pages": "Pages",
+    "suggestions": "Suggestions"
+  },
   "products": {
     "bulk_orders": "Bulk Orders",
     "description": "Description",
