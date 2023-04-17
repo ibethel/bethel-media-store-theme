@@ -47,6 +47,15 @@
   "announcement_bar": {
     "title": "Announcement bar"
   },
+  "article": {
+    "comment": "Comment",
+    "comments": "Comments",
+    "comment_moderated": "Your comments must be approved by the moderator before they are published.",
+    "comment_title": "Leave a comment",
+    "comment_success": "Your comment was posted successfully!",
+    "comment_success_moderated": "Your comment was posted successfully. When our blog has been moderated your comments may be published.",
+    "name": "Name"
+  },
   "cart": {
     "checkout_btn": "Continue to checkout",
     "empty": "Your cart is currently empty.",
