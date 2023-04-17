@@ -52,3 +52,10 @@ body {
     text-align: center;
   }
 }
+
+.page,
+.next {
+  a {
+    color: $black;
+  }
+}

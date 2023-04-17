@@ -25,6 +25,7 @@
 @import "../features/sidebar-slider/sidebar-slider.scss";
 @import "../features/animations/list-open-animate.scss";
 @import "../features/scroll-to/scroll-to.scss";
+@import "../features/predictive-search/predictive-search.scss";
 
 /* Third party */
 @import "../third-party/third-party.scss";
@@ -50,5 +51,6 @@
 @import "../sections/featured-product/featured-product.scss";
 @import "../sections/footer/footer.scss";
 @import "../sections/title-divider/title-divider.scss";
+@import "../sections/article/article.scss";
 
 /* stylelint-enable at-rule-empty-line-before */

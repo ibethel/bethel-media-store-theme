@@ -1,0 +1,138 @@
+{%- if predictive_search.performed -%}
+  <div class="p-2">
+
+    {%- if settings.enable_predictive_search_terms and predictive_search.resources.queries.size > 0 -%}
+      <div class="px-2 mb-2">
+        <h3 class="m-0 fs-6">
+          {{- 'predictive_search.suggestions' | t -}}
+        </h3>
+        <hr class="m-0 border-color-grey-10">
+      </div>
+
+      <ul class="list-type-none ps-0  mb-2">
+        {%- for query in predictive_search.resources.queries -%}
+          <li class="d-block">
+            <a class="bm-link d-block bm-header__link-hover px-2 py-1" href="{{ query.url }}">
+              {{- query.styled_text -}}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- if settings.enable_predictive_search_products and predictive_search.resources.products.size > 0 -%}
+      <div class="px-2 mb-2">
+        <h3 class="m-0 fs-6">
+          {{- 'products.name' | t -}}
+        </h3>
+        <hr class="m-0 border-color-grey-10">
+      </div>
+
+      <ul class="list-type-none ps-0" aria-labelledby="predictive-search-products">
+        {%- for product in predictive_search.resources.products limit: 3 -%}
+
+          <li class="d-block mb-2">
+            <a class="text-decoration-none text-black opacity-hover row px-2" href="{{ product.url }}">
+              {%- assign prd_img = product.featured_image -%}
+
+              <div class="col-3">
+
+                {%- render 'bm-image-block'
+                  bm_img: prd_img,
+                  bm_img_alt: prd_img.alt,
+                  bm_img_classes: bm_img_classes,
+                  bm_img_is_lazy: true,
+                  bm_img_margin: block.settings.img_margin,
+                  bm_img_wrapper_classes: "bm-img__wrapper--fixed-width",
+                  bm_img_widths: image_widths,
+                  bm_img_width: prd_img.width,
+                  bm_img_height: prd_img.height -%}
+
+              </div>
+
+              <div class="col-9">
+
+                {%- render 'bm-title-block',
+                  title_content: product.title,
+                  title_margin: "mb-1",
+                  title_size: "bm-fonts fs-8",
+                  title_tag: "text" -%}
+
+                {%- render 'bm-prod-pricing',
+                  compare_price: product.compare_at_price,
+                  compare_price_varies: product.compare_at_price_varies,
+                  price: product.price,
+                  price_classes: "bm-fonts fs-8 text-secondary",
+                  price_varies: product.price_varies -%}
+
+              </div>
+
+            </a>
+          </li>
+
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- if settings.enable_predictive_search_collections and predictive_search.resources.collections.size > 0 -%}
+      <div class="px-2 mb-2">
+        <h3 class="m-0 fs-6">
+          {{- 'predictive_search.collections' | t -}}
+        </h3>
+        <hr class="m-0 border-color-grey-10">
+      </div>
+
+      <ul class="list-type-none ps-0 mb-2">
+        {%- for collection in predictive_search.resources.collections -%}
+          <li class="d-block">
+            <a class="bm-link d-block bm-header__link-hover px-2 py-1" href="{{ collection.url }}">
+              {{- collection.title -}}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- if settings.enable_predictive_search_pages and predictive_search.resources.pages.size > 0 -%}
+      <div class="px-2 mb-2">
+        <h3 class="m-0 fs-6">
+          {{- 'predictive_search.pages' | t -}}
+        </h3>
+        <hr class="m-0 border-color-grey-10">
+      </div>
+
+      <ul class="list-type-none ps-0 mb-2">
+        {%- for page in predictive_search.resources.pages -%}
+          <li class="d-block">
+            <a class="bm-link d-block bm-header__link-hover px-2 py-1" href="{{ page.url }}">
+              {{- page.title -}}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- if settings.enable_predictive_search_articles and predictive_search.resources.articles.size > 0 -%}
+      <div class="px-2 mb-2">
+        <h3 class="m-0 fs-6">
+          {{- 'predictive_search.articles' | t -}}
+        </h3>
+        <hr class="m-0 border-color-grey-10">
+      </div>
+
+      <ul class="list-type-none ps-0 mb-2">
+        {%- for article in predictive_search.resources.articles -%}
+          <li class="d-block">
+            <a class="bm-link d-block bm-header__link-hover px-2 py-1" href="{{ article.url }}">
+              {{- article.title -}}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    <a class="bm-btn bm-btn--anchor-btn rounded-5 bm-fonts fs-6 bm-btn--primary bm-btn--small opacity-hover" href="/search?q={{ predictive_search.terms | replace: ' ', '+' }}">
+      Search for “{{ predictive_search.terms }}”
+    </a>
+  </div>
+{%- endif -%}
