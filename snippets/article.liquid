@@ -1,7 +1,6 @@
-{%- capture section_title -%}
-  <u>{{ article.title }}</u>
-{%- endcapture -%}
+{%- capture section_title %}<u>{{ article.title }}</u>{% endcapture -%}
 {%- assign article_image = article.image -%}
+{%- assign comments_title = "article.comments" | t -%}
 {%- assign date_year = article.published_at | date: '%Y' -%}
 {%- assign date_month_day = article.published_at | date: '%B. %d' -%}
 {%- assign share_title = "general.social.share" | t | upcase -%}
@@ -16,9 +15,7 @@
     <header class="bm-bg-very-light-brown px-3 pt-2 pt-sm-3 pb-4 pb-sm-5 mb-4 mb-sm-5">
       <div class="bm-article__header-container">
         <div class="d-sm-flex align-items-sm-center mb-3 mb-sm-5">
-          <div class="col-12 col-sm-3 d-none d-sm-flex justify-content-sm-center">
-            {{- date_month_day -}}
-          </div>
+          <div class="col-12 col-sm-3 d-none d-sm-flex justify-content-sm-center">{{ date_month_day }}</div>
 
           <div class="col-12 col-sm-6 d-flex justify-content-center mb-3 mb-sm-0">
 
@@ -79,12 +76,51 @@
 
         </div>
 
-        <div class="bm-article__content-text">
-          {{- article.content -}}
-        </div>
+        <div class="bm-article__content-text">{{ article.content }}</div>
 
         <div class="bm-article__column-right"></div>
       </div>
+
+      {%- if blog.comments_enabled? -%}
+        <div class="col-12 col-sm-9 col-xl-4 px-3 p-xl-4 m-auto">
+
+        {%- if article.comments_count > 0 -%}
+
+          {%- render 'bm-title-block',
+            title_alignment_phone: "text-center",
+            title_content: comments_title,
+            title_margin: "mb-0 mb-sm-2",
+            title_font: "ff-ivypresto",
+            title_size: "fs-3",
+            title_tag: "h3" -%}
+
+          {%- paginate article.comments by 5 -%}
+            {%- for comment in article.comments -%}
+              <article class="bm-comment mb-3">
+                <p class="bm-colors-color-brown mb-0">{{ comment.author }}</p>
+                {{- comment.content -}}
+                <footer class="bm-colors-color-brown">
+                  <span class="bm-fonts fs-9">{{ comment.created_at | time_tag: format: 'date' }}</span>
+                </footer>
+              </article>
+
+              {%- if article.comments.size > 1 and forloop.last != true -%}
+                <hr class="m-0 mb-3 border-color-grey-10">
+              {%- endif -%}
+
+            {%- endfor -%}
+
+            {{- paginate | default_pagination -}}
+          {%- endpaginate -%}
+
+        {%- endif -%}
+
+        {%- render 'article-comment-form' -%}
+
+        {%- if blog.moderated? %}<p class="bm-colors-color-brown">{{ 'article.comment_moderated' | t }}</p>{% endif -%}
+
+        </div>
+      {%- endif -%}
     </div>
 
   </div>
