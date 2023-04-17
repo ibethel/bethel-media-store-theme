@@ -1,0 +1,96 @@
+{%- assign comment_title = "article.comment_title" | t -%}
+{%- assign comment_success = "article.comment_success" | t -%}
+{%- assign comment_success_moderated = "article.comment_success_moderated" | t -%}
+
+{%- render 'bm-title-block',
+  title_alignment_phone: "text-center",
+  title_content: comment_title,
+  title_margin: "mb-3",
+  title_font: "ff-ivypresto",
+  title_size: "fs-4",
+  title_tag: "h3" -%}
+
+{%- form 'new_comment', article -%}
+
+  {%- if form.errors %}{{ form.errors | default_errors }}{% endif -%}
+
+  {%- if form.posted_successfully? -%}
+    {%- if blog.moderated? -%}
+
+      {%- render 'bm-message-block',
+        message_classes: "bm-colors-color-brown",
+        message_content: comment_success_moderated,
+        message_margin: "mb-3" -%}
+
+        {%- else -%}
+
+          {%- render 'bm-message-block',
+            message_classes: "bm-colors-color-brown",
+            message_content: comment_success,
+            message_margin: "mb-3" -%}
+
+    {%- endif -%}
+  {%- endif -%}
+
+  <div class="field-group mb-3">
+    <div class="field-group-wrapper">
+      {%- assign comment_id = "comment-message-" | sha1 -%}
+      {%- assign email_id = "comment-email-" | sha1 -%}
+      {%- assign name_id = "comment-name-" | sha1 -%}
+
+      <input
+        id="{{ name_id }}"
+        type="text"
+        name="comment[author]"
+        class="px-2 py-3 mb-3 border-very-light-brown col-12 field"
+        autocomplete="name"
+        value="{{ form.author }}"
+        aria-required="true"
+        required
+        placeholder="{{ 'article.name' | t }}"
+      >
+      <label class="visually-hidden" for="{{ name_id }}">{{ 'article.name' | t }}</label>
+
+      <input
+        type="email"
+        name="comment[email]"
+        id="{{ email_id }}"
+        autocomplete="email"
+        class="px-2 py-3 mb-3 border-very-light-brown col-12 field"
+        value="{{ form.email }}"
+        autocorrect="off"
+        autocapitalize="off"
+        aria-required="true"
+        required
+        placeholder="{{ 'general.email' | t }}"
+      >
+      <label class="visually-hidden" for="{{ email_id }}">{{ 'general.email' | t }}</label>
+
+      <textarea
+        rows="5"
+        name="comment[body]"
+        id="{{ comment_id }}"
+        class="px-2 py-3 mb-3 border-very-light-brown col-12 field"
+        aria-required="true"
+        required
+        placeholder="{{ 'article.comment' | t }}"
+      >{{ form.body }}</textarea>
+      <label class="visually-hidden" for="{{ comment_id }}">{{ 'article.comment' | t }}</label>
+    </div>
+  </div>
+
+  {%- assign submit_button_content = 'general.submit' | t -%}
+
+  <div class="comment-form__actions">
+    <div class="mb-3">
+
+      {%- render 'bm-btn-template',
+        button_size: "large",
+        button_content: submit_button_content,
+        button_template: "primary",
+        button_type: "submit" -%}
+
+    </div>
+  </div>
+
+{%- endform -%}
