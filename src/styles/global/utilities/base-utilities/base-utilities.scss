@@ -23,3 +23,23 @@
     height: 100%;
   }
 }
+
+.aspect-ratio__box {
+  height: 0;
+  overflow: hidden;
+  padding-top: 100%;
+  position: relative;
+
+  .aspect-ratio__box-inside {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    model-viewer {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

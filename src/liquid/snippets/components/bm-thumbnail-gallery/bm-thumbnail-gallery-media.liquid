@@ -85,4 +85,37 @@
 
     </li>
 
+    {%- when 'model' -%}
+
+      {%- if primary -%}
+
+        <li class="splide__slide bg-black" data-mediaid="{{ media.id }}">
+          <div class="aspect-ratio__box">
+            <div class="aspect-ratio__box-inside">
+
+              {{ media | model_viewer_tag }}
+
+            </div>
+          </div>
+        </li>
+
+        {%- else -%}
+
+          <li class="splide__slide bg-black d-flex align-items-center" data-mediaid="{{ media.id }}">
+
+            {%- render 'bm-image'
+              bm_img: media.preview_image,
+              bm_img_alt: media.alt,
+              bm_img_classes: bm_img_classes,
+              bm_img_is_lazy: true,
+              bm_img_wrapper_classes: "position-relative bm-img__wrapper--fixed-width",
+              bm_img_widths: "540,720,900,1728",
+              bm_img_width: media.preview_image.width,
+              bm_img_height: media.preview_image.height,
+              bm_img_zoom: enable_image_zoom -%}
+
+          </li>
+
+      {%- endif -%}
+
 {%- endcase -%}
