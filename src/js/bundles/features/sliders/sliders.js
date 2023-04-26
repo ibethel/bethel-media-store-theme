@@ -71,6 +71,7 @@ const formatSliderOptions = settings => {
     autoplay = false,
     autoScroll = false,
     breakpoints,
+    drag,
     gap,
     rewind = true,
     speed = 2,
@@ -82,7 +83,7 @@ const formatSliderOptions = settings => {
     perPage,
   } = sliderSettings;
 
-  let options = { arrows, pagination };
+  let options = { arrows, noDrag: ".no-drag", pagination };
 
   if (autoplay) {
     options = { ...options, autoplay, interval: interval || 5000 };
@@ -98,6 +99,10 @@ const formatSliderOptions = settings => {
     if (breakPoints) {
       options = { ...options, breakpoints: breakPoints };
     }
+  }
+
+  if (drag === false) {
+    options = { ...options, drag };
   }
 
   if (gap) {

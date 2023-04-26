@@ -1,8 +1,24 @@
+{%- liquid
+  for media in media_array
+    if media.media_type == "model"
+      assign drag = false
+    endif
+  endfor
+
+  assign arrows = false
+  if drag == false
+    assign arrows = true
+  endif
+-%}
+
+
+
 <div class="bm-thumbnail-gallery__primary">
   <div
     class="splide bm-thumbnail-gallery__primary-slider"
     data-settings='{%- render "helper-slider-settings",
-      arrows: false,
+      arrows: arrows,
+      drag: drag,
       change_variant_image: true,
       pagination: false,
       primary_thumbnail: true,
