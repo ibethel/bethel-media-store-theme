@@ -434,7 +434,10 @@
   "sections": {
     "all": {
       "alignment": {
-        "name": "Alignment"
+        "name": "Alignment",
+        "section_alignment": {
+          "label": "Section alignment"
+        }
       },
       "alignment_horizontal": {
         "label": "Horizontal Alignment",
@@ -622,6 +625,7 @@
       "image": {
         "name": "Image",
         "settings": {
+          "enable_img_max_width": "Enable image max width",
           "phone": "Image phone",
           "tablet": "Image tablet",
           "desktop": "Image desktop",
@@ -629,6 +633,7 @@
           "max_screen": "Image max screen",
           "overlay": "Image overlay",
           "img_margin": "Image margin",
+          "img_max_width": "Image max width",
           "img_pos": "Image position",
           "img_visibility": "Image visibility",
           "img_width": "Image width",
@@ -697,6 +702,9 @@
       "navigation": {
         "label": "Navigation",
         "nav_menu": "Nav menu"
+      },
+      "multi_row": {
+        "name": "Multi row"
       },
       "read_more": {
         "name": "Read more",
