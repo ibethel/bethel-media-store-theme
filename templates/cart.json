@@ -20,19 +20,10 @@
         "section_margin": "mb-5"
       }
     },
-    "16595381533bd43ebe": {
-      "type": "easy-donation",
-      "settings": {
-        "enable_contain": true,
-        "enable_background": false,
-        "background_color": "#1878b9",
-        "section_margin": "mb-5",
-        "donation_img": "shopify:\/\/shop_images\/donation_image-form_2.jpg"
-      }
-    },
     "1659458709dc22fa39": {
       "type": "limespot",
       "settings": {
+        "enable_hide_scroll": false,
         "enable_contain": false,
         "is_a_section": false,
         "enable_background": false,
@@ -44,7 +35,6 @@
   "order": [
     "16594524348e1c1507",
     "cart",
-    "16595381533bd43ebe",
     "1659458709dc22fa39"
   ]
 }
