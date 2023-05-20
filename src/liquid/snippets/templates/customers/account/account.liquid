@@ -68,69 +68,68 @@
         </div>
       </div>
 
-      {%- assign favorites_list = customer.metafields.customer_fields.data.favorites_list -%}
+      {%- assign bm_wish_title = "wish_list.title" | t -%}
+      {%- assign formatted_wish_title = bm_wish_title | sha1 -%}
+      {%- assign title_wish_id = bm_wish_title | handleize | append: '-' | append: formatted_wish_title -%}
 
-      {%- if favorites_list.size > 0 -%}
-        {%- assign bm_wish_title = "wish_list.title" | t -%}
-        {%- assign formatted_wish_title = bm_wish_title | sha1 -%}
-        {%- assign title_wish_id = bm_wish_title | handleize | append: '-' | append: formatted_wish_title -%}
+      <div class="bm-account-favorites d-none" aria-labelledby="{{ title_wish_id }}">
 
-        <div class="bm-account-favorites" aria-labelledby="{{ title_wish_id }}">
+        {%- render 'bm-title-block',
+          title_content: "Wish list",
+          title_font: "ff-ivypresto",
+          title_id: title_wish_id,
+          title_margin: "mb-3",
+          title_size: "fs-1",
+          title_tag: "h3" -%}
 
-          {%- render 'bm-title-block',
-            title_content: "Wish list",
-            title_font: "ff-ivypresto",
-            title_id: title_wish_id,
-            title_margin: "mb-3",
-            title_size: "fs-1",
-            title_tag: "h3" -%}
+        <ul class="list-type-none my-0 ps-0 bm-bdr-top border-color-grey-20">
 
-          <ul class="row list-type-none my-0 ps-0 bm-bdr-top border-color-grey-20">
+          {%- for favorite in favorites_list -%}
+            <li class="favorites-item d-flex align-items-center bm-bdr-btm border-color-grey-20">
 
-            {%- for favorite in favorites_list -%}
-              <li class="favorites-item d-flex align-items-center bm-bdr-btm border-color-grey-20">
+              {%- assign current_product = all_products[favorite] -%}
 
-                {%- assign current_product = all_products[favorite] -%}
+              <div class="flex-grow-1">
 
-                <div class="flex-grow-1">
+                {%- render 'bm-link',
+                  bm_link_title: current_product.title,
+                  bm_link_classes: "opacity-hover text-decoration-none d-block py-3",
+                  bm_link_url: current_product.url,
+                  bm_link_content: current_product.title -%}
 
-                  {%- render 'bm-link',
-                    bm_link_title: current_product.title,
-                    bm_link_classes: "opacity-hover text-decoration-none d-block py-3",
-                    bm_link_url: current_product.url,
-                    bm_link_content: current_product.title -%}
+              </div>
 
-                </div>
+              <div>
 
-                <div>
+                {%- capture button_content -%}
 
-                  {%- capture button_content -%}
+                  {%- render 'bm-icon-template',
+                    bm_icon: "icon-close-lg",
+                    bm_icon_classes: "d-block",
+                    icon_classes: "d-block" -%}
 
-                    {%- render 'bm-icon-template',
-                      bm_icon: "icon-close-lg",
-                      bm_icon_classes: "d-block",
-                      icon_classes: "d-block" -%}
+                {%- endcapture -%}
 
-                  {%- endcapture -%}
+                {%- capture button_attributes -%}
+                  data-product='{
+                    "handle": {{ current_product.handle | json }},
+                    "title": {{ current_product.title | escape | json }},
+                    "url": {{ current_product.url | json }}
+                  }',
+                  data-remove="true"
+                {%- endcapture -%}
 
-                  {%- capture button_attributes -%}
-                    data-handle="{{ current_product.handle }}"
-                    data-remove="true"
-                  {%- endcapture -%}
+                {%- render 'bm-btn',
+                  button_attributes: button_attributes,
+                  button_classes: "bm-btn--no-styles opacity-hover px-2 py-3 bm-btn--wish-remove"
+                  button_content: button_content -%}
 
-                  {%- render 'bm-btn',
-                    button_attributes: button_attributes,
-                    button_classes: "bm-btn--no-styles opacity-hover px-2 py-3 bm-btn--wish-remove"
-                    button_content: button_content -%}
+              </div>
+            </li>
+          {%- endfor -%}
 
-                </div>
-              </li>
-            {%- endfor -%}
-
-          </ul>
-        </div>
-      {%- endif -%}
-
+        </ul>
+      </div>
     </div>
   </div>
 </div>
