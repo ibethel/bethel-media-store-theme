@@ -9,6 +9,7 @@
   {%- endif -%}
 
   {%- render 'bm-prod-item',
+    bmpi_available: product.available,
     bmpi_classes: bmpi_classes,
     bmpi_img: product.featured_image,
     bmpi_title: product.title,

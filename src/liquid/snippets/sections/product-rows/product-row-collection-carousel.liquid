@@ -78,6 +78,7 @@
         {%- endif -%}
 
         {%- render 'bm-prod-item',
+          bmpi_available: product.available,
           bmpi_classes: "splide__slide",
           bmpi_img: product.featured_image,
           bmpi_title: product.title,
