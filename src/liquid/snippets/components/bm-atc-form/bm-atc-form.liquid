@@ -34,6 +34,13 @@
 
   </div>
 
+  {%- assign wsl_collection = settings.wsl_collection -%}
+  {%- assign wsl_message = settings.wsl_message -%}
+
+  {%- if wsl_collection != blank and wsl_message != blank and form_product.collections contains wsl_collection -%}
+    <span class="d-block mb-3 text-danger">{{ wsl_message }}</span>
+  {%- endif -%}
+
   {%- unless form_product.available %}
     {%- assign button_attributes = "disabled" -%}
     {% assign button_classes = button_classes | append: ' disabled' %}
