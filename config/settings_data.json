@@ -4,6 +4,7 @@
     "bm_logo": "shopify:\/\/shop_images\/logox2_47cdd922-fdb7-406f-b4f0-d3bd9841922e.png",
     "enable_wish_list": true,
     "enable_quick_view": true,
+    "wsl_collection": "books-best-sellers",
     "main_header_sticky": true,
     "enable_atc_ajax": true,
     "bm_head_scripts": "<!-- Google tag (gtag.js) -->\n<script async src=\"https:\/\/www.googletagmanager.com\/gtag\/js?id=G-12169MTHLZ\"><\/script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'G-12169MTHLZ');\n<\/script>",
@@ -60,6 +61,7 @@
           "1c439f34-47e7-4583-8710-d0fd9c6d336b": {
             "type": "nav_list_manage",
             "settings": {
+              "search_format": "default",
               "search_link_vis": "default",
               "enable_wish_star": false,
               "star_link_vis": "xl",
