@@ -3,6 +3,7 @@
 {%- assign show_form_single = form_product.has_only_default_variant -%}
 {%- assign tag_bulk_approved = settings.tag_bulk_approved -%}
 {%- assign tag_bulk_not_approved = settings.tag_bulk_not_approved -%}
+{%- assign oos_short = 'products.out_of_stock.short_message' | t -%}
 
 {%- form 'product',  form_product, id: form_id, class: "bm-atc-form col-12" -%}
 
@@ -43,7 +44,8 @@
 
   {%- unless form_product.available %}
     {%- assign button_attributes = "disabled" -%}
-    {% assign button_classes = button_classes | append: ' disabled' %}
+    {%- assign button_classes = button_classes | append: ' disabled' -%}
+    {%- assign button_content = oos_short -%}
   {%- endunless -%}
 
   {%- render 'bm-btn',

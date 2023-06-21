@@ -164,11 +164,10 @@
 
   &.disabled {
     background: $grey20;
-    border-color: $grey20;
-    color: $grey10;
+    border-color: $grey90;
+    color: $grey90;
     cursor: default;
     pointer-events: none;
-    text-decoration: line-through;
   }
 
   .bm-btn__wrapper {

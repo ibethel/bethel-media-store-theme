@@ -68,6 +68,7 @@
         {%- endif -%}
 
         {%- render 'bm-prod-item',
+          bmpi_available: current_item.available,
           bmpi_classes: "mb-4",
           bmpi_img: current_item.featured_image,
           bmpi_title: current_item.title,

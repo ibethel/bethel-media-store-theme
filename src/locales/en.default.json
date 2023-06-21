@@ -212,6 +212,9 @@
     "digital_requirements": "Digital requirements",
     "name": "Products",
     "product_page": "Product page",
+    "out_of_stock": {
+      "short_message": "Restocking"
+    },
     "read_more": "Read More",
     "reviews": "Reviews",
     "select_option": "Select Option",
