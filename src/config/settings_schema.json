@@ -113,6 +113,21 @@
         "id": "enable_predictive_search_articles",
         "label": "t:settings_schema.features.settings.search.enable_predictive_search_articles.label",
         "default": false
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.features.settings.search.name"
+      },
+      {
+        "type": "collection",
+        "id": "wsl_collection",
+        "label": "t:settings_schema.features.settings.wsl.wsl_collection.label"
+      },
+      {
+        "type": "textarea",
+        "id": "wsl_message",
+        "label": "t:settings_schema.features.settings.wsl.wsl_message.label",
+        "default": "While Supplies Last"
       }
     ]
   },
