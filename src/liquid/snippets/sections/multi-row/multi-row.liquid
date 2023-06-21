@@ -1,0 +1,78 @@
+{%- liquid
+  assign show_background = false
+  if enable_background and background_color != blank
+    assign show_background = true
+  endif
+-%}
+
+{%- if is_a_section -%}
+  <section
+    class="bm-multi-row {{ section_margin -}}
+
+      {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+      {%- if show_background -%}
+        {%- if enable_contain %} py-3 py-xl-5
+          {%- else %} p-3 p-xl-5
+        {%- endif -%}
+      {%- endif %}"
+
+    {%- if show_background -%}
+      style="background-color: {{ background_color }};"
+    {%- endif -%}
+  >
+  {%- else -%}
+    <div
+      class="bm-multi-row {{ section_margin -}}
+
+        {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
+
+        {%- if show_background -%}
+          {%- if enable_contain %} py-3 py-xl-5
+            {%- else %} p-3 p-xl-5
+          {%- endif -%}
+        {%- endif %}"
+
+      {%- if show_background -%}
+        style="background-color: {{ background_color }};"
+      {%- endif -%}
+    >
+{%- endif -%}
+
+  <div
+    class="multi-row__container
+
+      {{- text_alignment_phone | prepend: ' ' -}}
+      {{- text_alignment_tablet | prepend: ' ' -}}
+      {{- text_alignment_desk | prepend: ' ' -}}
+
+      {%- if enable_contain %} container-xl px-3
+        {%- else -%}
+          {%- if show_background == false %} px-3 px-xl-5{%- endif -%}
+      {%- endif -%}"
+  >
+    <div class="multi-row__wrapper">
+      <div class="multi-row__box">
+
+        {%- render 'multi-row-blocks',
+          aria_labelledby: aria_labelledby,
+          content_width_desk: content_width_desk,
+          content_width_phone: content_width_phone,
+          content_width_tablet: content_width_tablet,
+          horiz_align_desk: horiz_align_desk,
+          horiz_align_phone: horiz_align_phone,
+          horiz_align_tablet: horiz_align_tablet,
+          section_blocks: section_blocks,
+          text_alignment_desk: text_alignment_desk,
+          text_alignment_tablet: text_alignment_tablet,
+          text_alignment_phone: text_alignment_phone -%}
+
+      </div>
+    </div>
+  </div>
+
+{%- if is_a_section -%}
+  </section>
+  {%- else -%}
+    </div>
+{%- endif -%}

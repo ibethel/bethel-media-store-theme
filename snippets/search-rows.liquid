@@ -43,6 +43,7 @@
       {%- endif -%}
 
       {%- render 'bm-prod-item',
+        bmpi_available: item.available,
         bmpi_classes: "mb-4",
         bmpi_img: current_image,
         bmpi_img_url: current_image_url,

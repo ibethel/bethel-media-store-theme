@@ -104,7 +104,14 @@
           <span class="bm-prod-item__title">{{- bmpi_title -}}</span>
         {%- endif -%}
 
-        {%- if price != blank -%}
+        {%- if price != blank and bmpi_available -%}
+        
+        {%- assign wsl_collection = settings.wsl_collection -%}
+        {%- assign wsl_message = settings.wsl_message -%}
+
+        {%- if wsl_collection != blank and wsl_message != blank and bmpi_product.collections contains wsl_collection -%}
+          <span class="d-block mb-3 text-danger">{{ wsl_message }}</span>
+        {%- endif -%}
 
           {%- render 'bm-prod-pricing',
             compare_price: compare_price,
@@ -117,6 +124,10 @@
             price_color_sale: price_color_sale,
             price_varies: price_varies,
             show_compare_price: show_compare_price -%}
+
+          {%- else -%}
+
+            <span class="bm-colors-color-grey-50">{{ 'products.out_of_stock.short_message' | t }}</span>
 
         {%- endif -%}
 

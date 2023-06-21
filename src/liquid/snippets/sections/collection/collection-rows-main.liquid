@@ -18,6 +18,7 @@
       {%- endif -%}
 
       {%- render 'bm-prod-item',
+        bmpi_available: product.available,
         bmpi_classes: "mb-4",
         bmpi_handle: product.handle,
         bmpi_img: product.featured_image,

@@ -11,9 +11,10 @@ const handleVideoIsVisibile = entry => {
   const elementIsVideo = currentVideo.nodeName === "VIDEO";
   const elementIsIframe = currentVideo.nodeName === "IFRAME";
   const elementIsWistia = currentVideo.classList.contains("wistia-video");
-  const videoSettings = elementIsVideo && JSON.parse(currentVideo.dataset.settings);
+  const videoDataSet = currentVideo && currentVideo.dataset.settings;
+  const videoSettings = elementIsVideo && videoDataSet && JSON.parse(videoDataSet);
 
-  if (elementIsVideo && videoSettings.autoplay) {
+  if (elementIsVideo && videoSettings && videoSettings.autoplay) {
     currentVideo.autoplay = true;
     currentVideo.muted = true;
   }
