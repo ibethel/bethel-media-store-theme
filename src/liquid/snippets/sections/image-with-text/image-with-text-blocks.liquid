@@ -60,8 +60,43 @@
   {%- assign padding_top = "pt-0 pt-sm-0" -%}
 {%- endif -%}
 
+{%- if image_pos == "row" -%}
+  {%- if img_breakpoint_pos == "flex-column" -%}
+    {%- assign blocks_overlap_classes = "pt-sm-5" -%}
+    {%- assign box_overlap_classes = "col-10 col-sm-12 mgs-auto me-auto me-sm-0 -mgt-5 -mgt-sm-0 -mgs-sm-5" -%}
+    {%- else -%}
+      {%- assign blocks_overlap_classes = "pt-sm-5" -%}
+      {%- assign box_overlap_classes = "-mgs-sm-5" -%}
+  {%- endif -%}
+  {%- else -%}
+    {%- if img_breakpoint_pos == "flex-column" -%}
+      {%- assign blocks_overlap_classes = "pb-sm-5" -%}
+      {%- assign box_overlap_classes = "col-10 col-sm-12 ms-auto me-auto me-sm-0 ms-sm-0 -mgt-5 -mgt-sm-0" -%}
+      {%- else -%}
+        {%- assign blocks_overlap_classes = "pb-sm-5" -%}
+    {%- endif -%}
+{%- endif -%}
+
 {%- if main_breakpoint == "xl" -%}
   {%- assign text_width_tablet = "12" -%}
+
+  {%- if image_pos == "row" -%}
+    {%- if img_breakpoint_pos == "flex-column" -%}
+      {%- assign blocks_overlap_classes = "pt-xl-5" -%}
+      {%- assign box_overlap_classes = "col-10 col-xl-12 mgs-auto me-auto me-xl-0 -mgt-5 -mgt-xl-0 -mgs-xl-5" -%}
+      {%- else -%}
+        {%- assign blocks_overlap_classes = "pt-xl-5" -%}
+        {%- assign box_overlap_classes = "-mgs-xl-5" -%}
+    {%- endif -%}
+    {%- else -%}
+      {%- if img_breakpoint_pos == "flex-column" -%}
+        {%- assign blocks_overlap_classes = "pb-xl-5" -%}
+        {%- assign box_overlap_classes = "col-10 col-xl-12 ms-auto me-auto me-xl-0 ms-xl-0 -mgt-5 -mgt-xl-0" -%}
+        {%- else -%}
+          {%- assign blocks_overlap_classes = "pb-xl-5" -%}
+      {%- endif -%}
+
+  {%- endif -%}
 {%- endif -%}
 
 {%- if text_width_tablet == blank -%}
@@ -80,19 +115,18 @@
   {%- assign content_width_desk = "12" -%}
 {%- endif -%}
 
-<div
-  class="image-with-text__blocks col-12 col-sm-{{ text_width_tablet }} col-xl-{{ text_width_desk -}}
+<div class="image-with-text__blocks col-12 col-sm-{{ text_width_tablet }} col-xl-{{ text_width_desk }}{% if enable_overlap and blocks_overlap_classes != blank %} {{ blocks_overlap_classes }}{% endif %}">
+  <div class="image-with-text__blocks-box h-100
 
     {%- if enable_text_padding %} ps-3 pe-3{%- endif -%}
     {{- padding_bottom | prepend: ' ' -}}
     {{- padding_left | prepend: ' ' -}}
     {{- padding_right | prepend: ' ' -}}
-    {{- padding_top | prepend: ' ' -}}"
+    {{- padding_top | prepend: ' ' -}}
+    {%- if enable_overlap and box_overlap_classes != blank %} {{ box_overlap_classes }}{% endif %}"
 
-  {%- if enable_text_section_styles and text_background != blank -%}
-    style="background-color: {{- text_background -}};"
-  {%- endif -%}
->
+    {%- if enable_text_section_styles and text_background != blank %}style="background-color: {{ text_background }};"{% endif -%}
+  >
   <div
     class="image-with-text__blocks-container
 
@@ -204,5 +238,6 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>

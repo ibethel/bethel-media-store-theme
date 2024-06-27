@@ -1144,6 +1144,7 @@
         "content_width_tablet": "Content width tablet",
         "enable_full_width": "Enable full width",
         "enable_text_section_styles": "Enable text section styles",
+        "enable_text_section_overlap": "Enable overlap",
         "space_between_img_txt": "Space between image and text",
         "img_breakpoint_pos": {
           "label": "Image breakpoint position",
