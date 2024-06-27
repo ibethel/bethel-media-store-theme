@@ -1,9 +1,24 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "favicon": "shopify:\/\/shop_images\/bm-favicon.webp",
     "bm_logo": "shopify:\/\/shop_images\/logox2_47cdd922-fdb7-406f-b4f0-d3bd9841922e.png",
     "enable_wish_list": true,
     "enable_quick_view": true,
+    "enable_predictive_search": true,
+    "enable_predictive_search_terms": true,
+    "enable_predictive_search_products": true,
+    "enable_predictive_search_pages": true,
+    "enable_predictive_search_collections": true,
+    "enable_predictive_search_articles": true,
     "wsl_collection": "books-best-sellers",
     "main_header_sticky": true,
     "enable_atc_ajax": true,
