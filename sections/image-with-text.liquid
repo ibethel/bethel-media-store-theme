@@ -1,14 +1,18 @@
 {%- render "image-with-text",
   autoplay: section.settings.autoplay,
   background_color: section.settings.background_color,
+  content_radius: section.settings.content_radius,
   content_width_desk: section.settings.content_width_desk,
   content_width_tablet: section.settings.content_width_tablet,
   controls: section.settings.controls,
   enable_background: section.settings.enable_background,
   enable_contain: section.settings.enable_contain,
+  enable_content_radius: section.settings.enable_content_radius,
   enable_full_width: section.settings.enable_full_width,
   enable_hide_scroll: section.settings.enable_hide_scroll,
+  enable_image_radius: section.settings.enable_image_radius,
   enable_text_section_styles: section.settings.enable_text_section_styles,
+  enable_overlap: section.settings.enable_overlap,
   horiz_align_desk: section.settings.horiz_align_desk,
   horiz_align_phone: section.settings.horiz_align_phone,
   horiz_align_tablet: section.settings.horiz_align_tablet,
@@ -21,6 +25,7 @@
   image_tablet: section.settings.image_tablet,
   img_width_desk: section.settings.img_width_desk,
   img_width_tablet: section.settings.img_width_tablet,
+  img_radius: section.settings.img_radius,
   interaction: section.settings.interaction,
   is_a_section: section.settings.is_a_section,
   loop: section.settings.loop,
@@ -30,6 +35,9 @@
   section_margin_desk: section.settings.section_margin_desk,
   section_margin_phone: section.settings.section_margin_phone,
   section_margin_tablet: section.settings.section_margin_tablet,
+  space_between_img_content: section.settings.space_between_img_content,
+  space_between_img_content_tablet: section.settings.space_between_img_content_tablet,
+  space_between_img_content_desk: section.settings.space_between_img_content_desk,
   space_between_img_txt: section.settings.space_between_img_txt,
   text_alignment_desk: section.settings.text_alignment_desk,
   text_alignment_tablet: section.settings.text_alignment_tablet,
@@ -120,6 +128,36 @@
         "default": "5"
       },
       {
+        "type": "range",
+        "id": "space_between_img_content",
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "unit": "pad",
+        "label": "t:sections.image-with-text.settings.space_between_img_content_phone",
+        "default": 3
+      },
+      {
+        "type": "range",
+        "id": "space_between_img_content_tablet",
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "unit": "pad",
+        "label": "t:sections.image-with-text.settings.space_between_img_content_tablet",
+        "default": 3
+      },
+      {
+        "type": "range",
+        "id": "space_between_img_content_desk",
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "unit": "pad",
+        "label": "t:sections.image-with-text.settings.space_between_img_content_desk",
+        "default": 3
+      },
+      {
         "type": "header",
         "content": "t:sections.all.image.name"
       },
@@ -141,6 +179,22 @@
         "type": "image_picker",
         "id": "image_desk",
         "label": "t:sections.all.image.settings.desktop"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_image_radius",
+        "label": "t:sections.all.image.settings.enable_image_radius",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "img_radius",
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "unit": "unt",
+        "label": "t:sections.all.image.settings.img_radius",
+        "default": 3
       },
       {
         "type": "range",
@@ -495,6 +549,22 @@
         "content": "t:sections.image-with-text.text_section"
       },
       {
+        "type": "checkbox",
+        "id": "enable_content_radius",
+        "label": "t:sections.image-with-text.settings.enable_content_radius",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "content_radius",
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "unit": "unt",
+        "label": "t:sections.image-with-text.settings.content_radius",
+        "default": 3
+      },
+      {
         "type": "range",
         "id": "content_width_tablet",
         "min": 3,
@@ -525,6 +595,12 @@
         "id": "text_background",
         "label": "t:sections.image-with-text.settings.text_background",
         "default": "#fff"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_overlap",
+        "label": "t:sections.image-with-text.settings.enable_text_section_overlap",
+        "default": false
       },
       {
         "type": "header",

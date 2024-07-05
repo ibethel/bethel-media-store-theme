@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "settings_schema": {
     "base": {
@@ -644,7 +653,6 @@
           "img_margin": "Image margin",
           "img_max_width": "Image max width",
           "img_pos": "Image position",
-          "img_radius": "Image radius",
           "img_visibility": "Image visibility",
           "img_width": "Image width",
           "img_width_desk": "Image width desktop",
@@ -1147,11 +1155,12 @@
         "content_width_desk": "Content width desktop",
         "content_width_tablet": "Content width tablet",
         "enable_full_width": "Enable full width",
-        "enable_text_section_styles": "Enable text section styles",
         "space_between_img_content": "Space between image and content",
         "space_between_img_content_phone": "Space between image and content phone",
         "space_between_img_content_tablet": "Space between image and content tablet",
         "space_between_img_content_desk": "Space between image and content desktop",
+        "enable_text_section_styles": "Enable text section styles",
+        "enable_text_section_overlap": "Enable overlap",
         "space_between_img_txt": "Space between image and text",
         "img_breakpoint_pos": {
           "label": "Image breakpoint position",

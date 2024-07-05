@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "1659815126ce988bd5": {
@@ -76,8 +85,8 @@
             "button_size_desk": "large",
             "button_template": "primary",
             "enable_button_styles": true,
-            "button_color": "#fff",
-            "button_border_color": "#fff",
+            "button_color": "#ffffff",
+            "button_border_color": "#ffffff",
             "button_text_color": "#000000",
             "button_mp4_url": "",
             "button_iframe_url": "",
@@ -355,9 +364,14 @@
         "enable_background": true,
         "background_color": "#eeebea",
         "space_between_img_txt": "3",
+        "space_between_img_content": 0,
+        "space_between_img_content_tablet": 0,
+        "space_between_img_content_desk": 0,
         "image_phone": "shopify:\/\/shop_images\/iwt-mockup-desk.jpg",
         "image_tablet": "shopify:\/\/shop_images\/iwt-mockup-mobile.jpg",
         "image_desk": "shopify:\/\/shop_images\/iwt-mockup-desk.jpg",
+        "enable_image_radius": false,
+        "img_radius": 3,
         "img_width_tablet": 6,
         "img_width_desk": 8,
         "image_pos": "row",
@@ -378,10 +392,13 @@
         "text_alignment_desk": "text-xl-inherit",
         "text_alignment_tablet": "text-sm-inherit",
         "text_alignment_phone": "text-inherit",
+        "enable_content_radius": false,
+        "content_radius": 3,
         "content_width_tablet": 11,
         "content_width_desk": 8,
         "enable_text_section_styles": true,
         "text_background": "#a5acb0",
+        "enable_overlap": false,
         "main_breakpoint": "sm",
         "section_margin_phone": "pb-0",
         "section_margin_tablet": "pb-sm-0",
