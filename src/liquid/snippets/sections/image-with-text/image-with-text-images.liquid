@@ -63,7 +63,7 @@
 {%- endif -%}
 
 <div class="image-with-text__images col-12 col-sm-{{ img_width_tablet }} col-xl-{{ img_width_desk }}{% if enable_overlap and blocks_overlap_classes != blank %} {{ blocks_overlap_classes }}{% endif %}">
-  <div class="image-with-text__images-container{% if enable_overlap and overlap_classes != blank %} {{ overlap_classes }}{% endif %}">
+  <div class="image-with-text__images-container{% if enable_overlap and overlap_classes != blank %} {{ overlap_classes }}{% endif %}{% if enable_image_radius and img_radius != blank and img_radius > 0 %} rounded-{{ img_radius }} overflow-hidden{% endif %}">
     {%- if show_video -%}
 
       {% if video_thumbnail != blank %}
