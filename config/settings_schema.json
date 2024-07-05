@@ -356,7 +356,7 @@
       {
         "type": "checkbox",
         "id": "pt_show_tags_group",
-        "label": "Show unused\/ungrouped tags as a 'Tags' group",
+        "label": "Show unused/ungrouped tags as a 'Tags' group",
         "default": false
       },
       {
@@ -882,7 +882,7 @@
           },
           {
             "value": "plus_minus",
-            "label": "Plus \/ Minus"
+            "label": "Plus / Minus"
           }
         ],
         "default": "arrows"

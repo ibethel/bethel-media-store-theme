@@ -32,9 +32,9 @@
     "address1": "Address 1",
     "address2": "Address 2",
     "city": "City",
-    "country": "Country\/region",
+    "country": "Country/region",
     "province": "Province",
-    "zip": "Postal\/ZIP code",
+    "zip": "Postal/ZIP code",
     "phone": "Phone",
     "set_default": "Set as default address",
     "add": "Add address",
@@ -162,7 +162,7 @@
   "general": {
     "cancel": "Cancel",
     "continue": "Continue",
-    "continue_browsing_html": "Continue browsing <a class=\"bm-link text-black opacity-hover\" href=\"\/collections\/all\">here<\/a>.",
+    "continue_browsing_html": "Continue browsing <a class=\"bm-link text-black opacity-hover\" href=\"/collections/all\">here</a>.",
     "email": "Email",
     "logout": "Logout",
     "password": "Password",
@@ -175,8 +175,7 @@
     "search": {
       "name": "Search"
     },
-    "section_contain": {
-    },
+    "section_contain": {},
     "social": {
       "alt_text": {
         "share_on_facebook": "Share on Facebook",
@@ -196,10 +195,10 @@
     "submit": "Submit"
   },
   "localization": {
-    "country_label": "Country\/region",
+    "country_label": "Country/region",
     "language_label": "Language",
     "update_language": "Update language",
-    "update_country": "Update country\/region"
+    "update_country": "Update country/region"
   },
   "predictive_search": {
     "articles": "Articles",
@@ -223,7 +222,7 @@
     "shipping_details": "Shipping Details"
   },
   "wish_list": {
-    "no_customer_html": "You must login to make a wish list.<br \/> Please login <a class='bm-link opacity-hover text-black' href='\/account\/login'>here",
+    "no_customer_html": "You must login to make a wish list.<br /> Please login <a class='bm-link opacity-hover text-black' href='/account/login'>here",
     "title": "Wish list"
   }
 }
