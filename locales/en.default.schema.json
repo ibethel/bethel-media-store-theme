@@ -634,6 +634,7 @@
         "name": "Image",
         "settings": {
           "enable_img_max_width": "Enable image max width",
+          "enable_image_radius": "Enable image radius",
           "phone": "Image phone",
           "tablet": "Image tablet",
           "desktop": "Image desktop",
@@ -643,6 +644,7 @@
           "img_margin": "Image margin",
           "img_max_width": "Image max width",
           "img_pos": "Image position",
+          "img_radius": "Image radius",
           "img_visibility": "Image visibility",
           "img_width": "Image width",
           "img_width_desk": "Image width desktop",
@@ -1140,10 +1142,16 @@
       "text_section": "Text section",
       "video_paragraph": "Video will replace image based on the video visibility settings.",
       "settings": {
+        "enable_content_radius": "Enable content radius",
+        "content_radius": "Content radius",
         "content_width_desk": "Content width desktop",
         "content_width_tablet": "Content width tablet",
         "enable_full_width": "Enable full width",
         "enable_text_section_styles": "Enable text section styles",
+        "space_between_img_content": "Space between image and content",
+        "space_between_img_content_phone": "Space between image and content phone",
+        "space_between_img_content_tablet": "Space between image and content tablet",
+        "space_between_img_content_desk": "Space between image and content desktop",
         "space_between_img_txt": "Space between image and text",
         "img_breakpoint_pos": {
           "label": "Image breakpoint position",
