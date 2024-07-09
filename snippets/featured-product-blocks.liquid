@@ -308,8 +308,11 @@
                 text_alignment_phone: text_alignment_phone, -%}
 
             {%- when "section_html" -%}
+              {%- assign custom_html = block.settings.custom_html -%}
+              {%- assign custom_liquid = block.settings.custom_liquid -%}
 
-              {{- block.settings.custom_html -}}
+              {%- if custom_html != blank %}{{ custom_html }}{% endif -%}
+              {%- if custom_liquid != blank %}{{ custom_liquid }}{% endif -%}
 
             {%- when "section_bulk_accordion" -%}
 

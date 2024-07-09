@@ -62,6 +62,21 @@
     <a class="bm-prod-item__link d-block text-decoration-none" href="{{- bmpi_url -}}" title="{{ bmpi_title }}">
 
       {%- if bmpi_img != blank or bmpi_img_url != blank -%}
+
+        {%- if bmpi_disable_lazy %}
+          {%- assign is_lazy = false -%}
+
+          {%- capture bm_img_srcset -%}
+            {{ bmpi_img | image_url: width: 180 }} 180w,
+            {{ bmpi_img | image_url: width: 360 }} 360w,
+            {{ bmpi_img | image_url: width: 540 }} 540w,
+            {{ bmpi_img | image_url: width: 720 }} 720w
+          {%- endcapture -%}
+          {%- else -%}
+            {%- assign is_lazy = true -%}
+            {%- assign bm_img_srcset = "" -%}
+        {%- endif -%}
+
         <div
           class="bm-prod-item__image mb-3
 
@@ -72,12 +87,13 @@
             bm_img: bmpi_img,
             bm_img_alt: bmpi_img.alt,
             bm_img_classes: bm_img_classes,
-            bm_img_is_lazy: true,
+            bm_img_is_lazy: is_lazy,
             bm_img_url: bmpi_img_url,
             bm_img_wrapper_classes: bm_img_wrapper_classes,
             bm_img_widths: image_widths,
             bm_img_width: bmpi_img.width,
-            bm_img_height: bmpi_img.height -%}
+            bm_img_height: bmpi_img.height,
+            bm_img_srcset: bm_img_srcset -%}
 
           {%- if settings.enable_quick_view -%}
             {%- render 'sca-quick-view', product: bmpi_product -%}
@@ -105,7 +121,7 @@
         {%- endif -%}
 
         {%- if price != blank and bmpi_available -%}
-        
+
         {%- assign wsl_collection = settings.wsl_collection -%}
         {%- assign wsl_message = settings.wsl_message -%}
 
