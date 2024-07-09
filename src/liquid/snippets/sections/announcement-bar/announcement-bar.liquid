@@ -14,8 +14,10 @@
 
     {%- if section_margin != blank %} {{ section_margin -}}{%- endif -%}"
 
-  {%- if background_color != blank -%}
-    style="background: {{- background_color -}};"
+  {%- if background_color != blank or enable_bottom_border -%}
+    {%- if border_color == blank %}{% assign border_color = "#fff" %}{% endif -%}
+    style="{% if background_color != blank %}background: {{ background_color }};{% endif -%}
+      {% if enable_bottom_border %}border-bottom-width: {{ border_width }}px;border-color: {{ border_color }};border-bottom-style: solid;{% endif %}"
   {%- endif -%}
 
   aria-label="{{ 'announcement_bar.title' | t }}"

@@ -8,6 +8,8 @@
 {%- assign single_video_visibility = single_video.settings.block_visibility -%}
 {%- assign img_link = single_img.settings.img_link -%}
 
+{%- if overlay_opacity == blank %}{% assign overlay_opacity = "0.3" %}{% endif -%}
+
 {%- capture labelledby -%}
   {%- render 'helper-labelledby-title-blocks',
     title_blocks: banner_titles -%}
@@ -49,6 +51,7 @@
         single_img: single_img,
         single_video_visibility: single_video_visibility -%}
 
+      {%- if enable_overlay %}<div class="position-absolute left-0 top-0 bottom-0 right-0 w-100" style="background-color:rgba(0,0,0,{{ overlay_opacity }});"></div>{% endif -%}
 
       {%- if single_video != blank and banner_html == blank -%}
 

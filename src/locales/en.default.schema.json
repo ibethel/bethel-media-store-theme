@@ -105,6 +105,9 @@
       },
       "product": {
         "settings": {
+          "disable_first_image_lazyload": {
+            "label": "Disable lazyload on first image"
+          },
           "enable_atc_ajax": {
             "label": "Enable ajax add to cart"
           },
@@ -136,6 +139,9 @@
         "borders": {
           "label": "Borders",
           "settings": {
+            "enable_bottom_border": {
+              "label": "Enable bottom border"
+            },
             "enable_borders": {
               "label": "Enable borders"
             },
@@ -156,6 +162,9 @@
             },
             "border_top": {
               "label": "Border top"
+            },
+            "border_width": {
+              "label": "Border width"
             }
           }
         },
@@ -473,6 +482,17 @@
       "background_image": {
         "label": "Background image"
       },
+      "borders": {
+        "enable_bottom_border": {
+          "label": "Enable bottom border"
+        },
+        "border_color": {
+          "label": "Border color"
+        },
+        "border_width": {
+          "label": "Border width"
+        }
+      },
       "button": {
         "label_1": "Button one",
         "label_2": "Button two",
@@ -550,6 +570,12 @@
         "phone": "Content width phone",
         "tablet": "Content width tablet"
       },
+      "custom_html": {
+        "label": "Custom html"
+      },
+      "custom_liquid": {
+        "label": "Custom liquid"
+      },
       "description": {
         "label": "Description",
         "settings": {
@@ -562,6 +588,9 @@
       },
       "enable_background": {
         "label": "Enable background"
+      },
+      "enable_overlay": {
+        "label": "Enable overlay"
       },
       "enable_section": {
         "label": "Enable",
@@ -688,6 +717,9 @@
           "message_pos": "Message position",
           "message_visibility": "Message visibility"
         }
+      },
+      "overlay_opacity": {
+        "label": "Overlay opacity"
       },
       "padding": {
         "label": "Padding",
@@ -927,6 +959,15 @@
       "accordion": "Accordion",
       "name": "Accordions"
     },
+    "account": {
+      "name": "Account"
+    },
+    "activate-account": {
+      "name": "Activate account"
+    },
+    "addresses": {
+      "name": "Addresses"
+    },
     "article": {
       "name": "Article"
     },
@@ -1077,12 +1118,18 @@
         }
       }
     },
+    "html_liquid": {
+      "name": "HTML/Liquid"
+    },
     "item_list": {
       "name": "Item list",
       "settings": {
         "item_number": "Item number",
         "section_item": "Item"
       }
+    },
+    "login": {
+      "name": "Login"
     },
     "offset_collection_row": {
       "name": "Offset collection row",
@@ -1099,6 +1146,15 @@
           "label": "Hide after the first page."
         }
       }
+    },
+    "order": {
+      "name": "Order"
+    },
+    "register": {
+      "name": "Register"
+    },
+    "reset-password": {
+      "name": "Reset password"
     },
     "search": {
       "name": "Search"

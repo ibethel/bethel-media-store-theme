@@ -4,6 +4,9 @@
 {%- if enable -%}
 
   {%- render 'announcement-bar',
+    enable_bottom_border: section.settings.enable_bottom_border,
+    border_color: section.settings.border_color,
+    border_width: section.settings.border_width,
     rewind: section.settings.enable_rewind,
     section_blocks: section.blocks,
     section_margin: section.settings.section_margin,
@@ -101,6 +104,26 @@
       "id": "enable_rewind",
       "label": "Enable rewind",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_bottom_border",
+      "label": "t:sections.all.borders.enable_bottom_border.label"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "t:sections.all.borders.border_color.label",
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.borders.border_width.label",
+      "default": 1
     }
   ],
   "blocks": [

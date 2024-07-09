@@ -28,8 +28,12 @@
       <ul class="splide__list">
 
         {%- for media in media_array -%}
+          {%- assign index = forloop.index0 -%}
+
+          {%- if index < 1 and disable_first_image_lazyload %}{% assign disable_lazy = true %}{% else %}{% assign disable_lazy = false %}{% endif -%}
 
           {%- render 'bm-thumbnail-gallery-media',
+            disable_lazy: disable_lazy,
             enable_image_zoom: enable_image_zoom,
             media: media,
             primary: true,

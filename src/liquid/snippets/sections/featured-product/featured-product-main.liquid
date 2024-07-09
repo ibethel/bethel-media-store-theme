@@ -67,11 +67,12 @@
 
 <div class="d-flex {{ img_breakpoint_pos }} flex-{{ main_breakpoint }}-{{ image_pos -}}">
 
-  {%- if enable_thumbnail_gallery -%}
+  {%- if enable_thumbnail_gallery and product.media.size > 1 -%}
 
     <div class="image-with-text__images {{ video_controls }}--video_controls col-12 col-{{ main_breakpoint }}-{{ img_width -}}">
 
       {%- render 'bm-thumbnail-gallery',
+        disable_first_image_lazyload: disable_first_image_lazyload,
         enable_image_zoom: enable_image_zoom,
         media_array: product.media,
         video_autoplay: video_autoplay,
@@ -85,6 +86,7 @@
       {%- render 'featured-product-images',
         autoplay: autoplay,
         controls: controls,
+        disable_lazy: disable_first_image_lazyload,
         enable_image_zoom: enable_image_zoom,
         interaction: interaction,
         iframe_url: iframe_url,

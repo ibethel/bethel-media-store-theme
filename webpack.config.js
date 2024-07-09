@@ -101,7 +101,7 @@ module.exports = {
           },
         },
         {
-          from: "src/liquid/templates/customers/*.liquid",
+          from: "src/liquid/templates/customers/**/*",
           to: "templates/customers/[name].[ext]",
         },
       ],
