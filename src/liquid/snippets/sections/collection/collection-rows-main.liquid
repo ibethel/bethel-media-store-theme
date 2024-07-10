@@ -12,14 +12,17 @@
   >
 
     {%- for product in section_collection.products -%}
-
+      {%- assign index = forloop.index0 -%}
       {%- if product.variants.size == 1 -%}
         {%- assign show_compare_price = true -%}
       {%- endif -%}
 
+      {%- if index < 2 %}{% assign disable_lazy = true %}{% else %}{% assign disable_lazy = false %}{% endif -%}
+
       {%- render 'bm-prod-item',
         bmpi_available: product.available,
         bmpi_classes: "mb-4",
+        bmpi_disable_lazy: disable_lazy,
         bmpi_handle: product.handle,
         bmpi_img: product.featured_image,
         bmpi_product: product,

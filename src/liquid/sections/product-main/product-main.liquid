@@ -12,6 +12,7 @@
 {%- render "featured-product",
   background_color: section.settings.background_color,
   is_product_page: is_product_page,
+  disable_first_image_lazyload: section.settings.disable_first_image_lazyload,
   enable_background: section.settings.enable_background,
   enable_contain: section.settings.enable_contain,
   enable_image_zoom: section.settings.enable_image_zoom,
@@ -95,6 +96,12 @@
       {
         "type": "header",
         "content": "t:sections.all.image.name"
+      },
+      {
+        "type": "checkbox",
+        "id": "disable_first_image_lazyload",
+        "label": "t:settings_schema.products.product.settings.disable_first_image_lazyload.label",
+        "default": true
       },
       {
         "type": "checkbox",
@@ -244,6 +251,9 @@
       }
     ],
     "blocks": [
+      {
+        "type": "@app"
+      },
       {
         "type": "section_product_author",
         "name": "t:sections.product_main.blocks.section_product_author.name",
@@ -3029,12 +3039,17 @@
       },
       {
         "type": "section_html",
-        "name": "t:sections.all.html.name",
+        "name": "t:sections.html_liquid.name",
         "settings": [
           {
             "type": "html",
             "id": "custom_html",
             "label": "t:sections.all.html.label"
+          },
+          {
+            "type": "liquid",
+            "id": "custom_liquid",
+            "label": "t:sections.all.custom_liquid.label"
           }
         ]
       },

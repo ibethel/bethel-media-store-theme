@@ -6,16 +6,28 @@
 
     <li class="splide__slide" data-mediaid="{{ media.id }}">
 
+      {%- if disable_lazy %}
+        {%- assign is_lazy = false -%}
+
+        {%- capture bm_img_srcset -%}
+          {{- media | image_url: width: 540 }} 540w, {{ media | image_url: width: 720 }} 720w, {{ media | image_url: width: 900 }} 900w, {{ media | image_url: width: 1728 }} 1728w
+        {%- endcapture -%}
+        {%- else -%}
+          {%- assign is_lazy = true -%}
+          {%- assign bm_img_srcset = "" -%}
+      {%- endif -%}
+
       {%- render 'bm-image'
         bm_img: media,
         bm_img_alt: media.alt,
         bm_img_classes: bm_img_classes,
-        bm_img_is_lazy: true,
+        bm_img_is_lazy: is_lazy,
         bm_img_wrapper_classes: "position-relative bm-img__wrapper--fixed-width",
         bm_img_widths: "540,720,900,1728",
         bm_img_width: media.width,
         bm_img_height: media.height,
-        bm_img_zoom: enable_image_zoom -%}
+        bm_img_zoom: enable_image_zoom,
+        bm_img_srcset: bm_img_srcset -%}
 
     </li>
 

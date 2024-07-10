@@ -1,12 +1,3 @@
-/*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin language editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
 {
   "settings_schema": {
     "base": {
@@ -114,6 +105,9 @@
       },
       "product": {
         "settings": {
+          "disable_first_image_lazyload": {
+            "label": "Disable lazyload on first image"
+          },
           "enable_atc_ajax": {
             "label": "Enable ajax add to cart"
           },
@@ -145,6 +139,9 @@
         "borders": {
           "label": "Borders",
           "settings": {
+            "enable_bottom_border": {
+              "label": "Enable bottom border"
+            },
             "enable_borders": {
               "label": "Enable borders"
             },
@@ -165,6 +162,9 @@
             },
             "border_top": {
               "label": "Border top"
+            },
+            "border_width": {
+              "label": "Border width"
             }
           }
         },
@@ -482,6 +482,17 @@
       "background_image": {
         "label": "Background image"
       },
+      "borders": {
+        "enable_bottom_border": {
+          "label": "Enable bottom border"
+        },
+        "border_color": {
+          "label": "Border color"
+        },
+        "border_width": {
+          "label": "Border width"
+        }
+      },
       "button": {
         "label_1": "Button one",
         "label_2": "Button two",
@@ -559,6 +570,12 @@
         "phone": "Content width phone",
         "tablet": "Content width tablet"
       },
+      "custom_html": {
+        "label": "Custom html"
+      },
+      "custom_liquid": {
+        "label": "Custom liquid"
+      },
       "description": {
         "label": "Description",
         "settings": {
@@ -571,6 +588,9 @@
       },
       "enable_background": {
         "label": "Enable background"
+      },
+      "enable_overlay": {
+        "label": "Enable overlay"
       },
       "enable_section": {
         "label": "Enable",
@@ -643,7 +663,6 @@
         "name": "Image",
         "settings": {
           "enable_img_max_width": "Enable image max width",
-          "enable_image_radius": "Enable image radius",
           "phone": "Image phone",
           "tablet": "Image tablet",
           "desktop": "Image desktop",
@@ -698,6 +717,9 @@
           "message_pos": "Message position",
           "message_visibility": "Message visibility"
         }
+      },
+      "overlay_opacity": {
+        "label": "Overlay opacity"
       },
       "padding": {
         "label": "Padding",
@@ -937,6 +959,15 @@
       "accordion": "Accordion",
       "name": "Accordions"
     },
+    "account": {
+      "name": "Account"
+    },
+    "activate-account": {
+      "name": "Activate account"
+    },
+    "addresses": {
+      "name": "Addresses"
+    },
     "article": {
       "name": "Article"
     },
@@ -1087,12 +1118,18 @@
         }
       }
     },
+    "html_liquid": {
+      "name": "HTML/Liquid"
+    },
     "item_list": {
       "name": "Item list",
       "settings": {
         "item_number": "Item number",
         "section_item": "Item"
       }
+    },
+    "login": {
+      "name": "Login"
     },
     "offset_collection_row": {
       "name": "Offset collection row",
@@ -1109,6 +1146,15 @@
           "label": "Hide after the first page."
         }
       }
+    },
+    "order": {
+      "name": "Order"
+    },
+    "register": {
+      "name": "Register"
+    },
+    "reset-password": {
+      "name": "Reset password"
     },
     "search": {
       "name": "Search"
@@ -1150,15 +1196,9 @@
       "text_section": "Text section",
       "video_paragraph": "Video will replace image based on the video visibility settings.",
       "settings": {
-        "enable_content_radius": "Enable content radius",
-        "content_radius": "Content radius",
         "content_width_desk": "Content width desktop",
         "content_width_tablet": "Content width tablet",
         "enable_full_width": "Enable full width",
-        "space_between_img_content": "Space between image and content",
-        "space_between_img_content_phone": "Space between image and content phone",
-        "space_between_img_content_tablet": "Space between image and content tablet",
-        "space_between_img_content_desk": "Space between image and content desktop",
         "enable_text_section_styles": "Enable text section styles",
         "enable_text_section_overlap": "Enable overlap",
         "space_between_img_txt": "Space between image and text",

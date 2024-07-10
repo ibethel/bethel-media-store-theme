@@ -1,3 +1,11 @@
+{%- liquid
+  assign show_shop_login = false
+
+  if shop.features.login_with_shop_classic_customer_accounts? and enable_shop_login
+    assign show_shop_login = true
+  endif
+-%}
+
 <div class="bm-login py-3 py-xl-5 mb-3 mb-xl-5">
   <div class="bm-login__container container-xl px-3 position-relative">
     {%- assign bm_login_title = "login_page.title" | t -%}
@@ -40,4 +48,6 @@
 
     </div>
   </div>
+
+  {%- if show_shop_login %}<div class="text-center pt-5" name="sign-in-with-shop-provider">{{ shop | login_button }}</div>{% endif -%}
 </div>
