@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "register": {
+      "type": "register"
+    }
+  },
+  "order": ["register"]
+}

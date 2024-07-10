@@ -1,0 +1,15 @@
+{%- render 'login', enable_shop_login: section.settings.enable_shop_login -%}
+
+{% schema %}
+  {
+    "name": "t:sections.login.name",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_shop_login",
+        "label": "Enable shop login",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

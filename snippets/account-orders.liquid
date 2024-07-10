@@ -15,7 +15,7 @@
     title_size: "fs-3",
     title_tag: "h2" -%}
 
-  {%- paginate customer.orders by 20 -%}
+  {%- paginate customer.orders by 5 -%}
 
   {%- if customer.orders_count > 0 -%}
     <div class="bm-account__orders-table-container overflow-auto" aria-labelledby="{{ title_id }}">
