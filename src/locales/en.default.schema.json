@@ -684,6 +684,7 @@
         "label": "Item rows",
         "settings": {
           "enable_item_gap": "Enable item gap",
+          "item_limit": "Item limit",
           "item_width_desk": "Width desktop",
           "item_width_max": "Width max screen",
           "item_width_phone": "Width phone",
@@ -1150,6 +1151,9 @@
     },
     "order": {
       "name": "Order"
+    },
+    "product_recommendations": {
+      "name": "Product recommendations"
     },
     "register": {
       "name": "Register"
