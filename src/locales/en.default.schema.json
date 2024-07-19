@@ -5,6 +5,9 @@
       "settings": {
         "favicon": {
           "label": "Favicon"
+        },
+        "enable_currency_code": {
+          "label": "Enable currency codes"
         }
       }
     },
@@ -681,6 +684,9 @@
         },
         "warning": "Only one of this type of block allowed for this section."
       },
+      "inventory": {
+        "label": "Inventory"
+      },
       "item_rows": {
         "label": "Item rows",
         "settings": {
@@ -838,6 +844,9 @@
         "option_vis_phone_down": "Visible phone down",
         "option_vis_tablet_down": "Visible tablet down",
         "option_vis_desk_down": "Visible desktop down"
+      },
+      "sku": {
+        "label": "SKU"
       },
       "slider": {
         "name": "Slider",
@@ -1263,6 +1272,15 @@
         "section_product_author": {
           "name": "Product author"
         },
+        "section_custom_accordion": {
+          "name": "Custom accordion",
+          "message": {
+            "label": "Custom message"
+          },
+          "title": {
+            "label": "Custom title"
+          }
+        },
         "section_bulk_accordion": {
           "name": "Bulk orders",
           "message": {
@@ -1291,6 +1309,9 @@
           "message": {
             "label": "Shipping message"
           }
+        },
+        "show_count": {
+          "label": "Show count"
         }
       },
       "name": "Product main",
