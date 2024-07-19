@@ -210,6 +210,10 @@
     "bulk_orders": "Bulk Orders",
     "description": "Description",
     "digital_requirements": "Digital requirements",
+    "in_stock": "In stock",
+    "in_stock_count": "{{ count }} in stock",
+    "low_stock": "Low stock",
+    "low_stock_count": "Only {{ count }} left!",
     "name": "Products",
     "product_page": "Product page",
     "out_of_stock": {
@@ -219,7 +223,15 @@
     "reviews": "Reviews",
     "select_option": "Select Option",
     "share": "Share",
-    "shipping_details": "Shipping Details"
+    "shipping_details": "Shipping Details",
+    "sku": "SKU",
+    "volume_pricing": {
+      "title": "Volume Pricing",
+      "note": "Volume pricing available",
+      "minimum": "{{ quantity }}+",
+      "price_at_each": "at {{ price }}/ea",
+      "price_range": "{{ minimum }} - {{ maximum }}"
+    }
   },
   "wish_list": {
     "no_customer_html": "You must login to make a wish list.<br /> Please login <a class='bm-link opacity-hover text-black' href='/account/login'>here",
