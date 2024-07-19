@@ -16,6 +16,7 @@
     <div class="d-flex justify-content-center mb-3 mb-xl-5">
 
       {%- render 'bm-search-form',
+        enable_predictive_search: settings.enable_predictive_search,
         label_hidden: true,
         search_btn_content: "icon",
         search_width: "280" -%}
@@ -32,6 +33,8 @@
           message_alignment_phone: "text-center",
           message_content: search_message,
           message_margin: "mb-3 mb-xl-5" -%}
+
+        {%- render 'search-sorting' -%}
 
         {%- render 'search-rows'
           item_widths_desk: item_widths_desk,
