@@ -50,7 +50,9 @@
         style="color: {{- price_color -}} !important;"
       {%- endif -%}
     >
-      {{- price | money -}}
+
+      {%- if settings.enable_currency_code %}{{ price | money_with_currency }}{% else %}{{ price | money }}{% endif -%}
+
     </span>
   </span>
 
@@ -71,7 +73,7 @@
           style="color: {{- compare_price_color -}} !important;"
         {%- endif -%}
       >
-        {{- compare_price | money -}}
+        {%- if settings.enable_currency_code %}{{ compare_price | money_with_currency }}{% else %}{{ compare_price | money }}{% endif -%}
       </span>
     </span>
   {%- endif -%}

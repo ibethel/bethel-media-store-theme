@@ -22,7 +22,7 @@
 
           {%- if show_compare %} me-2 text-danger{%- endif -%}"
       >
-        {{- item.final_line_price | money -}}
+        {%- if settings.enable_currency_code %}{{ item.final_line_price | money_with_currency }}{% else %}{{ item.final_line_price | money }}{% endif -%}
       </span>
     </div>
 
@@ -33,7 +33,7 @@
           {{- 'general.pricing.regular_price' | t -}}
         </span>
         <s class="cart-item-pricing__price-compare text-muted d-block bm-fonts fs-8 mb-3">
-          {{- item.original_line_price | money -}}
+          {%- if settings.enable_currency_code %}{{ item.original_line_price | money_with_currency }}{% else %}{{ item.original_line_price | money }}{% endif -%}
         </s>
       </div>
     {%- endif -%}
