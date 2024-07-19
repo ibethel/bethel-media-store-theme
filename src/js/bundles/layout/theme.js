@@ -25,6 +25,7 @@ import MainNavHoverOpen from "../features/hover-open/hover-open";
 import NewsLetter from "../features/newsletter/newsletter";
 import PopOver from "../features/pop-over/pop-over";
 import PredictiveSearch from "../features/predictive-search/predictive-search";
+import ProductRecommendations from "../features/product-recommendations/product-recommendations";
 import ScrollTo from "../features/scroll-to/scroll-to";
 import SidebarSlider from "../features/sidebar-slider/sidebar-slider";
 import VideoOnLoad from "../features/video-on-load/video-on-load";
@@ -184,6 +185,14 @@ const popOverFeature = () => {
   }
 };
 
+const productRecommendationsFeature = () => {
+  const prodRecs = Array.from(document.querySelectorAll(".prod-rec"));
+
+  if (!prodRecs.length > 0) return false;
+
+  ProductRecommendations(prodRecs);
+};
+
 const predictiveSearchFeature = () => {
   const searches = Array.from(document.querySelectorAll(".bm-predictive-search"));
 
@@ -250,6 +259,7 @@ window.addEventListener("DOMContentLoaded", () => {
   loadMoreFeature();
   mainNavHoverOpenFeature();
   newsletterFeature();
+  productRecommendationsFeature();
   productRowSliders();
   popOverFeature();
   predictiveSearchFeature();
