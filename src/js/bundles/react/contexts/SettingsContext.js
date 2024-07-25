@@ -7,6 +7,7 @@ const settings = {
   cart: bmApi.cartPage.cart,
   checkoutButtonText: bmApi.cartPage.copy.checkout_button,
   continueBrowsing: bmApi.cartPage.copy.continue_browsing,
+  currency: bmApi.currency,
   emptyCartText: bmApi.cartPage.copy.cart_empty,
   itemRegularPriceText: bmApi.cartPage.copy.regular_price,
   itemSalePriceText: bmApi.cartPage.copy.sale_price,
