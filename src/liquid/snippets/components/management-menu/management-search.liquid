@@ -12,12 +12,16 @@
 
   {%- if search_is_form -%}
 
-    {%- render 'bm-search-form',
-      enable_predictive_search: enable_predictive_search,
-      label_hidden: true,
-      search_btn_content: "icon",
-      search_classes: "me-2 me-xl-4",
-      search_width: search_width -%}
+    {%- unless request.path contains routes.search_url -%}
+
+      {%- render 'bm-search-form',
+        enable_predictive_search: enable_predictive_search,
+        label_hidden: true,
+        search_btn_content: "icon",
+        search_classes: "me-2 me-xl-4",
+        search_width: search_width -%}
+
+    {%- endunless -%}
 
     {%- else -%}
       {%- capture bm_link_content -%}
