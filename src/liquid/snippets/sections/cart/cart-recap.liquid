@@ -14,7 +14,7 @@
 
     <p class="cart-recap__total d-flex justify-content-between m-0 fs-7">
       <span>{{ subtotal_title }}</span>
-      <span class="cart-recap__total-price">{{ cart.total_price | money }}</span>
+      <span class="cart-recap__total-price">{% if settings.enable_currency_code %}{{ cart.total_price | money_with_currency }}{% else %}{{ cart.total_price | money }}{% endif %}</span>
     </p>
   </div>
 

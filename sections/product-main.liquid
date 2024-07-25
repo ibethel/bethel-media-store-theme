@@ -255,6 +255,28 @@
         "type": "@app"
       },
       {
+        "type": "sku",
+        "name": "t:sections.all.sku.label"
+      },
+      {
+        "type": "inventory",
+        "name": "t:sections.all.inventory.label",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "show_count",
+            "label": "t:sections.product_main.blocks.show_count.label",
+            "default": false
+          },
+          {
+            "type": "number",
+            "id": "inventory_threshold",
+            "label": "Inventory threshold",
+            "default": 20
+          }
+        ]
+      },
+      {
         "type": "section_product_author",
         "name": "t:sections.product_main.blocks.section_product_author.name",
         "settings": [
@@ -3050,6 +3072,196 @@
             "type": "liquid",
             "id": "custom_liquid",
             "label": "t:sections.all.custom_liquid.label"
+          }
+        ]
+      },
+      {
+        "type": "section_custom_accordion",
+        "name": "t:sections.product_main.blocks.section_custom_accordion.name",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "t:sections.product_main.blocks.section_custom_accordion.title.label"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_title_styles",
+            "label": "t:sections.all.title.settings.enable_title_styles",
+            "default": false
+          },
+          {
+            "type": "color",
+            "id": "title_color",
+            "label": "t:sections.all.title.settings.title_color",
+            "default": "#fff"
+          },
+          {
+            "type": "textarea",
+            "id": "message",
+            "label": "t:sections.product_main.blocks.section_custom_accordion.message.label"
+          },
+          {
+            "type": "header",
+            "content": "t:sections.all.message.message_styles"
+          },
+          {
+            "type": "checkbox",
+            "id": "enable_message_styles",
+            "label": "t:sections.all.styles.enable_styles",
+            "default": false
+          },
+          {
+            "type": "color",
+            "id": "message_color",
+            "label": "t:sections.all.color.label",
+            "default": "#fff"
+          },
+          {
+            "type": "select",
+            "id": "font_size",
+            "label": "t:sections.all.font_size.label",
+            "options": [
+              {
+                "value": "fs-1",
+                "label": "t:sections.all.font_size.option_large"
+              },
+              {
+                "value": "fs-2",
+                "label": "t:sections.all.font_size.option_xmedium"
+              },
+              {
+                "value": "fs-3",
+                "label": "t:sections.all.font_size.option_medium"
+              },
+              {
+                "value": "fs-4",
+                "label": "t:sections.all.font_size.option_mediuml"
+              },
+              {
+                "value": "fs-5",
+                "label": "t:sections.all.font_size.option_small"
+              },
+              {
+                "value": "fs-6",
+                "label": "t:sections.all.font_size.option_smaller"
+              }
+            ],
+            "default": "fs-6"
+          },
+          {
+            "type": "checkbox",
+            "id": "font_style_italic",
+            "label": "t:sections.all.font_style_italic.label",
+            "default": false
+          },
+          {
+            "type": "select",
+            "id": "font_weight",
+            "label": "t:sections.all.font_weight.label",
+            "options": [
+              {
+                "value": "fw-default",
+                "label": "t:sections.all.font_weight.option_default"
+              },
+              {
+                "value": "fw-semibold",
+                "label": "t:sections.all.font_weight.option_semi_bold"
+              },
+              {
+                "value": "fw-bold",
+                "label": "t:sections.all.font_weight.option_bold"
+              },
+              {
+                "value": "fw-bolder",
+                "label": "t:sections.all.font_weight.option_bolder"
+              },
+              {
+                "value": "fw-normal",
+                "label": "t:sections.all.font_weight.option_normal"
+              },
+              {
+                "value": "fw-light",
+                "label": "t:sections.all.font_weight.option_light"
+              },
+              {
+                "value": "fw-lighter",
+                "label": "t:sections.all.font_weight.option_lighter"
+              }
+            ],
+            "default": "fw-default"
+          },
+          {
+            "type": "select",
+            "id": "text_alignment_desk",
+            "label": "t:sections.all.text_alignment_horizontal.label_desk",
+            "options": [
+              {
+                "value": "text-xl-inherit",
+                "label": "t:sections.all.text_alignment_horizontal.options_inherit"
+              },
+              {
+                "value": "text-xl-start",
+                "label": "t:sections.all.text_alignment_horizontal.options_left"
+              },
+              {
+                "value": "text-xl-center",
+                "label": "t:sections.all.text_alignment_horizontal.options_center"
+              },
+              {
+                "value": "text-xl-end",
+                "label": "t:sections.all.text_alignment_horizontal.options_right"
+              }
+            ],
+            "default": "text-xl-inherit"
+          },
+          {
+            "type": "select",
+            "id": "text_alignment_tablet",
+            "label": "t:sections.all.text_alignment_horizontal.label_tablet",
+            "options": [
+              {
+                "value": "text-sm-inherit",
+                "label": "t:sections.all.text_alignment_horizontal.options_inherit"
+              },
+              {
+                "value": "text-sm-start",
+                "label": "t:sections.all.text_alignment_horizontal.options_left"
+              },
+              {
+                "value": "text-sm-center",
+                "label": "t:sections.all.text_alignment_horizontal.options_center"
+              },
+              {
+                "value": "text-sm-end",
+                "label": "t:sections.all.text_alignment_horizontal.options_right"
+              }
+            ],
+            "default": "text-sm-inherit"
+          },
+          {
+            "type": "select",
+            "id": "text_alignment_phone",
+            "label": "t:sections.all.text_alignment_horizontal.label_phone",
+            "options": [
+              {
+                "value": "text-inherit",
+                "label": "t:sections.all.text_alignment_horizontal.options_inherit"
+              },
+              {
+                "value": "text-start",
+                "label": "t:sections.all.text_alignment_horizontal.options_left"
+              },
+              {
+                "value": "text-center",
+                "label": "t:sections.all.text_alignment_horizontal.options_center"
+              },
+              {
+                "value": "text-end",
+                "label": "t:sections.all.text_alignment_horizontal.options_right"
+              }
+            ],
+            "default": "text-inherit"
           }
         ]
       },

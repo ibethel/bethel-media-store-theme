@@ -230,6 +230,12 @@
                 price_varies: current_product.price_varies,
                 show_compare_price: show_compare_price -%}
 
+              {%- if current_product.quantity_price_breaks_configured? -%}
+                <div>
+                  <span>{{ 'products.volume_pricing.note' | t }}</span>
+                </div>
+              {%- endif -%}
+
             {%- when "section_message" -%}
 
               {%- render 'bm-message-block',
@@ -314,6 +320,37 @@
               {%- if custom_html != blank %}{{ custom_html }}{% endif -%}
               {%- if custom_liquid != blank %}{{ custom_liquid }}{% endif -%}
 
+            {%- when "section_custom_accordion" -%}
+
+              {%- assign title_content = block.settings.title -%}
+              {%- assign message_content = block.settings.message -%}
+              {%- assign formatted_title = title_content | sha1 -%}
+              {%- assign title_labelledby = "accordion-title-" | append: formatted_title -%}
+              {%- assign data_target = "accordion-" | append: formatted_title -%}
+
+              {%- if title_content != blank and message_content != blank -%}
+
+                {%- render 'featured-product-accordion',
+                  data_target: data_target,
+                  enable_title_styles: block.settings.enable_title_styles,
+                  title_color: block.settings.title_color,
+                  title_content: title_content,
+                  title_italic: block.settings.title_font_style_italic,
+                  title_labelledby: title_labelledby,
+                  title_size: block.settings.title_font_size,
+                  title_weight: block.settings.title_font_weight,
+                  enable_message_styles: block.settings.enable_message_styles,
+                  message_alignment_desk: block.settings.text_alignment_desk,
+                  message_alignment_tablet: block.settings.text_alignment_tablet,
+                  message_alignment_phone: block.settings.text_alignment_phone,
+                  message_color: block.settings.message_color,
+                  message_content: message_content,
+                  message_italic: block.settings.font_style_italic,
+                  message_size: block.settings.font_size,
+                  message_weight: block.settings.font_weight -%}
+
+              {%- endif -%}
+
             {%- when "section_bulk_accordion" -%}
 
               {%- render 'featured-product-bulk',
@@ -337,6 +374,16 @@
             {%- when "section_ship_accordion" -%}
 
               {%- render 'featured-product-shipping', block: block  -%}
+
+            {%- when 'sku' -%}
+              <p class="text-uppercase{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}" role="status">
+                <span class="visually-hidden">{{ 'products.sku' | t }}:</span>
+                {{- product.selected_or_first_available_variant.sku -}}
+              </p>
+
+            {%- when 'inventory' -%}
+
+              {%- render 'featured-product-inventory' block: block -%}
 
           {%- endcase -%}
         {%- endfor -%}

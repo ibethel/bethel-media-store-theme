@@ -23,6 +23,12 @@
         "id": "enable_quick_view",
         "label": "t:settings_schema.header.settings.enable_quick_view.label",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_currency_code",
+        "label": "t:settings_schema.base.settings.enable_currency_code.label",
+        "default": false
       }
     ]
   },

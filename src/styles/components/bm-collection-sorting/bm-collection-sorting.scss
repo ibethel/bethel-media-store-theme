@@ -1,4 +1,5 @@
-.collection-sorting__button {
+.collection-sorting__button,
+.search-sorting__button {
   border: 1px solid $grey20;
   border-radius: $buttonBorderRadiusSmall;
   min-width: 125px;
@@ -12,12 +13,14 @@
   }
 }
 
-.collection-sorting__select {
+.collection-sorting__select,
+.search-sorting__select {
   background-color: $grey40;
   z-index: $zLevelOne;
 }
 
-.collection-sorting__item {
+.collection-sorting__item,
+.search-sorting__item {
   .bm-link {
     color: $white;
     white-space: nowrap;

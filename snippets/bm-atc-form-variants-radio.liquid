@@ -49,7 +49,7 @@
             {%- unless variant.available %} text-black text-opacity-25 text-decoration-line-through{%- endunless -%}"
           for="{{ variant_unique_id }}"
         >
-          {{- variant.title }} - {{ variant.price | money -}}
+          {{- variant.title }} - {% if settings.enable_currency_code %}{{ variant.price | money_with_currency }}{% else %}{{ variant.price | money }}{% endif -%}
         </label>
       </div>
     {%- endfor -%}
