@@ -43,6 +43,8 @@
   <div
     class="button-block d-flex align-items-{{- button_wrap_breakpoint -}}-end flex-column flex-{{- button_wrap_breakpoint -}}-row
 
+      {%- if button_product_classes %} {{ button_product_classes }}{% endif -%}
+
       {%- if button_alignment_phone -%}{{- button_alignment_phone | prepend: ' ' -}}{%- endif -%}
 
       {%- if button_alignment_tablet -%}{{- button_alignment_tablet | prepend: ' ' -}}{%- endif -%}

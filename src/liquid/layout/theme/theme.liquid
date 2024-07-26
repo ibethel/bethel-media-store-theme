@@ -10,10 +10,6 @@
 
   {%- section 'filter-menu-settings' -%}
 
-  {%- if settings.enable_quick_view -%}
-    {%- render 'sca-quick-view-init' -%}
-  {%- endif -%}
-
   {{ content_for_header }}
 </head>
 <body>
@@ -29,10 +25,6 @@
   {%- section 'footer' -%}
 
   {%- render 'theme-footer-scripts' -%}
-
-  {%- if settings.enable_quick_view -%}
-    {%- render 'sca-quick-view-templatevintage' -%}
-  {%- endif -%}
 
 </body>
 </html>

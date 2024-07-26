@@ -59,7 +59,8 @@
 
     {%- endif -%}
 
-    <a class="bm-prod-item__link d-block text-decoration-none" href="{{- bmpi_url -}}" title="{{ bmpi_title }}">
+    <a class="bm-prod-item__link d-block text-decoration-none" href="{{ bmpi_url }}" title="{{ bmpi_title }}" aria-label="{{ bmpi_title }}">
+      <span class="visually-hidden">{{ bmpi_title }}</span>
 
       {%- if bmpi_img != blank or bmpi_img_url != blank -%}
 
@@ -95,15 +96,11 @@
             bm_img_height: bmpi_img.height,
             bm_img_srcset: bm_img_srcset -%}
 
-          {%- if settings.enable_quick_view -%}
-            {%- render 'sca-quick-view', product: bmpi_product -%}
-          {%- endif -%}
-
         </div>
       {%- endif -%}
 
       <div
-        class="bm-prod-item__details d-flex flex-column
+        class="bm-prod-item__details
 
           {%- if enable_styles and font_italic %} fst-italic{%- endif -%}
 
@@ -111,44 +108,46 @@
 
           {%- if enable_styles and font_weight != blank -%}{{- font_weight | prepend: ' ' -}}{%- endif -%}"
 
-        {%- if enable_styles -%}
-          style="color: {{- text_color -}};"
-        {%- endif -%}
+        {%- if enable_styles %}style="color: {{ text_color }};"{% endif -%}
       >
+        <div class="d-flex flex-column">
 
-        {%- if bmpi_title != blank -%}
-          <span class="bm-prod-item__title">{{- bmpi_title -}}</span>
-        {%- endif -%}
+          {%- if bmpi_title != blank %}<span class="bm-prod-item__title">{{ bmpi_title }}</span>{% endif -%}
 
-        {%- if price != blank and bmpi_available -%}
+          {%- if price != blank and bmpi_available -%}
 
-        {%- assign wsl_collection = settings.wsl_collection -%}
-        {%- assign wsl_message = settings.wsl_message -%}
+            {%- assign wsl_collection = settings.wsl_collection -%}
+            {%- assign wsl_message = settings.wsl_message -%}
 
-        {%- if wsl_collection != blank and wsl_message != blank and bmpi_product.collections contains wsl_collection -%}
-          <span class="d-block mb-3 text-danger">{{ wsl_message }}</span>
-        {%- endif -%}
+            {%- if wsl_collection != blank and wsl_message != blank and bmpi_product.collections contains wsl_collection -%}
+              <span class="d-block mb-3 text-danger">{{ wsl_message }}</span>
+            {%- endif -%}
 
-          {%- render 'bm-prod-pricing',
-            compare_price: compare_price,
-            compare_price_color: compare_price_color,
-            compare_price_varies: compare_price_varies,
-            enable_styles: enable_styles,
-            price: price,
-            price_classes: price_classes,
-            price_color: price_color,
-            price_color_sale: price_color_sale,
-            price_varies: price_varies,
-            show_compare_price: show_compare_price -%}
+            {%- render 'bm-prod-pricing',
+              compare_price: compare_price,
+              compare_price_color: compare_price_color,
+              compare_price_varies: compare_price_varies,
+              enable_styles: enable_styles,
+              price: price,
+              price_classes: price_classes,
+              price_color: price_color,
+              price_color_sale: price_color_sale,
+              price_varies: price_varies,
+              show_compare_price: show_compare_price -%}
 
-          {%- else -%}
+            {%- else -%}
 
-            <span class="bm-colors-color-grey-50">{{ 'products.out_of_stock.short_message' | t }}</span>
+              <span class="bm-colors-color-grey-50">{{ 'products.out_of_stock.short_message' | t }}</span>
 
-        {%- endif -%}
+          {%- endif -%}
+
+        </div>
+
+
 
       </div>
     </a>
 
+    {%- if settings.enable_quick_view %}{% render 'bm-quick-view', qv_product: bmpi_product %}{% endif -%}
   </div>
 </li>

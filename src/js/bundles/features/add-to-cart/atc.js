@@ -4,6 +4,7 @@ import { bmApiObj } from "../../utilities/bm-api-obj";
 import { updateUrlParams } from "../../helpers/helpers";
 import { atcModalHtml } from "./atc-modal-html";
 import { klaviyoAtc } from "../third-party-apps/klaviyo/klaviyo-atc";
+import { formatMoney } from "../../helpers/helpers";
 import Swal from "sweetalert2";
 
 const Atc = () => {
@@ -36,6 +37,68 @@ const Atc = () => {
     });
 
     return variant;
+  };
+
+  const handleQuickAtc = async (btn, originalText) => {
+    console.log("handleQuickAtc");
+
+    const variantsData = btn.dataset.variants;
+    const variants = variantsData && JSON.parse(variantsData);
+    const itemContainer = btn.closest(".bm-prod-item__container");
+    const container = document.createElement("div");
+    const list = document.createElement("ul");
+    const option = document.createElement("li");
+
+    console.log("variants", variants);
+    console.log("itemContainer", itemContainer);
+
+    container.classList.add(
+      "position-absolute",
+      "top-0",
+      "start-0",
+      "end-0",
+      "bottom-0",
+      "d-flex",
+      "flex-column",
+      "justify-content-end",
+      "faded-opacity",
+      "faded-opacity-show",
+      "px-1",
+      "py-2"
+    );
+    list.classList.add("list-type-none", "my-0", "ps-0");
+    option.classList.add(
+      "bm-atc-form-variants__radio",
+      "quick-add-options",
+      "rounded-1",
+      "cursor-pointer",
+      "d-block",
+      "p-1",
+      "mb-1"
+    );
+
+    container.style.zIndex = "10";
+    container.style.background = "rgba(255, 255, 255, 0.8)";
+
+    btn.insertAdjacentElement("beforebegin", container);
+
+    container.focus();
+
+    variants.forEach((variant, index) => {
+      const amount = parseInt(variant.price.replace(".", ""));
+      const money = formatMoney(amount);
+      option.textContent = `${variant.title} - ${money}`;
+
+      if (index === 0) {
+        option.focus();
+      }
+
+      container.appendChild(option.cloneNode(true));
+    });
+
+    setTimeout(() => {
+      container.classList.remove("faded-opacity-show");
+    }, 200);
   };
 
   const handleBtnAtc = async (btn, originalText, redirect) => {
@@ -225,11 +288,17 @@ const Atc = () => {
 
   const handleBtnAtcFlow = (btn, originalText) => {
     const isBuyNow = btn.dataset.action === "buy_now";
+    const isQuickAdd = btn.dataset.action === "quick_add";
+
+    console.log("isBuyNow", isBuyNow);
+    console.log("isQuickAdd", isQuickAdd);
 
     if (isBuyNow) {
       const redirectPath = window.location.origin + "/checkout";
 
       handleBtnAtc(btn, originalText, redirectPath);
+    } else if (isQuickAdd) {
+      handleQuickAtc(btn, originalText);
     } else {
       handleBtnAtc(btn, originalText);
     }

@@ -1,0 +1,66 @@
+{%- capture button_attributes -%}
+  data-action="quick_add"
+  data-type="button"
+  data-product-id="{{ qv_product.id }}"
+  data-variants='[
+    {%- for variant in qv_product.variants -%}
+      {"id": "{{ variant.id }}","price": "{{ variant.price | money_without_currency }}","compare_at_price": "{{ variant.compare_at_price | money_without_currency }}","available": {{ variant.available }},"title": "{{ variant.title }}"}
+      {%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]'
+{%- endcapture -%}
+
+{%- render 'bm-btn-template',
+  button_attributes: button_attributes,
+  button_classes: "atc__btn col-12 bm-btn--quick-add",
+  button_content: "Add to cart",
+  button_size: "medium",
+  button_type: "button",
+  button_title: "Add to cart",
+  button_template: "primary",
+  button_radius: "rounded-5" -%}
+
+{% comment %} {%- render 'bm-btn',
+  button_attributes: button_attributes,
+  button_autofocus: button_autofocus,
+  button_classes: button_classes,
+  button_content: button_content,
+  button_font_size: button_font_size,
+  button_font_size_tablet: button_font_size_tablet,
+  button_font_size_desk: button_font_size_desk,
+  button_id: button_id,
+  button_name: button_name,
+  button_radius: button_radius,
+  button_route: button_route,
+  button_styles: button_styles,
+  button_title: button_title,
+  button_type: button_type,
+  button_value: button_value -%} {% endcomment %}
+
+
+{% comment %} {%- render 'bm-prod-btn-block',
+  button_action: "add_to_cart",
+  button_attributes: button_attributes,
+  button_alignment_desk: button_alignment_desk,
+  button_alignment_phone: button_alignment_phone,
+  button_alignment_tablet: button_alignment_tablet,
+  button_product_classes: "pt-3",
+  button_classes: button_classes,
+  button_content: button_content,
+  button_font_size: button_font_size,
+  button_font_size_tablet: button_font_size_tablet,
+  button_font_size_desk: button_font_size_desk,
+  button_margin: button_margin,
+  button_product: qv_product.handle,
+  button_product_form: button_product_form,
+  button_product_two: button_product_two,
+  button_radius: "rounded-5"
+  button_route: button_route
+  button_size: "medium",
+  button_size_tablet: button_size_tablet,
+  button_size_desk: button_size_desk,
+  button_styles: button_styles,
+  button_template: "primary",
+  button_visibility: button_visibility,
+  button_wrap_breakpoint: button_wrap_breakpoint,
+  product_variant_selection: product_variant_selection -%} {% endcomment %}
