@@ -1,5 +1,5 @@
 import DOMPurify from "dompurify";
-import Swal from "sweetalert2";
+import MicroModal from "micromodal";
 
 import { videoHtml } from "../button-video/video-html";
 import { wistiaLoadScript } from "../wistia-video/wistia-video";
@@ -60,16 +60,17 @@ const VideoOnLoad = () => {
       wistiaLoadScript();
     }
 
-    Swal.fire({
-      customClass: {
-        container: "bm-video__modal-container",
-        popup: "bm-video__modal-popup",
-        htmlContainer: "bm-video__modal-html",
+    MicroModal.show("bm-video-modal", {
+      onShow: modal => {
+        const modalContent = modal.querySelector(".mm-modal-content");
+
+        if (modalContent) {
+          modalContent.innerHTML = html;
+        }
+
+        handleWillOpen(modal);
       },
-      willOpen: modal => handleWillOpen(modal),
-      html: html,
-      showCloseButton: true,
-      showConfirmButton: false,
+      awaitOpenAnimation: true,
     });
   };
 

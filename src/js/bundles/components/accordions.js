@@ -1,4 +1,4 @@
-const Accordion = () => {
+const Accordion = (externalAccordions = []) => {
   // Inspired by bootstrap collapse v5.2 https://getbootstrap.com/docs/5.2/components/accordion/
   const CLASS_NAME_CLOSE_ACCORDION = "close-accordion";
   const CLASS_NAME_CLOSING_ACCORDION = "closing-accordion";
@@ -157,19 +157,41 @@ const Accordion = () => {
   };
 
   const initiate = () => {
-    accordions.forEach(accordion => {
-      const accordionButton = accordion.querySelector(".accordion-item__title-button");
+    if (accordions.length > 0) {
+      accordions.forEach(accordion => {
+        const accordionButton = accordion.querySelector(".accordion-item__title-button");
 
-      if (accordionButton) {
-        accordionButton.onclick = ({ currentTarget }) => {
-          const currentButton = currentTarget;
-          const currentAccordion = currentButton.closest(".accordion-item");
-          const currentContent = currentAccordion.querySelector(`#${currentButton.dataset.target}`);
+        if (accordionButton) {
+          accordionButton.onclick = ({ currentTarget }) => {
+            const currentButton = currentTarget;
+            const currentAccordion = currentButton.closest(".accordion-item");
+            const currentContent = currentAccordion.querySelector(
+              `#${currentButton.dataset.target}`
+            );
 
-          toggleAccordion(currentContent);
-        };
-      }
-    });
+            toggleAccordion(currentContent);
+          };
+        }
+      });
+    }
+
+    if (externalAccordions.length > 0) {
+      externalAccordions.forEach(accordion => {
+        const accordionButton = accordion.querySelector(".accordion-item__title-button");
+
+        if (accordionButton) {
+          accordionButton.onclick = ({ currentTarget }) => {
+            const currentButton = currentTarget;
+            const currentAccordion = currentButton.closest(".accordion-item");
+            const currentContent = currentAccordion.querySelector(
+              `#${currentButton.dataset.target}`
+            );
+
+            toggleAccordion(currentContent);
+          };
+        }
+      });
+    }
   };
 
   initiate();

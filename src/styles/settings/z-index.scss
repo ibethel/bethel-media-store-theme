@@ -1,0 +1,37 @@
+.z-level {
+  &-1 {
+    z-index: $zLevelOne;
+  }
+
+  &-2 {
+    z-index: $zLevelTwo;
+  }
+
+  &-3 {
+    z-index: $zLevelThree;
+  }
+
+  &-4 {
+    z-index: $zLevelFour;
+  }
+
+  &-5 {
+    z-index: $zLevelFive;
+  }
+
+  &-6 {
+    z-index: $zLevelSix;
+  }
+
+  &-7 {
+    z-index: $zLevelSeven;
+  }
+
+  &-8 {
+    z-index: $zLevelEight;
+  }
+
+  &-9 {
+    z-index: $zLevelNine;
+  }
+}

@@ -1,24 +1,52 @@
+{%- assign quick_view = settings.quick_view -%}
+
 {%- capture button_attributes -%}
-  data-action="quick_add"
-  data-type="button"
-  data-product-id="{{ qv_product.id }}"
-  data-variants='[
-    {%- for variant in qv_product.variants -%}
-      {"id": "{{ variant.id }}","price": "{{ variant.price | money_without_currency }}","compare_at_price": "{{ variant.compare_at_price | money_without_currency }}","available": {{ variant.available }},"title": "{{ variant.title }}"}
-      {%- unless forloop.last -%},{%- endunless -%}
-    {%- endfor -%}
-  ]'
+  {%- if quick_view == "quick_view" -%}
+    data-handle="{{ qv_product.handle }}"
+    {%- else -%}
+      {%- if qv_product.variants.size > 1 -%}
+        data-action="quick_add"
+        data-type="button"
+        data-product-id="{{ qv_product.id }}"
+        data-variants='[
+          {%- for variant in qv_product.variants -%}
+            {"id": "{{ variant.id }}","price": "{{ variant.price | money_without_currency }}","compare_at_price": "{{ variant.compare_at_price | money_without_currency }}","available": {{ variant.available }},"title": "{{ variant.title | escape }}"}
+            {%- unless forloop.last -%},{%- endunless -%}
+          {%- endfor -%}
+        ]'
+        {%- else -%}
+          data-action="add_to_cart"
+          data-type="button"
+          data-products='{%- render 'helper-atc-btn-items', product_handles: true, product_array: qv_product.handle -%}'
+      {%- endif -%}
+  {%- endif -%}
 {%- endcapture -%}
 
-{%- render 'bm-btn-template',
-  button_attributes: button_attributes,
-  button_classes: "atc__btn col-12 bm-btn--quick-add",
-  button_content: "Add to cart",
-  button_size: "medium",
-  button_type: "button",
-  button_title: "Add to cart",
-  button_template: "primary",
-  button_radius: "rounded-5" -%}
+<div class="pt-2">
+
+  {%- assign quick_view = settings.quick_view -%}
+
+  {%- if quick_view == "quick_view" -%}
+    {%- assign button_content = "features.atc.quick_view" | t -%}
+    {%- assign button_classes = "col-12 bm-btn--quick-view" -%}
+  {%- endif -%}
+
+  {%- if quick_view == "quick_add" -%}
+    {%- assign button_content = "features.atc.start" | t -%}
+    {%- assign button_classes = "atc__btn col-12 bm-btn--quick-add" -%}
+  {%- endif -%}
+
+  {%- render 'bm-btn-template',
+    button_attributes: button_attributes,
+    button_classes: button_classes,
+    button_content: button_content,
+    button_size: "medium",
+    button_type: "button",
+    button_title: "Add to cart",
+    button_template: "primary",
+    button_radius: "rounded-5" -%}
+
+</div>
 
 {% comment %} {%- render 'bm-btn',
   button_attributes: button_attributes,

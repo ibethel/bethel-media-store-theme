@@ -148,6 +148,6 @@
       </div>
     </a>
 
-    {%- if settings.enable_quick_view %}{% render 'bm-quick-view', qv_product: bmpi_product %}{% endif -%}
+    {%- if settings.quick_view != "disabled" %}{% render 'bm-quick-view', qv_product: bmpi_product %}{% endif -%}
   </div>
 </li>
