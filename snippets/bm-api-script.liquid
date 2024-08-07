@@ -21,6 +21,9 @@
         "message": {{ settings.bulk_not_approved_message | json -}}
       }
     },
+    "text": {
+      "description": {{ 'products.description' | t | json }}
+    },
     "giftCards": {
       "qrImageAlt": {{ 'gift_cards.issued.qr_image_alt' | t | json -}}
     },
@@ -32,6 +35,9 @@
 
     ,"products": {
       "enableAtcAjax": {{ settings.enable_atc_ajax | json -}}
+    },
+    "quickView": {
+      "format": {{ settings.quick_view | json }}
     },
     "wishList": {
       "enableWishList": {{ settings.enable_wish_list | json }},

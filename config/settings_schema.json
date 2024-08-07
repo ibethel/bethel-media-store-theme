@@ -19,10 +19,24 @@
         "default": false
       },
       {
-        "type": "checkbox",
-        "id": "enable_quick_view",
-        "label": "t:settings_schema.header.settings.enable_quick_view.label",
-        "default": false
+        "type": "select",
+        "id": "quick_view",
+        "label": "t:settings_schema.base.settings.quick_view.label",
+        "default": "disabled",
+        "options": [
+          {
+            "value": "disabled",
+            "label": "t:settings_schema.base.settings.quick_view.options.disabled"
+          },
+          {
+            "value": "quick_add",
+            "label": "t:settings_schema.base.settings.quick_view.options.quick_add"
+          },
+          {
+            "value": "quick_view",
+            "label": "t:settings_schema.base.settings.quick_view.options.quick_view"
+          }
+        ]
       },
       {
         "type": "checkbox",
