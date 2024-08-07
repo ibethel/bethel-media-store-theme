@@ -2,11 +2,12 @@ import isEmpty from "lodash/isEmpty";
 import { addToCart } from "../../utilities/bm-api";
 import { bmApiObj } from "../../utilities/bm-api-obj";
 import { updateUrlParams } from "../../helpers/helpers";
-import { atcModalHtml } from "./atc-modal-html";
+import { atcModalHtml, atcModalItemsHtml, messageHtml } from "./atc-modal-html";
 import { klaviyoAtc } from "../third-party-apps/klaviyo/klaviyo-atc";
-import Swal from "sweetalert2";
+import { quickAtc } from "./quick-add";
+import MicroModal from "micromodal";
 
-const Atc = () => {
+const Atc = (atcSelector, atcButtons = [], externalPrdData) => {
   const bmApi = bmApiObj();
   const variantChangeEvent = new Event("variantchanged", { bubbles: true });
 
@@ -38,7 +39,8 @@ const Atc = () => {
     return variant;
   };
 
-  const handleBtnAtc = async (btn, originalText, redirect) => {
+  const handleBtnAtc = async (btn, originalButton, originalText, redirect) => {
+    const button = originalButton || btn;
     const btnItems = JSON.parse(btn.dataset.products);
     const addedText = !isEmpty(bmApi) && bmApi.atc.btn.text.added;
 
@@ -46,51 +48,63 @@ const Atc = () => {
 
     if (!isEmpty(res)) {
       const html = atcModalHtml(res.items);
+      const itemsHtml = atcModalItemsHtml(res.items);
+      const messagesHtml = messageHtml(res.items);
 
       if (!isEmpty(bmApi) && bmApi.klaviyo.enableAtc) {
         klaviyoAtc();
       }
 
-      Swal.fire({
-        didOpen: modal => {
-          const cartButton = modal.querySelector('[href="/cart"');
-          cartButton.focus();
+      MicroModal.show("atc-modal", {
+        onShow: modal => {
+          const modalContent = modal.querySelector(".mm-modal-content");
+          const contentContainer = `${messagesHtml}<div>${itemsHtml}</div>`;
+
+          if (modalContent) {
+            modalContent.innerHTML = contentContainer;
+          }
         },
-        html,
-        showCloseButton: true,
-        showConfirmButton: false,
+        awaitOpenAnimation: true,
       });
 
-      addedText && !redirect && changeBtnText(btn, addedText);
+      addedText && !redirect && changeBtnText(button, addedText);
       redirect && window.location.replace(redirect);
     }
 
-    !redirect && resetBtn(btn, originalText);
+    !redirect && resetBtn(button, originalText);
   };
 
-  const handleFormAtc = async (data, btn, originalText, redirect) => {
+  const handleFormAtc = async (data, btn, originalText, redirect, showModal) => {
     const addedText = !isEmpty(bmApi) && bmApi.atc.btn.text.added;
     const prodElement = document.querySelector(".product-data");
-    const prodData = JSON.parse(prodElement.textContent);
+    const prodText = prodElement?.textContent;
+    const prodJSON = prodText && JSON.parse(prodText);
+    const prodData = prodJSON || externalPrdData;
 
     const res = await addToCart(data);
 
     if (!isEmpty(res)) {
       const html = atcModalHtml(res.items, prodData);
+      const itemsHtml = atcModalItemsHtml(res.items);
+      const messagesHtml = messageHtml(res.items);
 
       if (!isEmpty(bmApi) && bmApi.klaviyo.enableAtc) {
         klaviyoAtc();
       }
 
-      Swal.fire({
-        didOpen: modal => {
-          const cartButton = modal.querySelector('[href="/cart"');
-          cartButton.focus();
-        },
-        html,
-        showCloseButton: true,
-        showConfirmButton: false,
-      });
+      if (showModal) {
+        MicroModal.show("atc-modal", {
+          onShow: modal => {
+            const modalContent = modal.querySelector(".mm-modal-content");
+            const contentContainer = `${messagesHtml}<div>${itemsHtml}</div>`;
+
+            if (modalContent) {
+              modalContent.innerHTML = contentContainer;
+            }
+          },
+          awaitOpenAnimation: true,
+        });
+      }
 
       addedText && !redirect && changeBtnText(btn, addedText);
       redirect && window.location.replace(redirect);
@@ -225,13 +239,17 @@ const Atc = () => {
 
   const handleBtnAtcFlow = (btn, originalText) => {
     const isBuyNow = btn.dataset.action === "buy_now";
+    const isQuickAdd = btn.dataset.action === "quick_add";
+    const enableQuickView = bmApi?.quickView?.format === "quick_add";
 
     if (isBuyNow) {
       const redirectPath = window.location.origin + "/checkout";
 
-      handleBtnAtc(btn, originalText, redirectPath);
+      handleBtnAtc(btn, null, originalText, redirectPath);
+    } else if (isQuickAdd && enableQuickView) {
+      quickAtc(btn, originalText, handleBtnAtc);
     } else {
-      handleBtnAtc(btn, originalText);
+      handleBtnAtc(btn, null, originalText);
     }
   };
 
@@ -281,7 +299,7 @@ const Atc = () => {
     addingText && changeBtnText(btn, textToChange);
 
     if (!isEmpty(items)) {
-      handleFormAtc(items, btn, originalText, false);
+      handleFormAtc(items, btn, originalText, false, true);
     }
   };
 
@@ -327,12 +345,17 @@ const Atc = () => {
   };
 
   const findAllAtcBtns = () => {
-    const atcBtns = Array.from(document.querySelectorAll(".atc__btn"));
+    const atcBtns = Array.from(document.querySelectorAll(`.${atcSelector}`));
+    const finalAtcBtns = atcButtons.length > 0 ? atcButtons : atcBtns;
 
-    atcBtns.forEach(btn => handleFormFlow(btn));
+    finalAtcBtns.forEach(btn => handleFormFlow(btn));
   };
 
   findAllAtcBtns();
+
+  return { changeBtnText, handleItemProperties, handleFormAtc };
 };
 
 export default Atc;
+
+export const { changeBtnText, handleItemProperties, handleFormAtc } = Atc();

@@ -31,6 +31,8 @@ import SidebarSlider from "../features/sidebar-slider/sidebar-slider";
 import VideoOnLoad from "../features/video-on-load/video-on-load";
 import WishList from "../features/wist-list/wish-list";
 
+import { quickView } from "../features/add-to-cart/quick-view";
+
 const accordionComponent = () => {
   const accordion = document.querySelector(".accordion-item");
 
@@ -49,10 +51,11 @@ const announcementBarSection = () => {
 };
 
 const addToCartFeature = () => {
-  const atcBtn = document.querySelector(".atc__btn");
+  const ATC_CLASS = "atc__btn";
+  const atcBtn = document.querySelector(`.${ATC_CLASS}`);
 
   if (atcBtn) {
-    Atc();
+    Atc(ATC_CLASS);
   }
 };
 
@@ -235,6 +238,12 @@ const videoSliders = () => {
   }
 };
 
+const quickViewFeature = () => {
+  const quickViewBtns = Array.from(document.querySelectorAll(".bm-btn--quick-view"));
+
+  if (quickViewBtns.length > 0) quickView(quickViewBtns);
+};
+
 const wishListFeature = () => {
   const { wishList } = bmApiObj();
 
@@ -263,6 +272,7 @@ window.addEventListener("DOMContentLoaded", () => {
   productRowSliders();
   popOverFeature();
   predictiveSearchFeature();
+  quickViewFeature();
   scrollToFeature();
   sideBarSliderFeature();
   thumbnailGallery();

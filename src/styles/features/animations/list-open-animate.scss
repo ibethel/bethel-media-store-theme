@@ -10,3 +10,12 @@
     }
   }
 }
+
+.faded-opacity {
+  opacity: 0;
+  transition: opacity 0.07s linear;
+
+  &:not(.faded-opacity-show) {
+    opacity: 1;
+  }
+}
