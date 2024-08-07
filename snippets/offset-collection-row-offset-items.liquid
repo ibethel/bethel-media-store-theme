@@ -23,6 +23,7 @@
     {%- endif -%}
 
     {%- render 'bm-prod-item',
+      bmpi_product: product,
       bmpi_available: product.available,
       bmpi_classes: bmpi_classes,
       bmpi_img: product.featured_image,

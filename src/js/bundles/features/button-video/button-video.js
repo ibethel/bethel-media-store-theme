@@ -1,7 +1,7 @@
 import DOMPurify from "dompurify";
-import Swal from "sweetalert2";
 import { videoHtml } from "./video-html";
 import { wistiaLoadScript } from "../wistia-video/wistia-video";
+import MicroModal from "micromodal";
 
 const ButtonVideo = () => {
   const formatYoutubeUrl = (id, settings) => {
@@ -30,7 +30,7 @@ const ButtonVideo = () => {
   const handleDidOpen = modal => {
     const iframe = modal.querySelector("iframe");
     const video = modal.querySelector("video");
-    const wistia = modal.querySelector(".wistia-video");
+    // const wistia = modal.querySelector(".wistia-video");
 
     if (iframe) {
       iframe.focus();
@@ -38,10 +38,6 @@ const ButtonVideo = () => {
 
     if (video) {
       video.focus();
-    }
-
-    if (wistia) {
-      Swal.getFocusableElements().forEach(element => element.blur());
     }
   };
 
@@ -77,17 +73,18 @@ const ButtonVideo = () => {
       wistiaLoadScript();
     }
 
-    Swal.fire({
-      customClass: {
-        container: "bm-video__modal-container",
-        popup: "bm-video__modal-popup",
-        htmlContainer: "bm-video__modal-html",
+    MicroModal.show("bm-video-modal", {
+      onShow: modal => {
+        const modalContent = modal.querySelector(".mm-modal-content");
+
+        if (modalContent) {
+          modalContent.innerHTML = html;
+        }
+
+        handleWillOpen(modal);
+        handleDidOpen(modal);
       },
-      didOpen: modal => handleDidOpen(modal),
-      willOpen: modal => handleWillOpen(modal),
-      html: html,
-      showCloseButton: true,
-      showConfirmButton: false,
+      awaitOpenAnimation: true,
     });
   };
 

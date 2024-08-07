@@ -49,6 +49,18 @@ export const formatImageUrl = (url, size) => {
 
 export const formatMoney = number => "$" + (number / 100).toFixed(2);
 
+export const handleErrorModal = (error, modal) => {
+  const stausMessage = error?.message;
+  const message = error?.response?.data?.description;
+  const status = error?.response?.data?.status;
+  const modalContent = modal.querySelector(".mm-modal-content");
+  const contentContainer = `<div><p>${status}</p><p>${stausMessage}</p><p>${message}</p></div>`;
+
+  if (modalContent) {
+    modalContent.innerHTML = contentContainer;
+  }
+};
+
 export const updateUrlParams = (paramsArray, replaceLocation) => {
   const newUrl =
     window.location.protocol +

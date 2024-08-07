@@ -1,41 +1,48 @@
 import "../../../../styles/components/bm-modal/bm-modal.scss";
-import Swal from "sweetalert2";
+import MicroModal from "micromodal";
 
 const ImageZoom = () => {
   const zoomedImages = Array.from(document.getElementsByClassName("bm-image--zoom"));
 
-  const initiateZoom = image => {
-    const handleImageIsLoaded = event => {
-      const currentImage = event.target;
+  const initiateZoom = (image, index) => {
+    const handleImageIsLoaded = (event, image) => {
+      const currentImage = event?.target || image;
       const html = `<img class="bm-modal__image" src="${currentImage.dataset.zoom}" />`;
 
+      console.log("currentImage", currentImage);
+
       const handleDidOpen = modal => {
-        const htmlContainer = modal.querySelector(".bm-modal__html-container");
-        const modalImage = htmlContainer.querySelector("img");
+        const htmlContainer = modal.querySelector(".mm-modal__container");
+        const modalImage = htmlContainer && htmlContainer.querySelector("img");
 
         modalImage.onload = () =>
           (htmlContainer.scrollLeft = (modalImage.width - htmlContainer.clientWidth) / 2);
       };
 
       currentImage.onclick = () => {
-        Swal.fire({
-          customClass: {
-            container: "p-0 bm-modal__container bm-modal__container-image-zoom overlow-y-unset",
-            popup: "bm-modal bm-modal--full-width",
-            htmlContainer: "m-0 pt-xl-5 bm-modal__html-container text-center",
+        MicroModal.show("bm-zoom-modal", {
+          onShow: modal => {
+            const modalContent = modal.querySelector(".mm-modal-content");
+
+            if (modalContent) {
+              modalContent.innerHTML = html;
+            }
+
+            handleDidOpen(modal);
           },
-          didOpen: modal => handleDidOpen(modal),
-          html,
-          showCloseButton: true,
-          showConfirmButton: false,
+          awaitOpenAnimation: true,
         });
       };
     };
 
-    image.addEventListener("lazyloaded", handleImageIsLoaded);
+    if (index === 0) {
+      handleImageIsLoaded(null, image);
+    } else {
+      image.addEventListener("lazyloaded", handleImageIsLoaded);
+    }
   };
 
-  zoomedImages.forEach(image => initiateZoom(image));
+  zoomedImages.forEach((image, index) => initiateZoom(image, index));
 };
 
 export default ImageZoom;

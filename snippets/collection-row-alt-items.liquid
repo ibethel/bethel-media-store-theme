@@ -14,6 +14,7 @@
   {%- endif -%}
 
   {%- render 'bm-prod-item',
+    bmpi_product: current_item,
     bmpi_available: current_item.available,
     bmpi_classes: bmpi_classes,
     bmpi_img: current_item.featured_image,

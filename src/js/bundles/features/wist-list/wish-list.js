@@ -1,6 +1,6 @@
 import isEmpty from "lodash/isEmpty";
-import Swal from "sweetalert2";
 import { bmApiObj } from "../../utilities/bm-api-obj";
+import MicroModal from "micromodal";
 
 const WishList = () => {
   const starHtml = () => {
@@ -126,10 +126,15 @@ const WishList = () => {
     if (!customer) {
       const html = loginHtml();
 
-      Swal.fire({
-        html,
-        showCloseButton: true,
-        showConfirmButton: false,
+      MicroModal.show("bm-generic-modal", {
+        onShow: modal => {
+          const modalContent = modal.querySelector(".mm-modal-content");
+
+          if (modalContent) {
+            modalContent.innerHTML = html;
+          }
+        },
+        awaitOpenAnimation: true,
       });
     } else {
       if (isWish) {
