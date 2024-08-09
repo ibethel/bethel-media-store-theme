@@ -212,6 +212,15 @@
     "update_language": "Update language",
     "update_country": "Update country/region"
   },
+  "password_page": {
+    "enter_password": "Enter password",
+    "message": "Enter your email below to be notified when we launch.",
+    "password_message": "Enter the store password to access the store.",
+    "store_password": "Store password",
+    "submit": "Submit",
+    "sub_title": "We will be opening soon",
+    "title": "Currently Under Construction"
+  },
   "predictive_search": {
     "articles": "Articles",
     "collections": "Collections",
