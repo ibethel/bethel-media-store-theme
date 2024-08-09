@@ -1,6 +1,12 @@
 {%- assign is_a_carousel = true -%}
 {%- assign section_blocks = section.blocks -%}
-{%- assign section_collection = section.settings.section_collection -%}
+
+{% comment %} topic-healing topic-prophecy {% endcomment %}
+{%- if section.settings.section_collection != blank -%}
+  {%- assign section_collection = section.settings.section_collection -%}
+  {%- else -%}
+    {%- assign section_collection = collection -%}
+{%- endif -%}
 
 {%- if section_blocks != blank or section_collection != blank -%}
 
@@ -27,6 +33,7 @@
     section_collection: section_collection,
     section_blocks: section_blocks,
     section_margin: section.settings.section_margin,
+    tag_filter: section.settings.tag_filter,
     text_color: section.settings.text_color -%}
 
 {%- endif -%}
@@ -82,6 +89,12 @@
         "type": "collection",
         "id": "section_collection",
         "label": "t:sections.product-rows.settings.collection"
+      },
+      {
+        "type": "textarea",
+        "id": "tag_filter",
+        "label": "t:sections.product-rows.settings.tag_filter.label",
+        "info": "t:sections.product-rows.settings.tag_filter.info"
       },
       {
         "type": "checkbox",
