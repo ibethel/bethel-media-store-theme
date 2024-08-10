@@ -107,11 +107,108 @@
         "text_alignment_phone": "text-inherit",
         "section_margin": "mb-5"
       }
+    },
+    "image_with_text_HDadh4": {
+      "type": "image-with-text",
+      "blocks": {
+        "section_title_KX83qT": {
+          "type": "section_title",
+          "settings": {
+            "title": "Large Print, Black",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h2",
+            "font_family": "ff-ivypresto",
+            "font_size": "fs-2",
+            "font_size_tablet": "fs-sm-2",
+            "font_size_desk": "fs-xl-2",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        },
+        "section_title_XbWghj": {
+          "type": "section_title",
+          "settings": {
+            "title": "Bethel's 2020 Edition | The Passion Translation Bible",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h3",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "section_title_KX83qT",
+        "section_title_XbWghj"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_full_width": false,
+        "enable_contain": false,
+        "is_a_section": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "space_between_img_txt": "5",
+        "space_between_img_content": 3,
+        "space_between_img_content_tablet": 3,
+        "space_between_img_content_desk": 3,
+        "image_phone": "shopify:\/\/shop_images\/IMG_1191_2.jpg",
+        "image_tablet": "shopify:\/\/shop_images\/IMG_1191_2.jpg",
+        "image_desk": "shopify:\/\/shop_images\/IMG_1191_2.jpg",
+        "enable_image_radius": false,
+        "img_radius": 3,
+        "img_width_tablet": 6,
+        "img_width_desk": 6,
+        "image_pos": "row",
+        "img_breakpoint_pos": "flex-column",
+        "mp4_url": "",
+        "autoplay": false,
+        "controls": true,
+        "interaction": true,
+        "loop": false,
+        "video_visibility": "d-block",
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "vert_align_phone": "align-items-inherit",
+        "vert_align_tablet": "align-items-sm-inherit",
+        "vert_align_desk": "align-items-xl-inherit",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "enable_content_radius": false,
+        "content_radius": 3,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "enable_text_section_styles": false,
+        "text_background": "#fff",
+        "enable_overlap": false,
+        "main_breakpoint": "sm",
+        "section_margin_phone": "pb-5",
+        "section_margin_tablet": "pb-sm-5",
+        "section_margin_desk": "pb-xl-5"
+      }
     }
   },
   "order": [
     "page",
     "banner_gpD7CT",
-    "text_xrcAaG"
+    "text_xrcAaG",
+    "image_with_text_HDadh4"
   ]
 }
