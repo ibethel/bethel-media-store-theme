@@ -1276,6 +1276,12 @@
     "page": {
       "name": "Page"
     },
+    "password": {
+      "name": "Password page"
+    },
+    "password_page_header": {
+      "name": "Password page header"
+    },
     "product_main": {
       "blocks": {
         "section_product_author": {

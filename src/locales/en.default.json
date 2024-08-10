@@ -212,6 +212,17 @@
     "update_language": "Update language",
     "update_country": "Update country/region"
   },
+  "password_page": {
+    "enter_password": "Enter password",
+    "help_html": "Already have an order? Please contact us via email at <a class=\"bm-link text-black opacity-hover\" href=\"mailto:shop@bethel.com\">shop@bethel.com</a>.",
+    "message": "Enter your email below to be notified when we launch.",
+    "password_message": "Enter the store password to access the store.",
+    "store_password": "Store password",
+    "submit": "Submit",
+    "sub_title": "We apologize for the inconvenience. We will be opening the new Bethel Store Online Soon!",
+    "title": "Currently Under Construction",
+    "title_message": "Thank you for visiting the Bethel Store!"
+  },
   "predictive_search": {
     "articles": "Articles",
     "collections": "Collections",
