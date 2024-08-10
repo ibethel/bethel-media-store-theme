@@ -304,9 +304,9 @@
         "text_background": "#fff",
         "enable_overlap": false,
         "main_breakpoint": "sm",
-        "section_margin_phone": "pb-5",
-        "section_margin_tablet": "pb-sm-5",
-        "section_margin_desk": "pb-xl-5"
+        "section_margin_phone": "pb-0",
+        "section_margin_tablet": "pb-sm-0",
+        "section_margin_desk": "pb-xl-0"
       }
     }
   },
