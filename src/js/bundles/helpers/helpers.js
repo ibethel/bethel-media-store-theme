@@ -1,4 +1,7 @@
 import { getCart } from "../utilities/bm-api";
+import { bmApiObj } from "../utilities/bm-api-obj";
+
+const bmApi = bmApiObj();
 
 export const updateCartCount = async eagerQty => {
   const cartCounter = Array.from(document.querySelectorAll(".bm-cart-counter"));
@@ -47,7 +50,20 @@ export const formatImageUrl = (url, size) => {
   }
 };
 
-export const formatMoney = number => "$" + (number / 100).toFixed(2);
+export const formatMoney = number => {
+  const currency = bmApi?.currency;
+  const code = currency?.currencyCode;
+  const enableCode = currency?.enableCurrencyCode;
+  const symbol = currency?.currencySymbol;
+  const money = (number / 100).toFixed(2);
+  let finalFormat = money;
+
+  if (enableCode) finalFormat += ` ${code}`;
+
+  if (symbol) finalFormat = `${symbol}${finalFormat}`;
+
+  return finalFormat;
+};
 
 export const handleErrorModal = (error, modal) => {
   const stausMessage = error?.message;

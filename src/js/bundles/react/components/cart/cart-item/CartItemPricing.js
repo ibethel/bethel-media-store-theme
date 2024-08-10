@@ -5,7 +5,7 @@ import SettingsContext from "../../../contexts/SettingsContext";
 const CartItemPricing = props => {
   const { item } = props;
   const [showCompare, setShowCompare] = useState(false);
-  const { itemSalePriceText, itemRegularPriceText } = useContext(SettingsContext);
+  const { currency, itemSalePriceText, itemRegularPriceText } = useContext(SettingsContext);
 
   useEffect(() => {
     if (item.original_price !== item.final_price) {
