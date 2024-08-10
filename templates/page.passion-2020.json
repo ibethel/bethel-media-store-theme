@@ -9,12 +9,6 @@
 */
 {
   "sections": {
-    "page": {
-      "type": "page",
-      "disabled": true,
-      "settings": {
-      }
-    },
     "banner_gpD7CT": {
       "type": "banner",
       "blocks": {
@@ -1217,7 +1211,6 @@
     }
   },
   "order": [
-    "page",
     "banner_gpD7CT",
     "text_xrcAaG",
     "image_with_text_HDadh4",
