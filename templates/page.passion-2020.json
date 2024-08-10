@@ -192,7 +192,7 @@
             "button_size": "large",
             "button_size_tablet": "large",
             "button_size_desk": "large",
-            "button_template": "primary",
+            "button_template": "secondary",
             "enable_button_full_width": false,
             "enable_button_styles": false,
             "button_color": "#000000",
