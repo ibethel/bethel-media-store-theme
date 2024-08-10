@@ -902,7 +902,7 @@
             "vert_align_phone": "align-items-center",
             "vert_align_tablet": "align-items-sm-center",
             "vert_align_desk": "align-items-xl-center",
-            "content_padding_phone": "p-1",
+            "content_padding_phone": "p-2",
             "content_padding_tablet": "p-sm-2",
             "content_padding_desk": "p-xl-3",
             "item_url": "",
