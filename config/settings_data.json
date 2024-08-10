@@ -12,7 +12,6 @@
     "favicon": "shopify:\/\/shop_images\/bm-favicon.webp",
     "bm_logo": "shopify:\/\/shop_images\/logox2_47cdd922-fdb7-406f-b4f0-d3bd9841922e.png",
     "enable_wish_list": true,
-    "enable_quick_view": true,
     "enable_predictive_search": true,
     "enable_predictive_search_terms": true,
     "enable_predictive_search_products": true,
@@ -63,6 +62,7 @@
     "pt_apply_button_color": "rgba(0,0,0,0)",
     "pt_apply_button_hover_color": "#7f7f7f",
     "pt_ajax_selector": "#bm-collection__container",
+    "enable_quick_view": true,
     "sections": {
       "mobile-menu": {
         "type": "mobile-menu",

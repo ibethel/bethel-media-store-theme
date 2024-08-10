@@ -21,6 +21,11 @@
         "message": {{ settings.bulk_not_approved_message | json -}}
       }
     },
+    "currency": {
+      "enableCurrencyCode": {{ settings.enable_currency_code | json }},
+      "currencyCode": {{ shop.currency | json }},
+      "currencySymbol": {{ shop.money_format | split: '{' | first | json }}
+    },
     "text": {
       "description": {{ 'products.description' | t | json }}
     },
