@@ -1276,6 +1276,12 @@
     "page": {
       "name": "Page"
     },
+    "password": {
+      "name": "Password page"
+    },
+    "password_page_header": {
+      "name": "Password page header"
+    },
     "product_main": {
       "blocks": {
         "section_product_author": {
@@ -1336,7 +1342,7 @@
     },
     "product-rows": {
       "name": "Product rows",
-      "collection_info": "Choose a collection or choose each product. Choosing your own products will override this collection.",
+      "collection_info": "If a collection is available it will be used automatically or choose a collection or choose each product. Choosing your own products will override this collection.",
       "settings": {
         "collection": "Collection",
         "collection_item": {
@@ -1344,7 +1350,11 @@
           "info": "Choose a collection as a single item."
         },
         "enable_item_limit": "Enable collection product limit",
-        "item_limit": "Collection product limit"
+        "item_limit": "Collection product limit",
+        "tag_filter": {
+          "label": "Filter a collection by a tag",
+          "info": "Enter a single tag only to filter the collection by. Leave blank to show all products."
+        }
       }
     },
     "product-rows-carousel": {
