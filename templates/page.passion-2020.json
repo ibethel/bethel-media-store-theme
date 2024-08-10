@@ -127,7 +127,7 @@
             "text_alignment_desk": "text-xl-inherit",
             "text_alignment_tablet": "text-sm-inherit",
             "text_alignment_phone": "text-inherit",
-            "title_margin": "mb-3",
+            "title_margin": "mb-0",
             "title_visibility": "default"
           }
         },
