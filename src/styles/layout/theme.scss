@@ -19,6 +19,10 @@
 @import "../global/utilities/containers/containers.scss";
 @import "../global/utilities/hovers/hovers.scss";
 
+/* Settings */
+
+@import "../settings/z-index.scss";
+
 /* Features */
 @import "../features/drop-open/drop-open.scss";
 @import "../features/pop-over/pop-over.scss";
@@ -41,6 +45,7 @@
 @import "../components/bm-banner-item/bm-banner-item.scss";
 @import "../components/bm-search-form/bm-search-form.scss";
 @import "../components/bm-collection-sorting/bm-collection-sorting.scss";
+@import "../components/bm-modal/bm-modal.scss";
 
 /* Sections */
 @import "../sections/header/header.scss";

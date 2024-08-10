@@ -21,6 +21,13 @@
     "submit": "Activate account",
     "cancel": "Decline invitation"
   },
+  "actions": {
+    "checkout": "Checkout",
+    "close": "Close",
+    "continue_shopping": "Continue shopping",
+    "view_bag": "View bag",
+    "view_product": "View product"
+  },
   "addresses": {
     "title": "Addresses",
     "default": "Default",
@@ -71,8 +78,11 @@
       "added": "ADDED TO BAG",
       "adding": "ADDING TO BAG",
       "buy_now": "CHECKING OUT...",
+      "checkout": "Checkout",
       "now": "BUY NOW",
-      "unavailable": "UNAVAILABLE"
+      "quick_view": "QUICK VIEW",
+      "unavailable": "UNAVAILABLE",
+      "view_bag": "View Bag"
     }
   },
   "gift_cards": {
@@ -164,6 +174,7 @@
     "continue": "Continue",
     "continue_browsing_html": "Continue browsing <a class=\"bm-link text-black opacity-hover\" href=\"/collections/all\">here</a>.",
     "email": "Email",
+    "error": "Error",
     "logout": "Logout",
     "password": "Password",
     "pricing": {
@@ -192,6 +203,7 @@
       "nav_menu": "Social media menu",
       "share": "Share"
     },
+    "status": "Status",
     "submit": "Submit"
   },
   "localization": {

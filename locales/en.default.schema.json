@@ -6,6 +6,17 @@
         "favicon": {
           "label": "Favicon"
         },
+        "quick_view": {
+          "label": "Quick view",
+          "options": {
+            "disabled": "Disabled",
+            "quick_add": "Quick add",
+            "quick_view": "Quick view"
+          }
+        },
+        "enable_quick_view": {
+          "label": "Enable quick view"
+        },
         "enable_currency_code": {
           "label": "Enable currency codes"
         }
@@ -91,9 +102,6 @@
     "header": {
       "name": "Header",
       "settings": {
-        "enable_quick_view": {
-          "label": "Enable quick view"
-        },
         "enable_wish_list": {
           "label": "Enable wish list"
         },
@@ -508,7 +516,8 @@
           "button_action": {
             "label": "Button action",
             "option_add_to_cart": "ADD TO BAG",
-            "option_buy_now": "BUY NOW"
+            "option_buy_now": "BUY NOW",
+            "option_quick_view": "QUICK VIEW"
           },
           "button_alignment_desk": "Button alignment desktop",
           "button_alignment_phone": "Button alignment phone",

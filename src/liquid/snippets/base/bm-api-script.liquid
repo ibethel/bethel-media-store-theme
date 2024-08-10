@@ -26,6 +26,9 @@
       "currencyCode": {{ shop.currency | json }},
       "currencySymbol": {{ shop.money_format | split: '{' | first | json }}
     },
+    "text": {
+      "description": {{ 'products.description' | t | json }}
+    },
     "giftCards": {
       "qrImageAlt": {{ 'gift_cards.issued.qr_image_alt' | t | json -}}
     },
@@ -37,6 +40,9 @@
 
     ,"products": {
       "enableAtcAjax": {{ settings.enable_atc_ajax | json -}}
+    },
+    "quickView": {
+      "format": {{ settings.quick_view | json }}
     },
     "wishList": {
       "enableWishList": {{ settings.enable_wish_list | json }},
