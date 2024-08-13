@@ -1176,6 +1176,26 @@
             "img_link": ""
           }
         },
+        "banner_title_QEpmwj": {
+          "type": "banner_title",
+          "settings": {
+            "title": "Resource Your Everyday Revival Lifestyle",
+            "enable_title_styles": true,
+            "title_color": "#fff",
+            "title_tag": "h2",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        },
         "banner_title_JAm7aK": {
           "type": "banner_title",
           "settings": {
@@ -1193,7 +1213,27 @@
             "text_alignment_tablet": "text-sm-inherit",
             "text_alignment_phone": "text-inherit",
             "title_margin": "mb-3",
-            "title_visibility": "default"
+            "title_visibility": "d-none_d-sm-block"
+          }
+        },
+        "banner_message_zwcqij": {
+          "type": "banner_message",
+          "settings": {
+            "message": "Equip yourself for the supernatural way of life with recommended books, e-courses, and teachings from a community passionate about revival.",
+            "enable_message_styles": true,
+            "message_color": "#fff",
+            "font_size": "fs-4",
+            "font_size_tablet": "fs-sm-4",
+            "font_size_desk": "fs-xl-4",
+            "font_family": "ff-roboto",
+            "font_style_italic": false,
+            "line_height": "lh-default",
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
           }
         },
         "banner_message_UBPRnm": {
@@ -1213,7 +1253,7 @@
             "text_alignment_tablet": "text-sm-inherit",
             "text_alignment_phone": "text-inherit",
             "message_margin": "mb-3",
-            "message_visibility": "default"
+            "message_visibility": "d-none_d-sm-block"
           }
         },
         "section_button_kHteVb": {
@@ -1295,7 +1335,9 @@
       },
       "block_order": [
         "banner_image_QJHeLi",
+        "banner_title_QEpmwj",
         "banner_title_JAm7aK",
+        "banner_message_zwcqij",
         "banner_message_UBPRnm",
         "section_button_kHteVb"
       ],
