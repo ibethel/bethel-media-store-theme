@@ -18,6 +18,20 @@
     "btv_header_GULYTU": {
       "type": "btv-header",
       "blocks": {
+        "section_link_xLRLeE": {
+          "type": "section_link",
+          "settings": {
+            "nav_link": "",
+            "nav_link_text": "About"
+          }
+        },
+        "section_link_W96HV3": {
+          "type": "section_link",
+          "settings": {
+            "nav_link": "",
+            "nav_link_text": "FAQ"
+          }
+        },
         "section_button_mmWUXB": {
           "type": "section_button",
           "settings": {
@@ -34,6 +48,8 @@
         }
       },
       "block_order": [
+        "section_link_xLRLeE",
+        "section_link_W96HV3",
         "section_button_mmWUXB"
       ],
       "settings": {
