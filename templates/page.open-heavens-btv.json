@@ -1409,6 +1409,67 @@
         "section_margin": "mb-5",
         "banner_html": ""
       }
+    },
+    "item_list_YBneVg": {
+      "type": "item-list",
+      "blocks": {
+        "section_item_3eRarC": {
+          "type": "section_item",
+          "settings": {
+            "enable_background": false,
+            "background_color": "#fff",
+            "item_margin": "mb-4",
+            "enable_number_styles": false,
+            "number_color": "#fff",
+            "number_font_family": "ff-roboto",
+            "number_font_size": "fs-1-5",
+            "number_font_weight": "fw-default",
+            "title": "How do I know if I have the pre-sale offer applied to my e-course purchase?",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h4",
+            "font_family": "ff-roboto",
+            "font_size": "fs-5",
+            "font_size_tablet": "fs-sm-5",
+            "font_size_desk": "fs-xl-5",
+            "font_style_italic": false,
+            "font_weight": "fw-bolder",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-0",
+            "title_visibility": "default",
+            "message": "You will be automatically directed to the pre-sale offer link to purchase from April 1, 2022 to April 23, 2022 (Pacific Time). Complete the steps to purchase as mentioned above and you’ll enjoy 20% off the regular price.",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "message_font_size": "fs-6",
+            "message_font_size_tablet": "fs-sm-6",
+            "message_font_size_desk": "fs-xl-6",
+            "message_font_family": "ff-roboto",
+            "message_font_style_italic": false,
+            "message_line_height": "lh-default",
+            "message_font_weight": "fw-default",
+            "message_text_alignment_desk": "text-xl-inherit",
+            "message_text_alignment_tablet": "text-sm-inherit",
+            "message_text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "section_item_3eRarC"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "section_margin": "mb-5"
+      }
     }
   },
   "order": [
@@ -1423,6 +1484,7 @@
     "item_list_Wm7nHw",
     "image_with_text_7LLhUU",
     "banner_8gX9Lx",
-    "banner_xnkCUD"
+    "banner_xnkCUD",
+    "item_list_YBneVg"
   ]
 }
