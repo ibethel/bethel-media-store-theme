@@ -1014,6 +1014,12 @@
             "message_margin": "mb-3",
             "message_visibility": "default"
           }
+        },
+        "background_image_7Ei8gW": {
+          "type": "background_image",
+          "settings": {
+            "background_image": "shopify:\/\/shop_images\/clouds-open-heavens-2022-background.jpg"
+          }
         }
       },
       "block_order": [
@@ -1021,7 +1027,8 @@
         "section_title_fMpphw",
         "section_item_D3WWHf",
         "section_item_NhTJ8C",
-        "section_item_q3bjzC"
+        "section_item_q3bjzC",
+        "background_image_7Ei8gW"
       ],
       "settings": {
         "enable_hide_scroll": false,
