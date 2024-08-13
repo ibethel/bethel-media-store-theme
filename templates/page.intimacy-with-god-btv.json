@@ -659,12 +659,6 @@
             "message_visibility": "default"
           }
         },
-        "background_image_7Ei8gW": {
-          "type": "background_image",
-          "settings": {
-            "background_image": "shopify:\/\/shop_images\/clouds-open-heavens-2022-background.jpg"
-          }
-        },
         "section_button_i4w8cB": {
           "type": "section_button",
           "settings": {
@@ -737,14 +731,13 @@
         "section_item_D3WWHf",
         "section_item_NhTJ8C",
         "section_item_q3bjzC",
-        "background_image_7Ei8gW",
         "section_button_i4w8cB"
       ],
       "settings": {
         "enable_hide_scroll": false,
         "enable_contain": true,
-        "enable_background": false,
-        "background_color": "#ffffff",
+        "enable_background": true,
+        "background_color": "#ceb49b",
         "content_width_phone": 12,
         "content_width_tablet": 12,
         "content_width_desk": 12,
