@@ -44,7 +44,7 @@
           "settings": {
             "button_text": "Buy Now",
             "button_route": "https:\/\/bit.ly\/intimacywithgodcourse",
-            "button_radius": "rounded-1",
+            "button_radius": "rounded-4",
             "button_font_size": "fs-6",
             "button_size": "medium",
             "button_template": "secondary",
