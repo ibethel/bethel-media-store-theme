@@ -1688,6 +1688,30 @@
         "content_width_desk": 12,
         "section_margin": "mb-5"
       }
+    },
+    "btv_footer_RxPFb7": {
+      "type": "btv-footer",
+      "settings": {
+        "enable_background": true,
+        "background_color": "#000000",
+        "logo_max_width": 90,
+        "message": "STAY CONNECTED",
+        "enable_message_styles": true,
+        "message_color": "#fff",
+        "message_font_family": "ff-roboto",
+        "message_font_size": "fs-6",
+        "message_font_weight": "fw-default",
+        "enable_social": true,
+        "enable_social_styles": true,
+        "social_color": "#fff",
+        "social_facebook_link": "https:\/\/www.facebook.com\/ibetheltv",
+        "social_instagram_link": "https:\/\/www.instagram.com\/betheltv_",
+        "social_youtube_link": "https:\/\/www.youtube.com\/user\/ibetheltv",
+        "social_twitter_link": "https:\/\/twitter.com\/betheltv_",
+        "footer_nav": "",
+        "enable_nav_styles": false,
+        "nav_color": ""
+      }
     }
   },
   "order": [
@@ -1703,6 +1727,7 @@
     "image_with_text_7LLhUU",
     "banner_8gX9Lx",
     "banner_xnkCUD",
-    "item_list_YBneVg"
+    "item_list_YBneVg",
+    "btv_footer_RxPFb7"
   ]
 }
