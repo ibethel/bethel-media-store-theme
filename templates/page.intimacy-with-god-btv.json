@@ -85,13 +85,33 @@
             "img_link": ""
           }
         },
+        "banner_title_jVjyRr": {
+          "type": "banner_title",
+          "settings": {
+            "title": "<span style=\"text-decoration: underline;\n    text-decoration-color: #e2d6ca;\n    text-decoration-thickness: 10px;\">YOU WERE DESIGNED FOR INTIMACY WITH GOD<\/span>",
+            "enable_title_styles": true,
+            "title_color": "#fff",
+            "title_tag": "h2",
+            "font_family": "ff-ivypresto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-3",
+            "title_visibility": "d-sm-none"
+          }
+        },
         "banner_title_cLd8zD": {
           "type": "banner_title",
           "settings": {
             "title": "<span style=\"text-decoration: underline;\n    text-decoration-color: #e2d6ca;\n    text-decoration-thickness: 10px;\">YOU WERE DESIGNED FOR INTIMACY WITH GOD<\/span>",
             "enable_title_styles": false,
             "title_color": "#ffffff",
-            "title_tag": "h2",
+            "title_tag": "h1",
             "font_family": "ff-ivypresto",
             "font_size": "fs-1-2",
             "font_size_tablet": "fs-sm-1-2",
@@ -102,7 +122,27 @@
             "text_alignment_tablet": "text-sm-center",
             "text_alignment_phone": "text-center",
             "title_margin": "mb-4",
-            "title_visibility": "default"
+            "title_visibility": "d-none_d-sm-block"
+          }
+        },
+        "banner_message_fNwcJr": {
+          "type": "banner_message",
+          "settings": {
+            "message": "Become connected to your Creator,\nand see the tangible ways He is\npursuing you every day.",
+            "enable_message_styles": true,
+            "message_color": "#fff",
+            "font_size": "fs-6",
+            "font_size_tablet": "fs-sm-6",
+            "font_size_desk": "fs-xl-6",
+            "font_family": "ff-roboto",
+            "font_style_italic": false,
+            "line_height": "lh-default",
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "message_margin": "mb-3",
+            "message_visibility": "d-block_d-sm-none"
           }
         },
         "banner_message_EXhQnU": {
@@ -122,7 +162,7 @@
             "text_alignment_tablet": "text-sm-center",
             "text_alignment_phone": "text-center",
             "message_margin": "mb-5",
-            "message_visibility": "default"
+            "message_visibility": "d-none_d-sm-block"
           }
         },
         "section_button_rLGNxD": {
@@ -204,7 +244,9 @@
       },
       "block_order": [
         "banner_image_nY9jiQ",
+        "banner_title_jVjyRr",
         "banner_title_cLd8zD",
+        "banner_message_fNwcJr",
         "banner_message_EXhQnU",
         "section_button_rLGNxD"
       ],
