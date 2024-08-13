@@ -487,51 +487,11 @@
     "item_list_Wm7nHw": {
       "type": "item-list",
       "blocks": {
-        "section_title_TrMLVn": {
-          "type": "section_title",
-          "settings": {
-            "title": "EXCLUSIVELY AVAILABLE ON BETHEL.TV",
-            "enable_title_styles": false,
-            "title_color": "#ffffff",
-            "title_tag": "h3",
-            "font_family": "ff-roboto",
-            "font_size": "fs-4",
-            "font_size_tablet": "fs-sm-4",
-            "font_size_desk": "fs-xl-4",
-            "font_style_italic": false,
-            "font_weight": "fw-default",
-            "text_alignment_desk": "text-xl-center",
-            "text_alignment_tablet": "text-sm-center",
-            "text_alignment_phone": "text-center",
-            "title_margin": "mb-3",
-            "title_visibility": "default"
-          }
-        },
-        "section_title_fMpphw": {
-          "type": "section_title",
-          "settings": {
-            "title": "Learn at your own pace with an online community on Bethel.TV",
-            "enable_title_styles": false,
-            "title_color": "#ffffff",
-            "title_tag": "h4",
-            "font_family": "ff-roboto",
-            "font_size": "fs-1",
-            "font_size_tablet": "fs-sm-1",
-            "font_size_desk": "fs-xl-1",
-            "font_style_italic": false,
-            "font_weight": "fw-default",
-            "text_alignment_desk": "text-xl-center",
-            "text_alignment_tablet": "text-sm-center",
-            "text_alignment_phone": "text-center",
-            "title_margin": "mb-5",
-            "title_visibility": "default"
-          }
-        },
         "section_item_D3WWHf": {
           "type": "section_item",
           "settings": {
-            "enable_background": true,
-            "background_color": "#9491be",
+            "enable_background": false,
+            "background_color": "#a8884d",
             "item_margin": "mb-4",
             "item_number": 1,
             "enable_number_styles": true,
@@ -539,7 +499,7 @@
             "number_font_family": "ff-roboto",
             "number_font_size": "fs-1-5",
             "number_font_weight": "fw-default",
-            "title": "Eight Video Sessions",
+            "title": "18 Video Sessions",
             "enable_title_styles": true,
             "title_color": "#ffffff",
             "title_tag": "h3",
@@ -554,7 +514,7 @@
             "text_alignment_phone": "text-inherit",
             "title_margin": "mb-3",
             "title_visibility": "default",
-            "message": "Giving you practical keys to recognize, steward, and sustain a move of God.",
+            "message": "Watch over four hours of teachings, testimonies, and practical tools livestreamed on Bethel.TV each week for seven weeks.",
             "enable_message_styles": true,
             "message_color": "#ffffff",
             "message_font_size": "fs-4",
@@ -574,8 +534,8 @@
         "section_item_NhTJ8C": {
           "type": "section_item",
           "settings": {
-            "enable_background": true,
-            "background_color": "#9491be",
+            "enable_background": false,
+            "background_color": "#a8884d",
             "item_margin": "mb-4",
             "item_number": 2,
             "enable_number_styles": true,
@@ -598,7 +558,7 @@
             "text_alignment_phone": "text-inherit",
             "title_margin": "mb-3",
             "title_visibility": "default",
-            "message": "Taking you on a reflective journey with the content from each session.",
+            "message": "Learn at your own pace with a personal workbook to guide you into a lifestyle of daily connection with God.",
             "enable_message_styles": true,
             "message_color": "#ffffff",
             "message_font_size": "fs-4",
@@ -618,7 +578,7 @@
         "section_item_q3bjzC": {
           "type": "section_item",
           "settings": {
-            "enable_background": true,
+            "enable_background": false,
             "background_color": "#9491be",
             "item_margin": "mb-5",
             "item_number": 3,
@@ -642,7 +602,7 @@
             "text_alignment_phone": "text-inherit",
             "title_margin": "mb-3",
             "title_visibility": "default",
-            "message": "Championing you through the eight weeks with activations, prayers, and highlights.",
+            "message": "Check your inbox each week for extra content to help champion you through seven weeks of growing.",
             "enable_message_styles": true,
             "message_color": "#ffffff",
             "message_font_size": "fs-4",
@@ -659,6 +619,50 @@
             "message_visibility": "default"
           }
         },
+        "section_item_dTgdQP": {
+          "type": "section_item",
+          "settings": {
+            "enable_background": false,
+            "background_color": "#fff",
+            "item_margin": "mb-4",
+            "item_number": 4,
+            "enable_number_styles": true,
+            "number_color": "#fff",
+            "number_font_family": "ff-roboto",
+            "number_font_size": "fs-1-5",
+            "number_font_weight": "fw-default",
+            "title": "Livestream & Group Discussions",
+            "enable_title_styles": true,
+            "title_color": "#fff",
+            "title_tag": "h3",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-light",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default",
+            "message": "Join our online community on chat each week, followed by a Zoom group discussion of the material.",
+            "enable_message_styles": true,
+            "message_color": "#fff",
+            "message_font_size": "fs-4",
+            "message_font_size_tablet": "fs-sm-4",
+            "message_font_size_desk": "fs-xl-4",
+            "message_font_family": "ff-roboto",
+            "message_font_style_italic": false,
+            "message_line_height": "lh-default",
+            "message_font_weight": "fw-default",
+            "message_text_alignment_desk": "text-xl-inherit",
+            "message_text_alignment_tablet": "text-sm-inherit",
+            "message_text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
+        },
         "section_button_i4w8cB": {
           "type": "section_button",
           "settings": {
@@ -668,8 +672,8 @@
             "block_margin": "mb-5",
             "block_visibility": "d-flex",
             "button_wrap_breakpoint": "sm",
-            "button_text": "Start Your Journey",
-            "button_route": "https:\/\/bethel.tv\/details?id=623b5c34e4b061ea41a71054&type=vod",
+            "button_text": "Join Now",
+            "button_route": "https:\/\/bit.ly\/intimacywithgodcourse",
             "button_product": "",
             "button_product_two": "",
             "button_action": "add_to_cart",
@@ -726,11 +730,10 @@
         }
       },
       "block_order": [
-        "section_title_TrMLVn",
-        "section_title_fMpphw",
         "section_item_D3WWHf",
         "section_item_NhTJ8C",
         "section_item_q3bjzC",
+        "section_item_dTgdQP",
         "section_button_i4w8cB"
       ],
       "settings": {
