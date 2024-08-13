@@ -1193,7 +1193,7 @@
             "text_alignment_tablet": "text-sm-inherit",
             "text_alignment_phone": "text-inherit",
             "title_margin": "mb-3",
-            "title_visibility": "default"
+            "title_visibility": "d-sm-none"
           }
         },
         "banner_title_JAm7aK": {
@@ -1233,7 +1233,7 @@
             "text_alignment_tablet": "text-sm-inherit",
             "text_alignment_phone": "text-inherit",
             "message_margin": "mb-3",
-            "message_visibility": "default"
+            "message_visibility": "d-block_d-sm-none"
           }
         },
         "banner_message_UBPRnm": {
