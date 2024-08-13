@@ -1220,8 +1220,8 @@
         "vert_align_phone": "align-items-center",
         "vert_align_tablet": "align-items-sm-center",
         "vert_align_desk": "align-items-xl-center",
-        "text_alignment_desk": "text-xl-center",
-        "text_alignment_tablet": "text-sm-center",
+        "text_alignment_desk": "text-xl-start",
+        "text_alignment_tablet": "text-sm-start",
         "text_alignment_phone": "text-center",
         "section_margin": "mb-5",
         "banner_html": ""
