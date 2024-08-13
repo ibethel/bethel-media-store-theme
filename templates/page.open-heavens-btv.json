@@ -77,10 +77,31 @@
             "banner_image_max": "shopify:\/\/shop_images\/open-heavens-clouds-bill.jpg",
             "img_link": ""
           }
+        },
+        "banner_title_cLd8zD": {
+          "type": "banner_title",
+          "settings": {
+            "title": "Discover the important role you play in the next move of God",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h2",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1-2",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
         }
       },
       "block_order": [
-        "banner_image_nY9jiQ"
+        "banner_image_nY9jiQ",
+        "banner_title_cLd8zD"
       ],
       "settings": {
         "enable_hide_scroll": false,
@@ -90,14 +111,14 @@
         "enable_overlay": false,
         "overlay_opacity": 0.3,
         "content_width_phone": 12,
-        "content_width_tablet": 12,
+        "content_width_tablet": 9,
         "content_width_desk": 12,
         "content_padding_phone": "p-3",
         "content_padding_tablet": "p-sm-4",
         "content_padding_desk": "p-xl-4",
-        "horiz_align_phone": "justify-content-center",
-        "horiz_align_tablet": "justify-content-sm-center",
-        "horiz_align_desk": "justify-content-xl-center",
+        "horiz_align_phone": "justify-content-start",
+        "horiz_align_tablet": "justify-content-sm-start",
+        "horiz_align_desk": "justify-content-xl-start",
         "vert_align_phone": "align-items-center",
         "vert_align_tablet": "align-items-sm-center",
         "vert_align_desk": "align-items-xl-center",
