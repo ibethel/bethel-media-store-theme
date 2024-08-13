@@ -9,6 +9,13 @@
 */
 {
   "sections": {
+    "html_liquid_x9J9Xh": {
+      "type": "html-liquid",
+      "settings": {
+        "custom_html": "<style>\n.bm-image__block {\nmax-width: 150px;\n    margin-left: auto;\n    margin-right: auto;\n}\n<\/style>",
+        "custom_liquid": ""
+      }
+    },
     "page": {
       "type": "page",
       "disabled": true,
@@ -675,6 +682,7 @@
     }
   },
   "order": [
+    "html_liquid_x9J9Xh",
     "page",
     "btv_header_GULYTU",
     "banner_e8zyaU",
