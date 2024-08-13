@@ -1195,11 +1195,32 @@
             "title_margin": "mb-3",
             "title_visibility": "default"
           }
+        },
+        "banner_message_UBPRnm": {
+          "type": "banner_message",
+          "settings": {
+            "message": "Equip yourself for the supernatural way of life with recommended books, e-courses, and teachings from a community passionate about revival.",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "font_size": "fs-4",
+            "font_size_tablet": "fs-sm-4",
+            "font_size_desk": "fs-xl-4",
+            "font_family": "ff-roboto",
+            "font_style_italic": false,
+            "line_height": "lh-default",
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
         }
       },
       "block_order": [
         "banner_image_QJHeLi",
-        "banner_title_JAm7aK"
+        "banner_title_JAm7aK",
+        "banner_message_UBPRnm"
       ],
       "settings": {
         "enable_hide_scroll": false,
@@ -1209,7 +1230,7 @@
         "enable_overlay": false,
         "overlay_opacity": 0.3,
         "content_width_phone": 12,
-        "content_width_tablet": 5,
+        "content_width_tablet": 4,
         "content_width_desk": 12,
         "content_padding_phone": "p-3",
         "content_padding_tablet": "p-sm-4",
