@@ -1366,6 +1366,49 @@
         "section_margin": "mb-5",
         "banner_html": ""
       }
+    },
+    "banner_xnkCUD": {
+      "type": "banner",
+      "blocks": {
+        "banner_image_g4Wq9f": {
+          "type": "banner_image",
+          "settings": {
+            "banner_image_phone": "shopify:\/\/shop_images\/bill-johnson-quote-open-heavens-2020-phone.jpg",
+            "banner_image_tablet": "shopify:\/\/shop_images\/bill-johnson-quote-open-heavens-2020-desktop.jpg",
+            "banner_image_desk": "shopify:\/\/shop_images\/bill-johnson-quote-open-heavens-2020-desktop.jpg",
+            "banner_image_max": "shopify:\/\/shop_images\/bill-johnson-quote-open-heavens-2020-desktop.jpg",
+            "img_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_image_g4Wq9f"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "enable_overlay": false,
+        "overlay_opacity": 0.3,
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "content_padding_phone": "p-3",
+        "content_padding_tablet": "p-sm-4",
+        "content_padding_desk": "p-xl-4",
+        "horiz_align_phone": "justify-content-center",
+        "horiz_align_tablet": "justify-content-sm-center",
+        "horiz_align_desk": "justify-content-xl-center",
+        "vert_align_phone": "align-items-center",
+        "vert_align_tablet": "align-items-sm-center",
+        "vert_align_desk": "align-items-xl-center",
+        "text_alignment_desk": "text-xl-center",
+        "text_alignment_tablet": "text-sm-center",
+        "text_alignment_phone": "text-center",
+        "section_margin": "mb-5",
+        "banner_html": ""
+      }
     }
   },
   "order": [
@@ -1379,6 +1422,7 @@
     "banner_4rhR67",
     "item_list_Wm7nHw",
     "image_with_text_7LLhUU",
-    "banner_8gX9Lx"
+    "banner_8gX9Lx",
+    "banner_xnkCUD"
   ]
 }
