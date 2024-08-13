@@ -322,7 +322,7 @@
             "title_font_size_tablet": "fs-sm-3",
             "title_font_size_desk": "fs-xl-3",
             "title_font_italic": false,
-            "title_font_weight": "fw-default",
+            "title_font_weight": "fw-bolder",
             "title_alignment_desk": "text-xl-center",
             "title_alignment_tablet": "text-sm-center",
             "title_alignment_phone": "text-center",
