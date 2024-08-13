@@ -243,10 +243,10 @@
             "font_size_tablet": "fs-sm-4",
             "font_size_desk": "fs-xl-4",
             "font_style_italic": false,
-            "font_weight": "fw-default",
-            "text_alignment_desk": "text-xl-inherit",
-            "text_alignment_tablet": "text-sm-inherit",
-            "text_alignment_phone": "text-inherit",
+            "font_weight": "fw-light",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
             "title_margin": "mb-3",
             "title_visibility": "default"
           }
