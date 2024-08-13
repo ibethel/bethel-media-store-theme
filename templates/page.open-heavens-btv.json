@@ -820,6 +820,87 @@
         "section_margin": "mb-5",
         "banner_html": ""
       }
+    },
+    "multi_row_mjkKQb": {
+      "type": "multi-row",
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "section_margin": "mb-5"
+      }
+    },
+    "item_list_Wm7nHw": {
+      "type": "item-list",
+      "blocks": {
+        "section_item_D3WWHf": {
+          "type": "section_item",
+          "settings": {
+            "enable_background": true,
+            "background_color": "#9491be",
+            "item_margin": "mb-4",
+            "item_number": 1,
+            "enable_number_styles": true,
+            "number_color": "#fff",
+            "number_font_family": "ff-roboto",
+            "number_font_size": "fs-1-5",
+            "number_font_weight": "fw-default",
+            "title": "Eight Video Sessions",
+            "enable_title_styles": true,
+            "title_color": "#fff",
+            "title_tag": "h3",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default",
+            "message": "Giving you practical keys to recognize, steward, and sustain a move of God.",
+            "enable_message_styles": true,
+            "message_color": "#fff",
+            "message_font_size": "fs-4",
+            "message_font_size_tablet": "fs-sm-4",
+            "message_font_size_desk": "fs-xl-4",
+            "message_font_family": "ff-roboto",
+            "message_font_style_italic": false,
+            "message_line_height": "lh-default",
+            "message_font_weight": "fw-default",
+            "message_text_alignment_desk": "text-xl-inherit",
+            "message_text_alignment_tablet": "text-sm-inherit",
+            "message_text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "section_item_D3WWHf"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "section_margin": "mb-5"
+      }
     }
   },
   "order": [
@@ -830,6 +911,8 @@
     "text_DEr7bi",
     "custom_item_rows_rbynyY",
     "button_zq7xbz",
-    "banner_4rhR67"
+    "banner_4rhR67",
+    "multi_row_mjkKQb",
+    "item_list_Wm7nHw"
   ]
 }
