@@ -440,7 +440,7 @@
         "text_title_h3XWaf": {
           "type": "text_title",
           "settings": {
-            "title": "<span style=\"line-height: 0;\">What's Included:<span><\/span><\/span>",
+            "title": "What's Included:",
             "title_link": "",
             "enable_title_styles": true,
             "title_color": "#ceb49b",
