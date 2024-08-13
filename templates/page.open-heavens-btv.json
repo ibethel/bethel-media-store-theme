@@ -1008,7 +1008,7 @@
             "horiz_align_phone": "justify-content-center",
             "horiz_align_tablet": "justify-content-sm-center",
             "horiz_align_desk": "justify-content-xl-center",
-            "block_margin": "mb-3",
+            "block_margin": "mb-5",
             "block_visibility": "d-flex",
             "button_wrap_breakpoint": "sm",
             "button_text": "Start Your Journey",
