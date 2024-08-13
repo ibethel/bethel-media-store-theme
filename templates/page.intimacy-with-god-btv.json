@@ -88,19 +88,19 @@
         "banner_title_cLd8zD": {
           "type": "banner_title",
           "settings": {
-            "title": "YOU WERE\nDESIGNED FOR\nINTIMACY\nWITH GOD",
+            "title": "<span style=\"text-decoration: underline;\n    text-decoration-color: #e2d6ca;\n    text-decoration-thickness: 10px;\">YOU WERE DESIGNED FOR INTIMACY WITH GOD<\/span>",
             "enable_title_styles": false,
             "title_color": "#ffffff",
             "title_tag": "h2",
-            "font_family": "ff-roboto",
-            "font_size": "fs-1",
+            "font_family": "ff-ivypresto",
+            "font_size": "fs-1-2",
             "font_size_tablet": "fs-sm-1-2",
-            "font_size_desk": "fs-xl-1",
+            "font_size_desk": "fs-xl-1-2",
             "font_style_italic": false,
             "font_weight": "fw-default",
-            "text_alignment_desk": "text-xl-inherit",
-            "text_alignment_tablet": "text-sm-inherit",
-            "text_alignment_phone": "text-inherit",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
             "title_margin": "mb-3",
             "title_visibility": "default"
           }
