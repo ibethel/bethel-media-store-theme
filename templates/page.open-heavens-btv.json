@@ -15,6 +15,40 @@
       "settings": {
       }
     },
+    "btv_header_GULYTU": {
+      "type": "btv-header",
+      "blocks": {
+        "section_button_mmWUXB": {
+          "type": "section_button",
+          "settings": {
+            "button_text": "Buy Now",
+            "button_route": "https:\/\/bethel.tv\/details?id=623b5c34e4b061ea41a71054&type=vod",
+            "button_radius": "rounded-1",
+            "button_font_size": "fs-5",
+            "button_size": "medium",
+            "button_template": "secondary",
+            "enable_button_styles": true,
+            "button_color": "#ffffff",
+            "button_text_color": "#9491be"
+          }
+        }
+      },
+      "block_order": [
+        "section_button_mmWUXB"
+      ],
+      "settings": {
+        "enable_sticky": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "logo": "shopify:\/\/shop_images\/btv-logo.png",
+        "logo_max_width": 90,
+        "enable_text_styles": false,
+        "text_color": "#fff",
+        "text_font_family": "ff-roboto",
+        "text_font_size": "fs-6",
+        "text_font_weight": "fw-default"
+      }
+    },
     "banner_e8zyaU": {
       "type": "banner",
       "blocks": {
@@ -61,6 +95,7 @@
   },
   "order": [
     "page",
+    "btv_header_GULYTU",
     "banner_e8zyaU"
   ]
 }
