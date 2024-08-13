@@ -432,8 +432,8 @@
         "content_width_desk": 12,
         "item_widths_phone": "col-12",
         "item_widths_tablet": "col-sm-4",
-        "item_widths_desk": "alt-col-xl-2",
-        "item_widths_max": "col-xxxl-2",
+        "item_widths_desk": "col-xl-4",
+        "item_widths_max": "col-xxxl-4",
         "section_margin": "mb-5"
       }
     }
