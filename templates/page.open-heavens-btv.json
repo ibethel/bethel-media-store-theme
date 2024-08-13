@@ -24,7 +24,7 @@
             "button_text": "Buy Now",
             "button_route": "https:\/\/bethel.tv\/details?id=623b5c34e4b061ea41a71054&type=vod",
             "button_radius": "rounded-1",
-            "button_font_size": "fs-5",
+            "button_font_size": "fs-6",
             "button_size": "medium",
             "button_template": "secondary",
             "enable_button_styles": true,
