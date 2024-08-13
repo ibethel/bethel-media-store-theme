@@ -97,11 +97,32 @@
             "title_margin": "mb-3",
             "title_visibility": "default"
           }
+        },
+        "banner_message_EXhQnU": {
+          "type": "banner_message",
+          "settings": {
+            "message": "Pastor Bill Johnson’s newest e-course gives you practical keys and biblical insights to release God’s transformational power into our world today.",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "font_size": "fs-6",
+            "font_size_tablet": "fs-sm-4",
+            "font_size_desk": "fs-xl-4",
+            "font_family": "ff-roboto",
+            "font_style_italic": false,
+            "line_height": "lh-default",
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
         }
       },
       "block_order": [
         "banner_image_nY9jiQ",
-        "banner_title_cLd8zD"
+        "banner_title_cLd8zD",
+        "banner_message_EXhQnU"
       ],
       "settings": {
         "enable_hide_scroll": false,
