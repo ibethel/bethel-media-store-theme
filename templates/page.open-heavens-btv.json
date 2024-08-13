@@ -1363,7 +1363,7 @@
         "text_alignment_desk": "text-xl-start",
         "text_alignment_tablet": "text-sm-start",
         "text_alignment_phone": "text-center",
-        "section_margin": "mb-5",
+        "section_margin": "mb-0",
         "banner_html": ""
       }
     },
