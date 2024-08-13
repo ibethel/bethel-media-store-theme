@@ -843,6 +843,46 @@
     "item_list_Wm7nHw": {
       "type": "item-list",
       "blocks": {
+        "section_title_TrMLVn": {
+          "type": "section_title",
+          "settings": {
+            "title": "EXCLUSIVELY AVAILABLE ON BETHEL.TV",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h3",
+            "font_family": "ff-roboto",
+            "font_size": "fs-4",
+            "font_size_tablet": "fs-sm-4",
+            "font_size_desk": "fs-xl-1-4",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        },
+        "section_title_fMpphw": {
+          "type": "section_title",
+          "settings": {
+            "title": "Learn at your own pace with an online community on Bethel.TV",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h4",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-5",
+            "title_visibility": "default"
+          }
+        },
         "section_item_D3WWHf": {
           "type": "section_item",
           "settings": {
@@ -977,6 +1017,8 @@
         }
       },
       "block_order": [
+        "section_title_TrMLVn",
+        "section_title_fMpphw",
         "section_item_D3WWHf",
         "section_item_NhTJ8C",
         "section_item_q3bjzC"
