@@ -834,7 +834,7 @@
             "font_family": "ff-roboto",
             "font_size": "fs-4",
             "font_size_tablet": "fs-sm-4",
-            "font_size_desk": "fs-xl-1-4",
+            "font_size_desk": "fs-xl-4",
             "font_style_italic": false,
             "font_weight": "fw-default",
             "text_alignment_desk": "text-xl-center",
@@ -1087,6 +1087,56 @@
         "content_width_desk": 12,
         "section_margin": "mb-5"
       }
+    },
+    "image_with_text_7LLhUU": {
+      "type": "image-with-text",
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_full_width": false,
+        "enable_contain": false,
+        "is_a_section": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "space_between_img_txt": "5",
+        "space_between_img_content": 3,
+        "space_between_img_content_tablet": 3,
+        "space_between_img_content_desk": 3,
+        "image_phone": "shopify:\/\/shop_images\/open-heavens-resources-phone.jpg",
+        "image_tablet": "shopify:\/\/shop_images\/open-heavens-resources-desktop.jpg",
+        "image_desk": "shopify:\/\/shop_images\/open-heavens-resources-desktop.jpg",
+        "enable_image_radius": false,
+        "img_radius": 3,
+        "img_width_tablet": 6,
+        "img_width_desk": 6,
+        "image_pos": "row",
+        "img_breakpoint_pos": "flex-column",
+        "mp4_url": "",
+        "autoplay": false,
+        "controls": true,
+        "interaction": true,
+        "loop": false,
+        "video_visibility": "d-block",
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "vert_align_phone": "align-items-inherit",
+        "vert_align_tablet": "align-items-sm-inherit",
+        "vert_align_desk": "align-items-xl-inherit",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "enable_content_radius": false,
+        "content_radius": 3,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "enable_text_section_styles": false,
+        "text_background": "#fff",
+        "enable_overlap": false,
+        "main_breakpoint": "sm",
+        "section_margin_phone": "pb-5",
+        "section_margin_tablet": "pb-sm-5",
+        "section_margin_desk": "pb-xl-5"
+      }
     }
   },
   "order": [
@@ -1098,6 +1148,7 @@
     "custom_item_rows_rbynyY",
     "button_zq7xbz",
     "banner_4rhR67",
-    "item_list_Wm7nHw"
+    "item_list_Wm7nHw",
+    "image_with_text_7LLhUU"
   ]
 }
