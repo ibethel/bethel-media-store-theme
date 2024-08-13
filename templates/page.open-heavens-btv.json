@@ -1413,6 +1413,46 @@
     "item_list_YBneVg": {
       "type": "item-list",
       "blocks": {
+        "section_title_itqVdx": {
+          "type": "section_title",
+          "settings": {
+            "title": "FREQUENTLY ASKED QUESTIONS",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h4",
+            "font_family": "ff-roboto",
+            "font_size": "fs-4",
+            "font_size_tablet": "fs-sm-4",
+            "font_size_desk": "fs-xl-4",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        },
+        "section_title_Ci9Ja4": {
+          "type": "section_title",
+          "settings": {
+            "title": "How to Access This E-Course on Bethel.TV",
+            "enable_title_styles": true,
+            "title_color": "#9491be",
+            "title_tag": "h4",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-5",
+            "title_visibility": "default"
+          }
+        },
         "section_item_3eRarC": {
           "type": "section_item",
           "settings": {
@@ -1458,6 +1498,8 @@
         }
       },
       "block_order": [
+        "section_title_itqVdx",
+        "section_title_Ci9Ja4",
         "section_item_3eRarC"
       ],
       "settings": {
