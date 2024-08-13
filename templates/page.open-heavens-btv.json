@@ -1209,7 +1209,7 @@
         "enable_overlay": false,
         "overlay_opacity": 0.3,
         "content_width_phone": 12,
-        "content_width_tablet": 6,
+        "content_width_tablet": 5,
         "content_width_desk": 12,
         "content_padding_phone": "p-3",
         "content_padding_tablet": "p-sm-4",
