@@ -1538,13 +1538,57 @@
             "message_margin": "mb-3",
             "message_visibility": "default"
           }
+        },
+        "section_item_jCedCD": {
+          "type": "section_item",
+          "settings": {
+            "enable_background": false,
+            "background_color": "#fff",
+            "item_margin": "mb-4",
+            "enable_number_styles": false,
+            "number_color": "#fff",
+            "number_font_family": "ff-roboto",
+            "number_font_size": "fs-1-5",
+            "number_font_weight": "fw-default",
+            "title": "How long will I have access to this e-course?",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h5",
+            "font_family": "ff-roboto",
+            "font_size": "fs-5",
+            "font_size_tablet": "fs-sm-5",
+            "font_size_desk": "fs-xl-5",
+            "font_style_italic": false,
+            "font_weight": "fw-bolder",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-0",
+            "title_visibility": "default",
+            "message": "You have access to the e-course as long as you have any Bethel.TV subscription (free or paid).",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "message_font_size": "fs-6",
+            "message_font_size_tablet": "fs-sm-6",
+            "message_font_size_desk": "fs-xl-6",
+            "message_font_family": "ff-roboto",
+            "message_font_style_italic": false,
+            "message_line_height": "lh-default",
+            "message_font_weight": "fw-default",
+            "message_text_alignment_desk": "text-xl-inherit",
+            "message_text_alignment_tablet": "text-sm-inherit",
+            "message_text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
         }
       },
       "block_order": [
         "section_title_itqVdx",
         "section_title_Ci9Ja4",
         "section_item_3eRarC",
-        "section_item_wBUxLp"
+        "section_item_wBUxLp",
+        "section_item_jCedCD"
       ],
       "settings": {
         "enable_hide_scroll": false,
