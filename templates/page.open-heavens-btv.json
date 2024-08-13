@@ -1231,7 +1231,7 @@
         "overlay_opacity": 0.3,
         "content_width_phone": 12,
         "content_width_tablet": 4,
-        "content_width_desk": 12,
+        "content_width_desk": 4,
         "content_padding_phone": "p-3",
         "content_padding_tablet": "p-sm-4",
         "content_padding_desk": "p-xl-4",
