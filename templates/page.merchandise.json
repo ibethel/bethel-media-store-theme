@@ -99,10 +99,103 @@
         "section_margin": "mb-5",
         "banner_html": ""
       }
+    },
+    "text_ehQD3f": {
+      "type": "text",
+      "blocks": {
+        "text_message_7zx7rN": {
+          "type": "text_message",
+          "settings": {
+            "message": "SUMMER '19",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "font_family": "ff-default",
+            "font_size": "fs-6",
+            "font_size_tablet": "fs-sm-6",
+            "font_size_desk": "fs-xl-6",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "line_height": "lh-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
+        },
+        "text_title_pkqjHR": {
+          "type": "text_title",
+          "settings": {
+            "title": "Our Bethel Collection is Here",
+            "title_link": "",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h1",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        },
+        "text_message_reiLef": {
+          "type": "text_message",
+          "settings": {
+            "message": "Inspired by our very own, Redding, California, where it all began, our prayer chapel and majestic mountianscapes that surrounds us.",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "font_family": "ff-default",
+            "font_size": "fs-6",
+            "font_size_tablet": "fs-sm-6",
+            "font_size_desk": "fs-xl-6",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "line_height": "lh-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "text_message_7zx7rN",
+        "text_title_pkqjHR",
+        "text_message_reiLef"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": true,
+        "background_color": "#f8f8f8",
+        "enable_read_more": false,
+        "peak_text": 60,
+        "button_font_size": "fs-5",
+        "enable_button_styles": false,
+        "button_text_color": "#ffffff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "section_margin": "mb-5"
+      }
     }
   },
   "order": [
     "page",
-    "banner_aWHn6X"
+    "banner_aWHn6X",
+    "text_ehQD3f"
   ]
 }
