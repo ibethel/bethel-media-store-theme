@@ -930,11 +930,56 @@
             "message_margin": "mb-3",
             "message_visibility": "default"
           }
+        },
+        "section_item_q3bjzC": {
+          "type": "section_item",
+          "settings": {
+            "enable_background": false,
+            "background_color": "#fff",
+            "item_margin": "mb-4",
+            "item_number": 3,
+            "enable_number_styles": true,
+            "number_color": "#fff",
+            "number_font_family": "ff-roboto",
+            "number_font_size": "fs-1-5",
+            "number_font_weight": "fw-default",
+            "title": "Weekly Engagement Emails",
+            "enable_title_styles": true,
+            "title_color": "#fff",
+            "title_tag": "h3",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default",
+            "message": "",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "message_font_size": "fs-6",
+            "message_font_size_tablet": "fs-sm-6",
+            "message_font_size_desk": "fs-xl-6",
+            "message_font_family": "ff-roboto",
+            "message_font_style_italic": false,
+            "message_line_height": "lh-default",
+            "message_font_weight": "fw-default",
+            "message_text_alignment_desk": "text-xl-inherit",
+            "message_text_alignment_tablet": "text-sm-inherit",
+            "message_text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
         }
       },
       "block_order": [
         "section_item_D3WWHf",
-        "section_item_NhTJ8C"
+        "section_item_NhTJ8C",
+        "section_item_q3bjzC"
       ],
       "settings": {
         "enable_hide_scroll": false,
