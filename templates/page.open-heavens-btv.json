@@ -1624,6 +1624,49 @@
             "message_margin": "mb-3",
             "message_visibility": "default"
           }
+        },
+        "section_item_wVkGFz": {
+          "type": "section_item",
+          "settings": {
+            "enable_background": false,
+            "background_color": "#fff",
+            "item_margin": "mb-4",
+            "enable_number_styles": false,
+            "number_color": "#fff",
+            "number_font_family": "ff-roboto",
+            "number_font_size": "fs-1-5",
+            "number_font_weight": "fw-default",
+            "title": "How do I watch each of the sessions?",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h3",
+            "font_family": "ff-roboto",
+            "font_size": "fs-5",
+            "font_size_tablet": "fs-sm-5",
+            "font_size_desk": "fs-xl-5",
+            "font_style_italic": false,
+            "font_weight": "fw-bolder",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-0",
+            "title_visibility": "default",
+            "message": "You must be logged in to your Bethel.TV account to watch the e-course. There are two ways to find it on the Bethel.TV site:\n<br>\n1) Under “My List” in the top menu bar, or\n<br>\n2) Scroll down to the “E-Courses” section on the homepage, and select the “Open Heavens” e-course. Once you click on the e-course, all of the sessions will appear under the main video. You can play any of the sessions by clicking “Watch Now.”",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "message_font_size": "fs-6",
+            "message_font_size_tablet": "fs-sm-6",
+            "message_font_size_desk": "fs-xl-6",
+            "message_font_family": "ff-roboto",
+            "message_font_style_italic": false,
+            "message_line_height": "lh-default",
+            "message_font_weight": "fw-default",
+            "message_text_alignment_desk": "text-xl-inherit",
+            "message_text_alignment_tablet": "text-sm-inherit",
+            "message_text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
         }
       },
       "block_order": [
@@ -1632,7 +1675,8 @@
         "section_item_3eRarC",
         "section_item_wBUxLp",
         "section_item_jCedCD",
-        "section_item_ywArnn"
+        "section_item_ywArnn",
+        "section_item_wVkGFz"
       ],
       "settings": {
         "enable_hide_scroll": false,
