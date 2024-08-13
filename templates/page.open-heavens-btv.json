@@ -957,7 +957,7 @@
           "settings": {
             "enable_background": true,
             "background_color": "#9491be",
-            "item_margin": "mb-4",
+            "item_margin": "mb-5",
             "item_number": 3,
             "enable_number_styles": true,
             "number_color": "#fff",
