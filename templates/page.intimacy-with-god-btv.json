@@ -121,7 +121,7 @@
             "text_alignment_desk": "text-xl-center",
             "text_alignment_tablet": "text-sm-center",
             "text_alignment_phone": "text-center",
-            "message_margin": "mb-3",
+            "message_margin": "mb-5",
             "message_visibility": "default"
           }
         },
