@@ -983,7 +983,7 @@
       ],
       "settings": {
         "enable_hide_scroll": false,
-        "enable_contain": false,
+        "enable_contain": true,
         "enable_background": false,
         "background_color": "#fff",
         "content_width_phone": 12,
