@@ -747,6 +747,56 @@
         "section_margin": "mb-5"
       }
     },
+    "text_MQdxit": {
+      "type": "text",
+      "blocks": {
+        "text_title_giymjh": {
+          "type": "text_title",
+          "settings": {
+            "title": "<span style=\"text-decoration: underline;\n    text-decoration-color: #e2d6ca;\n    text-decoration-thickness: 10px;\">MEET YOUR INSTRUCTOR<\/span>",
+            "title_link": "",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h4",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "text_title_giymjh"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "enable_read_more": false,
+        "peak_text": 60,
+        "button_font_size": "fs-5",
+        "enable_button_styles": false,
+        "button_text_color": "#ffffff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "text_alignment_desk": "text-xl-center",
+        "text_alignment_tablet": "text-sm-center",
+        "text_alignment_phone": "text-center",
+        "section_margin": "mb-5"
+      }
+    },
     "custom_item_rows_rbynyY": {
       "type": "custom-item-rows",
       "blocks": {
@@ -1888,6 +1938,78 @@
         "enable_nav_styles": false,
         "nav_color": ""
       }
+    },
+    "image_with_text_bqUdxt": {
+      "type": "image-with-text",
+      "blocks": {
+        "section_message_dt4hxa": {
+          "type": "section_message",
+          "settings": {
+            "message": "\"I’ve been a lover of Jesus since I was five years old and was called into ministry by the time I was a teenager. I’ve chosen to live my life in constant communion with my King. Whether it’s consulting Him for parenting direction or celebrating His goodness over finding my perfect dishrag, I discovered that loving Him endlessly is not only available, it’s abundant. Life flows from this measure of intimacy, and I hope to help others find this same joy.\n<br>\n<br>\n<br>\nThere’s more of God available than most people have experienced, and I live to ignite a hunger in both believers and unbelievers, that they too can know God and encounter His relentless pursuit. My husband, Tom, and I have been serving in full-time ministry for over nineteen years, with the privilege of being on staff at Bethel Church in Redding, California for over eleven of those years. We have two children, Joel and Adelyn, and it’s my greatest joy to invest in them, as well as develop leaders of this generation who carry the fires of revival. I am a student of the theology and nature of God, and I love to refuel by reading and learning more about Him in my free time. If you’ve found yourself here, I want you to know that my desire is to destroy the myth of a distant God and help you discover the level of intimacy available to you in Him.\"\n<br>\n<br>\n<b>- Leslie Crandall<\/b>",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "font_size": "fs-6",
+            "font_size_tablet": "fs-sm-6",
+            "font_size_desk": "fs-xl-6",
+            "font_style_italic": false,
+            "font_family": "ff-default",
+            "font_weight": "fw-default",
+            "line_height": "lh-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "section_message_dt4hxa"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_full_width": false,
+        "enable_contain": false,
+        "is_a_section": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "space_between_img_txt": "5",
+        "space_between_img_content": 3,
+        "space_between_img_content_tablet": 3,
+        "space_between_img_content_desk": 3,
+        "enable_image_radius": false,
+        "img_radius": 3,
+        "img_width_tablet": 6,
+        "img_width_desk": 6,
+        "image_pos": "row",
+        "img_breakpoint_pos": "flex-column",
+        "mp4_url": "",
+        "autoplay": false,
+        "controls": true,
+        "interaction": true,
+        "loop": false,
+        "video_visibility": "d-block",
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "vert_align_phone": "align-items-inherit",
+        "vert_align_tablet": "align-items-sm-inherit",
+        "vert_align_desk": "align-items-xl-inherit",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "enable_content_radius": false,
+        "content_radius": 3,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "enable_text_section_styles": false,
+        "text_background": "#fff",
+        "enable_overlap": false,
+        "main_breakpoint": "sm",
+        "section_margin_phone": "pb-5",
+        "section_margin_tablet": "pb-sm-5",
+        "section_margin_desk": "pb-xl-5"
+      }
     }
   },
   "order": [
@@ -1900,6 +2022,7 @@
     "text_DEr7bi",
     "text_Fd3tRG",
     "item_list_Wm7nHw",
+    "text_MQdxit",
     "custom_item_rows_rbynyY",
     "button_zq7xbz",
     "banner_4rhR67",
@@ -1907,6 +2030,7 @@
     "banner_8gX9Lx",
     "banner_xnkCUD",
     "item_list_YBneVg",
-    "btv_footer_RxPFb7"
+    "btv_footer_RxPFb7",
+    "image_with_text_bqUdxt"
   ]
 }
