@@ -365,10 +365,31 @@
     "text_DEr7bi": {
       "type": "text",
       "blocks": {
+        "text_title_8GiPPk": {
+          "type": "text_title",
+          "settings": {
+            "title": "JOIN OUR WEEKLY LIVESTREAM ON BETHEL.TV",
+            "title_link": "",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h2",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-5",
+            "title_visibility": "default"
+          }
+        },
         "text_title_aEy6jh": {
           "type": "text_title",
           "settings": {
-            "title": "8 WEEK E-COURSE WITH BILL JOHNSON",
+            "title": "EMBARK ON A JOURNEY OF INTIMACY ALONG WITH\nTHE REST OF OUR GLOBAL ONLINE COMMUNITY.",
             "title_link": "",
             "enable_title_styles": false,
             "title_color": "#ffffff",
@@ -385,31 +406,11 @@
             "title_margin": "mb-3",
             "title_visibility": "default"
           }
-        },
-        "text_message_jFzj7j": {
-          "type": "text_message",
-          "settings": {
-            "message": "This e-course will stir hunger in your spirit to see Heaven on earth.",
-            "enable_message_styles": true,
-            "message_color": "#9491be",
-            "font_family": "ff-default",
-            "font_size": "fs-2",
-            "font_size_tablet": "fs-sm-1",
-            "font_size_desk": "fs-xl-1",
-            "font_style_italic": false,
-            "font_weight": "fw-default",
-            "line_height": "lh-default",
-            "text_alignment_desk": "text-xl-center",
-            "text_alignment_tablet": "text-sm-center",
-            "text_alignment_phone": "text-center",
-            "message_margin": "mb-3",
-            "message_visibility": "default"
-          }
         }
       },
       "block_order": [
-        "text_title_aEy6jh",
-        "text_message_jFzj7j"
+        "text_title_8GiPPk",
+        "text_title_aEy6jh"
       ],
       "settings": {
         "enable_hide_scroll": false,
