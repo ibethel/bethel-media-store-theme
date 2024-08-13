@@ -103,6 +103,14 @@
     "text_ehQD3f": {
       "type": "text",
       "blocks": {
+        "section_spacing_ghpGPR": {
+          "type": "section_spacing",
+          "settings": {
+            "bm_spacing_phone": "pb-5",
+            "bm_spacing_tablet": "pb-sm-5",
+            "bm_spacing_desk": "pb-xl-5"
+          }
+        },
         "text_message_7zx7rN": {
           "type": "text_message",
           "settings": {
@@ -163,16 +171,26 @@
             "message_margin": "mb-3",
             "message_visibility": "default"
           }
+        },
+        "section_spacing_eF4dt8": {
+          "type": "section_spacing",
+          "settings": {
+            "bm_spacing_phone": "pb-5",
+            "bm_spacing_tablet": "pb-sm-5",
+            "bm_spacing_desk": "pb-xl-5"
+          }
         }
       },
       "block_order": [
+        "section_spacing_ghpGPR",
         "text_message_7zx7rN",
         "text_title_pkqjHR",
-        "text_message_reiLef"
+        "text_message_reiLef",
+        "section_spacing_eF4dt8"
       ],
       "settings": {
         "enable_hide_scroll": false,
-        "enable_contain": false,
+        "enable_contain": true,
         "enable_background": true,
         "background_color": "#f8f8f8",
         "enable_read_more": false,
