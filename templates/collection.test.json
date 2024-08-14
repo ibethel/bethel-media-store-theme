@@ -88,7 +88,7 @@
         "is_a_section": false,
         "enable_background": false,
         "background_color": "#fff",
-        "section_collection": "",
+        "section_collection": "book-prophecy",
         "tag_filter": "topic-prophecy",
         "enable_item_limit": true,
         "item_limit": 8,
