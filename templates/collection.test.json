@@ -98,6 +98,35 @@
         "banner_html": ""
       }
     },
+    "title_divider_md8ryN": {
+      "type": "title-divider",
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "divider_type": "type_2",
+        "title": "Healing",
+        "title_link": "",
+        "enable_title_styles": false,
+        "title_color": "#fff",
+        "title_tag": "h3",
+        "font_family": "ff-roboto",
+        "font_size": "fs-2",
+        "font_size_tablet": "fs-sm-2",
+        "font_size_desk": "fs-xl-2",
+        "font_style_italic": false,
+        "font_weight": "fw-normal",
+        "horiz_align_phone": "justify-content-center",
+        "horiz_align_tablet": "justify-content-sm-center",
+        "horiz_align_desk": "justify-content-xl-center",
+        "text_alignment_desk": "text-xl-center",
+        "text_alignment_tablet": "text-sm-center",
+        "text_alignment_phone": "text-center",
+        "section_margin": "mb-5",
+        "title_visibility": "default"
+      }
+    },
     "product_row_carousel_wdMNaT": {
       "type": "product-row-carousel",
       "settings": {
@@ -158,6 +187,7 @@
     "165903208451bd1213",
     "collection",
     "banner_RYHFBx",
+    "title_divider_md8ryN",
     "product_row_carousel_wdMNaT",
     "product_row_carousel_nb8LXT"
   ]
