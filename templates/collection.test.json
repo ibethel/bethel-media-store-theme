@@ -34,27 +34,6 @@
         "section_margin_desk": "pb-xl-4"
       }
     },
-    "collection": {
-      "type": "collection",
-      "disabled": true,
-      "settings": {
-        "enable_contain": true,
-        "page_item_limit": 36,
-        "pagination_type": "load_more",
-        "item_widths_phone": "col-6",
-        "item_widths_tablet": "col-sm-4",
-        "item_widths_desk": "col-xl-3",
-        "item_widths_max": "col-xxxl-2",
-        "enable_styles": false,
-        "text_color": "#000000",
-        "price_color": "#000000",
-        "price_color_sale": "#bc3033",
-        "compare_price_color": "#cccccc",
-        "font_size": "fs-6",
-        "font_weight": "fw-default",
-        "section_margin": "mb-5"
-      }
-    },
     "banner_RYHFBx": {
       "type": "banner",
       "blocks": {
@@ -209,16 +188,36 @@
         "font_weight": "fw-default",
         "section_margin": "mb-5"
       }
+    },
+    "collection": {
+      "type": "collection",
+      "settings": {
+        "enable_contain": true,
+        "page_item_limit": 36,
+        "pagination_type": "load_more",
+        "item_widths_phone": "col-6",
+        "item_widths_tablet": "col-sm-4",
+        "item_widths_desk": "col-xl-3",
+        "item_widths_max": "col-xxxl-2",
+        "enable_styles": false,
+        "text_color": "#000000",
+        "price_color": "#000000",
+        "price_color_sale": "#bc3033",
+        "compare_price_color": "#cccccc",
+        "font_size": "fs-6",
+        "font_weight": "fw-default",
+        "section_margin": "mb-5"
+      }
     }
   },
   "order": [
     "1659032124f352ae46",
     "165903208451bd1213",
-    "collection",
     "banner_RYHFBx",
     "title_divider_md8ryN",
     "product_row_carousel_wdMNaT",
     "title_divider_TQUYwz",
-    "product_row_carousel_nb8LXT"
+    "product_row_carousel_nb8LXT",
+    "collection"
   ]
 }
