@@ -11,6 +11,7 @@
   "sections": {
     "1659032124f352ae46": {
       "type": "bm-spacing",
+      "disabled": true,
       "settings": {
         "enable_contain": false,
         "enable_background": false,
@@ -22,6 +23,7 @@
     },
     "165903208451bd1213": {
       "type": "breadcrumbs",
+      "disabled": true,
       "settings": {
         "enable_hide_scroll": false,
         "section_contain": "container-none",
