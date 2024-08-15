@@ -338,7 +338,7 @@
             "item_url": "",
             "banner_img": "shopify:\/\/shop_images\/image-phone-3.png",
             "title": "Dawna De Silva",
-            "enable_title_styles": true,
+            "enable_title_styles": false,
             "title_color": "#fff",
             "title_tag": "text",
             "font_family": "ff-roboto",
