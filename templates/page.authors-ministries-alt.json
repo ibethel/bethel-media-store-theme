@@ -87,7 +87,7 @@
             "title_link": "shopify:\/\/collections\/bill-johnson",
             "enable_title_styles": false,
             "title_color": "#fff",
-            "title_tag": "h2",
+            "title_tag": "text",
             "font_family": "ff-roboto",
             "font_size": "fs-1",
             "font_size_tablet": "fs-sm-1",
