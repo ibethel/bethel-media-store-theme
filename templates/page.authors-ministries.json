@@ -70,12 +70,6 @@
         "section_margin": "mb-5"
       }
     },
-    "page": {
-      "type": "page",
-      "disabled": true,
-      "settings": {
-      }
-    },
     "banner_item_rows_aQLf4m": {
       "type": "banner-item-rows",
       "blocks": {
@@ -2071,7 +2065,6 @@
   "order": [
     "bm_spacing_hCt6gm",
     "text_zGKbb4",
-    "page",
     "banner_item_rows_aQLf4m"
   ]
 }
