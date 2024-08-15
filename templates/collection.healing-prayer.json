@@ -191,6 +191,7 @@
     },
     "collection": {
       "type": "collection",
+      "disabled": true,
       "settings": {
         "enable_contain": true,
         "page_item_limit": 36,
@@ -208,6 +209,25 @@
         "font_weight": "fw-default",
         "section_margin": "mb-5"
       }
+    },
+    "offset_collection_row_zHNTgU": {
+      "type": "offset-collection-row",
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "page_item_limit": 36,
+        "hide_after_first_page": false,
+        "enable_sorting": false,
+        "enable_offset": false,
+        "pagination_type": "numerical",
+        "item_widths_phone": "col-6",
+        "item_widths_tablet": "col-sm-4",
+        "item_widths_desk": "col-xl-3",
+        "item_widths_max": "col-xxxl-2",
+        "section_margin": "mb-5"
+      }
     }
   },
   "order": [
@@ -218,6 +238,7 @@
     "product_row_carousel_wdMNaT",
     "title_divider_TQUYwz",
     "product_row_carousel_nb8LXT",
-    "collection"
+    "collection",
+    "offset_collection_row_zHNTgU"
   ]
 }
