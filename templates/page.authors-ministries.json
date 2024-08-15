@@ -9,7 +9,7 @@
 */
 {
   "sections": {
-    "bm_spacing_AGGdW3": {
+    "bm_spacing_hCt6gm": {
       "type": "bm-spacing",
       "settings": {
         "enable_contain": false,
@@ -18,6 +18,56 @@
         "bm_spacing_phone": "pb-5",
         "bm_spacing_tablet": "pb-sm-5",
         "bm_spacing_desk": "pb-xl-5"
+      }
+    },
+    "text_zGKbb4": {
+      "type": "text",
+      "blocks": {
+        "text_title_N7AmWV": {
+          "type": "text_title",
+          "settings": {
+            "title": "Authors & Ministries",
+            "title_link": "",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h1",
+            "font_family": "ff-ivypresto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "text_title_N7AmWV"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "enable_read_more": false,
+        "peak_text": 60,
+        "button_font_size": "fs-5",
+        "enable_button_styles": false,
+        "button_text_color": "#ffffff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "section_margin": "mb-5"
       }
     },
     "page": {
@@ -2019,7 +2069,8 @@
     }
   },
   "order": [
-    "bm_spacing_AGGdW3",
+    "bm_spacing_hCt6gm",
+    "text_zGKbb4",
     "page",
     "banner_item_rows_aQLf4m"
   ]
