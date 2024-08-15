@@ -330,6 +330,27 @@
             "title_margin": "mb-3",
             "title_visibility": "default"
           }
+        },
+        "section_title_NAXEWY": {
+          "type": "section_title",
+          "settings": {
+            "title": "SOZO",
+            "title_link": "shopify:\/\/collections\/sozo",
+            "enable_title_styles": true,
+            "title_color": "#8f7056",
+            "title_tag": "text",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
         }
       },
       "block_order": [
@@ -344,7 +365,8 @@
         "section_title_j3AjB8",
         "section_title_VkUUGt",
         "section_title_KamHiz",
-        "section_title_iXrryw"
+        "section_title_iXrryw",
+        "section_title_NAXEWY"
       ],
       "settings": {
         "enable_hide_scroll": false,
