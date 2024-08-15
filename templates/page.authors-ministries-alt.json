@@ -84,8 +84,8 @@
           "settings": {
             "title": "Bill Johnson Ministries",
             "title_link": "shopify:\/\/collections\/bill-johnson",
-            "enable_title_styles": false,
-            "title_color": "#fff",
+            "enable_title_styles": true,
+            "title_color": "#8f7056",
             "title_tag": "text",
             "font_family": "ff-roboto",
             "font_size": "fs-1",
@@ -105,8 +105,8 @@
           "settings": {
             "title": "Kris Vallotton Ministries",
             "title_link": "shopify:\/\/collections\/kris-vallotton-ministries",
-            "enable_title_styles": false,
-            "title_color": "#fff",
+            "enable_title_styles": true,
+            "title_color": "#8f7056",
             "title_tag": "text",
             "font_family": "ff-roboto",
             "font_size": "fs-1",
