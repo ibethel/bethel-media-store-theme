@@ -65,6 +65,7 @@
       "block_order": [
         "section_item_N4pfjm"
       ],
+      "disabled": true,
       "settings": {
         "enable_hide_scroll": false,
         "enable_contain": false,
@@ -75,10 +76,56 @@
         "content_width_desk": 12,
         "section_margin": "mb-5"
       }
+    },
+    "multi_row_rhApta": {
+      "type": "multi-row",
+      "blocks": {
+        "section_title_QLpNiH": {
+          "type": "section_title",
+          "settings": {
+            "title": "Bill Johnson Ministries",
+            "title_link": "shopify:\/\/collections\/bill-johnson",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h2",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "section_title_QLpNiH"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "section_margin": "mb-5"
+      }
     }
   },
   "order": [
     "page",
-    "item_list_jMhBEg"
+    "item_list_jMhBEg",
+    "multi_row_rhApta"
   ]
 }
