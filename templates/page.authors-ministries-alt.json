@@ -99,10 +99,32 @@
             "title_margin": "mb-3",
             "title_visibility": "default"
           }
+        },
+        "section_title_MfniNM": {
+          "type": "section_title",
+          "settings": {
+            "title": "Kris Vallotton Ministries",
+            "title_link": "shopify:\/\/collections\/kris-vallotton-ministries",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "text",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
         }
       },
       "block_order": [
-        "section_title_QLpNiH"
+        "section_title_QLpNiH",
+        "section_title_MfniNM"
       ],
       "settings": {
         "enable_hide_scroll": false,
