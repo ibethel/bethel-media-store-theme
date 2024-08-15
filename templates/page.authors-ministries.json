@@ -9,6 +9,17 @@
 */
 {
   "sections": {
+    "bm_spacing_AGGdW3": {
+      "type": "bm-spacing",
+      "settings": {
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "bm_spacing_phone": "pb-5",
+        "bm_spacing_tablet": "pb-sm-5",
+        "bm_spacing_desk": "pb-xl-5"
+      }
+    },
     "page": {
       "type": "page",
       "disabled": true,
@@ -2008,6 +2019,7 @@
     }
   },
   "order": [
+    "bm_spacing_AGGdW3",
     "page",
     "banner_item_rows_aQLf4m"
   ]
