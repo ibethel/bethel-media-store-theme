@@ -20,7 +20,7 @@
       "settings": {
         "enable_contain": false,
         "enable_background": false,
-        "background_color": "#fff",
+        "background_color": "#ffffff",
         "bm_spacing_phone": "pb-5",
         "bm_spacing_tablet": "pb-sm-5",
         "bm_spacing_desk": "pb-xl-5"
@@ -32,10 +32,10 @@
         "text_title_z9qGja": {
           "type": "text_title",
           "settings": {
-            "title": "Authors & Ministries",
+            "title": "By Genre",
             "title_link": "",
             "enable_title_styles": false,
-            "title_color": "#fff",
+            "title_color": "#ffffff",
             "title_tag": "h1",
             "font_family": "ff-ivypresto",
             "font_size": "fs-1-3",
@@ -58,7 +58,7 @@
         "enable_hide_scroll": false,
         "enable_contain": false,
         "enable_background": false,
-        "background_color": "#fff",
+        "background_color": "#ffffff",
         "enable_read_more": false,
         "peak_text": 60,
         "button_font_size": "fs-5",
@@ -372,7 +372,7 @@
         "enable_hide_scroll": false,
         "enable_contain": false,
         "enable_background": false,
-        "background_color": "#fff",
+        "background_color": "#ffffff",
         "content_width_phone": 12,
         "content_width_tablet": 12,
         "content_width_desk": 12,
