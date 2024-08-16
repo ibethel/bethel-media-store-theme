@@ -9,72 +9,65 @@
 */
 {
   "sections": {
-    "1659032124f352ae46": {
+    "bm_spacing_Xy4TQA": {
       "type": "bm-spacing",
-      "disabled": true,
       "settings": {
         "enable_contain": false,
         "enable_background": false,
-        "background_color": "#ffffff",
-        "bm_spacing_phone": "pb-3",
-        "bm_spacing_tablet": "pb-sm-3",
-        "bm_spacing_desk": "pb-xl-4"
+        "background_color": "#fff",
+        "bm_spacing_phone": "pb-5",
+        "bm_spacing_tablet": "pb-sm-5",
+        "bm_spacing_desk": "pb-xl-5"
       }
     },
-    "165903208451bd1213": {
-      "type": "breadcrumbs",
-      "disabled": true,
-      "settings": {
-        "enable_hide_scroll": false,
-        "section_contain": "container-none",
-        "enable_background": false,
-        "background_color": "#ffffff",
-        "section_margin_phone": "pb-3",
-        "section_margin_tablet": "pb-sm-3",
-        "section_margin_desk": "pb-xl-4"
-      }
-    },
-    "banner_RYHFBx": {
-      "type": "banner",
+    "text_FdgmPn": {
+      "type": "text",
       "blocks": {
-        "banner_image_y64bBx": {
-          "type": "banner_image",
+        "text_title_EhL9T4": {
+          "type": "text_title",
           "settings": {
-            "banner_image_phone": "shopify:\/\/shop_images\/image-phone.png",
-            "banner_image_tablet": "shopify:\/\/shop_images\/image-tablet.png",
-            "banner_image_desk": "shopify:\/\/shop_images\/image-desk.png",
-            "banner_image_max": "shopify:\/\/shop_images\/image-max.png",
-            "img_link": ""
+            "title": "Bethel Music",
+            "title_link": "",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h1",
+            "font_family": "ff-ivypresto",
+            "font_size": "fs-1-7",
+            "font_size_tablet": "fs-sm-1-7",
+            "font_size_desk": "fs-xl-1-7",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
           }
         }
       },
       "block_order": [
-        "banner_image_y64bBx"
+        "text_title_EhL9T4"
       ],
       "settings": {
         "enable_hide_scroll": false,
         "enable_contain": false,
         "enable_background": false,
-        "background_color": "#ffffff",
-        "enable_overlay": false,
-        "overlay_opacity": 0.3,
+        "background_color": "#fff",
+        "enable_read_more": false,
+        "peak_text": 60,
+        "button_font_size": "fs-5",
+        "enable_button_styles": false,
+        "button_text_color": "#ffffff",
         "content_width_phone": 12,
         "content_width_tablet": 12,
         "content_width_desk": 12,
-        "content_padding_phone": "p-3",
-        "content_padding_tablet": "p-sm-4",
-        "content_padding_desk": "p-xl-4",
-        "horiz_align_phone": "justify-content-center",
-        "horiz_align_tablet": "justify-content-sm-center",
-        "horiz_align_desk": "justify-content-xl-center",
-        "vert_align_phone": "align-items-center",
-        "vert_align_tablet": "align-items-sm-center",
-        "vert_align_desk": "align-items-xl-center",
-        "text_alignment_desk": "text-xl-center",
-        "text_alignment_tablet": "text-sm-center",
-        "text_alignment_phone": "text-center",
-        "section_margin": "mb-5",
-        "banner_html": ""
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "section_margin": "mb-5"
       }
     },
     "title_divider_md8ryN": {
@@ -195,12 +188,12 @@
         "enable_hide_scroll": false,
         "enable_contain": false,
         "enable_background": false,
-        "background_color": "#fff",
+        "background_color": "#ffffff",
         "divider_type": "type_default",
         "title": "All Healing & Prayer",
         "title_link": "",
         "enable_title_styles": false,
-        "title_color": "#fff",
+        "title_color": "#ffffff",
         "title_tag": "h3",
         "font_family": "ff-roboto",
         "font_size": "fs-2",
@@ -245,7 +238,7 @@
         "enable_hide_scroll": false,
         "enable_contain": false,
         "enable_background": false,
-        "background_color": "#fff",
+        "background_color": "#ffffff",
         "page_item_limit": 36,
         "hide_after_first_page": false,
         "enable_sorting": false,
@@ -260,9 +253,8 @@
     }
   },
   "order": [
-    "1659032124f352ae46",
-    "165903208451bd1213",
-    "banner_RYHFBx",
+    "bm_spacing_Xy4TQA",
+    "text_FdgmPn",
     "title_divider_md8ryN",
     "product_row_carousel_wdMNaT",
     "title_divider_TQUYwz",
