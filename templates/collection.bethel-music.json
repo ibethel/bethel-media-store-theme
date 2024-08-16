@@ -70,6 +70,102 @@
         "section_margin": "mb-5"
       }
     },
+    "image_with_text_d3CghY": {
+      "type": "image-with-text",
+      "blocks": {
+        "section_message_YBem4n": {
+          "type": "section_message",
+          "settings": {
+            "message": "Bethel Music is a worship ministry formed as an extension of Bethel Church and founded by Brian and Jenn Johnson. The heart of Bethel Music is to steward the worship being created and released at Bethel Church, making it a resource available to the world.",
+            "enable_message_styles": true,
+            "message_color": "#fff",
+            "font_size": "fs-6",
+            "font_size_tablet": "fs-sm-5",
+            "font_size_desk": "fs-xl-5",
+            "font_style_italic": false,
+            "font_family": "ff-default",
+            "font_weight": "fw-default",
+            "line_height": "lh-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
+        },
+        "section_message_eHgCL4": {
+          "type": "section_message",
+          "settings": {
+            "message": "Featuring a collective of songwriters and worship leaders, Bethel Music has released more than 21 albums, chart-topping songs, a No. 1 on overall iTunes Albums chart, a Top 10 on Billboard Top Albums chart, four GMA Dove Awards, a GMA Covenant Award and both online and on-campus worship schools.",
+            "enable_message_styles": true,
+            "message_color": "#fff",
+            "font_size": "fs-6",
+            "font_size_tablet": "fs-sm-5",
+            "font_size_desk": "fs-xl-5",
+            "font_style_italic": false,
+            "font_family": "ff-default",
+            "font_weight": "fw-default",
+            "line_height": "lh-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "section_message_YBem4n",
+        "section_message_eHgCL4"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_full_width": false,
+        "enable_contain": false,
+        "is_a_section": false,
+        "enable_background": true,
+        "background_color": "#000000",
+        "space_between_img_txt": "5",
+        "space_between_img_content": 3,
+        "space_between_img_content_tablet": 3,
+        "space_between_img_content_desk": 3,
+        "image_phone": "shopify:\/\/shop_images\/bethel-music-worship-collection-phone.jpg",
+        "image_tablet": "shopify:\/\/shop_images\/bethel-music-worship-collection-phone.jpg",
+        "image_desk": "shopify:\/\/shop_images\/bethel-music-worship-collection-phone.jpg",
+        "enable_image_radius": false,
+        "img_radius": 3,
+        "img_width_tablet": 6,
+        "img_width_desk": 6,
+        "image_pos": "row",
+        "img_breakpoint_pos": "flex-column",
+        "mp4_url": "",
+        "autoplay": false,
+        "controls": true,
+        "interaction": true,
+        "loop": false,
+        "video_visibility": "d-block",
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "vert_align_phone": "align-items-center",
+        "vert_align_tablet": "align-items-sm-center",
+        "vert_align_desk": "align-items-xl-center",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "enable_content_radius": false,
+        "content_radius": 3,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "enable_text_section_styles": false,
+        "text_background": "#fff",
+        "enable_overlap": false,
+        "main_breakpoint": "sm",
+        "section_margin_phone": "pb-5",
+        "section_margin_tablet": "pb-sm-5",
+        "section_margin_desk": "pb-xl-5"
+      }
+    },
     "title_divider_md8ryN": {
       "type": "title-divider",
       "settings": {
@@ -255,6 +351,7 @@
   "order": [
     "bm_spacing_Xy4TQA",
     "text_FdgmPn",
+    "image_with_text_d3CghY",
     "title_divider_md8ryN",
     "product_row_carousel_wdMNaT",
     "title_divider_TQUYwz",
