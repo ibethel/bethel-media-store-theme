@@ -423,6 +423,33 @@
         "title_visibility": "default"
       }
     },
+    "product_row_carousel_JU4tbj": {
+      "type": "product-row-carousel",
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "is_a_section": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "section_collection": "russian",
+        "tag_filter": "",
+        "enable_item_limit": true,
+        "item_limit": 8,
+        "item_widths_phone": "col-12",
+        "item_widths_tablet": "col-sm-4",
+        "item_widths_desk": "alt-col-xl-2",
+        "item_widths_max": "col-xxxl-2",
+        "enable_styles": false,
+        "text_color": "#000",
+        "price_color": "#000",
+        "price_color_sale": "#bc3033",
+        "compare_price_color": "#737373",
+        "font_size": "fs-6",
+        "font_italic": false,
+        "font_weight": "fw-default",
+        "section_margin": "mb-5"
+      }
+    },
     "title_divider_zDzeJL": {
       "type": "title-divider",
       "settings": {
@@ -508,6 +535,7 @@
     "title_divider_BcJqVd",
     "product_row_carousel_p7tjGA",
     "title_divider_WiDFjg",
+    "product_row_carousel_JU4tbj",
     "title_divider_zDzeJL",
     "collection",
     "offset_collection_row_zHNTgU"
