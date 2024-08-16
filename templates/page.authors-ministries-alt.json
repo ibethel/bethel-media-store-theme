@@ -167,7 +167,7 @@
           "type": "section_title",
           "settings": {
             "title": "Havilah Cunnington",
-            "title_link": "shopify:\/\/collections\/havilah-cunnington",
+            "title_link": "https:\/\/shop.bethel.com\/collections\/havilah-cunnington\/Book",
             "enable_title_styles": true,
             "title_color": "#8f7056",
             "title_tag": "text",
@@ -186,6 +186,7 @@
         },
         "section_title_AjAA9J": {
           "type": "section_title",
+          "disabled": true,
           "settings": {
             "title": "BSSM Voices",
             "title_link": "",
