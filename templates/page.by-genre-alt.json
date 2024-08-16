@@ -82,8 +82,8 @@
         "section_title_QLpNiH": {
           "type": "section_title",
           "settings": {
-            "title": "Bill Johnson Ministries",
-            "title_link": "shopify:\/\/collections\/bill-johnson",
+            "title": "Devotionals",
+            "title_link": "shopify:\/\/collections\/devotional",
             "enable_title_styles": true,
             "title_color": "#8f7056",
             "title_tag": "text",
@@ -103,8 +103,8 @@
         "section_title_MfniNM": {
           "type": "section_title",
           "settings": {
-            "title": "Kris Vallotton Ministries",
-            "title_link": "shopify:\/\/collections\/kris-vallotton-ministries",
+            "title": "Men",
+            "title_link": "shopify:\/\/collections\/topic-for-men",
             "enable_title_styles": true,
             "title_color": "#8f7056",
             "title_tag": "text",
