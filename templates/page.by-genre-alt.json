@@ -104,7 +104,7 @@
           "type": "section_title",
           "settings": {
             "title": "Men",
-            "title_link": "shopify:\/\/collections\/topic-for-men",
+            "title_link": "https:\/\/shop.bethel.com\/collections\/topic-for-men\/Book",
             "enable_title_styles": true,
             "title_color": "#8f7056",
             "title_tag": "text",
@@ -125,7 +125,7 @@
           "type": "section_title",
           "settings": {
             "title": "Women",
-            "title_link": "shopify:\/\/collections\/women",
+            "title_link": "https:\/\/shop.bethel.com\/collections\/women\/Book",
             "enable_title_styles": true,
             "title_color": "#8f7056",
             "title_tag": "text",
@@ -146,7 +146,7 @@
           "type": "section_title",
           "settings": {
             "title": "Igniting Hope Ministries",
-            "title_link": "shopify:\/\/collections\/igniting-hope-ministries",
+            "title_link": "https:\/\/shop.bethel.com\/collections\/igniting-hope\/Book",
             "enable_title_styles": true,
             "title_color": "#8f7056",
             "title_tag": "text",
@@ -167,7 +167,7 @@
           "type": "section_title",
           "settings": {
             "title": "Havilah Cunnington",
-            "title_link": "shopify:\/\/collections\/havilah-cunnington",
+            "title_link": "https:\/\/shop.bethel.com\/collections\/havilah-cunnington\/Book",
             "enable_title_styles": true,
             "title_color": "#8f7056",
             "title_tag": "text",
@@ -186,6 +186,7 @@
         },
         "section_title_AjAA9J": {
           "type": "section_title",
+          "disabled": true,
           "settings": {
             "title": "BSSM Voices",
             "title_link": "",
@@ -209,7 +210,7 @@
           "type": "section_title",
           "settings": {
             "title": "Bethel Music",
-            "title_link": "shopify:\/\/collections\/bethel-music",
+            "title_link": "https:\/\/shop.bethel.com\/collections\/bethel-music\/Book",
             "enable_title_styles": true,
             "title_color": "#8f7056",
             "title_tag": "text",
