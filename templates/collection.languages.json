@@ -11,7 +11,6 @@
   "sections": {
     "1659032124f352ae46": {
       "type": "bm-spacing",
-      "disabled": true,
       "settings": {
         "enable_contain": false,
         "enable_background": false,
@@ -21,17 +20,54 @@
         "bm_spacing_desk": "pb-xl-4"
       }
     },
-    "165903208451bd1213": {
-      "type": "breadcrumbs",
-      "disabled": true,
+    "text_LHyHBq": {
+      "type": "text",
+      "blocks": {
+        "text_title_Eh76KH": {
+          "type": "text_title",
+          "settings": {
+            "title": "Other Languages",
+            "title_link": "",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h1",
+            "font_family": "ff-ivypresto",
+            "font_size": "fs-1-3",
+            "font_size_tablet": "fs-sm-1-3",
+            "font_size_desk": "fs-xl-1-3",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        }
+      },
+      "block_order": [
+        "text_title_Eh76KH"
+      ],
       "settings": {
         "enable_hide_scroll": false,
-        "section_contain": "container-none",
+        "enable_contain": false,
         "enable_background": false,
-        "background_color": "#ffffff",
-        "section_margin_phone": "pb-3",
-        "section_margin_tablet": "pb-sm-3",
-        "section_margin_desk": "pb-xl-4"
+        "background_color": "#fff",
+        "enable_read_more": false,
+        "peak_text": 60,
+        "button_font_size": "fs-5",
+        "enable_button_styles": false,
+        "button_text_color": "#ffffff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "section_margin": "mb-5"
       }
     },
     "banner_RYHFBx": {
@@ -262,7 +298,7 @@
   },
   "order": [
     "1659032124f352ae46",
-    "165903208451bd1213",
+    "text_LHyHBq",
     "banner_RYHFBx",
     "title_divider_md8ryN",
     "product_row_carousel_wdMNaT",
