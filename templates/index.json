@@ -253,26 +253,6 @@
             "title_visibility": "default"
           }
         },
-        "51ca5551-a64e-4daa-9d77-451db22ae28b": {
-          "type": "section_message",
-          "settings": {
-            "message": "Viverra tellus in hac habitasse. Vivamus arcu felis bibendum ut tristique. Et netus et malesuada fames ac. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor.",
-            "enable_message_styles": true,
-            "message_color": "#ffffff",
-            "font_size": "fs-8",
-            "font_size_tablet": "fs-sm-6",
-            "font_size_desk": "fs-xl-6",
-            "font_style_italic": false,
-            "font_family": "ff-roboto",
-            "font_weight": "fw-light",
-            "line_height": "lh-4",
-            "text_alignment_desk": "text-xl-inherit",
-            "text_alignment_tablet": "text-sm-inherit",
-            "text_alignment_phone": "text-inherit",
-            "message_margin": "mb-3",
-            "message_visibility": "default"
-          }
-        },
         "fd539645-0a4d-48c0-9444-6fe3da41747e": {
           "type": "section_button",
           "settings": {
@@ -359,7 +339,6 @@
       },
       "block_order": [
         "ec8f19d6-ffa0-4f04-a149-184f04e50b92",
-        "51ca5551-a64e-4daa-9d77-451db22ae28b",
         "fd539645-0a4d-48c0-9444-6fe3da41747e"
       ],
       "settings": {
