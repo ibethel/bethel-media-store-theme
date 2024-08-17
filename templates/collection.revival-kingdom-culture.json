@@ -663,6 +663,7 @@
         "enable_contain": false,
         "enable_background": false,
         "background_color": "#fff",
+        "item_offset": 2,
         "section_margin": "mb-5"
       }
     },
