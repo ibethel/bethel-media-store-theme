@@ -1,55 +1,4 @@
-{%- if is_a_section -%}
-  <section
-    class="limespot {{ section_margin -}}
-
-      {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
-
-      {%- if enable_background and background_color != blank -%}
-        {%- if enable_contain %} py-3 py-xl-5
-          {%- else %} p-3 p-xl-5
-        {%- endif -%}
-      {%- endif %}"
-
-    {%- if enable_background and background_color != blank -%}
-      style="background-color: {{ background_color }};"
-    {%- endif -%}
-  >
-  {%- else -%}
-    <div
-      class="limespot {{ section_margin -}}
-
-        {%- if enable_hide_scroll %} bm-hide-scroll{% endif -%}
-
-        {%- if enable_background and background_color != blank -%}
-          {%- if enable_contain %} py-3 py-xl-5
-            {%- else %} p-3 p-xl-5
-          {%- endif -%}
-        {%- endif %}"
-
-      {%- if enable_background and background_color != blank -%}
-        style="background-color: {{ background_color }};"
-      {%- endif -%}
-    >
-{%- endif -%}
-
-  <div
-    class="limespot__container
-
-        {%- if enable_contain %} container-xl px-3{%- else %} px-3{%- endif -%}"
-  >
-
-    <limespot></limespot>
-
-  </div>
-
-{%- if is_a_section -%}
-  </section>
-  {%- else -%}
-    </div>
-{%- endif -%}
-
-
-<script type="text/javascript" async src="https://edge.personalizer.io/storefront/2.0.0/js/shopify/storefront.min.js?key=gcrmc-ri1op8bg9uw8m1uc-wdsys&shop=bethel-web-store.myshopify.com"></script>
+<script type="text/javascript" src="https://edge.personalizer.io/storefront/2.0.0/js/shopify/storefront.min.js?key=dgofb-rp1crp8ty9nx8hzf1y-jtiqw&shop=bethel-web-store.myshopify.com"></script>
 <script>
 window.LimeSpot = window.LimeSpot === undefined ? {} : LimeSpot;{% assign t = template | prepend: '/' | append: '.' %}
 {% if t contains '/product.' %}LimeSpot.PageInfo = { Type: "Product", ReferenceIdentifier: "{{ product.id }}"};
@@ -80,4 +29,4 @@ LimeSpot.CartItems = [{{ cart_product_ids | remove_first: "," }}];
 
 
 
-{% comment %}Checksum: 453f2c0c5da0be19e4953cdb7abc48f0{% endcomment %}
+{% comment %}Checksum: 2b6f4bf29b6d95564b4e085a4d4b7ba5{% endcomment %}
