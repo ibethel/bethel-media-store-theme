@@ -136,7 +136,10 @@
           "slider_scroll": "autoscroll",
           "speed": 2,
           "interval": 5,
-          "enable_rewind": true
+          "enable_rewind": true,
+          "enable_bottom_border": false,
+          "border_color": "",
+          "border_width": 1
         }
       },
       "header": {
@@ -177,7 +180,7 @@
           "background_color": "#ffffff",
           "text_color": "#000000",
           "enable_nav_level_two": true,
-          "enable_nav_level_three": false
+          "enable_nav_level_three": true
         }
       },
       "footer": {

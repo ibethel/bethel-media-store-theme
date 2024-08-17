@@ -1,0 +1,358 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "page": {
+      "type": "page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "banner_aWHn6X": {
+      "type": "banner",
+      "blocks": {
+        "banner_image_74WVVK": {
+          "type": "banner_image",
+          "settings": {
+            "banner_image_phone": "shopify:\/\/shop_images\/bethel-merchandise-collection-redding-mobile-banner-size.jpg",
+            "banner_image_tablet": "shopify:\/\/shop_images\/bethel-merchandise-collection-redding-desk.jpg",
+            "banner_image_desk": "shopify:\/\/shop_images\/bethel-merchandise-collection-redding-main-banner-size.jpg",
+            "banner_image_max": "shopify:\/\/shop_images\/bethel-merchandise-collection-redding-main-banner-size.jpg",
+            "img_link": ""
+          }
+        },
+        "banner_title_3nK8xi": {
+          "type": "banner_title",
+          "settings": {
+            "title": "BETHEL",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h2",
+            "font_family": "ff-roboto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1-10",
+            "font_size_desk": "fs-xl-1-10",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "d-none_d-sm-block"
+          }
+        },
+        "banner_message_cXw7bG": {
+          "type": "banner_message",
+          "settings": {
+            "message": "REDDING • CALIFORNIA",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "font_size": "fs-6",
+            "font_size_tablet": "fs-sm-3",
+            "font_size_desk": "fs-xl-6",
+            "font_family": "ff-roboto",
+            "font_style_italic": false,
+            "line_height": "lh-default",
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "d-none_d-sm-block"
+          }
+        }
+      },
+      "block_order": [
+        "banner_image_74WVVK",
+        "banner_title_3nK8xi",
+        "banner_message_cXw7bG"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "enable_overlay": false,
+        "overlay_opacity": 0.3,
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "content_padding_phone": "p-3",
+        "content_padding_tablet": "p-sm-4",
+        "content_padding_desk": "p-xl-4",
+        "horiz_align_phone": "justify-content-center",
+        "horiz_align_tablet": "justify-content-sm-center",
+        "horiz_align_desk": "justify-content-xl-center",
+        "vert_align_phone": "align-items-center",
+        "vert_align_tablet": "align-items-sm-center",
+        "vert_align_desk": "align-items-xl-center",
+        "text_alignment_desk": "text-xl-center",
+        "text_alignment_tablet": "text-sm-center",
+        "text_alignment_phone": "text-center",
+        "section_margin": "mb-5",
+        "banner_html": ""
+      }
+    },
+    "text_ehQD3f": {
+      "type": "text",
+      "blocks": {
+        "section_spacing_ghpGPR": {
+          "type": "section_spacing",
+          "settings": {
+            "bm_spacing_phone": "pb-5",
+            "bm_spacing_tablet": "pb-sm-5",
+            "bm_spacing_desk": "pb-xl-5"
+          }
+        },
+        "text_message_7zx7rN": {
+          "type": "text_message",
+          "settings": {
+            "message": "SUMMER '19",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "font_family": "ff-default",
+            "font_size": "fs-6",
+            "font_size_tablet": "fs-sm-6",
+            "font_size_desk": "fs-xl-6",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "line_height": "lh-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
+        },
+        "text_title_pkqjHR": {
+          "type": "text_title",
+          "settings": {
+            "title": "Our Bethel Collection is Here",
+            "title_link": "",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h1",
+            "font_family": "ff-ivypresto",
+            "font_size": "fs-3",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "title_margin": "mb-3",
+            "title_visibility": "default"
+          }
+        },
+        "text_message_reiLef": {
+          "type": "text_message",
+          "settings": {
+            "message": "Inspired by our very own, Redding, California, where it all began, our prayer chapel and majestic mountianscapes that surrounds us.",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "font_family": "ff-default",
+            "font_size": "fs-6",
+            "font_size_tablet": "fs-sm-6",
+            "font_size_desk": "fs-xl-6",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "line_height": "lh-default",
+            "text_alignment_desk": "text-xl-center",
+            "text_alignment_tablet": "text-sm-center",
+            "text_alignment_phone": "text-center",
+            "message_margin": "mb-3",
+            "message_visibility": "default"
+          }
+        },
+        "section_spacing_eF4dt8": {
+          "type": "section_spacing",
+          "settings": {
+            "bm_spacing_phone": "pb-5",
+            "bm_spacing_tablet": "pb-sm-5",
+            "bm_spacing_desk": "pb-xl-5"
+          }
+        }
+      },
+      "block_order": [
+        "section_spacing_ghpGPR",
+        "text_message_7zx7rN",
+        "text_title_pkqjHR",
+        "text_message_reiLef",
+        "section_spacing_eF4dt8"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": true,
+        "enable_background": true,
+        "background_color": "#f8f8f8",
+        "enable_read_more": false,
+        "peak_text": 60,
+        "button_font_size": "fs-5",
+        "enable_button_styles": false,
+        "button_text_color": "#ffffff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "horiz_align_phone": "justify-content-inherit",
+        "horiz_align_tablet": "justify-content-sm-inherit",
+        "horiz_align_desk": "justify-content-xl-inherit",
+        "text_alignment_desk": "text-xl-inherit",
+        "text_alignment_tablet": "text-sm-inherit",
+        "text_alignment_phone": "text-inherit",
+        "section_margin": "mb-5"
+      }
+    },
+    "custom_item_rows_Y9mwfJ": {
+      "type": "custom-item-rows",
+      "blocks": {
+        "item_block_kQGpyG": {
+          "type": "item_block",
+          "settings": {
+            "item_width_phone": "inherit",
+            "item_width_tablet": "inherit",
+            "item_width_desk": "inherit",
+            "item_width_max": "inherit",
+            "item_url": "",
+            "img_margin": "mb-3",
+            "img_visibility": "d-default",
+            "img_pos": 1,
+            "title": "",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "text",
+            "font_family": "ff-roboto",
+            "title_font_size": "fs-6",
+            "title_font_size_tablet": "fs-sm-6",
+            "title_font_size_desk": "fs-xl-6",
+            "title_font_italic": false,
+            "title_font_weight": "fw-default",
+            "title_alignment_desk": "text-xl-inherit",
+            "title_alignment_tablet": "text-sm-inherit",
+            "title_alignment_phone": "text-inherit",
+            "title_margin": "mb-3",
+            "title_visibility": "default",
+            "title_pos": 2,
+            "sub_title": "",
+            "enable_sub_title_styles": false,
+            "sub_title_color": "#fff",
+            "sub_title_tag": "text",
+            "sub_title_font_family": "ff-roboto",
+            "sub_title_size": "fs-6",
+            "sub_title_italic": false,
+            "sub_title_weight": "fw-default",
+            "sub_title_alignment_desk": "text-xl-inherit",
+            "sub_title_alignment_tablet": "text-sm-inherit",
+            "sub_title_alignment_phone": "text-inherit",
+            "sub_title_margin": "mb-3",
+            "sub_title_visibility": "default",
+            "sub_title_pos": 3,
+            "message": "",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "message_size": "fs-6",
+            "message_size_tablet": "fs-sm-6",
+            "message_size_desk": "fs-xl-6",
+            "message_font_family": "ff-default",
+            "message_italic": false,
+            "message_line_height": "lh-default",
+            "message_weight": "fw-default",
+            "message_alignment_desk": "text-xl-inherit",
+            "message_alignment_tablet": "text-sm-inherit",
+            "message_alignment_phone": "text-inherit",
+            "message_margin": "mb-3",
+            "message_visibility": "default",
+            "message_pos": 4,
+            "button_alignment_desk": "justify-content-xl-inherit",
+            "button_alignment_tablet": "justify-content-sm-inherit",
+            "button_alignment_phone": "justify-content-inherit",
+            "button_margin": "mb-3",
+            "button_visibility": "default",
+            "button_wrap_breakpoint": "sm",
+            "button_pos": 5,
+            "button_text": "",
+            "button_route": "",
+            "button_product": "",
+            "button_product_two": "",
+            "button_action": "add_to_cart",
+            "button_size": "large",
+            "button_template": "primary",
+            "enable_button_styles": false,
+            "button_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_mp4_url": "",
+            "button_iframe_url": "",
+            "button_autoplay": false,
+            "button_controls": true,
+            "button_interaction": true,
+            "button_loop": false,
+            "button_two_text": "",
+            "button_two_route": "",
+            "button_two_product": "",
+            "button_two_product_two": "",
+            "button_two_action": "add_to_cart",
+            "button_two_size": "large",
+            "button_two_template": "primary",
+            "enable_button_two_styles": false,
+            "button_two_color": "#000000",
+            "button_two_text_color": "#ffffff",
+            "button_two_mp4_url": "",
+            "button_two_iframe_url": "",
+            "button_two_autoplay": false,
+            "button_two_controls": true,
+            "button_two_interaction": true,
+            "button_two_loop": false,
+            "button_three_text": "",
+            "button_three_route": "",
+            "button_three_product": "",
+            "button_three_product_two": "",
+            "button_three_action": "add_to_cart",
+            "button_three_size": "large",
+            "button_three_template": "primary",
+            "enable_button_three_styles": false,
+            "button_three_color": "#000000",
+            "button_three_text_color": "#ffffff",
+            "button_three_mp4_url": "",
+            "button_three_iframe_url": "",
+            "button_three_autoplay": false,
+            "button_three_controls": true,
+            "button_three_interaction": true,
+            "button_three_loop": false,
+            "custom_html": "",
+            "custom_html_pos": 6
+          }
+        }
+      },
+      "block_order": [
+        "item_block_kQGpyG"
+      ],
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "content_width_phone": 12,
+        "content_width_tablet": 12,
+        "content_width_desk": 12,
+        "item_widths_phone": "col-12",
+        "item_widths_tablet": "col-sm-4",
+        "item_widths_desk": "alt-col-xl-2",
+        "item_widths_max": "col-xxxl-2",
+        "section_margin": "mb-5"
+      }
+    }
+  },
+  "order": [
+    "page",
+    "banner_aWHn6X",
+    "text_ehQD3f",
+    "custom_item_rows_Y9mwfJ"
+  ]
+}
