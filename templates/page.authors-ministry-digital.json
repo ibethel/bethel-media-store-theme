@@ -992,7 +992,7 @@
         "enable_item_gap": true,
         "item_widths_phone": "col-12",
         "item_widths_tablet": "col-sm-4",
-        "item_widths_desk": "alt-col-xl-2",
+        "item_widths_desk": "col-xl-4",
         "item_widths_max": "col-xxxl-2",
         "enable_borders": false,
         "border_color": "",
