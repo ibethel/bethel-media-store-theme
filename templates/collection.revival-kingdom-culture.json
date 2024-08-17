@@ -23,6 +23,41 @@
     "collection_row_alt_2_1_8kE4dk": {
       "type": "collection-row-alt-2-1",
       "blocks": {
+        "section_title_9rRJ3N": {
+          "type": "section_title",
+          "settings": {
+            "title": "Revival Lifestyle Collection",
+            "enable_title_styles": false,
+            "title_color": "#fff",
+            "title_tag": "h1",
+            "font_family": "ff-ivypresto",
+            "font_size": "fs-1",
+            "font_size_tablet": "fs-sm-1",
+            "font_size_desk": "fs-xl-1",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "title_margin": "mb-3"
+          }
+        },
+        "section_message_RwPq4i": {
+          "type": "section_message",
+          "settings": {
+            "message": "A curation of resources to help you live the everyday revival lifestyle—where the nearness of God is the most dominating factor.",
+            "enable_message_styles": false,
+            "message_color": "#fff",
+            "font_family": "ff-roboto",
+            "font_size": "fs-6",
+            "font_style_italic": false,
+            "font_weight": "fw-default",
+            "text_alignment_desk": "text-xl-inherit",
+            "text_alignment_tablet": "text-sm-inherit",
+            "text_alignment_phone": "text-inherit",
+            "message_margin": "mb-3"
+          }
+        },
         "custom_item_3kiYaA": {
           "type": "custom_item",
           "settings": {
@@ -150,6 +185,8 @@
         }
       },
       "block_order": [
+        "section_title_9rRJ3N",
+        "section_message_RwPq4i",
         "custom_item_3kiYaA"
       ],
       "settings": {
