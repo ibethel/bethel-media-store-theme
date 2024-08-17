@@ -15,15 +15,16 @@
         "d19fbd8b-e3d8-44cc-8c67-db326a57836c": {
           "type": "banner_image",
           "settings": {
-            "banner_image_phone": "shopify:\/\/shop_images\/image-phone.png",
-            "banner_image_tablet": "shopify:\/\/shop_images\/image-tablet.png",
-            "banner_image_desk": "shopify:\/\/shop_images\/image-desk.png",
-            "banner_image_max": "shopify:\/\/shop_images\/image-max.png",
+            "banner_image_phone": "shopify:\/\/shop_images\/2024-BethelSummerCollection-MobileBanner.png",
+            "banner_image_tablet": "shopify:\/\/shop_images\/2024-BethelSummerCollection-WebBanner.png",
+            "banner_image_desk": "shopify:\/\/shop_images\/2024-BethelSummerCollection-WebBanner.png",
+            "banner_image_max": "shopify:\/\/shop_images\/2024-BethelSummerCollection-WebBanner.png",
             "img_link": ""
           }
         },
         "968a2379-0f7f-4005-b39e-17b12d6d4050": {
           "type": "banner_title",
+          "disabled": true,
           "settings": {
             "title": "Newly&nbsp;&nbsp;&nbsp;Added",
             "enable_title_styles": true,
@@ -44,6 +45,7 @@
         },
         "41f7076c-4880-4228-86e3-071ee5b552fa": {
           "type": "banner_message",
+          "disabled": true,
           "settings": {
             "message": "RESOURCES THAT FEEL LIKE A BREATH OF FRESH AIR",
             "enable_message_styles": true,
@@ -64,6 +66,7 @@
         },
         "074e2d1c-fc36-42b8-a7ec-6b065dfde1e8": {
           "type": "section_button",
+          "disabled": true,
           "settings": {
             "horiz_align_phone": "justify-content-inherit",
             "horiz_align_tablet": "justify-content-sm-inherit",
@@ -150,6 +153,8 @@
         "enable_contain": false,
         "enable_background": false,
         "background_color": "#ffffff",
+        "enable_overlay": false,
+        "overlay_opacity": 0.3,
         "content_width_phone": 12,
         "content_width_tablet": 12,
         "content_width_desk": 12,
@@ -207,6 +212,7 @@
         "enable_background": false,
         "background_color": "#ffffff",
         "section_collection": "new-releases",
+        "tag_filter": "",
         "enable_item_limit": true,
         "item_limit": 8,
         "item_widths_phone": "col-12",
