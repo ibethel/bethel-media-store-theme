@@ -269,6 +269,13 @@
         "type": "filter-menu-settings",
         "settings": {
         }
+      },
+      "password-page-header": {
+        "type": "password-page-header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logox2_47cdd922-fdb7-406f-b4f0-d3bd9841922e.png",
+          "logo_max_width": 90
+        }
       }
     },
     "content_for_index": [
