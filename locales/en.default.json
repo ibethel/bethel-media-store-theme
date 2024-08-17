@@ -240,7 +240,7 @@
     "name": "Products",
     "product_page": "Product page",
     "out_of_stock": {
-      "short_message": "Restocking"
+      "short_message": "Out of stock"
     },
     "read_more": "Read More",
     "reviews": "Reviews",
