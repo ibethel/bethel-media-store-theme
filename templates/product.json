@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "1664821249f2cd9388": {
@@ -5,7 +14,7 @@
       "settings": {
         "enable_contain": false,
         "enable_background": false,
-        "background_color": "#fff",
+        "background_color": "#ffffff",
         "bm_spacing_phone": "pb-3",
         "bm_spacing_tablet": "pb-sm-3",
         "bm_spacing_desk": "pb-xl-5"
@@ -61,7 +70,7 @@
           "settings": {
             "message": "Your order will ship within 1-2 business days. Domestic orders will be delivered within approximately 3-7 business days and international orders within approximately 1-4 weeks. Please note that delays can be experienced due to customs and\\\/or other variables and are beyond our control and influence. If you need to make a change to your order, please contact us as soon as possible - ideally within the first 8 hours - and we will do our best to assist you with your request. Please note that our offices are closed on weekends and all major holidays.",
             "enable_message_styles": false,
-            "message_color": "#fff",
+            "message_color": "#ffffff",
             "font_size": "fs-6",
             "font_style_italic": false,
             "font_weight": "fw-default",
@@ -75,7 +84,7 @@
           "settings": {
             "message": "Bulk pricing is available for select products by Bethel pastors and are per item and not mix and match. The bulk discount is 20% off the regular retail price for 20 or more copies and 30% off the regular retail price for 30 or more copies. We do not offer a bulk discount on licenses of products. For a quote or to place a bulk order, please email shop@bethel.com.\",",
             "enable_message_styles": false,
-            "message_color": "#fff",
+            "message_color": "#ffffff",
             "font_size": "fs-6",
             "font_style_italic": false,
             "font_weight": "fw-default",
@@ -110,6 +119,7 @@
         "enable_background": false,
         "background_color": "#ffffff",
         "space_between_img_txt": "5",
+        "disable_first_image_lazyload": true,
         "enable_thumbnail_gallery": true,
         "enable_image_zoom": true,
         "img_width": 6,
@@ -124,18 +134,39 @@
     },
     "1656023423432819e4": {
       "type": "limespot",
+      "disabled": true,
       "settings": {
+        "enable_hide_scroll": false,
         "enable_contain": false,
         "is_a_section": false,
         "enable_background": false,
         "background_color": "#ffffff",
         "section_margin": "mb-5"
       }
+    },
+    "product_recommendations_GDytpP": {
+      "type": "product-recommendations",
+      "settings": {
+        "enable_hide_scroll": false,
+        "enable_contain": false,
+        "is_a_section": false,
+        "enable_background": false,
+        "background_color": "#fff",
+        "item_limit": 4,
+        "item_widths_phone": "col-12",
+        "item_widths_tablet": "col-sm-4",
+        "item_widths_desk": "col-xl-3",
+        "item_widths_max": "col-xxxl-3",
+        "section_margin_phone": "pb-5",
+        "section_margin_tablet": "pb-sm-5",
+        "section_margin_desk": "pb-xl-5"
+      }
     }
   },
   "order": [
     "1664821249f2cd9388",
     "product_main",
-    "1656023423432819e4"
+    "1656023423432819e4",
+    "product_recommendations_GDytpP"
   ]
 }
