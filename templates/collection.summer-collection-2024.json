@@ -26,6 +26,10 @@
         "banner_image_nkRep4": {
           "type": "banner_image",
           "settings": {
+            "banner_image_phone": "shopify:\/\/shop_images\/2024-BethelSummerCollection-StoreHeader-2.jpg",
+            "banner_image_tablet": "shopify:\/\/shop_images\/2024-BethelSummerCollection-StoreHeader-2.jpg",
+            "banner_image_desk": "shopify:\/\/shop_images\/2024-BethelSummerCollection-StoreHeader-2.jpg",
+            "banner_image_max": "shopify:\/\/shop_images\/2024-BethelSummerCollection-StoreHeader-2.jpg",
             "img_link": ""
           }
         }
