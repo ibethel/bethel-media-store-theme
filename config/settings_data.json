@@ -113,7 +113,7 @@
               "background_color": "#000000",
               "link": "",
               "message": "Welcome! Our new site is under construction. For any questions or customer service issues, please email shop@bethel.com. Thank you!",
-              "enable_message_styles": false,
+              "enable_message_styles": true,
               "message_color": "#ffffff",
               "font_family": "ff-roboto",
               "font_size": "6",
