@@ -208,7 +208,7 @@
         "enable_background": false,
         "background_color": "#ffffff",
         "section_collection": "prophetic-conference-1",
-        "tag_filter": "",
+        "tag_filter": "type-digital",
         "enable_item_limit": true,
         "item_limit": 8,
         "item_widths_phone": "col-12",
