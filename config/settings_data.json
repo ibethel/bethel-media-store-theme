@@ -110,7 +110,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "background_color": "#000000",
+              "background_color": "#bc3033",
               "link": "",
               "message": "Welcome! Our new site is under construction. For any questions or customer service issues, please email shop@bethel.com. Thank you!",
               "enable_message_styles": true,
@@ -122,9 +122,9 @@
               "font_style_italic": false,
               "font_weight": "default",
               "line_height": "lh-default",
-              "text_alignment_desk": "text-xl-inherit",
-              "text_alignment_tablet": "text-sm-inherit",
-              "text_alignment_phone": "text-inherit"
+              "text_alignment_desk": "text-xl-center",
+              "text_alignment_tablet": "text-sm-center",
+              "text_alignment_phone": "text-center"
             }
           }
         },
