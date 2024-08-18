@@ -508,7 +508,6 @@
     },
     "title_divider_zDzeJL": {
       "type": "title-divider",
-      "disabled": true,
       "settings": {
         "enable_hide_scroll": false,
         "enable_contain": false,
@@ -538,6 +537,7 @@
     },
     "collection": {
       "type": "collection",
+      "disabled": true,
       "settings": {
         "enable_contain": true,
         "page_item_limit": 36,
@@ -558,7 +558,6 @@
     },
     "offset_collection_row_zHNTgU": {
       "type": "offset-collection-row",
-      "disabled": true,
       "settings": {
         "enable_hide_scroll": false,
         "enable_contain": false,
@@ -566,7 +565,7 @@
         "background_color": "#ffffff",
         "page_item_limit": 36,
         "hide_after_first_page": false,
-        "enable_sorting": false,
+        "enable_sorting": true,
         "enable_offset": false,
         "pagination_type": "numerical",
         "item_widths_phone": "col-6",
