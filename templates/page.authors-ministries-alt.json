@@ -313,6 +313,7 @@
         },
         "section_title_iXrryw": {
           "type": "section_title",
+          "disabled": true,
           "settings": {
             "title": "Changed",
             "title_link": "https:\/\/shop.bethel.com\/collections\/changed\/Book",
