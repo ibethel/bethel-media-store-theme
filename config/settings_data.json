@@ -112,7 +112,7 @@
             "settings": {
               "background_color": "#000000",
               "link": "",
-              "message": "",
+              "message": "Welcome! Our new site is under construction. For any questions or customer service issues, please email shop@bethel.com. Thank you!",
               "enable_message_styles": false,
               "message_color": "#ffffff",
               "font_family": "ff-roboto",
@@ -134,7 +134,7 @@
         "settings": {
           "enable": true,
           "section_margin": "mb-0",
-          "slider_scroll": "autoscroll",
+          "slider_scroll": "none",
           "speed": 2,
           "interval": 5,
           "enable_rewind": true,
