@@ -537,7 +537,6 @@
     },
     "collection": {
       "type": "collection",
-      "disabled": true,
       "settings": {
         "enable_contain": true,
         "page_item_limit": 36,
@@ -558,6 +557,7 @@
     },
     "offset_collection_row_zHNTgU": {
       "type": "offset-collection-row",
+      "disabled": true,
       "settings": {
         "enable_hide_scroll": false,
         "enable_contain": false,
