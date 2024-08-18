@@ -148,7 +148,7 @@
       "type": "product-recommendations",
       "settings": {
         "enable_hide_scroll": false,
-        "enable_contain": false,
+        "enable_contain": true,
         "is_a_section": false,
         "enable_background": false,
         "background_color": "#fff",
