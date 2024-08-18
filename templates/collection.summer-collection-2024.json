@@ -20,6 +20,18 @@
         "bm_spacing_desk": "pb-xl-4"
       }
     },
+    "165903208451bd1213": {
+      "type": "breadcrumbs",
+      "settings": {
+        "enable_hide_scroll": false,
+        "section_contain": "container-none",
+        "enable_background": false,
+        "background_color": "#ffffff",
+        "section_margin_phone": "pb-3",
+        "section_margin_tablet": "pb-sm-3",
+        "section_margin_desk": "pb-xl-4"
+      }
+    },
     "banner_hWXLrK": {
       "type": "banner",
       "blocks": {
@@ -63,18 +75,6 @@
         "banner_html": ""
       }
     },
-    "165903208451bd1213": {
-      "type": "breadcrumbs",
-      "settings": {
-        "enable_hide_scroll": false,
-        "section_contain": "container-none",
-        "enable_background": false,
-        "background_color": "#ffffff",
-        "section_margin_phone": "pb-3",
-        "section_margin_tablet": "pb-sm-3",
-        "section_margin_desk": "pb-xl-4"
-      }
-    },
     "collection": {
       "type": "collection",
       "settings": {
@@ -98,8 +98,8 @@
   },
   "order": [
     "1659032124f352ae46",
-    "banner_hWXLrK",
     "165903208451bd1213",
+    "banner_hWXLrK",
     "collection"
   ]
 }
