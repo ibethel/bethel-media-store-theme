@@ -341,6 +341,7 @@
         "ec8f19d6-ffa0-4f04-a149-184f04e50b92",
         "fd539645-0a4d-48c0-9444-6fe3da41747e"
       ],
+      "disabled": true,
       "settings": {
         "enable_hide_scroll": false,
         "enable_full_width": false,
