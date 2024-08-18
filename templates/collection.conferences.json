@@ -508,6 +508,7 @@
     },
     "title_divider_zDzeJL": {
       "type": "title-divider",
+      "disabled": true,
       "settings": {
         "enable_hide_scroll": false,
         "enable_contain": false,
