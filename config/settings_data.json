@@ -305,7 +305,7 @@
     "custom_css": [
       "#sub-mnu-one-ttl-3260cdea5a0bed4d9882938893754fc86c1be1cb a {color: #ccc !important;}",
       "a[title=\"DIGITAL\"] {color: #ccc !important;}",
-      "#mobile-sub-menu-3260cdea5a0bed4d9882938893754fc86c1be1cb {color: #ccc !important;}"
+      "#mobile-sub-menu-3260cdea5a0bed4d9882938893754fc86c1be1cb a {color: #ccc !important;}"
     ]
   }
 }
