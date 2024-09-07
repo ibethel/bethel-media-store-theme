@@ -15,10 +15,10 @@
         "d19fbd8b-e3d8-44cc-8c67-db326a57836c": {
           "type": "banner_image",
           "settings": {
-            "banner_image_phone": "shopify:\/\/shop_images\/2024-BethelSummerCollection-MobileBanner.png",
-            "banner_image_tablet": "shopify:\/\/shop_images\/2024-BethelSummerCollection-WebBanner.png",
-            "banner_image_desk": "shopify:\/\/shop_images\/2024-BethelSummerCollection-WebBanner.png",
-            "banner_image_max": "shopify:\/\/shop_images\/2024-BethelSummerCollection-WebBanner.png",
+            "banner_image_phone": "shopify:\/\/shop_images\/2024-BethelStore-HomepageBanner_1200x1200_b5c09460-03ee-4de7-92ae-642549c9e83e.png",
+            "banner_image_tablet": "shopify:\/\/shop_images\/2024-BethelStore-HomepageBanner_2040x800_a08995d2-768a-4f81-8089-55c804929f97.png",
+            "banner_image_desk": "shopify:\/\/shop_images\/2024-BethelStore-NewBethelCollection-HomepageBanner2_png.png",
+            "banner_image_max": "shopify:\/\/shop_images\/2024-BethelStore-HomepageBanner_3024x1200_564a3604-5c0a-4b41-a4b2-f31807c7c703.png",
             "img_link": "shopify:\/\/collections\/summer-collection-2024"
           }
         },
