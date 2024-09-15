@@ -3,8 +3,10 @@ import { addToCart } from "../../utilities/bm-api";
 import { bmApiObj } from "../../utilities/bm-api-obj";
 import { updateUrlParams } from "../../helpers/helpers";
 import { atcModalHtml, atcModalItemsHtml, messageHtml } from "./atc-modal-html";
+import { iconCheckHtml, iconPlusHtml } from "../../helpers/icon";
 import { klaviyoAtc } from "../third-party-apps/klaviyo/klaviyo-atc";
 import { quickAtc } from "./quick-add";
+import { changeAtcBtnText } from "../../helpers/helpers";
 import MicroModal from "micromodal";
 
 const Atc = (atcSelector, atcButtons = [], externalPrdData) => {
@@ -12,12 +14,32 @@ const Atc = (atcSelector, atcButtons = [], externalPrdData) => {
   const variantChangeEvent = new Event("variantchanged", { bubbles: true });
 
   const changeBtnText = (btn, text) => {
+    const btnIsQvOrQa =
+      btn.classList.contains("bm-btn--quick-add") || btn.classList.contains("bm-btn--quick-view");
+    const adding = !isEmpty(bmApi) ? bmApi.atc.btn.text.adding.toLowerCase() : "adding";
+    const added = !isEmpty(bmApi) ? bmApi.atc.btn.text.added.toLowerCase() : "added";
+    const checkIcon = iconCheckHtml("bm-icon__size--25 bm-icon bm-icon__icon-check d-block");
+    const plusIcon = iconPlusHtml("bm-icon__size--25 bm-icon bm-icon__icon-plus d-block");
+    const textIsAdding = text.toLowerCase().includes(adding);
+    const textIsAdded = text.toLowerCase().includes(added);
     const btnContent = btn.querySelector(".bm-btn__content");
+    const spinner =
+      "<div class='d-flex align-items-center justify-content-center' style='height: 25px;width: 25px;'><span class='spinning-loader spinning-loader--brown spinning-loader--small' role='status'><span class='visually-hidden'>Loading..</span></span></div>";
+
+    const qvQaContent = (textIsAdding && spinner) || (textIsAdded && checkIcon) || plusIcon;
 
     if (btnContent) {
-      btnContent.textContent = text && text.trim();
+      if (btnIsQvOrQa) {
+        btnContent.innerHTML = qvQaContent;
+      } else {
+        btnContent.textContent = text && text.trim();
+      }
     } else {
-      btn && (btn.textContent = text && text.trim());
+      if (btnIsQvOrQa) {
+        btn.innerHTML = qvQaContent;
+      } else {
+        btn && (btn.textContent = text && text.trim());
+      }
     }
   };
 

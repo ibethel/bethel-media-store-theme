@@ -19,6 +19,11 @@
     width: $iconSize;
   }
 
+  &--25 {
+    height: $iconSize + 5;
+    width: $iconSize + 5;
+  }
+
   &--medium {
     height: $iconSizeMedium;
     width: $iconSizeMedium;
