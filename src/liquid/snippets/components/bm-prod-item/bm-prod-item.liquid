@@ -59,8 +59,7 @@
 
     {%- endif -%}
 
-    <a class="bm-prod-item__link d-block text-decoration-none" href="{{ bmpi_url }}" title="{{ bmpi_title }}" aria-label="{{ bmpi_title }}">
-      <span class="visually-hidden">{{ bmpi_title }}</span>
+
 
       {%- if bmpi_img != blank or bmpi_img_url != blank -%}
 
@@ -79,9 +78,9 @@
         {%- endif -%}
 
         <div
-          class="bm-prod-item__image mb-3
+          class="bm-prod-item__image position-relative mb-3
 
-            {%- if bmpi_img_contain %} position-relative bm-img__contain{%- endif -%}"
+            {%- if bmpi_img_contain %} bm-img__contain{%- endif -%}"
         >
 
           {%- render 'bm-image'
@@ -95,6 +94,8 @@
             bm_img_width: bmpi_img.width,
             bm_img_height: bmpi_img.height,
             bm_img_srcset: bm_img_srcset -%}
+
+          {%- if settings.quick_view != "disabled" and bmpi_product.available %}{% render 'bm-quick-view', qv_product: bmpi_product %}{% endif -%}
 
         </div>
       {%- endif -%}
@@ -146,8 +147,6 @@
 
 
       </div>
-    </a>
-
-    {%- if settings.quick_view != "disabled" %}{% render 'bm-quick-view', qv_product: bmpi_product %}{% endif -%}
+    <a class="bm-prod-item__link d-block text-decoration-none position-absolute top-0 start-0 end-0 bottom-0 z-level-one" href="{{ bmpi_url }}" title="{{ bmpi_title }}" aria-label="{{ bmpi_title }}"><span class="visually-hidden">{{ bmpi_title }}</span></a>
   </div>
 </li>

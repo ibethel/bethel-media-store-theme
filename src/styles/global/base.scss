@@ -71,6 +71,17 @@ body {
   height: 24px;
   width: 24px;
 
+  &--brown {
+    border-color: $bmBrown;
+    border-bottom-color: transparent;
+  }
+
+  &--small {
+    border-width: 2px;
+    height: 16px;
+    width: 16px;
+  }
+
   &--medium {
     border-width: 5px;
     height: 48px;
@@ -91,5 +102,14 @@ body {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.bm-btn--quick-view,
+.bm-btn--quick-add {
+  min-height: unset;
+
+  &--i {
+    min-height: unset !important;
   }
 }

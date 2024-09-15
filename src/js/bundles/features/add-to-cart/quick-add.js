@@ -1,5 +1,6 @@
 import { formatMoney } from "../../helpers/helpers";
 import { iconCloseHtml } from "../../helpers/icon";
+import { changeBtnText } from "./atc";
 
 export const quickAddHtml = variants => {
   const container = document.createElement("div");
@@ -104,7 +105,7 @@ export const quickAtc = async (btn, originalText, callback) => {
       quickAddModal.remove();
       btn.disabled = false;
 
-      if (changeText !== false) btn.textContent = originalText;
+      if (changeText !== false) changeBtnText(btn, originalText);
     }, 200);
   };
 
