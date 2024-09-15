@@ -22,18 +22,38 @@
   {%- endif -%}
 {%- endcapture -%}
 
-<div class="pt-2">
+<div class="bm-quick-view pt-2 position-absolute bottom-0 end-0 z-level-2 w-100">
 
   {%- assign quick_view = settings.quick_view -%}
 
   {%- if quick_view == "quick_view" -%}
-    {%- assign button_content = "features.atc.quick_view" | t -%}
-    {%- assign button_classes = "col-12 bm-btn--quick-view" -%}
+    {%- comment %} {%- assign button_content = "features.atc.quick_view" | t -%} {% endcomment -%}
+
+    {%- capture button_content -%}
+
+      {%- render 'bm-icon-template',
+        bm_icon: "icon-plus",
+        bm_icon_classes: "d-block",
+        icon_classes: "d-block bm-icon__size--25" -%}
+
+    {%- endcapture -%}
+
+    {%- assign button_classes = "bm-btn--quick-view bm-btn--quick-view--i rounded-circle p-1 me-1 mb-1" -%}
   {%- endif -%}
 
   {%- if quick_view == "quick_add" -%}
-    {%- assign button_content = "features.atc.start" | t -%}
-    {%- assign button_classes = "atc__btn col-12 bm-btn--quick-add" -%}
+    {%- comment %} {%- assign button_content = "features.atc.start" | t -%} {% endcomment -%}
+
+    {%- capture button_content -%}
+
+      {%- render 'bm-icon-template',
+        bm_icon: "icon-plus",
+        bm_icon_classes: "d-block",
+        icon_classes: "d-block bm-icon__size--25" -%}
+
+    {%- endcapture -%}
+
+    {%- assign button_classes = "atc__btn bm-btn--quick-add bm-btn--quick-add--i rounded-circle p-1 me-1 mb-1 ms-auto" -%}
   {%- endif -%}
 
   {%- render 'bm-btn-template',
@@ -43,7 +63,7 @@
     button_size: "medium",
     button_type: "button",
     button_title: "Add to cart",
-    button_template: "primary",
+    button_template: "secondary",
     button_radius: "rounded-5" -%}
 
 </div>
