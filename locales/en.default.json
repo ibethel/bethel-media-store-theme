@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "404": {
     "name": "404",
@@ -39,9 +48,9 @@
     "address1": "Address 1",
     "address2": "Address 2",
     "city": "City",
-    "country": "Country/region",
+    "country": "Country\/region",
     "province": "Province",
-    "zip": "Postal/ZIP code",
+    "zip": "Postal\/ZIP code",
     "phone": "Phone",
     "set_default": "Set as default address",
     "add": "Add address",
@@ -172,7 +181,7 @@
   "general": {
     "cancel": "Cancel",
     "continue": "Continue",
-    "continue_browsing_html": "Continue browsing <a class=\"bm-link text-black opacity-hover\" href=\"/collections/all\">here</a>.",
+    "continue_browsing_html": "Continue browsing <a class=\"bm-link text-black opacity-hover\" href=\"\/collections\/all\">here<\/a>.",
     "email": "Email",
     "error": "Error",
     "logout": "Logout",
@@ -186,7 +195,8 @@
     "search": {
       "name": "Search"
     },
-    "section_contain": {},
+    "section_contain": {
+    },
     "social": {
       "alt_text": {
         "share_on_facebook": "Share on Facebook",
@@ -207,14 +217,14 @@
     "submit": "Submit"
   },
   "localization": {
-    "country_label": "Country/region",
+    "country_label": "Country\/region",
     "language_label": "Language",
     "update_language": "Update language",
-    "update_country": "Update country/region"
+    "update_country": "Update country\/region"
   },
   "password_page": {
     "enter_password": "Enter password",
-    "help_html": "Already have an order? Please contact us via email at <a class=\"bm-link text-black opacity-hover\" href=\"mailto:shop@bethel.com\">shop@bethel.com</a>.",
+    "help_html": "Already have an order? Please contact us via email at <a class=\"bm-link text-black opacity-hover\" href=\"mailto:shop@bethel.com\">shop@bethel.com<\/a>.",
     "message": "Enter your email below to be notified when we launch.",
     "password_message": "Enter the store password to access the store.",
     "store_password": "Store password",
@@ -252,12 +262,12 @@
       "title": "Volume Pricing",
       "note": "Volume pricing available",
       "minimum": "{{ quantity }}+",
-      "price_at_each": "at {{ price }}/ea",
+      "price_at_each": "at {{ price }}\/ea",
       "price_range": "{{ minimum }} - {{ maximum }}"
     }
   },
   "wish_list": {
-    "no_customer_html": "You must login to make a wish list.<br /> Please login <a class='bm-link opacity-hover text-black' href='/account/login'>here",
+    "no_customer_html": "You must login to make a wish list.<br \/> Please login <a class='bm-link opacity-hover text-black' href='\/account\/login'>here",
     "title": "Wish list"
   }
 }
