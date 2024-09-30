@@ -1,7 +1,17 @@
-// .bm-prod-item {
-//   left: $gutterLarge;
-//   top: $gutterLarge;
-// }
+.bm-prod-item {
+  @include media-query($min, $phone + 1) {
+    .bm-quick-view {
+      opacity: 0;
+      transition: opacity $animationTransition ease;
+    }
+  }
+
+  &:hover {
+    .bm-quick-view {
+      opacity: 1;
+    }
+  }
+}
 
 .bm-prod-item__details {
   color: $baseFontColor;
