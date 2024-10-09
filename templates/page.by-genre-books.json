@@ -1143,7 +1143,7 @@
             "item_url": "shopify://collections/women",
             "banner_img": "shopify://shop_images/2024-BethelStore-WomenThumbnails5.jpg",
             "title": "Women",
-            "enable_title_styles": false,
+            "enable_title_styles": true,
             "title_color": "#fff",
             "title_tag": "text",
             "font_family": "ff-roboto",
