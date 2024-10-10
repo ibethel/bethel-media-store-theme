@@ -172,7 +172,7 @@
   "general": {
     "cancel": "Cancel",
     "continue": "Continue",
-    "continue_browsing_html": "Continue browsing <a class=\"bm-link text-black opacity-hover\" href=\"/collections/all\">here</a>.",
+    "continue_browsing_html": "Continue browsing <a class=\"bm-link text-black opacity-hover\" href=\"/\">here</a>.",
     "email": "Email",
     "error": "Error",
     "logout": "Logout",

@@ -1,0 +1,84 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+
+.collection-filter__button {
+  border: 1px solid $grey20;
+  border-radius: $buttonBorderRadiusSmall;
+  min-width: 125px;
+  padding-bottom: $gutterMediumSmall;
+  padding-top: $gutterMediumSmall;
+
+  @include media-query($max, $phone) {
+    border-radius: unset;
+    border-right: none;
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+.bm-collection-filter {
+  @include media-query($max, $desktop) {
+    left: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    position: absolute;
+    right: 0 !important;
+    top: 0 !important;
+    z-index: $zLevelSeven;
+  }
+
+  .bm-collection-filter__container {
+    background-color: $white;
+    height: 100%;
+    overflow-y: auto;
+
+    @include media-query(null, $phone, $desktop) {
+      width: 50%;
+    }
+  }
+
+  .bm-overlay {
+    width: 50%;
+    z-index: $zLevelSix;
+  }
+}
+
+// Power Tools Filters
+
+.bm-collection {
+  .bm-collection-filter {
+    height: 100%;
+
+    .filter-group {
+      border-bottom: 1px solid $grey20;
+
+      .filter-clear {
+        bottom: $gutterSmaller;
+        left: 0;
+        padding: 0;
+        right: unset;
+        top: unset;
+      }
+
+      h4 {
+        font-weight: $regularFontWeight;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-bottom: $gutterMedium;
+        padding-top: $gutterMedium;
+        position: relative;
+
+        &::after {
+          color: $black;
+          line-height: 16px;
+          margin-right: 0;
+          top: unset;
+        }
+      }
+
+      .scroll-content {
+        padding-bottom: $gutterMedium;
+      }
+    }
+  }
+}

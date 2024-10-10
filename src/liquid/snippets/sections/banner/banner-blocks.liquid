@@ -24,6 +24,10 @@
 
         {%- when "banner_title" -%}
           {%- assign is_section_title = block.settings.is_section_title -%}
+          {%- assign enable_page_title = block.settings.enable_page_title -%}
+          {%- assign title_content = block.settings.title -%}
+
+          {%- if enable_page_title %}{% assign title_content = page_title %}{% endif -%}
 
           {%- if is_section_title -%}
             {%- assign title_labelledby = aria_labelledby -%}
@@ -35,7 +39,7 @@
             title_alignment_tablet: block.settings.text_alignment_tablet,
             title_alignment_phone: block.settings.text_alignment_phone,
             title_color: block.settings.title_color,
-            title_content: block.settings.title,
+            title_content: title_content,
             title_font: block.settings.font_family,
             title_is_page_title: block.settings.is_page_title,
             title_italic: block.settings.font_style_italic,
@@ -66,6 +70,10 @@
             sub_title_weight: block.settings.font_weight -%}
 
         {%- when "banner_message" -%}
+          {%- assign enable_page_description = block.settings.enable_page_description -%}
+          {%- assign message_content = block.settings.message -%}
+
+          {%- if enable_page_description %}{% assign message_content = page_description %}{% endif -%}
 
           {%- render 'bm-message-block',
             enable_message_styles: block.settings.enable_message_styles,
@@ -73,7 +81,7 @@
             message_alignment_tablet: block.settings.text_alignment_tablet,
             message_alignment_phone: block.settings.text_alignment_phone,
             message_color: block.settings.message_color,
-            message_content: block.settings.message,
+            message_content: message_content,
             message_italic: block.settings.font_style_italic,
             message_font: block.settings.font_family,
             message_line_height: block.settings.line_height,
