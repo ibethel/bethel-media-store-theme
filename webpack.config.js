@@ -8,9 +8,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackShellPluginNext = require("webpack-shell-plugin-next");
 const mode = process.env.NODE_ENV === DEVELOPMENT ? DEVELOPMENT : PRODUCTION;
 const envIsDevelopment = mode === DEVELOPMENT;
-const root = envIsDevelopment ? "dev" : "";
+const isWatching = process.env.DEV_STATUS === "watching";
+const buildScripts = isWatching
+  ? ["echo Webpack done", "theme watch", "theme open"]
+  : ["echo Webpack done"];
+const root = envIsDevelopment ? "dev" : "dist";
 const stats = envIsDevelopment ? "errors-warnings" : { children: false };
-const shopifyCommand = `shopify theme dev -s=${process.env.SHOPIFY_FLAG_STORE} -t=${process.env.SHOPIFY_CLI_THEME_ID} --password=${process.env.SHOPIFY_CLI_THEME_TOKEN} --live-reload=full-page --path=dev`;
+// const shopifyCommand = `shopify theme dev -s=${process.env.SHOPIFY_FLAG_STORE} -t=${process.env.SHOPIFY_CLI_THEME_ID} --password=${process.env.SHOPIFY_CLI_THEME_TOKEN} --live-reload=full-page --path=dev`;
+// const lastCommand = envIsDevelopment ? "" : "theme open";
 const files = glob.sync("./src/js/bundles/**/*.js");
 const entries = files.reduce((obj, route) => {
   // eslint-disable-next-line no-useless-escape
@@ -19,6 +24,8 @@ const entries = files.reduce((obj, route) => {
   obj[key] = route;
   return obj;
 }, {});
+
+console.log("DEV_STATUS:", process.env.DEV_STATUS);
 
 module.exports = {
   devtool: false,
@@ -122,7 +129,7 @@ if (envIsDevelopment) {
         scripts: ["echo Builing webpack"],
       },
       onBuildEnd: {
-        scripts: ["echo Webpack done", shopifyCommand],
+        scripts: buildScripts,
         parallel: true,
       },
     })

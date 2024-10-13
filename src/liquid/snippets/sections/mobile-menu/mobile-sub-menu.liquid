@@ -82,10 +82,14 @@
             icon_classes: "d-block bm-icon__size--small" -%}
         {%- endcapture -%}
 
-        {%- render 'bm-btn',
+        {% comment %} {%- render 'bm-btn',
           button_attributes: button_attributes,
           button_classes: "bm-btn--no-styles p-3 pop-over-btn closed-pop-over"
-          button_content: button_content -%}
+          button_content: button_content -%} {% endcomment %}
+
+          <button class="d-flex align-items-center justify-content-end bm-btn--no-styles p-3 w-50 pop-over-btn closed-pop-over" {{ button_attributes }}>
+            {{- button_content -}}
+          </button>
 
         </span>
 
