@@ -4,7 +4,7 @@
   {%- endif -%}
 
   <button
-    class="bm-btn d-flex align-items-center justify-content-center {{ button_radius -}}
+    class="bm-btn d-flex  {{ button_radius -}}
 
       {%- if button_font_size != blank or
         button_font_size_tablet != blank or
@@ -19,7 +19,7 @@
       {%- if button_classes != blank -%}
         {{- button_classes | prepend: ' ' -}}
         {%- else %} bm-btn--regular mb-0 p-1
-      {%- endif -%}"
+      {%- endif %} align-items-center justify-content-center"
 
     type="{%- if button_type != blank -%}
               {{- button_type -}}

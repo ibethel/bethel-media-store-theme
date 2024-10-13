@@ -17,18 +17,20 @@
       collection_filter_id: collection_filter_id -%}
 
     <div class="col-12 col-xl-10">
-      <header class="collection-header">
+      {%- if enable_collection_title -%}
+        <header class="collection-header">
 
-        {%- render 'bm-title-block',
-          title_alignment_phone: "text-start",
-          title_alignment_tablet: "text-sm-center",
-          title_content: collection_title,
-          title_font: "ff-ivypresto",
-          title_margin: "mb-3 mb-sm-0",
-          title_size: "fs-1-3",
-          title_tag: "h1" -%}
+          {%- render 'bm-title-block',
+            title_alignment_phone: "text-start",
+            title_alignment_tablet: "text-sm-center",
+            title_content: collection_title,
+            title_font: "ff-ivypresto",
+            title_margin: "mb-3 mb-sm-0",
+            title_size: "fs-1-3",
+            title_tag: "h1" -%}
 
-      </header>
+        </header>
+      {%- endif -%}
 
       <section
         class="collection-rows {{ section_margin -}}"

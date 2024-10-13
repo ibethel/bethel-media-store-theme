@@ -723,6 +723,10 @@
         "label": "Message",
         "message_styles": "Message styles",
         "settings": {
+          "enable_page_description": {
+            "label": "Enable page description",
+            "info": "Use page description if there is one."
+          },
           "enable_message_styles": "Enable message styles",
           "message_alignment_desk": "Message alignment desktop",
           "message_alignment_phone": "Message alignment phone",
@@ -931,6 +935,10 @@
         "title_styles": "Title styles",
         "settings": {
           "enable_title_styles": "Enable title styles",
+          "enable_page_title": {
+            "label": "Enable page title",
+            "info": "Use page title if there is one. There must be at least on h1 title on the page for SEO purposes."
+          },
           "is_page_title": {
             "label": "Is Whole Page Title",
             "info": "This should be true for only one title. This is for accessibility."
@@ -1075,6 +1083,10 @@
     },
     "collection": {
       "settings": {
+        "enable_collection_title": {
+          "label": "Enable collection title",
+          "info": "Note: You should have at least one h1 title somewhere on the page for SEO purposes."
+        },
         "offset": {
           "label": "Offset",
           "info": "Choose how many products to offset in this collection row"

@@ -6,5 +6,10 @@
 /dev
 
 # misc
+dist
+config.yml
+node_modules
+src/liquid/templates/*.json
+src/locales/*.json
 .DS_Store
 .history

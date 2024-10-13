@@ -1,8 +1,0 @@
-{
-  "sections": {
-    "placeholder_page": {
-      "type": "placeholder-page"
-    }
-  },
-  "order": ["placeholder_page"]
-}

@@ -1,5 +1,6 @@
 {%- render 'collection',
   compare_price_color: section.settings.compare_price_color,
+  enable_collection_title: section.settings.enable_collection_title,
   enable_contain: section.settings.enable_contain,
   enable_styles: section.settings.enable_styles,
   font_size: section.settings.font_size,
@@ -34,6 +35,13 @@
       {
         "type": "header",
         "content": "t:settings_schema.collection.name"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_collection_title",
+        "label": "t:sections.collection.settings.enable_collection_title.label",
+        "default": true,
+        "info": "t:sections.collection.settings.enable_collection_title.info"
       },
       {
         "type": "range",

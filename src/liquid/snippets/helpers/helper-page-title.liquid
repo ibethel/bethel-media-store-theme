@@ -1,0 +1,19 @@
+{%- liquid
+  if template.name == "index"
+    assign current_page_title = shop.name
+    elsif template.name == "article"
+      assign current_page_title = article.title
+    elsif template.name == "blog"
+      assign current_page_title = blog.title
+    elsif template.name == "collection"
+      assign current_page_title = collection.title
+    elsif template.name == "page"
+      assign current_page_title = page.title
+    elsif template.name == "product"
+      assign current_page_title = product.title
+    else
+      assign current_page_title = shop.name
+  endif
+-%}
+
+{{- current_page_title | escape -}}
