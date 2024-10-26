@@ -6,35 +6,38 @@
   class="bm-header border-bottom border-1 position-relative"
   style="background-color: {{- background_color -}};"
 >
-  <div class="bm-header__container d-flex align-items-center px-2 px-xl-4">
-    <nav class="d-flex flex-grow-1">
+  <div class="bm-header__container px-2 px-xl-4">
+    <nav>
 
-      {%- render 'header-hamburger',
-        text_color: text_color -%}
+      {%- render 'header-logo' main_logo: main_logo.first, snippet_classes: "d-none d-xl-flex align-items-center justify-content-center", link_classes: "opacity-hover px-2 pt-4 pb-0 d-block text-decoration-none" -%}
 
-      {%- render 'header-main',
-        enable_nav_level_two: enable_nav_level_two,
-        enable_nav_level_three: enable_nav_level_three,
-        main_nav: nav_list_main.first.settings.main_nav,
-        text_color: text_color -%}
+      <div class="d-flex align-items-center">
 
-      {%- render 'header-logo',
-        main_logo: main_logo.first -%}
+        {%- render 'header-hamburger' text_color: text_color -%}
 
-      {%- render 'management-menu',
-        account_link_vis: nav_list_manage.first.settings.account_link_vis,
-        cart_link_vis: nav_list_manage.first.settings.cart_link_vis,
-        enable_wish_star: nav_list_manage.first.settings.enable_wish_star,
-        managment_menu_classes: "management-menu--desk d-flex align-items-center justify-content-end col-5",
-        managment_menu_desk: true,
-        management_menu_link_classes: "p-2",
-        orientation: "horizonal",
-        search_is_form: nav_list_manage.first.settings.search_is_form,
-        search_link_vis: nav_list_manage.first.settings.search_link_vis,
-        search_width: nav_list_manage.first.settings.search_width,
-        star_link_vis: nav_list_manage.first.settings.star_link_vis,
-        text_color: text_color -%}
+        {%- render 'header-logo' main_logo: main_logo.first, snippet_classes: "d-flex d-xl-none align-items-center justify-content-center flex-grow-1", link_classes: "opacity-hover p-2 d-block text-decoration-none" -%}
 
+        {%- render 'header-main',
+          enable_nav_level_two: enable_nav_level_two,
+          enable_nav_level_three: enable_nav_level_three,
+          main_nav: nav_list_main.first.settings.main_nav,
+          text_color: text_color -%}
+
+        {%- render 'management-menu',
+          account_link_vis: nav_list_manage.first.settings.account_link_vis,
+          cart_link_vis: nav_list_manage.first.settings.cart_link_vis,
+          enable_wish_star: nav_list_manage.first.settings.enable_wish_star,
+          managment_menu_classes: "management-menu--desk d-flex align-items-center justify-content-end flex-shrink-1",
+          managment_menu_desk: true,
+          management_menu_link_classes: "p-2",
+          orientation: "horizonal",
+          search_is_form: nav_list_manage.first.settings.search_is_form,
+          search_link_vis: nav_list_manage.first.settings.search_link_vis,
+          search_width: nav_list_manage.first.settings.search_width,
+          star_link_vis: nav_list_manage.first.settings.star_link_vis,
+          text_color: text_color -%}
+
+      </div>
     </nav>
   </div>
 </header>
