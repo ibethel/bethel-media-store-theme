@@ -1,5 +1,7 @@
 # Bethel Store - Theme - Shopify 2.0
 
+- Developer: rob.berryhill@bethel.com
+
 ## 🖥 System Requirements
 
 - [Node](https://nodejs.org/en/) (v16.14.0)
@@ -22,81 +24,41 @@
 1. `git clone` the repo
 2. `nvm use` && `nvm install`
 3. `npm i` to install all node modules.
-4. Create a `.env` in the root directory.
-5. Your `.env` file should look like this: [Shopify CLI Environment](#shopify-cli-environment)
-6. Run `npm start` to run the app.
-
-#### Note:
-
-- You might need to run push to your dev theme: [Scripts](#scripts)
-  - If your theme inside Shopify is really outdated.
-  - Or if you are setting up a new theme in shopify.
+4. Create a `config.yml` in the root directory.
+5. Your `config.yml` file should look similar to this: [Config file](https://shopify.dev/docs/storefronts/themes/tools/theme-kit/configuration-reference#config-file)
+6. Make sure to setup your `config.yml` to accomodate a development, staging and production theme on Shopify.
+7. Run `npm start` to run the app.
 
 ## ⚙️ Configuration
 
+- Your tech lead can give you the information you need for the staging and production themes for your `config.yml`
+- You must duplicate the production theme to create your development theme.
+  - Rename your theme to `Dev - <Your Name>`
+  - To get your theme id:
+    - Go to your theme in Shopify > Click `...` > Click `Edit code`
+    - Your theme id is at the end of the url in the browser.
+- Your tech lead will give you your password token for each environment in the `config.yml`
+
 ### Workflow setup
-
-**Store variable**
-
-- When logged into the Shopify admin look at the url to find your myshopify address.
-- Should look similar to `some-store-name.myshopify.com`
-- Assign variable `SHOPIFY_FLAG_STORE` in your `.env` to that myshopify address.
-
-**Development theme**
-
-- If you do not already have a development theme specific to you then you need to create one.
-- If you do not know how to create a development theme contact your developer lead.
-- Get your theme id and set `SHOPIFY_CLI_THEME_ID` in your `.env`.
 
 ### Workflow
 
-**Pull**
+- Development
 
-- Always pull and fetch before you begin a new branch `git pull origin staging`, `git fetch origin staging`.
-- This is very important as the json files in `/templates`, `/config` change very often by your store users.
+  - `npm run build:dev` to build the theme into production folder `/dev`
+  - `npm run start` to start your dev environment.
+    - Webpack will watch your `/src` and theme kit will watch your `/dev` and change the files on your dev theme.
 
-**Create new branch**
+- Staging
 
-- Always create a new branch `git checkout -b some-branch-name`.
-- Because staging jsons will be changing so often all commits must be merged with pull request.
+  - Once you are finished with development deploy test your theme to the staging theme.
+  - `npm run build` to build the theme into production folder `/dist`
+  - `theme deploy --env=staging` to deploy to staging.
 
-**npm start**
-
-- Webpack and shopify watch your files. see: [File Uploads](#file-uploads)
-- You should see something similart to the following:
-
-**!IMPORTANT**
-
-- Only edit files in the `/src` folder.
-  - Within the `/src` folder there are corresponding `/assets`, `/config`, `/layout`, `/locales`, `/sections`, `/snippets`, `/templates` that will build into the `/dev` folder.
-  - The `root` folders `/assets`, `/config`, `/layout`, `/locales`, `/sections`, `/snippets`, `/templates` are for production. Shopify reads these from Github and builds the theme. Do not edit these in development mode.
-    - These folders are only updated when you `build` right before your push your final commit to your PR.
-
-**npm run build**
-
-- When you are done coding on this branch and are ready to push for merging into staging you must first run `npm run build`.
-  - This will build into the `root` folders and allow Shopify to read Github hub and update staging once the PR is merged.
-
-**updating dev jsons(optional)**
-
-- If you would like to update your jsons in your dev environment then update your json in `/dev` and then your dev theme with update the json.
-
-```
-Serving <path to>/dev
-
-Please open this URL in your browser:
-http://some-local-url
-
-Customize this theme in the Theme Editor, and use 'theme pull' to get the changes:
-https://some-store.myshopify.com/admin/themes/<theme-id>/editor
-
-Share this theme preview:
-https://some-store.myshopify.com/?preview_theme_id=<theme-id>
-
-(Use Ctrl-C to stop)
-```
-
-- The local url will show your development theme
+- Production
+  - Once you are finished testing your the staging theme deploy to production.
+  - `npm run build` to build the theme into production folder `/dist` if it is not already.
+  - `theme deploy --env=production --allow-live` to deploy to staging.
 
 #### Scripts
 
@@ -104,19 +66,17 @@ https://some-store.myshopify.com/?preview_theme_id=<theme-id>
 
 - Completes a Webpack build in **development** mode
 - Webpack begins watching for file changes in the `src` folder.
-- Shopify CLI begins watching for file changes in `/dev` folder
-- Shopify CLI will print out your dev url, customize url and preview share url to use in the terminal.
+- Shopify Theme kit begins watching for file changes in `/dev` folder
+- Shopify Theme kit should automatically open your theme in the browser.
+  - If it does not then you must navigate to your theme in Shopify and open a preview to see your changes.
 
 `npm run build`
 
-- Completes a Webpack build in **production** mode
+- Completes a Webpack build in **production** mode in the `/dist`
 
 `npm run build:dev`
 
 - Completes a Webpack build in **development** mode in the `/dev` folder
-
-- If you need to push to your development theme:
-  - `shopify theme push -s=<your-store.myshopify.com> -t=<themeid> --password=<themeaccesstoken> --path=dev`
 
 ### Webpack
 
@@ -131,28 +91,8 @@ https://some-store.myshopify.com/?preview_theme_id=<theme-id>
 
 - Webpack will generate a JavaScript file for each template and layout file in the `bundles` directory.
 - The CSS files imported in each bundle entry file will also generate CSS files.
-- **production** Webpack will add all output files to their appropriate folder in the `root` directory.
+- **production** Webpack will add all output files to their appropriate folder in the `/dist` directory.
 - **development** Webpack will add all output files to their appropriate folder in the `/dev` directory.
-
-### Shopify CLI Environment
-
-- Get your `token` and `themeid` from your developer lead if you do not already know how to get it.
-
-```
-# https://shopify.dev/docs/themes/tools/cli/ci-cd
-SHOPIFY_CLI_THEME_TOKEN=<yourthemeaccesspassword>
-SHOPIFY_CLI_THEME_ID=<yourthemeid>
-SHOPIFY_FLAG_STORE=<your-store.myshopify.com>
-# SHOPIFY_CLI_TTY=
-```
-
-### File Uploads
-
-- When running `npm start`, Webpack will build into the `/dev` folder.
-- Webpack will then watch the `/src` folder for changes.
-- When the build has completed Webpack shell will run the Shopify CLI Command to start your sync with your development theme and your `/dev` folder.
-- When Shopify CLI has synced your files. Shopify CLI will watch you the `/dev` folder for changes.
-- When a change is made Webpack will recompile to the `/dev` folder your change, Shopify CLI will see it and sync that single change to your development theme.
 
 ## ‼️ Required Files
 
