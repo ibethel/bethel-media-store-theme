@@ -47,7 +47,11 @@
 
       {%- capture button_attributes -%}
         data-customer="{% if customer != blank %}true{% else %}false{% endif %}"
-        data-handle="{{ bmpi_handle }}"
+        data-product='{
+          "handle": {{ bmpi_product.handle | json }},
+          "title": {{ bmpi_product.title | escape | json }},
+          "url": {{ bmpi_product.url | json }}
+        }'
         data-wish="{{ is_wish }}"
       {%- endcapture -%}
 
